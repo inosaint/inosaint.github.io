@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+.dviz-content svg.sparkline {
+	vertical-align: bottom;
+}
+.dviz-content svg.sparkline line {
+	stroke: #666;
+	stroke-width: 1px;
+}
+
+.dviz-content svg.graph circle.node {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+.dviz-content svg.graph text.node {
+    stroke: #fff;
+    dominant-baseline: central;
+    text-anchor: middle;
+    font-size: 10px;
+    font-weight: normal;
+}
+.dviz-content svg.graph line.link {
+    stroke: #999;
+    stroke-opacity: .6;
+}
