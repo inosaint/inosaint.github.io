@@ -22,7 +22,24 @@
       .wax-tooltip {
         background: white;
         color: black;
-    	}
+        }
+    
+      .wax-legends {
+        position:absolute;
+        left: 655px;
+        bottom:80px;
+        z-index:999999;
+        width:300px;
+        }
+      
+      .legend-title,.map-legends .map-legend {
+        padding:10px;
+        }
+      
+      .wax-legends .wax-legend{
+        background:#fff;
+        color:#000;
+        }     
     </style>
     
     <title>Meteorites: Earth Impact</title>
@@ -30,7 +47,7 @@
 <body>
 
 <script type="text/javascript">
-var url = 'http://a.tiles.mapbox.com/v3/kenneth.meteoriteimpact.jsonp';
+var url = 'http://a.tiles.mapbox.com/v3/kenneth.meteorites.jsonp';
 wax.tilejson(url, function(tilejson) {
     // Set up a map in a div with the id 'modestmaps-setup'
     var m = new MM.Map('modestmaps-setup',
@@ -621,6 +638,17 @@ Year,Finds
 <p><code>(@column {colors:['#c0392b'],height:300,vAxis:{title: 'Number'},hAxis:{title: 'Years'}})</code></p>
 </div>
 </div>
+
+<div class="row">
+  <div class="twelve columns">
+    <p>Till date, 45,716 meteors have been recorded to have hit earth. Of which only 1107 have been seen falling. Some countries seem to have more than their share of meteorites and you may have to look so that you wont get hit by one ;)</p>
+  </div>
+  <div class="twelve columns">
+    
+  </div>
+</div>
+
+
 <footer>
 <div class="row">
     
