@@ -24,4 +24,4 @@ Dataset: <a href="http://visualizing.org/datasets/meteorite-landings">Meteorite 
 + CSS
 	- Foundation
 
-You can find more information in my writeup about the project [here][http://bit.ly/1aZgGdK].
+You can find more information in my writeup about the project [here](http://bit.ly/1aZgGdK).
