@@ -2,5 +2,5 @@ Hi,
 
 My Name is Kenneth.
 
-I work as a product designer at Practo working currently on mobile enterprise SAAS.
+I work as a Senior Product Design Manager at Jiva.ag.
 This repo is the home for my personal website.
