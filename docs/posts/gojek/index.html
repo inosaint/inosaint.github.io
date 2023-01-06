@@ -1,156 +1,299 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
-    
-    
-    
-    <meta charset="utf-8" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Kenneth's portfolio" />
-    <link rel="stylesheet" type="text/css" href="/public/style.css" />
-    <title>Gojek - Kenneth&apos;s Portfolio</title>
-
-<meta name="description" content="A simple portfolio site built with Eleventy on Glitch">
-<meta name="robots" content="index,follow">
-<meta name="author" content="undefined">
-
-<link rel="canonical" href="https://adaptable-abrupt-cannon.glitch.me/posts/gojek/">
-
-<meta property="og:title" content="Gojek - Kenneth&apos;s Portfolio">
-<meta property="og:type" content="article">
-
-<meta property="og:url" content="https://adaptable-abrupt-cannon.glitch.me/posts/gojek/">
-<meta property="og:description" content="A simple portfolio site built with Eleventy on Glitch">
-<meta property="og:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-eleventy-social.png?v=1616712747908">
-
-<meta name="twitter:card" content="summary">
-
-<meta name="twitter:url" content="https://adaptable-abrupt-cannon.glitch.me/posts/gojek/">
-<meta name="twitter:title" content="Gojek - Kenneth&apos;s Portfolio">
-<meta name="twitter:description" content="A simple portfolio site built with Eleventy on Glitch">
-<meta name="twitter:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-eleventy-social.png?v=1616712747908">
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Password Protected Page</title>
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #dialogText {
+            color: white;
+            background-color: #333333;
+        }
+        
+        #dialogWrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: table;
+            background-color: #EEEEEE;
+        }
+        
+        #dialogWrapCell {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        #mainDialog {
+            max-width: 400px;
+            margin: 5px;
+            border: solid #AAAAAA 1px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px 3px #AAAAAA;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #FFFFFF;
+            overflow: hidden;
+            text-align: left;
+        }
+        #mainDialog > * {
+            padding: 10px 30px;
+        }
+        #passArea {
+            padding: 20px 30px;
+            background-color: white;
+        }
+        #passArea > * {
+            margin: 5px auto;
+        }
+        #pass {
+            width: 100%;
+            height: 40px;
+            font-size: 30px;
+        }
+        
+        #messageWrapper {
+            float: left;
+            vertical-align: middle;
+            line-height: 30px;
+        }
+        
+        .notifyText {
+            display: none;
+        }
+        
+        #invalidPass {
+            color: red;
+        }
+        
+        #success {
+            color: green;
+        }
+        
+        #submitPass {
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #E7E7E7;
+            border: solid gray 1px;
+            float: right;
+            cursor: pointer;
+        }
+        #contentFrame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #attribution {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        #attribution, #attribution a {
+            color: #999;
+        }
+        .error {
+            display: none;
+            color: red;
+        }
+    </style>
   </head>
   <body>
-  <main>
-    
-    
-  
-    
-
-
-
-
-<div class="wrapper post">
-  <div>
-    <p>
-        <a class="next" href="/">Back to Home</a>
-      </p>
-  </div>
-  
-  <div>
-    
-    <h1 class='postTitle'>Gojek</h1>
-
-    
-    
-    
-    
-    <p>From the last 3 years, I’ve been working on the merchant side of Gojek. During this time, I’ve lead and contributed towards the GoBiz app and website, the Spots app and the Midtrans website.</p>
-<h3>GoBiz app:</h3>
-<p>With the formation of a merchant team in mid 2018, I was the designer tasked with the redesign of the GoBiz app.</p>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;El5gwBIVkAAbXtz.jpg" alt=""></p>
-<h4>The objectives of the redesign were</h4>
-<ol>
-<li><strong>Scalability:</strong> The app was moving from being a food merchant app to a merchant app used by different kinds of merchants. So we needed an information architecture that would work for GoFood, GoPay, and other merchants</li>
-<li><strong>UI refresh:</strong> With the move, we rebranded from Go-Resto to GoBiz and adopted the newly minted Asphalt 1.0 design language system. We were the first app in Gojek to be completely built on the Asphalt design system.</li>
-</ol>
-<h4>Design explorations:</h4>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;C2497D0A-6D7A-42AB-B889-09A51A84DD2B.png" alt=""></p>
-<h4>User testing:</h4>
-<p>We decided to have a pilot group of merchants for the release and the research team conducted a user diary research with them.</p>
-<p>As we had not changed any major flow, we did not find any issues.</p>
-<h4>Learnings post release:</h4>
-<p>Once we released we started seeing feedback on the playstore asking us why we had hidden the customer contact. In the design, in the interest of showing the list of ordered items, we had moved the customer contact behind an overflow menu. Our analytics had shown low usage of this feature and we felt we could move it and add an onboarding tooltip for the merchants</p>
-<p>However these complaints persisted and we followed up with a few merchants to understand the problem. We learned that though the merchants did not end up calling via the app, they would want to see the customer phone number either to collect it for marketing purpose, to call from another number or to identify if its a fraud order.</p>
-<p>Based on the feedback, we took a call to re-instate the customer number back on the order details screen.
-<img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;DA9F555A-8D98-46A7-9E7A-75524B550C32.png" alt=""></p>
-<h3>GoBiz Dashboard:</h3>
-<p>Sometimes you just inherit a product that has not been loved. The GoBiz dashboard was built for enterprise merchants by forking an internal portal. The portal was built on an internal front end framework “Tanjidor” and the designers used to design in the browser and this meant that there were no design files. This meant that there was a dependency on the existing designers. So we decided to pick it up as a design initiative.</p>
-<h4>Objectives of the redesign:</h4>
-<ol>
-<li>Reduce dependancy on the existing designer by</li>
-<li>Make the dashboard accessible via mobile web</li>
-</ol>
-<h4>What we did:</h4>
-<p>In 2019, we conducted a heuristic evaluation to identify key issues. But post that due to issues with design bandwidth, the project was deprioritised.</p>
-<p>Fast forward to 2020, Hendri joined us on the GoBiz team and I assigned him to start work on the GoBiz Dashboard redesign as a way to familiarise himself with the product.</p>
-<p>We decided to design anything new with our web design system and not do it in the browser. Due to some luck, the “platformisation” of the Dashboard project got prioritised that quarter. However the PM was going to do it without a change to the UI. I convinced her to switch to the new UI. But given the sprint was beginning in 2 weeks, we were short of time. So we got a list of pages to work on a priority basis and started exploring. A lot of work was already done by Hendri however we had to now make the whole site look coherent.</p>
-<blockquote>
-<p>You can arrive at a different output using the same design system.</p>
-</blockquote>
-<p>We experimented with spacing and separators, navigation menu designs and modal overlays in the next 10 days to finalise the boilerplate for all the pages. Oh and yeah we also made it responsive.</p>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;Screen%20Shot%202021-08-10%20at%203.36.42%20PM.png" alt=""></p>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;Screen%20Shot%202021-08-10%20at%203.36.59%20PM.png" alt=""></p>
-<h4>What we could not do:</h4>
-<ul>
-<li>[ ] Fix the information architecture issues in every page.</li>
-<li>[ ] Figure out a table design that works well on mobile and desktop</li>
-</ul>
-<h4>Outcome:</h4>
-<p>The GoMart designers were able to use the design system and build their module on the Dashboard with limited dependency on our team.</p>
-<h3>The Spots app:</h3>
-<p>The SPOTS app was a point of sales app on a Landi device. We were selling these to offline merchants to let them collect payment via offline modes like credit card, debit card and QR.</p>
-<p>The app they were using was a reskinned version of the default app provided by Landi(image on the left).</p>
-<p>I was asked to help out with it and I worked on a refresh for the app on a short timeline(image on the right)</p>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;19A4FA58-8E4F-4191-9F35-84CFB71B8922.png" alt=""></p>
-<p>We later integrated this into the POS application on the GoBiz app.</p>
-<h3>Midtrans:</h3>
-<p>In 2020, the Midtrans merchant onboarding was prioritized due to an external collaboration with Whatsapp.</p>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;736AD9B5-31A4-45E1-B2D4-0CBBAD0EDAD7.png" alt=""></p>
-<p>Given the urgency, I decided to ask Riyadhi to help the team with the wireframes. Riyadhi had previously worked on the merchant onboarding flow for the GoBiz app and I felt this would help us speed up the process.</p>
-<p>We had just completed the platformization exercise so Hendri and Firman were proficient with the new design system. The dev team too was confident that using the web design system was the best decision. This also made the flow mobile web compatible which was one of the identified merchant pain points.</p>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;Screen%20Shot%202021-08-10%20at%203.48.03%20PM.png" alt="">
-<img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;Screen%20Shot%202021-08-10%20at%203.48.08%20PM.png" alt=""></p>
-<p>So we shipped the new onboarding and saw lot of reduction in the drop offs.</p>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;F6FF4FB1-0D09-4C1F-B2A2-B45448304D1F.png" alt=""></p>
-<h4>Outcome:</h4>
-<p>This project exposed most of the team to the ‘merchant onboarding’ problem space and a surprising side-effect of this was that project handover of the ‘corporate onboarding’ project could be handled by Hendri when Riyadhi was affected by Covid-19.</p>
-<h4>Miscellaneous:</h4>
-<p>I consulted on the GoBiz and the Midtrans marketing website.</p>
-
-    <div class="controls">
-    
-    
-      <p>
-        <strong>Previous post</strong>: 
-        <a class="previous" href="/posts/gobiz-inbox/">GoBiz Inbox</a>
-      </p>
-    
-    
-      <p>
-        <strong>Next post</strong>: 
-        <a class="next" href="/posts/hiring/">Hiring</a>
-      </p>
-    </div>
-    
-  </div>
-</div>
-
-      <footer class="footer">
-        <div class="links">
-          <a href="/">Home</a>
-          <span class="divider">|</span>
-          <a href="/posts">Posts</a>
-          <span class="divider">|</span>
-          <a href="/about">About</a>
+    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
+    <div id="dialogWrap">
+        <div id="dialogWrapCell">
+            <div id="mainDialog">
+                <div id="dialogText">This page is password protected.</div>
+                <div id="passArea">
+                    <p id="passwordPrompt">Password</p>
+                    <input id="pass" type="password" name="pass" autofocus>
+                    <div>
+                        <span id="messageWrapper">
+                            <span id="invalidPass" class="error">Sorry, please try again.</span>
+                            <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
+                            <span id="success" class="notifyText">Success!</span>
+                            &nbsp;
+                        </span>
+                        <button id="submitPass" type="button">Submit</button>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+                <div id="securecontext" class="error">
+                    <p>
+                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
+                    </p>
+                </div>
+                <div id="nocrypto" class="error">
+                    <p>
+                        Your web browser appears to be outdated. Please visit this page using a modern browser.
+                    </p>
+                </div>
+            </div>
         </div>
+    </div>
+    <div id="attribution">
+        Protected by <a href="https://www.maxlaumeister.com/pagecrypt/">PageCrypt</a>
+    </div>
+    <script>
+    (function() {
+
+        var pl = "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";
         
-      </footer>
-    
-  </main>
-   
+        var submitPass = document.getElementById('submitPass');
+        var passEl = document.getElementById('pass');
+        var invalidPassEl = document.getElementById('invalidPass');
+        var trycatcherror = document.getElementById('trycatcherror');
+        var successEl = document.getElementById('success');
+        var contentFrame = document.getElementById('contentFrame');
+        
+        // Sanity checks
+
+        if (pl === "") {
+            submitPass.disabled = true;
+            passEl.disabled = true;
+            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
+            return;
+        }
+
+        if (!isSecureContext) {
+            document.querySelector("#passArea").style.display = "none";
+            document.querySelector("#securecontext").style.display = "block";
+            return;
+        }
+
+        if (!crypto.subtle) {
+            document.querySelector("#passArea").style.display = "none";
+            document.querySelector("#nocrypto").style.display = "block";
+            return;
+        }
+        
+        function str2ab(str) {
+            var ustr = atob(str);
+            var buf = new ArrayBuffer(ustr.length);
+            var bufView = new Uint8Array(buf);
+            for (var i=0, strLen=ustr.length; i < strLen; i++) {
+                bufView[i] = ustr.charCodeAt(i);
+            }
+            return bufView;
+        }
+
+        async function deriveKey(salt, password) {
+            const encoder = new TextEncoder()
+            const baseKey = await crypto.subtle.importKey(
+                'raw',
+                encoder.encode(password),
+                'PBKDF2',
+                false,
+                ['deriveKey'],
+            )
+            return await crypto.subtle.deriveKey(
+                { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+                baseKey,
+                { name: 'AES-GCM', length: 256 },
+                true,
+                ['decrypt'],
+            )
+        }
+        
+        async function doSubmit(evt) {
+            submitPass.disabled = true;
+            passEl.disabled = true;
+
+            let iv, ciphertext, key;
+            
+            try {
+                var unencodedPl = str2ab(pl);
+
+                const salt = unencodedPl.slice(0, 32)
+                iv = unencodedPl.slice(32, 32 + 16)
+                ciphertext = unencodedPl.slice(32 + 16)
+
+                key = await deriveKey(salt, passEl.value);
+            } catch (e) {
+                trycatcherror.style.display = "inline";
+                console.error(e);
+                return;
+            }
+
+            try {
+                const decryptedArray = new Uint8Array(
+                    await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
+                );
+
+                let decrypted = new TextDecoder().decode(decryptedArray);
+
+                if (decrypted === "") throw "No data returned";
+
+                const basestr = '<base href="." target="_top">';
+                const anchorfixstr = `
+                    <script>
+                        Array.from(document.links).forEach((anchor) => {
+                            const href = anchor.getAttribute("href");
+                            if (href.startsWith("#")) {
+                                anchor.addEventListener("click", function(e) {
+                                    e.preventDefault();
+                                    const targetId = this.getAttribute("href").substring(1);
+                                    const targetEl = document.getElementById(targetId);
+                                    targetEl.scrollIntoView();
+                                });
+                            }
+                        });
+                    <\/script>
+                `;
+                
+                // Set default iframe link targets to _top so all links break out of the iframe
+                if (decrypted.includes("<head>")) decrypted = decrypted.replace("<head>", "<head>" + basestr);
+                else if (decrypted.includes("<!DOCTYPE html>")) decrypted = decrypted.replace("<!DOCTYPE html>", "<!DOCTYPE html>" + basestr);
+                else decrypted = basestr + decrypted;
+
+                // Fix fragment links
+                if (decrypted.includes("</body>")) decrypted = decrypted.replace("</body>", anchorfixstr + '</body>');
+                else if (decrypted.includes("</html>")) decrypted = decrypted.replace("</html>", anchorfixstr + '</html>');
+                else decrypted = decrypted + anchorfixstr;
+                
+                contentFrame.srcdoc = decrypted;
+                
+                successEl.style.display = "inline";
+                setTimeout(function() {
+                    dialogWrap.style.display = "none";
+                }, 1000);
+            } catch (e) {
+                invalidPassEl.style.display = "inline";
+                passEl.value = "";
+                submitPass.disabled = false;
+                passEl.disabled = false;
+                console.error(e);
+                return;
+            }
+        }
+        
+        submitPass.onclick = doSubmit;
+        passEl.onkeypress = function(e){
+            if (!e) e = window.event;
+            var keyCode = e.keyCode || e.which;
+            invalidPassEl.style.display = "none";
+            if (keyCode == '13'){
+              // Enter pressed
+              doSubmit();
+              return false;
+            }
+        }
+    })();
+    </script>
   </body>
 </html>
