@@ -13,8 +13,8 @@ to this section's matching END comment to see page-specific styles.
   --color-primary: #AFECE0;
   --wrapper-height: 85vh;
   --image-max-width: 320px;
-  --font-family: "Special Gothic Expanded One";
-  --font-family-header: "Special Gothic Expanded One";
+  --font-family: "Liter";
+  --font-family-header: "Liter";
 }
 
 /* Basic page style resets */
@@ -28,7 +28,7 @@ to this section's matching END comment to see page-specific styles.
 
 
 .special-gothic-expanded-one-regular {
-  font-family: "Special Gothic Expanded One", sans-serif;
+  font-family: "Liter", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -36,7 +36,7 @@ to this section's matching END comment to see page-specific styles.
 
 /* Our remix on glitch button */
 .btn--remix {
-  font-family: "Special Gothic Expanded One";
+  font-family: "Liter";
   padding: 0.75rem 1rem;
   font-size: 1.1rem;
   line-height: 1rem;
@@ -73,7 +73,7 @@ to this section's matching END comment to see page-specific styles.
 
 .footer a:not(.btn--remix):link,
 a:not(.btn--remix):visited {
-  font-family: "Special Gothic Expanded One";
+  font-family: "Liter";
   font-style: normal;
   font-weight: normal;
   font-size: 1.1rem;
@@ -184,7 +184,7 @@ a:hover {
 /* Title style adjustments */
 .title-lg {
   color: var(--color-text-main);
-  font-family: "Special Gothic Expanded One";
+  font-family: "Liter";
   font-style: normal;
   font-weight: bold;
   line-height: 1.5;
