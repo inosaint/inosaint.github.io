@@ -100,7 +100,7 @@ END Glitch hello-app default styles
 /* Page structure */
 body {
   font-family: var(--font-family);
-  background-color: var(--color-bg);
+  background-color: #fbfbfb;
 }
 .wrapper {
   min-height: var(--wrapper-height);
@@ -137,7 +137,11 @@ h1 {
   margin-bottom: 1.75rem;
   font-size: 5rem;
   display: inline-flex;
-  color: #000;
+  color: #100;
+  line-height: .9;
+  font-family: "Host Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 h2 {
   font-size: 4rem;
