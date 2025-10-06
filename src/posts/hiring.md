@@ -1,5 +1,5 @@
 ---
-title: Hiring
+title: Thoughts on Hiring
 description: Thoughts on Hiring
 date: 2021-08-19
 tags:

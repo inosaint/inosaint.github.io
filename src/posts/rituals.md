@@ -1,5 +1,5 @@
 ---
-title: Team Rituals
+title: Why Team Rituals are important
 description: team rituals
 date: 2021-08-19
 tags:

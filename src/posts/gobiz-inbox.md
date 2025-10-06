@@ -1,5 +1,5 @@
 ---
-title: GoBiz Inbox
+title: Designing the Inbox experience for GoBiz
 description: How we designed the in-app comms channel
 date: 2021-08-19
 tags:

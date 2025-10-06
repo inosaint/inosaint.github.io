@@ -1,6 +1,6 @@
 ---
-title: Gojek
-description: Work at Gojek
+title: What I worked at Gojek
+description: GoBiz app, GoBiz Dashboard, Spots and Midtrans
 date: 2021-08-19
 tags:
   - posts
