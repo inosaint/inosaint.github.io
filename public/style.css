@@ -26,6 +26,14 @@ to this section's matching END comment to see page-specific styles.
 }
 
 
+.dot {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 16px 16px;
+}
 
 .special-gothic-expanded-one-regular {
   font-family: "Liter", sans-serif;
