@@ -13,8 +13,8 @@ to this section's matching END comment to see page-specific styles.
   --color-primary: #AFECE0;
   --wrapper-height: 85vh;
   --image-max-width: 320px;
-  --font-family: "HK Grotesk";
-  --font-family-header: "HK Grotesk";
+  --font-family: "Liter";
+  --font-family-header: "Liter";
 }
 
 /* Basic page style resets */
@@ -25,22 +25,26 @@ to this section's matching END comment to see page-specific styles.
   display: none !important;
 }
 
-/* Import fonts */
-@font-face {
-  font-family: HK Grotesk;
-  src: url("https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
-    format("opentype");
+
+body {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 16px 16px;
 }
-@font-face {
-  font-family: HK Grotesk;
-  font-weight: bold;
-  src: url("https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
-    format("opentype");
+
+.special-gothic-expanded-one-regular {
+  font-family: "Liter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
 
 /* Our remix on glitch button */
 .btn--remix {
-  font-family: HK Grotesk;
+  font-family: "Liter";
   padding: 0.75rem 1rem;
   font-size: 1.1rem;
   line-height: 1rem;
@@ -77,7 +81,7 @@ to this section's matching END comment to see page-specific styles.
 
 .footer a:not(.btn--remix):link,
 a:not(.btn--remix):visited {
-  font-family: HK Grotesk;
+  font-family: "Liter";
   font-style: normal;
   font-weight: normal;
   font-size: 1.1rem;
@@ -104,7 +108,7 @@ END Glitch hello-app default styles
 /* Page structure */
 body {
   font-family: var(--font-family);
-  background-color: var(--color-bg);
+  background-color: #fbfbfb;
 }
 .wrapper {
   min-height: var(--wrapper-height);
@@ -141,7 +145,11 @@ h1 {
   margin-bottom: 1.75rem;
   font-size: 5rem;
   display: inline-flex;
-  color: #000;
+  color: #100;
+  line-height: .9;
+  font-family: "Host Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 h2 {
   font-size: 4rem;
@@ -188,7 +196,7 @@ a:hover {
 /* Title style adjustments */
 .title-lg {
   color: var(--color-text-main);
-  font-family: HK Grotesk;
+  font-family: "Liter";
   font-style: normal;
   font-weight: bold;
   line-height: 1.5;
