@@ -25,6 +25,15 @@ to this section's matching END comment to see page-specific styles.
   display: none !important;
 }
 
+body {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
 /* Import fonts */
 @font-face {
   font-family: HK Grotesk;
