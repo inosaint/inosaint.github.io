@@ -26,7 +26,7 @@ to this section's matching END comment to see page-specific styles.
 }
 
 
-.dot {
+body {
   position: absolute;
   inset: 0;
   height: 100%;
