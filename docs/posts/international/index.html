@@ -1,299 +1,122 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Password Protected Page</title>
-    <style>
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #dialogText {
-            color: white;
-            background-color: #333333;
-        }
-        
-        #dialogWrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: table;
-            background-color: #EEEEEE;
-        }
-        
-        #dialogWrapCell {
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
-        
-        #mainDialog {
-            max-width: 400px;
-            margin: 5px;
-            border: solid #AAAAAA 1px;
-            border-radius: 10px;
-            box-shadow: 3px 3px 5px 3px #AAAAAA;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #FFFFFF;
-            overflow: hidden;
-            text-align: left;
-        }
-        #mainDialog > * {
-            padding: 10px 30px;
-        }
-        #passArea {
-            padding: 20px 30px;
-            background-color: white;
-        }
-        #passArea > * {
-            margin: 5px auto;
-        }
-        #pass {
-            width: 100%;
-            height: 40px;
-            font-size: 30px;
-        }
-        
-        #messageWrapper {
-            float: left;
-            vertical-align: middle;
-            line-height: 30px;
-        }
-        
-        .notifyText {
-            display: none;
-        }
-        
-        #invalidPass {
-            color: red;
-        }
-        
-        #success {
-            color: green;
-        }
-        
-        #submitPass {
-            font-size: 20px;
-            border-radius: 5px;
-            background-color: #E7E7E7;
-            border: solid gray 1px;
-            float: right;
-            cursor: pointer;
-        }
-        #contentFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        #attribution {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-        #attribution, #attribution a {
-            color: #999;
-        }
-        .error {
-            display: none;
-            color: red;
-        }
-    </style>
+    
+    
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kenneth's portfolio" />
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+    <link rel="alternate" type="application/atom+xml" title="Kenneth's Portfolio" href="/feed.xml" />
+    <title>Learnings from going International - Kenneth&apos;s Portfolio</title>
+
+<meta name="description" content="Kenneth&apos;s Personal Website">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Kenneth">
+
+<link rel="canonical" href="https://kenneth.dsouza.im/posts/international/">
+
+<meta property="og:title" content="Learnings from going International - Kenneth&apos;s Portfolio">
+<meta property="og:type" content="article">
+
+<meta property="og:url" content="https://kenneth.dsouza.im/posts/international/">
+<meta property="og:description" content="Kenneth&apos;s Personal Website">
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://kenneth.dsouza.im/posts/international/">
+<meta name="twitter:title" content="Learnings from going International - Kenneth&apos;s Portfolio">
+<meta name="twitter:description" content="Kenneth&apos;s Personal Website">
+
+
+
   </head>
   <body>
-    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
-    <div id="dialogWrap">
-        <div id="dialogWrapCell">
-            <div id="mainDialog">
-                <div id="dialogText">This page is password protected.</div>
-                <div id="passArea">
-                    <p id="passwordPrompt">Password</p>
-                    <input id="pass" type="password" name="pass" autofocus>
-                    <div>
-                        <span id="messageWrapper">
-                            <span id="invalidPass" class="error">Sorry, please try again.</span>
-                            <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
-                            <span id="success" class="notifyText">Success!</span>
-                            &nbsp;
-                        </span>
-                        <button id="submitPass" type="button">Submit</button>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-                <div id="securecontext" class="error">
-                    <p>
-                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
-                    </p>
-                </div>
-                <div id="nocrypto" class="error">
-                    <p>
-                        Your web browser appears to be outdated. Please visit this page using a modern browser.
-                    </p>
-                </div>
-            </div>
+  <main>
+    
+    
+  
+    
+
+
+
+
+<div class="wrapper post">
+  <div>
+    <p>
+        <a class="next" href="/">Back to Home</a>
+      </p>
+  </div>
+  
+  <div>
+    
+    <h1 class='postTitle'>Learnings from going International</h1>
+
+    
+    <p>At Practo, I had my first experience designing for markets outside of India. Singapore used to be a major market for the Practo Ray product, and features like Tooth Maps were developed specifically for their dentists. In 2015, when we started rolling out the doctor app to Malaysia, Indonesia, Philippines and Brazil, the major changes we made to the product stopped at currency and number formatting.</p>
+<p>[image:FA700E35-0BED-4963-8945-CB023B32CA9A-789-0000090F98B1A625/Reports Ray.png]</p>
+<p>However when I had to port the GoBiz app to Thailand, I got to learn a lot.</p>
+<h3>Collaboration and Organization</h3>
+<p>GoBiz is a platform with other teams contributing to it so when we prepare for a new country launch, getting every team who is part of the launch involved is crucial.</p>
+<p>Given that the features and the needs may differ across countries, I wanted to organize our projects separately on Abstract. Moreover, each feature/module needs to be a separate sketch file within the project instead of pages within the same sketch file to help manage the size and reduce the interference from other changes in the Master.</p>
+<p>[image:EBA65436-EF88-498B-919F-0BA8CC43D2F2-789-00001D11078422CF/Screen Shot 2021-08-24 at 8.22.13 PM.png]</p>
+<p>During the kickoff of a country launch, the Abstract project is setup and a corresponding Asana is set up to function as the tracker for the designs.
+This project feeds back to the weekly SOS(Scrum of Scrums) that is run by the Program managers.</p>
+<h3>Typography:</h3>
+<p>When your product is designed to support a language which only uses latin glyphs, then it’s easy to take it to other countries with minimal changes. However with GoBiz, we were designed to support the local language script i.e., Thai in Thailand, Vietnamese in Vietnam and Simplified Chinese in Singapore. This means that the font you use needs to support these scripts. Our brand typeface, Maison Neue, unfortunately wasn’t able to support these scripts and the application defaulted to using system fonts. In Thai, this led to the font size and styling getting affected on the screen and we noticed that every merchant we visited during our pilot used accessibility settings to increase the font size breaking the UI.</p>
+<p>￼
+[image:AA59799B-81F9-403C-8F99-ECA40D7E8682-789-00000CB236295A15/Image from iOS (9).jpg]</p>
+<p>In Vietnamese, missing glyphs caused the text to awkwardly renders the missing glyph in another format.
+￼￼
+[image:F195919D-5EE4-4034-9D12-4503E63C25BF-789-00000B95EB35399E/image (21).png]</p>
+<p>Maison doesn’t support the following vietnamese glyphs ￼￼ờ ư ằ ố ế ữ ả ẻ ễ ỉ ỏ ủ ư ứ ừ ử ữ ự ỷ</p>
+<p>So I worked with the brand and design system team leads to get them to finalize a fallback font which we could use in our designs. We narrowed down on NotoSans as it was a free option that supported what we needed.</p>
+<p>Months after the Thai release, we learnt that to support printing receipts, we would need to do additional development to support Thai and Viet fonts.</p>
+<p>P.S. wkwkwkwk and 5555555 are used to indicate laughter in Indonesian and Thai texting culture.</p>
+<h3>Managing Copy</h3>
+<p>Managing designs is fairly easy compared to managing copy across countries. We did this before tools like Lokalise were built so we used (and still do) google docs and google sheets.</p>
+<p>When we just had to support Bahasa Indonesian, the GoBiz copy was in a Google Doc which started getting really long and slow to load.
+[image:E4AC6FD8-E662-4466-B41E-48C59BF1A1B2-789-000013A0A3B41C85/Screen Shot 2021-08-24 at 4.17.02 PM.png]
+I had seen other teams using Google sheets to manage multi-language copy so I worked with Lauditta, the GoBiz UX writer, to create a new template that we could use based on our needs.
+[image:ACFD88B0-8506-433F-8B67-D4591EEFF68E-789-000013D1FA6EF7A5/Screen Shot 2021-08-24 at 4.15.50 PM.png]
+The devs manage the strings in the app using a ‘key’, we needed to map it to our copy lines. We learnt the hard way that this is something we should have setup early on as doing it now meant that we had to spend significant amount of time copy-pasting and searching through sheets.</p>
+<p>We wanted to have the screen image for reference so that other teams can also review and understand the context on the page. This is helpful because the UX writers in other countries need to understand the context and it also helps the rest of the team members like QA and designers who do not know the language to test if the right copy is being used.</p>
+<p><em>Google sheets releasing ‘Insert picture in cell’ helped us achieve this.</em></p>
+<p>We are now in the process of moving GoBiz’s UX copy to <a href="https://lokalise.com/">Lokalise</a>.</p>
+
+    <div class="controls">
+    
+    
+      <p>
+        <strong>Previous post</strong>:
+        <a class="previous" href="/posts/hiring/">Thoughts on Hiring</a>
+      </p>
+    
+    
+      <p>
+        <strong>Next post</strong>:
+        <a class="next" href="/posts/process/">Beyond building processes</a>
+      </p>
+    
+    </div>
+  </div>
+</div>
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/">Home</a>
+          <span class="divider">|</span>
+          <a href="/posts">Posts</a>
+          <span class="divider">|</span>
+          <a href="/about">About</a>
         </div>
-    </div>
-    <div id="attribution">
-        Protected by <a href="https://www.maxlaumeister.com/pagecrypt/">PageCrypt</a>
-    </div>
-    <script>
-    (function() {
-
-        var pl = "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";
         
-        var submitPass = document.getElementById('submitPass');
-        var passEl = document.getElementById('pass');
-        var invalidPassEl = document.getElementById('invalidPass');
-        var trycatcherror = document.getElementById('trycatcherror');
-        var successEl = document.getElementById('success');
-        var contentFrame = document.getElementById('contentFrame');
-        
-        // Sanity checks
-
-        if (pl === "") {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
-            return;
-        }
-
-        if (!isSecureContext) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#securecontext").style.display = "block";
-            return;
-        }
-
-        if (!crypto.subtle) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#nocrypto").style.display = "block";
-            return;
-        }
-        
-        function str2ab(str) {
-            var ustr = atob(str);
-            var buf = new ArrayBuffer(ustr.length);
-            var bufView = new Uint8Array(buf);
-            for (var i=0, strLen=ustr.length; i < strLen; i++) {
-                bufView[i] = ustr.charCodeAt(i);
-            }
-            return bufView;
-        }
-
-        async function deriveKey(salt, password) {
-            const encoder = new TextEncoder()
-            const baseKey = await crypto.subtle.importKey(
-                'raw',
-                encoder.encode(password),
-                'PBKDF2',
-                false,
-                ['deriveKey'],
-            )
-            return await crypto.subtle.deriveKey(
-                { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
-                baseKey,
-                { name: 'AES-GCM', length: 256 },
-                true,
-                ['decrypt'],
-            )
-        }
-        
-        async function doSubmit(evt) {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-
-            let iv, ciphertext, key;
-            
-            try {
-                var unencodedPl = str2ab(pl);
-
-                const salt = unencodedPl.slice(0, 32)
-                iv = unencodedPl.slice(32, 32 + 16)
-                ciphertext = unencodedPl.slice(32 + 16)
-
-                key = await deriveKey(salt, passEl.value);
-            } catch (e) {
-                trycatcherror.style.display = "inline";
-                console.error(e);
-                return;
-            }
-
-            try {
-                const decryptedArray = new Uint8Array(
-                    await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
-                );
-
-                let decrypted = new TextDecoder().decode(decryptedArray);
-
-                if (decrypted === "") throw "No data returned";
-
-                const basestr = '<base href="." target="_top">';
-                const anchorfixstr = `
-                    <script>
-                        Array.from(document.links).forEach((anchor) => {
-                            const href = anchor.getAttribute("href");
-                            if (href.startsWith("#")) {
-                                anchor.addEventListener("click", function(e) {
-                                    e.preventDefault();
-                                    const targetId = this.getAttribute("href").substring(1);
-                                    const targetEl = document.getElementById(targetId);
-                                    targetEl.scrollIntoView();
-                                });
-                            }
-                        });
-                    <\/script>
-                `;
-                
-                // Set default iframe link targets to _top so all links break out of the iframe
-                if (decrypted.includes("<head>")) decrypted = decrypted.replace("<head>", "<head>" + basestr);
-                else if (decrypted.includes("<!DOCTYPE html>")) decrypted = decrypted.replace("<!DOCTYPE html>", "<!DOCTYPE html>" + basestr);
-                else decrypted = basestr + decrypted;
-
-                // Fix fragment links
-                if (decrypted.includes("</body>")) decrypted = decrypted.replace("</body>", anchorfixstr + '</body>');
-                else if (decrypted.includes("</html>")) decrypted = decrypted.replace("</html>", anchorfixstr + '</html>');
-                else decrypted = decrypted + anchorfixstr;
-                
-                contentFrame.srcdoc = decrypted;
-                
-                successEl.style.display = "inline";
-                setTimeout(function() {
-                    dialogWrap.style.display = "none";
-                }, 1000);
-            } catch (e) {
-                invalidPassEl.style.display = "inline";
-                passEl.value = "";
-                submitPass.disabled = false;
-                passEl.disabled = false;
-                console.error(e);
-                return;
-            }
-        }
-        
-        submitPass.onclick = doSubmit;
-        passEl.onkeypress = function(e){
-            if (!e) e = window.event;
-            var keyCode = e.keyCode || e.which;
-            invalidPassEl.style.display = "none";
-            if (keyCode == '13'){
-              // Enter pressed
-              doSubmit();
-              return false;
-            }
-        }
-    })();
-    </script>
+      </footer>
+    
+  </main>
+   
   </body>
 </html>
