@@ -1,6 +1,7 @@
 ---
 title: An Insider's perspective on Design in Tech 2024
 description: By Kenneth Mark Dsouza
+date: 2024-01-01
 ---
 ![Is the grass green?](/content/writing/4IiQQOEdmqPcCsjTqlta-1.png)
 
