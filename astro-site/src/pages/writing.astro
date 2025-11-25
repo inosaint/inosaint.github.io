@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
-const writings = [
+const internalWritings = await getCollection('writing');
+
+const externalWritings = [
   {
     title: 'Squads as a Growth Engine for Designers',
     description: 'How we used squads to help our designers level up at Jiva',
@@ -22,7 +25,7 @@ const writings = [
   },
   {
     title: 'How Gojek\'s design & research teams collaborate effectively across borders',
-    description: 'Near, far, wherever we are - insights on cross-border collaboration',
+    description: 'Insights on cross-border collaboration',
     url: 'https://www.gojek.io/blog/near-far-wherever-we-are',
     image: 'https://placehold.co/360x200'
   },
@@ -32,6 +35,16 @@ const writings = [
     url: 'https://www.youtube.com/watch?v=c__raLe34ZU',
     image: 'https://placehold.co/360x200'
   }
+];
+
+const writings = [
+  ...internalWritings.map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    url: `/writing/${post.slug}/`,
+    image: post.data.image ?? 'https://placehold.co/360x200'
+  })),
+  ...externalWritings
 ];
 ---
 
