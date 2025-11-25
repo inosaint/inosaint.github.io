@@ -21,17 +21,20 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: 'astro-site/package-lock.json'
 
       - name: Install dependencies
+        working-directory: ./astro-site
         run: npm ci
 
-      - name: Build site
+      - name: Build Astro site
+        working-directory: ./astro-site
         run: npm run build
 
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/
+          path: astro-site/dist/
 
   deploy:
     # Only deploy on pushes to main branch
