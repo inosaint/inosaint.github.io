@@ -1,299 +1,139 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Password Protected Page</title>
-    <style>
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #dialogText {
-            color: white;
-            background-color: #333333;
-        }
-        
-        #dialogWrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: table;
-            background-color: #EEEEEE;
-        }
-        
-        #dialogWrapCell {
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
-        
-        #mainDialog {
-            max-width: 400px;
-            margin: 5px;
-            border: solid #AAAAAA 1px;
-            border-radius: 10px;
-            box-shadow: 3px 3px 5px 3px #AAAAAA;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #FFFFFF;
-            overflow: hidden;
-            text-align: left;
-        }
-        #mainDialog > * {
-            padding: 10px 30px;
-        }
-        #passArea {
-            padding: 20px 30px;
-            background-color: white;
-        }
-        #passArea > * {
-            margin: 5px auto;
-        }
-        #pass {
-            width: 100%;
-            height: 40px;
-            font-size: 30px;
-        }
-        
-        #messageWrapper {
-            float: left;
-            vertical-align: middle;
-            line-height: 30px;
-        }
-        
-        .notifyText {
-            display: none;
-        }
-        
-        #invalidPass {
-            color: red;
-        }
-        
-        #success {
-            color: green;
-        }
-        
-        #submitPass {
-            font-size: 20px;
-            border-radius: 5px;
-            background-color: #E7E7E7;
-            border: solid gray 1px;
-            float: right;
-            cursor: pointer;
-        }
-        #contentFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        #attribution {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-        #attribution, #attribution a {
-            color: #999;
-        }
-        .error {
-            display: none;
-            color: red;
-        }
-    </style>
+    
+    
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kenneth's portfolio" />
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+    <link rel="alternate" type="application/atom+xml" title="Kenneth's Portfolio" href="/feed.xml" />
+    <title>Designing the Inbox experience for GoBiz - Kenneth&apos;s Portfolio</title>
+
+<meta name="description" content="Kenneth&apos;s Personal Website">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Kenneth">
+
+<link rel="canonical" href="https://kenneth.dsouza.im/posts/gobiz-inbox/">
+
+<meta property="og:title" content="Designing the Inbox experience for GoBiz - Kenneth&apos;s Portfolio">
+<meta property="og:type" content="article">
+
+<meta property="og:url" content="https://kenneth.dsouza.im/posts/gobiz-inbox/">
+<meta property="og:description" content="Kenneth&apos;s Personal Website">
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://kenneth.dsouza.im/posts/gobiz-inbox/">
+<meta name="twitter:title" content="Designing the Inbox experience for GoBiz - Kenneth&apos;s Portfolio">
+<meta name="twitter:description" content="Kenneth&apos;s Personal Website">
+
+
+
   </head>
   <body>
-    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
-    <div id="dialogWrap">
-        <div id="dialogWrapCell">
-            <div id="mainDialog">
-                <div id="dialogText">This page is password protected.</div>
-                <div id="passArea">
-                    <p id="passwordPrompt">Password</p>
-                    <input id="pass" type="password" name="pass" autofocus>
-                    <div>
-                        <span id="messageWrapper">
-                            <span id="invalidPass" class="error">Sorry, please try again.</span>
-                            <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
-                            <span id="success" class="notifyText">Success!</span>
-                            &nbsp;
-                        </span>
-                        <button id="submitPass" type="button">Submit</button>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-                <div id="securecontext" class="error">
-                    <p>
-                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
-                    </p>
-                </div>
-                <div id="nocrypto" class="error">
-                    <p>
-                        Your web browser appears to be outdated. Please visit this page using a modern browser.
-                    </p>
-                </div>
-            </div>
+  <main>
+    
+    
+  
+    
+
+
+
+
+<div class="wrapper post">
+  <div>
+    <p>
+        <a class="next" href="/">Back to Home</a>
+      </p>
+  </div>
+  
+  <div>
+    
+    <h1 class='postTitle'>Designing the Inbox experience for GoBiz</h1>
+
+    
+    <p>The Chat SDK was built to support products wanting to integrate chat into their flows. However like many other platformized products, they end up being looked as solutions for use cases they were not designed for. The GoBiz inbox requirement wasn’t my first experience with dog fooding, but it was one that I was able to influence positively for the benefit of the users.</p>
+<p>We wanted to build an Inbox, an in-app channel for notifying our users. We just needed one-way communication. I do not understand the reason behind why product pushed to use the SDK, despite the arguments that the SDK wasn’t able to support our web product and wasn’t designed to communicate business updates.</p>
+<h3>Chat is chat, not inbox:</h3>
+<p>I created a document to explain what that decision meant for the app.
+If we use the chat sdk, then in the future as other teams build on the chat platform, we should plan to group all kinds of chat in a single space. This would align with the mental model of the user. This space would be the go-to place to follow up on your “conversations”, whether its about onboarding a new outlet or following up about your GoFresh order.
+￼
+<em>Decision:</em> We decided that all chats will show up in Inbox but we will need to visually separate them from the business chats. This is something that the Chat team had not yet designed for.</p>
+<h3>Where should Inbox/chat go?</h3>
+<p>Given that Inbox is something we are considering for communication, it should be easily accessible and indicate unread chats. Given the current structure of the GoBiz app, we could only think of 2 possible positions for the Inbox.
+￼
+However neither of these positions fulfill the conditions of</p>
+<ol>
+<li>
+<p>Visibility of new messages: The red dot on Lainnya can’t showcase a number since there are several other modules which have a no-number indication.</p>
+</li>
+<li>
+<p>Accessible from various parts of our app: A gofood merchant would jump right to the Orders inbox when they open the app and has no need to aware of this “notification’</p>
+</li>
+</ol>
+<p><em>Decision:</em> However without the redesign being prioritized, we decided to keep the entry point on the top right of the ‘Lainnya’ page.</p>
+<h3>Shuffle vs Inbox:</h3>
+<ol>
+<li>
+<p>Currently there can be overlaps. Overlaps may lead to reduction in importance of Inbox content.</p>
+</li>
+<li>
+<p>Can ‘Promo’ channel in Inbox be completely replaced by a shuffle card channel on lainnya? because promos need segmentation. Inbox may not work that way.</p>
+</li>
+</ol>
+<p><em>Decision:</em> No decision yet</p>
+<h3>Design iterations</h3>
+<p>The Inbox requirement wasn’t a new one. 11 months ago, Saneef had worked on how we could introduce communication channels(banner and inbox) in our /existing/ app. <a href="https://share.goabstract.com/8af61eee-de93-4f63-b0f8-64922742a29e?mode=design&amp;sha=875263ee629f633ddd9229602605e3870884c3da">(Aside: His redesign had ‘Inbox’ as a tab on the bottom navigation)</a>
+￼
+What was good about this iteration was that latest messages would be visible on the Lainnya page with a way for users to filter different kinds of messages. However this design wouldn’t scale well if there were many channels. Think how filters work on Gojek Home’s shuffles. Same problem.</p>
+<p>When we decided to adopt the Chat SDK, it came with a constraint that the view would be a chat window.
+￼
+So this constraint causes us to have limited explorations for the channel view. Based on this, here are two iterations that could be possible.</p>
+<h4>Iteration 1:</h4>
+<p>￼
+Iteration 1 is having a list of channels on the second page, but without the full message so users would need to make an additional click through to get the full message.</p>
+<h4>Iteration 2:</h4>
+<p>￼This exploration attempts to use a notifier informing user about a new message. It could include the text of the message or a generic ‘1 new message’. In the chat window, we can see the latest message of a channel up front without clicking again to see the message. Even CTAs could be visible here.</p>
+<p>So we went ahead with user-testing with both these iterations, and ‘Iteration 2’ came out successful.</p>
+<h4>Key Learnings from the research</h4>
+<ol>
+<li>
+<p>People may ignore the position of the Inbox because of its proximity to the logout button</p>
+</li>
+<li>
+<p>The inbox icon was not understood, so we switched to the envelope icon and called it ‘Kotak Pesan’</p>
+</li>
+</ol>
+
+    <div class="controls">
+    
+    
+    
+      <p>
+        <strong>Next post</strong>:
+        <a class="next" href="/posts/gojek/">What I worked at Gojek</a>
+      </p>
+    
+    </div>
+  </div>
+</div>
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/">Home</a>
+          <span class="divider">|</span>
+          <a href="/posts">Posts</a>
+          <span class="divider">|</span>
+          <a href="/about">About</a>
         </div>
-    </div>
-    <div id="attribution">
-        Protected by <a href="https://www.maxlaumeister.com/pagecrypt/">PageCrypt</a>
-    </div>
-    <script>
-    (function() {
-
-        var pl = "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";
         
-        var submitPass = document.getElementById('submitPass');
-        var passEl = document.getElementById('pass');
-        var invalidPassEl = document.getElementById('invalidPass');
-        var trycatcherror = document.getElementById('trycatcherror');
-        var successEl = document.getElementById('success');
-        var contentFrame = document.getElementById('contentFrame');
-        
-        // Sanity checks
-
-        if (pl === "") {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
-            return;
-        }
-
-        if (!isSecureContext) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#securecontext").style.display = "block";
-            return;
-        }
-
-        if (!crypto.subtle) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#nocrypto").style.display = "block";
-            return;
-        }
-        
-        function str2ab(str) {
-            var ustr = atob(str);
-            var buf = new ArrayBuffer(ustr.length);
-            var bufView = new Uint8Array(buf);
-            for (var i=0, strLen=ustr.length; i < strLen; i++) {
-                bufView[i] = ustr.charCodeAt(i);
-            }
-            return bufView;
-        }
-
-        async function deriveKey(salt, password) {
-            const encoder = new TextEncoder()
-            const baseKey = await crypto.subtle.importKey(
-                'raw',
-                encoder.encode(password),
-                'PBKDF2',
-                false,
-                ['deriveKey'],
-            )
-            return await crypto.subtle.deriveKey(
-                { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
-                baseKey,
-                { name: 'AES-GCM', length: 256 },
-                true,
-                ['decrypt'],
-            )
-        }
-        
-        async function doSubmit(evt) {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-
-            let iv, ciphertext, key;
-            
-            try {
-                var unencodedPl = str2ab(pl);
-
-                const salt = unencodedPl.slice(0, 32)
-                iv = unencodedPl.slice(32, 32 + 16)
-                ciphertext = unencodedPl.slice(32 + 16)
-
-                key = await deriveKey(salt, passEl.value);
-            } catch (e) {
-                trycatcherror.style.display = "inline";
-                console.error(e);
-                return;
-            }
-
-            try {
-                const decryptedArray = new Uint8Array(
-                    await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
-                );
-
-                let decrypted = new TextDecoder().decode(decryptedArray);
-
-                if (decrypted === "") throw "No data returned";
-
-                const basestr = '<base href="." target="_top">';
-                const anchorfixstr = `
-                    <script>
-                        Array.from(document.links).forEach((anchor) => {
-                            const href = anchor.getAttribute("href");
-                            if (href.startsWith("#")) {
-                                anchor.addEventListener("click", function(e) {
-                                    e.preventDefault();
-                                    const targetId = this.getAttribute("href").substring(1);
-                                    const targetEl = document.getElementById(targetId);
-                                    targetEl.scrollIntoView();
-                                });
-                            }
-                        });
-                    <\/script>
-                `;
-                
-                // Set default iframe link targets to _top so all links break out of the iframe
-                if (decrypted.includes("<head>")) decrypted = decrypted.replace("<head>", "<head>" + basestr);
-                else if (decrypted.includes("<!DOCTYPE html>")) decrypted = decrypted.replace("<!DOCTYPE html>", "<!DOCTYPE html>" + basestr);
-                else decrypted = basestr + decrypted;
-
-                // Fix fragment links
-                if (decrypted.includes("</body>")) decrypted = decrypted.replace("</body>", anchorfixstr + '</body>');
-                else if (decrypted.includes("</html>")) decrypted = decrypted.replace("</html>", anchorfixstr + '</html>');
-                else decrypted = decrypted + anchorfixstr;
-                
-                contentFrame.srcdoc = decrypted;
-                
-                successEl.style.display = "inline";
-                setTimeout(function() {
-                    dialogWrap.style.display = "none";
-                }, 1000);
-            } catch (e) {
-                invalidPassEl.style.display = "inline";
-                passEl.value = "";
-                submitPass.disabled = false;
-                passEl.disabled = false;
-                console.error(e);
-                return;
-            }
-        }
-        
-        submitPass.onclick = doSubmit;
-        passEl.onkeypress = function(e){
-            if (!e) e = window.event;
-            var keyCode = e.keyCode || e.which;
-            invalidPassEl.style.display = "none";
-            if (keyCode == '13'){
-              // Enter pressed
-              doSubmit();
-              return false;
-            }
-        }
-    })();
-    </script>
+      </footer>
+    
+  </main>
+   
   </body>
 </html>

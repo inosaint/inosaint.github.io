@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <subtitle></subtitle>
+  <link href="/feed.xml" rel="self"/>
+  <link href="/"/>
+  <updated>2021-08-19T00:00:00Z</updated>
+  <id>/</id>
+  <author>
+    <name></name>
+  </author>
+  <entry>
+    <title>Why Team Rituals are important</title>
+    <link href="/posts/rituals/"/>
+    <updated>2021-08-19T00:00:00Z</updated>
+    <id>/posts/rituals/</id>
+    <content type="html">&lt;p&gt;As the team grew, processes and rituals came into play.&lt;/p&gt;
+&lt;p&gt;Design Critiques were the first one we instituted. This was a design and research only session where designers could present their work to other designers. These would be weekly and designers were encouraged to show work in progress. To setup this session as a safe space, leaders need to be vulnerable and lead by showing their own work in progress.&lt;/p&gt;
+&lt;p&gt;With a need to showcasing our work and drive alignment with non-design stakeholders, we setup a Design Review. The format of the design review was formal compared to our informal design critique. The role of a design leader is to support their team during this session.&lt;/p&gt;
+&lt;p&gt;I used to be the only designer on my team based in India, but until the lockdown I did not think about instituting any daily standups. I used to frequently travel to Indonesia and everyone else was based in the same office. I felt that was enough. But when the pandemic hit and the designers started being isolated in their houses, Maji and I decided to setup a daily cooler talk. We called it &lt;em&gt;Design Standup&lt;/em&gt; but we didn’t want it to be a ‘standup’. We encouraged folks to talk about their personal life, what they were going through and what they were doing. We played games, drew murals together on digital whiteboards and went down internet rabbit holes. Attendance was never compulsory, you could join in if you felt like it. We always posted the link and created a thread of what we discussed on our channel so that if you missed out, you could still follow what was discussed. This ritual couldn’t have be achieved without the team members especially Maji, Lauditta and Aryo driving the conversations.
+￼
+I wonder if this is replicable or was I lucky to have this wonderful team…&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Beyond building processes</title>
+    <link href="/posts/process/"/>
+    <updated>2021-08-19T00:00:00Z</updated>
+    <id>/posts/process/</id>
+    <content type="html">&lt;p&gt;A considerable amount of time in &#39;Year 1&#39; of being a manager has been about setting up artifacts and processes. I was lucky to be part of an organization that had a documentation culture in its DNA. This was partly because we had Program Managers embedded within each team. This meant that Jira, Confluence and Asana were setup and maintained religiously, with weekly feature spec reviews [FSR] and ProdTech meetings to keep these upto date.&lt;/p&gt;
+&lt;h3&gt;Setting up Documentation spaces&lt;/h3&gt;
+&lt;p&gt;I find design documentation to be critical part of the design process. I recommend every designer takes the time to document the project because apart from being a design artifact, that serves as a single point of truth, it also helps them when they have to write their performance reviews, promotion proposals and build their portfolio.&lt;/p&gt;
+&lt;p&gt;I do not like Google Docs for documentation. Documentation spaces need to be a searchable wiki and ironically Google Docs is poor at providing this. At Practo, we already had Atlassian’s Confluence setup when I joined, and at Gojek, Maji setup our Confluence spaces in 2019 and then the two of us started structuring and documenting our knowledge about the product and its processes. I created a design documentation template based on the product feature spec template and advocated for it.&lt;/p&gt;
+&lt;p&gt;As for project management, the org moved to using Asana. Adding them here felt forced and an unnecessary addition to our workload. However as our product roadmap was moved into Asana, I devised a process to make design tasks a visible part of the product development process by adding them as subtasks and duplicating them to our design boards for effective tracking. Post every prioritization meeting, I added tasks into the todo list and tagged designers so that they were aware of what’s coming up.&lt;/p&gt;
+&lt;p&gt;However, we faced a problem with adoption of these processes. We lacked a program manager dedicated to design and not all designers in the team were able to keep their boards updated. We were able to setup a biweekly cadence with the program management VP, Gifika, to discuss our problems and understand how we can get better at solving them. And what we learned is two things.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Add more meetings in the calendar&lt;/li&gt;
+&lt;li&gt;Be a bad cop&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;More meetings in the calendar&lt;/h3&gt;
+&lt;p&gt;When your calendar is already full of meetings, you feel like staying away from setting up any more that will take away whatever little &#39;time for focus work&#39; that is left in it. But given our problem, this seemed to be the most effective way to get things working.
+Our team was a 3 level hierarchy so each lead now had to setup two additional cadences into their calendar. One was a common stream leads cadence where each stream lead would come prepared to the biweeekly meeting with a progress update (which would be posted biweekly to the Asana board) Maji worked on a template for this.&lt;/p&gt;
+&lt;p&gt;The other meeting was with their stream where each of their reports could come with a similarly formatted update. This meeting helped stream leads prepare them for the stream leads meeting.
+You can also make these meetings async if everyone is diligent. The updates were a small part of the biweekly leads meeting.&lt;/p&gt;
+&lt;h3&gt;Be a Bad Cop&lt;/h3&gt;
+&lt;p&gt;Not all designers like following process. They may see it as additional work with low ROI or they may just not have enough time. You should take the time to communicate the problems that the process is going to solve and ask them for feedback on the process. Make it feel like they co-own the process. But if this fails, then you should be okay with being &amp;quot;bad cop&amp;quot;. This would mean that you would need to set Slack reminders, add calendar invites and send DMs if everything fails. This is the way.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Learnings from going International</title>
+    <link href="/posts/international/"/>
+    <updated>2021-08-19T00:00:00Z</updated>
+    <id>/posts/international/</id>
+    <content type="html">&lt;p&gt;At Practo, I had my first experience designing for markets outside of India. Singapore used to be a major market for the Practo Ray product, and features like Tooth Maps were developed specifically for their dentists. In 2015, when we started rolling out the doctor app to Malaysia, Indonesia, Philippines and Brazil, the major changes we made to the product stopped at currency and number formatting.&lt;/p&gt;
+&lt;p&gt;[image:FA700E35-0BED-4963-8945-CB023B32CA9A-789-0000090F98B1A625/Reports Ray.png]&lt;/p&gt;
+&lt;p&gt;However when I had to port the GoBiz app to Thailand, I got to learn a lot.&lt;/p&gt;
+&lt;h3&gt;Collaboration and Organization&lt;/h3&gt;
+&lt;p&gt;GoBiz is a platform with other teams contributing to it so when we prepare for a new country launch, getting every team who is part of the launch involved is crucial.&lt;/p&gt;
+&lt;p&gt;Given that the features and the needs may differ across countries, I wanted to organize our projects separately on Abstract. Moreover, each feature/module needs to be a separate sketch file within the project instead of pages within the same sketch file to help manage the size and reduce the interference from other changes in the Master.&lt;/p&gt;
+&lt;p&gt;[image:EBA65436-EF88-498B-919F-0BA8CC43D2F2-789-00001D11078422CF/Screen Shot 2021-08-24 at 8.22.13 PM.png]&lt;/p&gt;
+&lt;p&gt;During the kickoff of a country launch, the Abstract project is setup and a corresponding Asana is set up to function as the tracker for the designs.
+This project feeds back to the weekly SOS(Scrum of Scrums) that is run by the Program managers.&lt;/p&gt;
+&lt;h3&gt;Typography:&lt;/h3&gt;
+&lt;p&gt;When your product is designed to support a language which only uses latin glyphs, then it’s easy to take it to other countries with minimal changes. However with GoBiz, we were designed to support the local language script i.e., Thai in Thailand, Vietnamese in Vietnam and Simplified Chinese in Singapore. This means that the font you use needs to support these scripts. Our brand typeface, Maison Neue, unfortunately wasn’t able to support these scripts and the application defaulted to using system fonts. In Thai, this led to the font size and styling getting affected on the screen and we noticed that every merchant we visited during our pilot used accessibility settings to increase the font size breaking the UI.&lt;/p&gt;
+&lt;p&gt;￼
+[image:AA59799B-81F9-403C-8F99-ECA40D7E8682-789-00000CB236295A15/Image from iOS (9).jpg]&lt;/p&gt;
+&lt;p&gt;In Vietnamese, missing glyphs caused the text to awkwardly renders the missing glyph in another format.
+￼￼
+[image:F195919D-5EE4-4034-9D12-4503E63C25BF-789-00000B95EB35399E/image (21).png]&lt;/p&gt;
+&lt;p&gt;Maison doesn’t support the following vietnamese glyphs ￼￼ờ ư ằ ố ế ữ ả ẻ ễ ỉ ỏ ủ ư ứ ừ ử ữ ự ỷ&lt;/p&gt;
+&lt;p&gt;So I worked with the brand and design system team leads to get them to finalize a fallback font which we could use in our designs. We narrowed down on NotoSans as it was a free option that supported what we needed.&lt;/p&gt;
+&lt;p&gt;Months after the Thai release, we learnt that to support printing receipts, we would need to do additional development to support Thai and Viet fonts.&lt;/p&gt;
+&lt;p&gt;P.S. wkwkwkwk and 5555555 are used to indicate laughter in Indonesian and Thai texting culture.&lt;/p&gt;
+&lt;h3&gt;Managing Copy&lt;/h3&gt;
+&lt;p&gt;Managing designs is fairly easy compared to managing copy across countries. We did this before tools like Lokalise were built so we used (and still do) google docs and google sheets.&lt;/p&gt;
+&lt;p&gt;When we just had to support Bahasa Indonesian, the GoBiz copy was in a Google Doc which started getting really long and slow to load.
+[image:E4AC6FD8-E662-4466-B41E-48C59BF1A1B2-789-000013A0A3B41C85/Screen Shot 2021-08-24 at 4.17.02 PM.png]
+I had seen other teams using Google sheets to manage multi-language copy so I worked with Lauditta, the GoBiz UX writer, to create a new template that we could use based on our needs.
+[image:ACFD88B0-8506-433F-8B67-D4591EEFF68E-789-000013D1FA6EF7A5/Screen Shot 2021-08-24 at 4.15.50 PM.png]
+The devs manage the strings in the app using a ‘key’, we needed to map it to our copy lines. We learnt the hard way that this is something we should have setup early on as doing it now meant that we had to spend significant amount of time copy-pasting and searching through sheets.&lt;/p&gt;
+&lt;p&gt;We wanted to have the screen image for reference so that other teams can also review and understand the context on the page. This is helpful because the UX writers in other countries need to understand the context and it also helps the rest of the team members like QA and designers who do not know the language to test if the right copy is being used.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Google sheets releasing ‘Insert picture in cell’ helped us achieve this.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;We are now in the process of moving GoBiz’s UX copy to &lt;a href=&quot;https://lokalise.com/&quot;&gt;Lokalise&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Thoughts on Hiring</title>
+    <link href="/posts/hiring/"/>
+    <updated>2021-08-19T00:00:00Z</updated>
+    <id>/posts/hiring/</id>
+    <content type="html">&lt;div class=&quot;blockquote&quot;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“For every open job on your team, you need to spend one hour a day on recruiting-related activities. Cap that investment at 50% of your time. “ &lt;/p&gt;&lt;p class=&quot;cite&quot;&gt;
+- &lt;a href=&quot;https://randsinrepose.com/archives/how-to-recruit/&quot;&gt;Rands&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;p&gt;I strongly believe that hiring is a critical focus area for a design leader. I’ve been part of hiring panels since 2015. I’ve seen companies usually do not focus on hiring flows leading them to have a bad experience for interviewing candidates. I gave a short talk about hiring designers at a friend’s startup in 2018.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Write good job descriptions
+The industry is filled with nonsense JDs ~written~ copy-pasted by HRs. If you need to stand out, you need to write a good JD. Hire a design consultant to help you out with this if you are hiring the first designer for your startup.&lt;/li&gt;
+&lt;li&gt;Don’t let a portfolio be a barrier for applying
+For entry level roles, I feel a portfolio acts like your resume but when you start hiring for senior designer roles you may want to broaden the application criteria. Most designers I know do not have an updated portfolio and this prevents them from applying to your startup if they are interested.&lt;/li&gt;
+&lt;li&gt;Customize application form to allow folks to upload a digital document
+The tool you use to run your hiring needs to be flexible to cater to your design hiring needs. At Gojek, we used Lever and for the longest time we did not have a way for designer applicants to upload a pdf portfolio. Binoy and I sat and figured out how to add it to the application form, however for internal referrals we were not able to enable it as Lever doesnt let you customize the form.&lt;/li&gt;
+&lt;li&gt;Keep the face-to-face rounds short
+In the interest of everyone’s time, its best if you can earmark a particular day of the week for interviews and schedule all the rounds on that day for candidates. For this to work, your screening rounds need to be well designed so as to not overload your panelists.&lt;/li&gt;
+&lt;li&gt;Scaling the process
+If you have a lot of reqs to fill, you will need to get others to take part in the interview process. Playbooks and evaluation templates help scale the process while maintaining quality.&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+  <entry>
+    <title>What I worked at Gojek</title>
+    <link href="/posts/gojek/"/>
+    <updated>2021-08-19T00:00:00Z</updated>
+    <id>/posts/gojek/</id>
+    <content type="html">&lt;p&gt;From the last 3 years, I’ve been working on the merchant side of Gojek. During this time, I’ve lead and contributed towards the GoBiz app and website, the Spots app and the Midtrans website.&lt;/p&gt;
+&lt;h3&gt;GoBiz app:&lt;/h3&gt;
+&lt;p&gt;With the formation of a merchant team in mid 2018, I was the designer tasked with the redesign of the GoBiz app.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;El5gwBIVkAAbXtz.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h4&gt;The objectives of the redesign were&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Scalability:&lt;/strong&gt; The app was moving from being a food merchant app to a merchant app used by different kinds of merchants. So we needed an information architecture that would work for GoFood, GoPay, and other merchants&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UI refresh:&lt;/strong&gt; With the move, we rebranded from Go-Resto to GoBiz and adopted the newly minted Asphalt 1.0 design language system. We were the first app in Gojek to be completely built on the Asphalt design system.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Design explorations:&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;C2497D0A-6D7A-42AB-B889-09A51A84DD2B.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h4&gt;User testing:&lt;/h4&gt;
+&lt;p&gt;We decided to have a pilot group of merchants for the release and the research team conducted a user diary research with them.&lt;/p&gt;
+&lt;p&gt;As we had not changed any major flow, we did not find any issues.&lt;/p&gt;
+&lt;h4&gt;Learnings post release:&lt;/h4&gt;
+&lt;p&gt;Once we released we started seeing feedback on the playstore asking us why we had hidden the customer contact. In the design, in the interest of showing the list of ordered items, we had moved the customer contact behind an overflow menu. Our analytics had shown low usage of this feature and we felt we could move it and add an onboarding tooltip for the merchants&lt;/p&gt;
+&lt;p&gt;However these complaints persisted and we followed up with a few merchants to understand the problem. We learned that though the merchants did not end up calling via the app, they would want to see the customer phone number either to collect it for marketing purpose, to call from another number or to identify if its a fraud order.&lt;/p&gt;
+&lt;p&gt;Based on the feedback, we took a call to re-instate the customer number back on the order details screen.
+&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;DA9F555A-8D98-46A7-9E7A-75524B550C32.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;GoBiz Dashboard:&lt;/h3&gt;
+&lt;p&gt;Sometimes you just inherit a product that has not been loved. The GoBiz dashboard was built for enterprise merchants by forking an internal portal. The portal was built on an internal front end framework “Tanjidor” and the designers used to design in the browser and this meant that there were no design files. This meant that there was a dependency on the existing designers. So we decided to pick it up as a design initiative.&lt;/p&gt;
+&lt;h4&gt;Objectives of the redesign:&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Reduce dependancy on the existing designer by&lt;/li&gt;
+&lt;li&gt;Make the dashboard accessible via mobile web&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;What we did:&lt;/h4&gt;
+&lt;p&gt;In 2019, we conducted a heuristic evaluation to identify key issues. But post that due to issues with design bandwidth, the project was deprioritised.&lt;/p&gt;
+&lt;p&gt;Fast forward to 2020, Hendri joined us on the GoBiz team and I assigned him to start work on the GoBiz Dashboard redesign as a way to familiarise himself with the product.&lt;/p&gt;
+&lt;p&gt;We decided to design anything new with our web design system and not do it in the browser. Due to some luck, the “platformisation” of the Dashboard project got prioritised that quarter. However the PM was going to do it without a change to the UI. I convinced her to switch to the new UI. But given the sprint was beginning in 2 weeks, we were short of time. So we got a list of pages to work on a priority basis and started exploring. A lot of work was already done by Hendri however we had to now make the whole site look coherent.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can arrive at a different output using the same design system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We experimented with spacing and separators, navigation menu designs and modal overlays in the next 10 days to finalise the boilerplate for all the pages. Oh and yeah we also made it responsive.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;Screen%20Shot%202021-08-10%20at%203.36.42%20PM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;Screen%20Shot%202021-08-10%20at%203.36.59%20PM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h4&gt;What we could not do:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] Fix the information architecture issues in every page.&lt;/li&gt;
+&lt;li&gt;[ ] Figure out a table design that works well on mobile and desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Outcome:&lt;/h4&gt;
+&lt;p&gt;The GoMart designers were able to use the design system and build their module on the Dashboard with limited dependency on our team.&lt;/p&gt;
+&lt;h3&gt;The Spots app:&lt;/h3&gt;
+&lt;p&gt;The SPOTS app was a point of sales app on a Landi device. We were selling these to offline merchants to let them collect payment via offline modes like credit card, debit card and QR.&lt;/p&gt;
+&lt;p&gt;The app they were using was a reskinned version of the default app provided by Landi(image on the left).&lt;/p&gt;
+&lt;p&gt;I was asked to help out with it and I worked on a refresh for the app on a short timeline(image on the right)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;19A4FA58-8E4F-4191-9F35-84CFB71B8922.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;We later integrated this into the POS application on the GoBiz app.&lt;/p&gt;
+&lt;h3&gt;Midtrans:&lt;/h3&gt;
+&lt;p&gt;In 2020, the Midtrans merchant onboarding was prioritized due to an external collaboration with Whatsapp.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;736AD9B5-31A4-45E1-B2D4-0CBBAD0EDAD7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Given the urgency, I decided to ask Riyadhi to help the team with the wireframes. Riyadhi had previously worked on the merchant onboarding flow for the GoBiz app and I felt this would help us speed up the process.&lt;/p&gt;
+&lt;p&gt;We had just completed the platformization exercise so Hendri and Firman were proficient with the new design system. The dev team too was confident that using the web design system was the best decision. This also made the flow mobile web compatible which was one of the identified merchant pain points.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;Screen%20Shot%202021-08-10%20at%203.48.03%20PM.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;Screen%20Shot%202021-08-10%20at%203.48.08%20PM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;So we shipped the new onboarding and saw lot of reduction in the drop offs.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;&amp;amp;&amp;amp;&amp;amp;SFLOCALFILEPATH&amp;amp;&amp;amp;&amp;amp;F6FF4FB1-0D09-4C1F-B2A2-B45448304D1F.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h4&gt;Outcome:&lt;/h4&gt;
+&lt;p&gt;This project exposed most of the team to the ‘merchant onboarding’ problem space and a surprising side-effect of this was that project handover of the ‘corporate onboarding’ project could be handled by Hendri when Riyadhi was affected by Covid-19.&lt;/p&gt;
+&lt;h4&gt;Miscellaneous:&lt;/h4&gt;
+&lt;p&gt;I consulted on the GoBiz and the Midtrans marketing website.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Designing the Inbox experience for GoBiz</title>
+    <link href="/posts/gobiz-inbox/"/>
+    <updated>2021-08-19T00:00:00Z</updated>
+    <id>/posts/gobiz-inbox/</id>
+    <content type="html">&lt;p&gt;The Chat SDK was built to support products wanting to integrate chat into their flows. However like many other platformized products, they end up being looked as solutions for use cases they were not designed for. The GoBiz inbox requirement wasn’t my first experience with dog fooding, but it was one that I was able to influence positively for the benefit of the users.&lt;/p&gt;
+&lt;p&gt;We wanted to build an Inbox, an in-app channel for notifying our users. We just needed one-way communication. I do not understand the reason behind why product pushed to use the SDK, despite the arguments that the SDK wasn’t able to support our web product and wasn’t designed to communicate business updates.&lt;/p&gt;
+&lt;h3&gt;Chat is chat, not inbox:&lt;/h3&gt;
+&lt;p&gt;I created a document to explain what that decision meant for the app.
+If we use the chat sdk, then in the future as other teams build on the chat platform, we should plan to group all kinds of chat in a single space. This would align with the mental model of the user. This space would be the go-to place to follow up on your “conversations”, whether its about onboarding a new outlet or following up about your GoFresh order.
+￼
+&lt;em&gt;Decision:&lt;/em&gt; We decided that all chats will show up in Inbox but we will need to visually separate them from the business chats. This is something that the Chat team had not yet designed for.&lt;/p&gt;
+&lt;h3&gt;Where should Inbox/chat go?&lt;/h3&gt;
+&lt;p&gt;Given that Inbox is something we are considering for communication, it should be easily accessible and indicate unread chats. Given the current structure of the GoBiz app, we could only think of 2 possible positions for the Inbox.
+￼
+However neither of these positions fulfill the conditions of&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Visibility of new messages: The red dot on Lainnya can’t showcase a number since there are several other modules which have a no-number indication.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accessible from various parts of our app: A gofood merchant would jump right to the Orders inbox when they open the app and has no need to aware of this “notification’&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Decision:&lt;/em&gt; However without the redesign being prioritized, we decided to keep the entry point on the top right of the ‘Lainnya’ page.&lt;/p&gt;
+&lt;h3&gt;Shuffle vs Inbox:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Currently there can be overlaps. Overlaps may lead to reduction in importance of Inbox content.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Can ‘Promo’ channel in Inbox be completely replaced by a shuffle card channel on lainnya? because promos need segmentation. Inbox may not work that way.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Decision:&lt;/em&gt; No decision yet&lt;/p&gt;
+&lt;h3&gt;Design iterations&lt;/h3&gt;
+&lt;p&gt;The Inbox requirement wasn’t a new one. 11 months ago, Saneef had worked on how we could introduce communication channels(banner and inbox) in our /existing/ app. &lt;a href=&quot;https://share.goabstract.com/8af61eee-de93-4f63-b0f8-64922742a29e?mode=design&amp;amp;sha=875263ee629f633ddd9229602605e3870884c3da&quot;&gt;(Aside: His redesign had ‘Inbox’ as a tab on the bottom navigation)&lt;/a&gt;
+￼
+What was good about this iteration was that latest messages would be visible on the Lainnya page with a way for users to filter different kinds of messages. However this design wouldn’t scale well if there were many channels. Think how filters work on Gojek Home’s shuffles. Same problem.&lt;/p&gt;
+&lt;p&gt;When we decided to adopt the Chat SDK, it came with a constraint that the view would be a chat window.
+￼
+So this constraint causes us to have limited explorations for the channel view. Based on this, here are two iterations that could be possible.&lt;/p&gt;
+&lt;h4&gt;Iteration 1:&lt;/h4&gt;
+&lt;p&gt;￼
+Iteration 1 is having a list of channels on the second page, but without the full message so users would need to make an additional click through to get the full message.&lt;/p&gt;
+&lt;h4&gt;Iteration 2:&lt;/h4&gt;
+&lt;p&gt;￼This exploration attempts to use a notifier informing user about a new message. It could include the text of the message or a generic ‘1 new message’. In the chat window, we can see the latest message of a channel up front without clicking again to see the message. Even CTAs could be visible here.&lt;/p&gt;
+&lt;p&gt;So we went ahead with user-testing with both these iterations, and ‘Iteration 2’ came out successful.&lt;/p&gt;
+&lt;h4&gt;Key Learnings from the research&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;People may ignore the position of the Inbox because of its proximity to the logout button&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The inbox icon was not understood, so we switched to the envelope icon and called it ‘Kotak Pesan’&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+</feed>
