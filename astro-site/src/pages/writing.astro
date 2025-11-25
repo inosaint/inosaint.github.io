@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const writings = [
+  {
+    title: 'Squads as a Growth Engine for Designers',
+    description: 'How we used squads to help our designers level up at Jiva',
+    url: 'https://medium.com/notes-from-the-fields/how-we-used-squads-to-help-our-designers-level-up-443fcbc52e2f',
+    image: 'https://via.placeholder.com/600x400/d3d3d3/666666?text=Squads'
+  },
+  {
+    title: 'How a sticker design became an unofficial Mascot',
+    description: 'The story of how a last-minute sticker design became a beloved company icon',
+    url: 'https://medium.com/notes-from-the-fields/more-than-swag-how-a-last-minute-sticker-became-a-company-icon-42d86246e736',
+    image: 'https://via.placeholder.com/600x400/d3d3d3/666666?text=Mascot'
+  },
+  {
+    title: 'Designing the Akar Design System',
+    description: 'Taming the chaos of hypergrowth with a lean approach to building a design system',
+    url: 'https://medium.com/notes-from-the-fields/taming-the-chaos-of-hypergrowth-our-lean-approach-to-building-a-design-system-part-1-2adbb24ddef0',
+    image: 'https://via.placeholder.com/600x400/d3d3d3/666666?text=Design+System'
+  },
+  {
+    title: 'How Gojek\'s design & research teams collaborate effectively across borders',
+    description: 'Near, far, wherever we are - insights on cross-border collaboration',
+    url: 'https://www.gojek.io/blog/near-far-wherever-we-are',
+    image: 'https://via.placeholder.com/600x400/d3d3d3/666666?text=Gojek+Collaboration'
+  },
+  {
+    title: 'Gamify DesignOps with human connection',
+    description: 'A talk about bringing human connection into DesignOps',
+    url: 'https://www.youtube.com/watch?v=c__raLe34ZU',
+    image: 'https://via.placeholder.com/600x400/d3d3d3/666666?text=DesignOps+Talk'
+  }
+];
+---
+
+<BaseLayout title="Writing and Talks - Kenneth Mark Dsouza">
+  <div style="margin-bottom: 3rem;">
+    <h1>Writing and Talks</h1>
+  </div>
+
+  <div class="grid">
+    {writings.map(writing => (
+      <a href={writing.url} target="_blank" rel="noopener noreferrer" class="card">
+        <img
+          src={writing.image}
+          alt={writing.title}
+          class="card-image"
+        />
+        <h3>{writing.title}</h3>
+        <p>{writing.description}</p>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

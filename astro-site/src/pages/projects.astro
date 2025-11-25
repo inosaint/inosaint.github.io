@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    slug: 'jive-lite',
+    title: 'Jive Lite',
+    description: 'Building a farmer-centric experience for buying Corn in rural Indonesia',
+    image: 'https://via.placeholder.com/600x400/d3d3d3/666666?text=Jive+Lite'
+  },
+  {
+    slug: 'sahabat-jiva-redesign',
+    title: 'Sahabat Jiva redesign',
+    description: 'Building a farmer-centric experience for buying Corn in rural Indonesia',
+    image: 'https://via.placeholder.com/600x400/d3d3d3/666666?text=Sahabat+Jiva'
+  },
+  {
+    slug: 'gobiz-inbox',
+    title: 'Designing the Inbox experience for GoBiz',
+    description: 'Creating a unified inbox for merchant communications',
+    image: 'https://via.placeholder.com/600x400/d3d3d3/666666?text=GoBiz+Inbox'
+  },
+  {
+    slug: 'akar-design-system',
+    title: 'Designing the Akar Design System',
+    description: 'Taming the chaos of hypergrowth with a lean approach to building a design system',
+    image: 'https://via.placeholder.com/600x400/d3d3d3/666666?text=Akar+Design+System'
+  }
+];
+---
+
+<BaseLayout title="Projects - Kenneth Mark Dsouza">
+  <div style="margin-bottom: 3rem;">
+    <h1>Projects</h1>
+  </div>
+
+  <div class="grid">
+    {projects.map(project => (
+      <a href={`/projects/${project.slug}`} class="card">
+        <img
+          src={project.image}
+          alt={project.title}
+          class="card-image"
+        />
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
