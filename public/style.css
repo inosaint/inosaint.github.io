@@ -14,7 +14,7 @@ to this section's matching END comment to see page-specific styles.
   --wrapper-height: 85vh;
   --image-max-width: 320px;
   --font-family: "Liter";
-  --font-family-header: "Liter";
+  --font-family-header: "Host Grotesk";
 }
 
 /* Basic page style resets */
@@ -112,22 +112,24 @@ body {
 }
 .wrapper {
   min-height: var(--wrapper-height);
-  place-items: center;
-  
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .content {
   display: flex;
   flex-direction: column;
   max-width: 900px;
-  margin: 1.5rem;
-  padding: 5rem 0 0 0;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 0 1.5rem;
+  width: 100%;
 }
 
 /* Typography */
 p {
   margin: 0 0 1rem 0;
   line-height: 1.5 !important;
-  font-size: 1rem;
+  font-size: 24px;
 }
 h1,
 h2,
@@ -153,15 +155,27 @@ h1 {
 }
 h2 {
   font-size: 4rem;
+  font-family: "Host Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 h3 {
   font-size: 2rem;
+  font-family: "Host Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 h4 {
   font-size: 1.5rem;
+  font-family: "Host Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 h5 {
   font-size: 1.25rem;
+  font-family: "Host Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 small,
 .text_small {
@@ -171,7 +185,7 @@ ul > li,
 ol > li {
   margin-bottom: 0.75rem;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 20px;
 }
 ul {
   padding: 0 0 0 18px;
@@ -226,6 +240,15 @@ a:hover {
   place-items: normal;
   max-width: 900px;
   margin: 5rem auto 0;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+.post-content {
+  width: 100%;
+  max-width: 900px;
+}
+.back-link {
+  margin: 0 0 2rem 0;
 }
 .postTitle {
   font-size: 4rem;
