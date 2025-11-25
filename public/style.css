@@ -13,7 +13,7 @@ to this section's matching END comment to see page-specific styles.
   --color-primary: #AFECE0;
   --wrapper-height: 85vh;
   --image-max-width: 320px;
-  --font-family: "Host Grotesk";
+  --font-family: "Liter";
   --font-family-header: "Host Grotesk";
 }
 
@@ -36,7 +36,7 @@ body {
 }
 
 .special-gothic-expanded-one-regular {
-  font-family: "Host Grotesk", sans-serif;
+  font-family: "Liter", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -44,7 +44,7 @@ body {
 
 /* Our remix on glitch button */
 .btn--remix {
-  font-family: "Host Grotesk";
+  font-family: "Liter";
   padding: 0.75rem 1rem;
   font-size: 1.1rem;
   line-height: 1rem;
@@ -81,7 +81,7 @@ body {
 
 .footer a:not(.btn--remix):link,
 a:not(.btn--remix):visited {
-  font-family: "Host Grotesk";
+  font-family: "Liter";
   font-style: normal;
   font-weight: normal;
   font-size: 1.1rem;
@@ -210,7 +210,7 @@ a:hover {
 /* Title style adjustments */
 .title-lg {
   color: var(--color-text-main);
-  font-family: "Host Grotesk";
+  font-family: "Liter";
   font-style: normal;
   font-weight: bold;
   line-height: 1.5;
