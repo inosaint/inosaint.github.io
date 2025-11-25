@@ -161,6 +161,7 @@ footer {
   justify-content: space-between;
   gap: 4rem;
   font-size: 0.95rem;
+  min-height: 80px;
 }
 
 .footer-section {
@@ -200,7 +201,7 @@ footer {
   .intro {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    text-align: center;
+    text-align: left;
     margin-bottom: 2.5rem;
   }
 
@@ -211,7 +212,7 @@ footer {
   .intro > div:has(.profile-photo) {
     order: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .profile-photo {
@@ -272,6 +273,11 @@ footer {
     gap: 1.5rem;
     margin-top: 3rem;
     padding-top: 1.5rem;
+    min-height: 120px;
+  }
+
+  .footer-section {
+    width: 100%;
   }
 
   .footer-section-right .footer-line {
@@ -283,6 +289,18 @@ footer {
   }
 
   .footer-line {
-    width: 60%;
+    width: min(50%, 200px);
+    max-width: 100%;
+  }
+}
+
+/* Extra styles for very small screens (iPhone SE, etc.) */
+@media (max-width: 390px) {
+  .footer-line {
+    width: min(45%, 180px);
+  }
+
+  footer {
+    min-height: 110px;
   }
 }
