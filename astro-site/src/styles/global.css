@@ -158,37 +158,32 @@ footer {
   margin-top: 4rem;
   padding-top: 2rem;
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 4rem;
   font-size: 0.95rem;
-  position: relative;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
 }
 
 .footer-line {
   height: 3px;
   background-color: var(--color-primary);
-  flex: 1;
+  width: 100%;
 }
 
-.footer-line-left {
-  margin-right: 1rem;
-}
-
-.footer-line-right {
-  margin-left: 1rem;
-}
-
-.footer-content {
-  display: flex;
-  gap: 2rem;
-  flex-shrink: 0;
-}
-
-.footer-links-left,
-.footer-links-right {
+.footer-links {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+.footer-section-right .footer-links {
+  justify-content: flex-end;
 }
 
 /* Responsive design */
@@ -214,22 +209,10 @@ footer {
 
   footer {
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
   }
 
-  .footer-line {
-    width: 100%;
-    margin: 0;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .footer-links-left,
-  .footer-links-right {
-    justify-content: center;
+  .footer-section-right .footer-links {
+    justify-content: flex-start;
   }
 }
