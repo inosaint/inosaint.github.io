@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const writings = await getCollection('writing');
+  return writings.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+type Props = {
+  entry: CollectionEntry<'writing'>;
+};
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title}>
+  <article class="post">
+    <h1>{entry.data.title}</h1>
+    <p class="description">{entry.data.description}</p>
+
+    <Content />
+  </article>
+</BaseLayout>

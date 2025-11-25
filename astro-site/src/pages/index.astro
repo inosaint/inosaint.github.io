@@ -1,5 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all writing posts and sort by date (newest first)
+const allWritings = await getCollection('writing');
+const sortedWritings = allWritings.sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+
+// Get the 2 most recent posts for the home page
+const recentWritings = sortedWritings.slice(0, 2);
 ---
 
 <BaseLayout>
@@ -62,25 +72,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <a href="/writing" class="view-all">view all writings →</a>
     </div>
     <div class="grid">
-      <a href="https://medium.com/notes-from-the-fields/how-we-used-squads-to-help-our-designers-level-up-443fcbc52e2f" target="_blank" rel="noopener noreferrer" class="card">
-        <img
-          src="https://placehold.co/360x200"
-          alt="Squads as a Growth Engine"
-          class="card-image"
-        />
-        <h3>Squads as a Growth Engine for Designers</h3>
-        <p>How we used squads to help our designers level up at Jiva</p>
-      </a>
-
-      <a href="https://medium.com/notes-from-the-fields/more-than-swag-how-a-last-minute-sticker-became-a-company-icon-42d86246e736" target="_blank" rel="noopener noreferrer" class="card">
-        <img
-          src="https://placehold.co/360x200"
-          alt="Company Mascot Story"
-          class="card-image"
-        />
-        <h3>How a sticker design became an unofficial Mascot</h3>
-        <p>The story of how a last-minute sticker design became a beloved company icon</p>
-      </a>
+      {recentWritings.map(writing => (
+        <a href={`/writing/${writing.slug}/`} class="card">
+          <img
+            src={writing.data.image || 'https://placehold.co/360x200'}
+            alt={writing.data.title}
+            class="card-image"
+          />
+          <h3>{writing.data.title}</h3>
+          <p>{writing.data.description}</p>
+        </a>
+      ))}
     </div>
   </section>
 </BaseLayout>
