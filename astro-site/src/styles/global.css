@@ -182,6 +182,10 @@ footer {
   align-items: center;
 }
 
+.footer-section-right .footer-line {
+  margin-left: auto;
+}
+
 .footer-section-right .footer-links {
   justify-content: flex-end;
 }
@@ -189,30 +193,96 @@ footer {
 /* Responsive design */
 @media (max-width: 768px) {
   body {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
+    max-width: 100%;
   }
 
   .intro {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .intro-text {
+    order: 2;
+  }
+
+  .intro > div:has(.profile-photo) {
+    order: 1;
+    display: flex;
+    justify-content: center;
   }
 
   .profile-photo {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
+    width: 140px;
+    height: 140px;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.8),
+                0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .intro-text h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .intro-text p {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 0.75rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .view-all {
+    font-size: 0.8rem;
   }
 
   .grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .card-image {
+    margin-bottom: 0.75rem;
+  }
+
+  .card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   footer {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+  }
+
+  .footer-section-right .footer-line {
+    margin-left: auto;
   }
 
   .footer-section-right .footer-links {
     justify-content: flex-start;
+  }
+
+  .footer-line {
+    width: 60%;
   }
 }
