@@ -147,13 +147,8 @@ figcaption {
   margin: 0;
 }
 
-/* Article/Post styles */
-.post {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.post .back-link {
+/* Back link styles */
+.back-link {
   display: inline-block;
   margin-bottom: 2rem;
   font-size: 0.95rem;
@@ -162,9 +157,15 @@ figcaption {
   transition: color 0.2s;
 }
 
-.post .back-link:hover {
+.back-link:hover {
   color: var(--color-primary);
   opacity: 1;
+}
+
+/* Article/Post styles */
+.post {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .post h1 {
