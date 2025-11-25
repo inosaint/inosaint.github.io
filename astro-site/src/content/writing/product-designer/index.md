@@ -12,7 +12,7 @@ The ‘product designer’ now had to start looking at what they are designing a
 
 But even then there were few orgs which took design seriously.
 
-![Source: 2014 interview in Dezeen [2]](/content/writing/product-designer/product-designer-1.png)
+![Source: 2014 interview in Dezeen [2]](./product-designer-1.png)
 
 Even today, most orgs don’t really provide a space for designers to thrive in the product space and even today, there are probably a handful of product designers and product orgs in the world, the rest is mostly good PR.
 
@@ -22,7 +22,7 @@ And what are the aspects of a product designer that sets them apart from other d
 
 The primary aspect the product designer optimises for is quality of delivery. Quality being subjective makes it hard for the different disciplines to align over what this means. For me, it means that the product designer needs to understand the constraints of business and development to be able to deliver the best outcome possible in the defined timeline. You may want to build that perfect animated transition, but let’s be real, that’s not really a user need most of the time. The product’s usage and success should be the thing driving you towards excelling as a designer.
 
-![](/content/writing/product-designer/product-designer-2.jpg)
+![](./product-designer-2.jpg)
 
 ### Curiosity
 
