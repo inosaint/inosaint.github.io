@@ -56,6 +56,16 @@ h3 {
   color: var(--color-text-secondary);
 }
 
+h4 {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
 p {
   margin-bottom: 1rem;
 }
@@ -255,7 +265,7 @@ figcaption {
   margin-bottom: 2rem;
 }
 
-.section-header h2 {
+.section-header h4 {
   margin: 0;
 }
 
