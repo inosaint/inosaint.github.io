@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 
 // Get all writing posts and sort by date (newest first)
 const allWritings = await getCollection('writing');
@@ -74,11 +75,21 @@ const recentWritings = sortedWritings.slice(0, 2);
     <div class="grid">
       {recentWritings.map(writing => (
         <a href={`/writing/${writing.slug}/`} class="card">
-          <img
-            src={writing.data.image || 'https://placehold.co/360x200'}
-            alt={writing.data.title}
-            class="card-image"
-          />
+          {writing.data.image ? (
+            <Image
+              src={writing.data.image}
+              alt={writing.data.title}
+              class="card-image"
+              width={360}
+              height={200}
+            />
+          ) : (
+            <img
+              src="https://placehold.co/360x200"
+              alt={writing.data.title}
+              class="card-image"
+            />
+          )}
           <h3>{writing.data.title}</h3>
           <p>{writing.data.description}</p>
         </a>

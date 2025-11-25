@@ -2,7 +2,7 @@
 title: "What is a product designer?"
 description: "Reflections from a decade of designing products"
 date: 2025-01-01
-image: ""   # optional
+image: "./product-designer-1.png"
 ---
 
 ---

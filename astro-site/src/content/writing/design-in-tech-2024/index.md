@@ -2,6 +2,7 @@
 title: An Insider's perspective on Design in Tech 2024
 description: Reflections on the state of design leadership and the industry in India and Indonesia
 date: 2024-01-01
+image: "./4IiQQOEdmqPcCsjTqlta-1.png"
 ---
 ![Is the grass green?](/content/writing/4IiQQOEdmqPcCsjTqlta-1.png)
 

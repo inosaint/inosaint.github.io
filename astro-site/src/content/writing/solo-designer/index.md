@@ -2,6 +2,7 @@
 title: Evaluating that Solo Designer job
 description: What to look for when joining a startup as the solo designer
 date: 2024-01-01
+image: "./solo-designer-jobs-1.png"
 ---
 ![Screenshot from Rams](/content/writing/solo-designer-jobs-1.png)
 

@@ -2,6 +2,7 @@
 title: "How far we've come: The last decade of design tools"
 description: A lookback at the evolution of design tools from Photoshop to Figma
 date: 2024-01-01
+image: "./lookback-design-tools-1.jpg"
 ---
 Last night, I was thinking about how much the interface design and protoyping landscape has changed in the last decade. I started using Sketch and Marvelapp in 2014 when the predominant tools were Adobe Illustrator/Photoshop/Fireworks for UI, Balsamiq for low fidelity, Axure, Omnigraffle and Keynote for clickable prototypes. Some of these still exist today. While others like Antetype, Invision are no more.
 
