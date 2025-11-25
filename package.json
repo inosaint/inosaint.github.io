@@ -1,17 +1,9 @@
 {
   "name": "inosaint-portfolio",
   "version": "1.0.0",
-  "description": "Kenneth's personal website and blog, built with Eleventy.",
-  "scripts": {
-    "start": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-rss": "^2.0.2",
-    "eleventy-plugin-seo": "^0.5.2",
-    "luxon": "^3.5.0"
-  },
+  "description": "Kenneth's personal website and blog, built with Astro.",
+  "scripts": {},
+  "dependencies": {},
   "devDependencies": {},
   "engines": {
     "node": ">=18"
@@ -22,7 +14,7 @@
   },
   "license": "MIT",
   "keywords": [
-    "eleventy",
+    "astro",
     "blog",
     "portfolio",
     "personal-website"
