@@ -119,10 +119,52 @@ sup a {
   font-weight: 600;
 }
 
+/* Image caption/figure styles */
+figure.image-figure {
+  margin: 2rem 0;
+}
+
+figure.image-figure img {
+  margin: 0;
+  display: block;
+  border-radius: 4px;
+}
+
+figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.post figure.image-figure {
+  margin: 2rem 0;
+}
+
+.post figure.image-figure img {
+  margin: 0;
+}
+
 /* Article/Post styles */
 .post {
   max-width: 700px;
   margin: 0 auto;
+}
+
+.post .back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.post .back-link:hover {
+  color: var(--color-primary);
+  opacity: 1;
 }
 
 .post h1 {
