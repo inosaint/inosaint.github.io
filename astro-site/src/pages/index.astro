@@ -11,6 +11,9 @@ const sortedWritings = allWritings.sort((a, b) => {
 
 // Get the 2 most recent posts for the home page
 const recentWritings = sortedWritings.slice(0, 2);
+
+// Get all projects
+const projects = await getCollection('projects');
 ---
 
 <BaseLayout>
@@ -44,25 +47,27 @@ const recentWritings = sortedWritings.slice(0, 2);
       <a href="/projects" class="view-all">view all projects →</a>
     </div>
     <div class="grid">
-      <a href="/projects/jive-lite" class="card">
-        <img
-          src="/jivalite.jpg"
-          alt="Jive Lite"
-          class="card-image"
-        />
-        <h3>Jive Lite</h3>
-        <p>Building a farmer-centric experience for buying Corn in rural Indonesia</p>
-      </a>
-
-      <a href="/projects/sahabat-jiva-redesign" class="card">
-        <img
-          src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*47slWItY8dFezNCPw6biOA.png"
-          alt="Sahabat Jiva redesign"
-          class="card-image"
-        />
-        <h3>Sahabat Jiva redesign</h3>
-        <p>Building a farmer-centric experience for buying Corn in rural Indonesia</p>
-      </a>
+      {projects.map(project => (
+        <a href={`/projects/${project.slug}`} class="card">
+          {project.data.image ? (
+            <Image
+              src={project.data.image}
+              alt={project.data.title}
+              class="card-image"
+              width={360}
+              height={200}
+            />
+          ) : (
+            <img
+              src="https://placehold.co/360x200"
+              alt={project.data.title}
+              class="card-image"
+            />
+          )}
+          <h3>{project.data.title}</h3>
+          <p>{project.data.description}</p>
+        </a>
+      ))}
     </div>
   </section>
 
