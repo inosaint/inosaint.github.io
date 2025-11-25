@@ -6,9 +6,9 @@ layout: layouts/home.njk
   <img src="https://cdn.glitch.com/cad20829-cd7f-405a-95e8-5e17b206a304%2Fillustration.svg?v=1618198438357" class="illustration" style="align: right" alt="Eleventy!">
 </div -->
 
-# Kenneth Mark Dsouza 
+# Kenneth Mark Dsouza
 
-# Product Design manager with experience building and leading design teams in SEA and India.
+### Product Design manager with experience building and leading design teams in SEA and India.
 
 Recently, I was a senior design manager at [Jiva](https://www.jiva.ag) (2022-2025), an Agritech startup, where I built and led the product design and research team, working on a suite of mobile apps and web apps for users in rural Indonesia. You can read about the work we did in our medium publication, 
 
