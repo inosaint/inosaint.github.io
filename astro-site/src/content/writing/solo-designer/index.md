@@ -1,6 +1,7 @@
 ---
 title: Evaluating that Solo Designer job
 description: By Kenneth Mark Dsouza
+date: 2024-01-01
 ---
 ![Screenshot from Rams](/content/writing/solo-designer-jobs-1.png)
 

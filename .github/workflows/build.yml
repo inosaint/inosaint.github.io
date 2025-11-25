@@ -3,10 +3,10 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -37,8 +37,8 @@ jobs:
           path: astro-site/dist/
 
   deploy:
-    # Only deploy on pushes to main branch
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # Only deploy on pushes to master branch
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
 
