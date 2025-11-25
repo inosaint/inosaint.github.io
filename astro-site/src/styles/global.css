@@ -173,7 +173,7 @@ footer {
 .footer-line {
   height: 3px;
   background-color: var(--color-primary);
-  width: 100%;
+  width: 50%;
 }
 
 .footer-links {
