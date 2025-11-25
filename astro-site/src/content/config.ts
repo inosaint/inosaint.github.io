@@ -10,6 +10,17 @@ const writing = defineCollection({
   }),
 });
 
+const projects = defineCollection({
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    description: z.string(),
+    image: image().optional(),
+    year: z.string().optional(),
+    company: z.string().optional(),
+  }),
+});
+
 export const collections = {
   writing,
+  projects,
 };
