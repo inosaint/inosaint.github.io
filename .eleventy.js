@@ -52,11 +52,11 @@ module.exports = function(eleventyConfig) {
     /* The posts collection includes all posts that list 'posts' in the front matter 'tags'
        - https://www.11ty.dev/docs/collections/
     */
-    
-    // EDIT HERE WITH THE CODE FROM THE NEXT STEPS PAGE TO REVERSE CHRONOLOGICAL ORDER
-    // (inspired by https://github.com/11ty/eleventy/issues/898#issuecomment-581738415)
+
+    // Sort posts in reverse chronological order (newest first)
     const coll = collection
-      .getFilteredByTag("posts");
+      .getFilteredByTag("posts")
+      .sort((a, b) => b.date - a.date);
 
     // From: https://github.com/11ty/eleventy/issues/529#issuecomment-568257426 
     // Adds {{ prevPost.url }} {{ prevPost.data.title }}, etc, to our njks templates
@@ -75,7 +75,7 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: "src",
       includes: "_includes",
-      output: "build"
+      output: "docs"
     }
   };
 };

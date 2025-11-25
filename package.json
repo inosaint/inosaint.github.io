@@ -1,7 +1,7 @@
 {
-  "name": "hello-eleventy",
-  "version": "0.0.1",
-  "description": "A simple blog, set up with Eleventy.",
+  "name": "inosaint-portfolio",
+  "version": "1.0.0",
+  "description": "Kenneth's personal website and blog, built with Eleventy.",
   "scripts": {
     "start": "eleventy --serve",
     "build": "NODE_ENV=production eleventy"
@@ -17,15 +17,14 @@
     "node": "12"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-hello-eleventy"
-  },
-  "glitch": {
-    "projectType": "generated_static"
+    "type": "git",
+    "url": "https://github.com/inosaint/inosaint.github.io"
   },
   "license": "MIT",
   "keywords": [
-    "node",
-    "glitch",
-    "express"
+    "eleventy",
+    "blog",
+    "portfolio",
+    "personal-website"
   ]
 }
