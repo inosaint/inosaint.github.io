@@ -112,22 +112,24 @@ body {
 }
 .wrapper {
   min-height: var(--wrapper-height);
-  place-items: center;
-  
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .content {
   display: flex;
   flex-direction: column;
   max-width: 900px;
-  margin: 1.5rem;
-  padding: 5rem 0 0 0;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 0 1.5rem;
+  width: 100%;
 }
 
 /* Typography */
 p {
   margin: 0 0 1rem 0;
   line-height: 1.5 !important;
-  font-size: 1rem;
+  font-size: 18px;
 }
 h1,
 h2,
@@ -183,7 +185,7 @@ ul > li,
 ol > li {
   margin-bottom: 0.75rem;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 18px;
 }
 ul {
   padding: 0 0 0 18px;
