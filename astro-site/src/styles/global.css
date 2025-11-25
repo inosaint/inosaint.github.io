@@ -157,10 +157,38 @@ a:hover {
 footer {
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--color-gray-light);
   display: flex;
+  align-items: center;
   gap: 2rem;
   font-size: 0.95rem;
+  position: relative;
+}
+
+.footer-line {
+  height: 3px;
+  background-color: var(--color-primary);
+  flex: 1;
+}
+
+.footer-line-left {
+  margin-right: 1rem;
+}
+
+.footer-line-right {
+  margin-left: 1rem;
+}
+
+.footer-content {
+  display: flex;
+  gap: 2rem;
+  flex-shrink: 0;
+}
+
+.footer-links-left,
+.footer-links-right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 /* Responsive design */
@@ -185,6 +213,23 @@ footer {
   }
 
   footer {
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-line {
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .footer-links-left,
+  .footer-links-right {
+    justify-content: center;
   }
 }
