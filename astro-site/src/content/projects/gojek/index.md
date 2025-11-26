@@ -1,7 +1,9 @@
 ---
 title: What I worked at Gojek
 description: GoBiz app, GoBiz Dashboard, Spots and Midtrans
-date: 2021-08-19
+year: "2019-2021"
+company: "Gojek"
+
 ---
 
 From the last 3 years, I've been working on the merchant side of Gojek. During this time, I've lead and contributed towards the GoBiz app and website, the Spots app and the Midtrans website.

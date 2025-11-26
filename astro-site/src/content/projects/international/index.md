@@ -1,7 +1,9 @@
 ---
 title: Learnings from going International
 description: What I learnt from launching the app for different countries
-date: 2021-08-19
+year: "2021"
+company: "Gojek"
+
 ---
 
 At Practo, I had my first experience designing for markets outside of India. Singapore used to be a major market for the Practo Ray product, and features like Tooth Maps were developed specifically for their dentists. In 2015, when we started rolling out the doctor app to Malaysia, Indonesia, Philippines and Brazil, the major changes we made to the product stopped at currency and number formatting.
