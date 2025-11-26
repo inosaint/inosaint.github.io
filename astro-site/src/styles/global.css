@@ -214,10 +214,10 @@ figcaption {
 }
 
 .post-header-meta {
-  font-family: var(--font-heading);
+  font-family: var(--font-family);
   font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-primary);
+  font-weight: 400;
+  color: #7A7B98;
   margin: 0;
   white-space: nowrap;
 }
@@ -225,7 +225,7 @@ figcaption {
 .post-header-meta:not(:last-child)::after {
   content: "•";
   margin-left: 0.5rem;
-  color: var(--color-primary);
+  color: #7A7B98;
 }
 
 .post h1 {
@@ -236,9 +236,8 @@ figcaption {
 
 .post .description {
   font-size: 1.25rem;
-  color: var(--color-text-secondary);
+  color: #7A7B98;
   margin-bottom: 2rem;
-  font-style: italic;
 }
 
 .post h2 {
@@ -597,7 +596,7 @@ footer {
   /* Post header responsive */
   .post-header {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 0.5rem;
   }
 
   .post-header-right {
