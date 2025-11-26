@@ -3,7 +3,7 @@ title: "Sahabat Jiva redesign"
 description: "Building a farmer-centric experience for buying Corn in rural Indonesia"
 year: "2022-2023"
 company: "Jiva"
-imageUrl: "./sjhome.webp"
+image: "./sjhome.webp"
 ---
 
 <!-- Add your project content here -->
