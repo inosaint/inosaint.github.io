@@ -56,7 +56,7 @@ const fullImageUrl = new URL(image, siteUrl).href;
             <span>•</span>
             <a href="/resume">Resume</a>
             <span>•</span>
-            <a href="/resume">Colophon</a>
+            <button id="colophon-btn" class="colophon-link">Colophon</button>
           </div>
           <div class="footer-links footer-links-right">
             <a href="https://x.com/kenneth" target="_blank" rel="noopener noreferrer">X</a>
@@ -66,5 +66,55 @@ const fullImageUrl = new URL(image, siteUrl).href;
         </div>
       </footer>
     </div>
+
+    <!-- Colophon Modal -->
+    <div id="colophon-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <h2>Colophon</h2>
+
+        <div class="colophon-section">
+          <h3>Technology</h3>
+          <p>This site is built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>, a modern static site generator. The site is hosted on GitHub Pages.</p>
+        </div>
+
+        <div class="colophon-section">
+          <h3>Typography</h3>
+          <p><strong>Headings:</strong> <a href="https://fonts.google.com/specimen/Hanken+Grotesk" target="_blank" rel="noopener noreferrer">Hanken Grotesk</a> by Alfredo Marco Pradil</p>
+          <p><strong>Body:</strong> <a href="https://fonts.cdnfonts.com/css/liter" target="_blank" rel="noopener noreferrer">Liter</a></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById('colophon-modal');
+      const btn = document.getElementById('colophon-btn');
+      const closeBtn = document.getElementById('modal-close');
+
+      btn?.addEventListener('click', () => {
+        modal?.classList.add('modal-active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      closeBtn?.addEventListener('click', () => {
+        modal?.classList.remove('modal-active');
+        document.body.style.overflow = '';
+      });
+
+      modal?.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('modal-active');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal?.classList.contains('modal-active')) {
+          modal.classList.remove('modal-active');
+          document.body.style.overflow = '';
+        }
+      });
+    </script>
   </body>
 </html>
