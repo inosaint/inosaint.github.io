@@ -206,30 +206,26 @@ figcaption {
 
 .post-header-right {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  min-width: 200px;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: flex-end;
   text-align: right;
 }
 
-.post-meta-label {
+.post-header-meta {
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-text-secondary);
+  color: var(--color-primary);
   margin: 0;
+  white-space: nowrap;
 }
 
-.post-meta-value {
-  font-size: 1rem;
-  color: var(--color-text);
-  margin: 0 0 1rem 0;
-}
-
-.post-meta-value:last-child {
-  margin-bottom: 0;
+.post-header-meta:not(:last-child)::after {
+  content: "•";
+  margin-left: 0.5rem;
+  color: var(--color-primary);
 }
 
 .post h1 {
@@ -606,7 +602,11 @@ footer {
 
   .post-header-right {
     text-align: left;
-    min-width: auto;
+    justify-content: flex-start;
+  }
+
+  .post-header-meta {
+    font-size: 1.1rem;
   }
 
   .post h1 {

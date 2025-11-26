@@ -41,10 +41,7 @@ const formatDate = (date: Date) => {
       </div>
       <div class="post-header-right">
         {entry.data.date && (
-          <p class="post-meta-label">Date</p>
-        )}
-        {entry.data.date && (
-          <p class="post-meta-value">{formatDate(entry.data.date)}</p>
+          <p class="post-header-meta">{formatDate(entry.data.date)}</p>
         )}
       </div>
     </div>
