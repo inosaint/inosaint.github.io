@@ -22,8 +22,6 @@ The team would need to adapt to having an in-house designer working with them. T
 
 One of my key learnings has been to choose to work with someone who will be your advocate in the organisation. It’s the single most important thing to look for during the interview process. The best teams I’ve observed had CEOs being the design sponsor and their products tend to win at least in terms of product quality (a product’s success is more than it’s quality, but that’s another post) Don’t believe me? Well in \*Rams\*, Dieter Rams states “If you don't have someone who stands behind you, then you can forget it.” And cites it as a reason for leaving Braun.
 
-Of course, not every Startup out there succeeds and there’s no guarantee that the team you join will survive but its always good to make sure that you enjoy the team you spend there and learn how to become a better designer.
-
----
+Of course, not every Startup out there succeeds and there's no guarantee that the team you join will survive but its always good to make sure that you enjoy the team you spend there and learn how to become a better designer.
 
 If you are looking for advice on what you can do as a solo designer to succeed, [this post I wrote after my first year as a designer](https://medium.com/user-experience-design-1/what-every-young-designer-should-know-abb2af79f43e) may be useful.
