@@ -7,7 +7,14 @@ const projects = await getCollection('projects');
 ---
 
 <BaseLayout title="Projects - Kenneth Mark Dsouza">
-  <a href="/" class="back-link">← Back to Home</a>
+  <nav class="breadcrumb-header">
+    <div class="breadcrumb">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">Projects</span>
+    </div>
+  </nav>
+
   <h1 style="margin-bottom: 3rem;">Projects</h1>
 
   <div class="grid">
