@@ -12,8 +12,17 @@ const sortedWritings = allWritings.sort((a, b) => {
 // Get the 2 most recent posts for the home page
 const recentWritings = sortedWritings.slice(0, 2);
 
-// Get all projects
-const projects = await getCollection('projects');
+// Get all projects and sort by year (newest first)
+const allProjects = await getCollection('projects');
+const sortedProjects = allProjects.sort((a, b) => {
+  // Extract the starting year from the year string (e.g., "2023-2024" -> 2023)
+  const yearA = parseInt(a.data.year.split('-')[0]);
+  const yearB = parseInt(b.data.year.split('-')[0]);
+  return yearB - yearA;
+});
+
+// Get the 2 most recent projects for the home page
+const projects = sortedProjects.slice(0, 2);
 ---
 
 <BaseLayout>
