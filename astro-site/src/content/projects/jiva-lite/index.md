@@ -1,5 +1,5 @@
 ---
-title: "Jive Lite"
+title: "Jiva Lite"
 description: "Building a farmer-centric experience for buying Corn in rural Indonesia"
 year: "2023-2024"
 company: "Jiva"
@@ -58,11 +58,6 @@ After pitching this to leadership, we got buyin to use the Whatsapp flow as a pi
 ### Building the MVP
 A small team got together to work on this part time. Designing the first flow to be as simple took a few iterations. We used Figma and FigJam a lot to align everyone and used Slack's inbuilt project management system to keep us on track.
 Weekly syncs were run to share progress with the larger group of stakeholders and monthly meetings with the CEO.
-
-<div class="image-grid-2">
-  <img src="./figjam.png" alt="Blueprinting" />
-  <img src="./jivalitev1.png" alt="Designs for the first release version on Figma" />
-</div>
 
 ![Figjam](./figjam.png "Blueprinting")
 
