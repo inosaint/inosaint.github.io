@@ -176,6 +176,62 @@ figcaption {
 .post {
 }
 
+/* Post header image */
+.post-header-image {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post-header-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+/* Post header layout */
+.post-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.post-header-left {
+  flex: 1;
+}
+
+.post-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 200px;
+  text-align: right;
+}
+
+.post-meta-label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.post-meta-value {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin: 0 0 1rem 0;
+}
+
+.post-meta-value:last-child {
+  margin-bottom: 0;
+}
+
 .post h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -540,5 +596,24 @@ footer {
     margin-top: 3rem;
     padding-top: 1.5rem;
     gap: 1rem;
+  }
+
+  /* Post header responsive */
+  .post-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .post-header-right {
+    text-align: left;
+    min-width: auto;
+  }
+
+  .post h1 {
+    font-size: 2rem;
+  }
+
+  .post .description {
+    font-size: 1.1rem;
   }
 }

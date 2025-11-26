@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -21,13 +22,33 @@ const { Content } = await entry.render();
 <BaseLayout title={entry.data.title}>
   <article class="post">
     <a href="/projects" class="back-link">← Back to Projects</a>
-    <h1>{entry.data.title}</h1>
-    <p class="description">{entry.data.description}</p>
-    {entry.data.year && entry.data.company && (
-      <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">
-        {entry.data.company} • {entry.data.year}
-      </p>
+
+    {entry.data.image && (
+      <div class="post-header-image">
+        <Image src={entry.data.image} alt={entry.data.title} width={1200} height={600} />
+      </div>
     )}
+
+    <div class="post-header">
+      <div class="post-header-left">
+        <h1>{entry.data.title}</h1>
+        <p class="description">{entry.data.description}</p>
+      </div>
+      <div class="post-header-right">
+        {entry.data.company && (
+          <p class="post-meta-label">Company</p>
+        )}
+        {entry.data.company && (
+          <p class="post-meta-value">{entry.data.company}</p>
+        )}
+        {entry.data.year && (
+          <p class="post-meta-label">Year</p>
+        )}
+        {entry.data.year && (
+          <p class="post-meta-value">{entry.data.year}</p>
+        )}
+      </div>
+    </div>
 
     <Content />
   </article>
