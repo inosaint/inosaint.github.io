@@ -276,7 +276,7 @@ figcaption {
   font-family: var(--font-family);
   font-size: 1.1rem;
   font-weight: 400;
-  color: #7A7B98;
+  color: #5B5C7A;
   margin: 0;
   white-space: nowrap;
 }
@@ -284,7 +284,7 @@ figcaption {
 .post-header-meta:not(:last-child)::after {
   content: "•";
   margin-left: 0.5rem;
-  color: #7A7B98;
+  color: #5B5C7A;
 }
 
 .post h1 {
@@ -295,7 +295,7 @@ figcaption {
 
 .post .description {
   font-size: 1.1rem;
-  color: #7A7B98;
+  color: #5B5C7A;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
