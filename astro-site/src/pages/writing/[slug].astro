@@ -36,23 +36,21 @@ const formatDate = (date: Date) => {
   </nav>
 
   <article class="post">
+    <div class="post-header">
+      <h1>{entry.data.title}</h1>
+      <p class="description">{entry.data.description}</p>
+      {entry.data.date && (
+        <div class="post-header-meta-container">
+          <span class="post-header-meta">{formatDate(entry.data.date)}</span>
+        </div>
+      )}
+    </div>
+
     {entry.data.image && (
       <div class="post-header-image">
         <Image src={entry.data.image} alt={entry.data.title} width={1200} height={600} />
       </div>
     )}
-
-    <div class="post-header">
-      <div class="post-header-left">
-        <h1>{entry.data.title}</h1>
-        <p class="description">{entry.data.description}</p>
-      </div>
-      <div class="post-header-right">
-        {entry.data.date && (
-          <p class="post-header-meta">{formatDate(entry.data.date)}</p>
-        )}
-      </div>
-    </div>
 
     <Content />
   </article>

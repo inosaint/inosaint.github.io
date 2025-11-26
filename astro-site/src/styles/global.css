@@ -290,28 +290,15 @@ figcaption {
 
 /* Post header layout */
 .post-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 3rem;
-  align-items: start;
   margin-bottom: 3rem;
 }
 
-.post-header-left {
-  flex: 1;
-}
-
-.post-header-right {
+.post-header-meta-container {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
-  align-items: flex-start;
-  justify-content: flex-end;
-  text-align: right;
-  padding: 0.75rem 1rem;
-  background-color: #F8F9FA;
-  border-radius: 8px;
-  align-self: start;
+  align-items: center;
+  margin-top: 1.5rem;
 }
 
 .post-header-meta {
@@ -704,15 +691,8 @@ footer {
   }
 
   /* Post header responsive */
-  .post-header {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .post-header-right {
-    text-align: left;
-    justify-content: flex-start;
-    padding: 0.5rem 0.75rem;
+  .post-header-meta-container {
+    margin-top: 1rem;
   }
 
   .post-header-meta {

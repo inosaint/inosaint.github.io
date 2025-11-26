@@ -31,26 +31,26 @@ const { Content } = await entry.render();
   </nav>
 
   <article class="post">
+    <div class="post-header">
+      <h1>{entry.data.title}</h1>
+      <p class="description">{entry.data.description}</p>
+      {(entry.data.company || entry.data.year) && (
+        <div class="post-header-meta-container">
+          {entry.data.company && (
+            <span class="post-header-meta">{entry.data.company}</span>
+          )}
+          {entry.data.year && (
+            <span class="post-header-meta">{entry.data.year}</span>
+          )}
+        </div>
+      )}
+    </div>
+
     {entry.data.image && (
       <div class="post-header-image">
         <Image src={entry.data.image} alt={entry.data.title} width={1200} height={600} />
       </div>
     )}
-
-    <div class="post-header">
-      <div class="post-header-left">
-        <h1>{entry.data.title}</h1>
-        <p class="description">{entry.data.description}</p>
-      </div>
-      <div class="post-header-right">
-        {entry.data.company && (
-          <p class="post-header-meta">{entry.data.company}</p>
-        )}
-        {entry.data.year && (
-          <p class="post-header-meta">{entry.data.year}</p>
-        )}
-      </div>
-    </div>
 
     <Content />
   </article>
