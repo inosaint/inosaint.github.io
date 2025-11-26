@@ -20,9 +20,17 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title}>
-  <article class="post">
-    <a href="/projects" class="back-link">← Back to Projects</a>
+  <nav class="breadcrumb-header">
+    <div class="breadcrumb">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="/projects" class="breadcrumb-link">Projects</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{entry.data.title}</span>
+    </div>
+  </nav>
 
+  <article class="post">
     {entry.data.image && (
       <div class="post-header-image">
         <Image src={entry.data.image} alt={entry.data.title} width={1200} height={600} />

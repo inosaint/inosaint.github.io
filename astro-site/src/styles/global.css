@@ -210,6 +210,48 @@ figcaption {
   line-height: 1.4;
 }
 
+/* Sticky breadcrumb header */
+.breadcrumb-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+  margin: -4rem -2rem 2rem -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-primary);
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-secondary);
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
 /* Back link styles */
 .back-link {
   display: inline-block;
@@ -416,7 +458,7 @@ figcaption {
   margin-bottom: 0.5rem;
   color: var(--color-primary);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: all 0.2s;
 }
 
 .card p {
@@ -427,7 +469,9 @@ figcaption {
 }
 
 .card:hover h3 {
-  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-underline-offset: 3px;
 }
 
 .card:hover p {
@@ -687,5 +731,16 @@ footer {
   .image-grid-2,
   .image-grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  /* Breadcrumb mobile adjustments */
+  .breadcrumb-header {
+    margin: -1.5rem -1rem 1.5rem -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
   }
 }
