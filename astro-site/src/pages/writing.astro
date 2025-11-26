@@ -63,14 +63,19 @@ const writings = [
 ---
 
 <BaseLayout title="Writing and Talks - Kenneth Mark Dsouza">
-  <a href="/" class="back-link">← Back to Home</a>
-  <div style="margin-bottom: 3rem;">
-    <h1>Writing and Talks</h1>
-  </div>
+  <nav class="breadcrumb-header">
+    <div class="breadcrumb">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">Writing</span>
+    </div>
+  </nav>
+
+  <h1 style="margin-bottom: 3rem;">Writing and Talks</h1>
 
   <div class="grid">
     {writings.map(writing => (
-      <a href={writing.url} target="_blank" rel="noopener noreferrer" class="card">
+      <a href={writing.url} target={writing.isInternal ? undefined : "_blank"} rel={writing.isInternal ? undefined : "noopener noreferrer"} class="card">
         {writing.image && writing.isInternal ? (
           <Image
             src={writing.image}
@@ -86,7 +91,10 @@ const writings = [
             class="card-image"
           />
         )}
-        <h3>{writing.title}</h3>
+        <h3>
+          {writing.title}
+          {!writing.isInternal && <span class="sr-only"> (opens in new tab)</span>}
+        </h3>
         <p>{writing.description}</p>
       </a>
     ))}

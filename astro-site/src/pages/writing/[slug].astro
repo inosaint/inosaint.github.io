@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
   const writings = await getCollection('writing');
@@ -16,13 +17,40 @@ type Props = {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Format date
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
 ---
 
 <BaseLayout title={entry.data.title}>
+  <nav class="breadcrumb-header">
+    <div class="breadcrumb">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="/writing" class="breadcrumb-link">Writing</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{entry.data.title}</span>
+    </div>
+  </nav>
+
   <article class="post">
-    <a href="/writing" class="back-link">← Back to Writing</a>
-    <h1>{entry.data.title}</h1>
-    <p class="description">{entry.data.description}</p>
+    <div class="post-header">
+      <h1>{entry.data.title}</h1>
+      <p class="description">{entry.data.description}</p>
+      {entry.data.date && (
+        <div class="post-header-meta-container">
+          <span class="post-header-meta">{formatDate(entry.data.date)}</span>
+        </div>
+      )}
+    </div>
+
+    {entry.data.image && (
+      <div class="post-header-image">
+        <Image src={entry.data.image} alt={entry.data.title} width={1200} height={600} />
+      </div>
+    )}
 
     <Content />
   </article>

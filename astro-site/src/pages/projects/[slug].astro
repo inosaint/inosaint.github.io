@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -19,14 +20,36 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title}>
+  <nav class="breadcrumb-header">
+    <div class="breadcrumb">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="/projects" class="breadcrumb-link">Projects</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{entry.data.title}</span>
+    </div>
+  </nav>
+
   <article class="post">
-    <a href="/projects" class="back-link">← Back to Projects</a>
-    <h1>{entry.data.title}</h1>
-    <p class="description">{entry.data.description}</p>
-    {entry.data.year && entry.data.company && (
-      <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">
-        {entry.data.company} • {entry.data.year}
-      </p>
+    <div class="post-header">
+      <h1>{entry.data.title}</h1>
+      <p class="description">{entry.data.description}</p>
+      {(entry.data.company || entry.data.year) && (
+        <div class="post-header-meta-container">
+          {entry.data.company && (
+            <span class="post-header-meta">{entry.data.company}</span>
+          )}
+          {entry.data.year && (
+            <span class="post-header-meta">{entry.data.year}</span>
+          )}
+        </div>
+      )}
+    </div>
+
+    {entry.data.image && (
+      <div class="post-header-image">
+        <Image src={entry.data.image} alt={entry.data.title} width={1200} height={600} />
+      </div>
     )}
 
     <Content />

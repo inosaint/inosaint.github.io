@@ -1,5 +1,5 @@
 ---
-title: "Jive Lite"
+title: "Jiva Lite"
 description: "Building a farmer-centric experience for buying Corn in rural Indonesia"
 year: "2023-2024"
 company: "Jiva"
@@ -25,7 +25,6 @@ Our Collectors earned commission for selling through us and our Farmers got the 
 
 But the question remained.. **could we do even better?** and that's where Jiva Lite came in.
 
-[graphic on impact to farmers]
 
 ## Challenge
 
@@ -37,6 +36,8 @@ It didn't make sense for them to keep our apps on their phones across seasons an
 - From the business side, this meant our customer acqusition funnel was fairly expensive and with the commissions and price fluctuations of the market, the Gross Contribution (GC) that we earned per kg was far below what we wanted to be at.
 
 ## Solution
+
+![Early Jiva Lite app wireframes](lite-wire.png "Early Jiva Lite app wireframes")
 
 The first idea for Jiva Lite came out of our efforts to simplify the Sahabat Jiva App information architecture and workflows. But it took a few more months before we got a chance to try to solve this.
 The overwhelming idea at that time was to make another app albeit a "lite" one. But a few of us felt that Whatsapp was the way to go. So I used Landbot to quickly prototype how a Whatsapp based flow would look like.
@@ -50,11 +51,31 @@ After pitching this to leadership, we got buyin to use the Whatsapp flow as a pi
 
 #### Why was Jiva Lite different?
 - If Jiva Lite had to succeed then it should be economically viable while at the same time, it should not cannibalize our existing businesses. So the pricing logic we set was to keep our offering price at 100idr/kg less than the price we showed in our Sahabat Jiva app. 
-- A recent tax exemption made it easy for us to operate at the small scale without needing unnecessary documentation.
+- A recent tax exemption made it easy for us to operate at the small scale without needing unnecessary documentation like KTPs
 - For the first time (probably), small holders could sell direct to our buyers irrespective of the volume of their harvest and get paid within a few hours.
 - Meta Ads and Whatsapp QRs let users quickly get into our flow and check prices.
 
 ### Building the MVP
+A small team got together to work on this part time. Designing the first flow to be as simple took a few iterations. We used Figma and FigJam a lot to align everyone and used Slack's inbuilt project management system to keep us on track.
+Weekly syncs were run to share progress with the larger group of stakeholders and monthly meetings with the CEO.
+
+![Figjam](./figjam.png "Blueprinting")
+
+Our first version was built using Whatsapp Flows and simplified the crop buying flow to just 3 steps; View Prices, Register and Send Truck.
+
+![Designs for the first release version on Figma](./jivalitev1.png "Designs for the first release version on Figma")
+
+### Preparing for Go-To-Market
+
+Onboarding internal teams
+We ran sessions with our field agents, customer service agents and marketing teams to onboard them onto the pilot project. I prepared an "objection handling" (a FAQ document) for CX team to use for answering any queries they may receive on their channels.
+Speaking to our on-ground field agents helped us address their concerns about Jiva Lite and its impact on their operations.
+
+Selecting a region for piloting. 
+based on the time of the year and our micro-collector density, we decided to go with the districts closest to Makassar; Maros and Takalar. This meant that the distances to be travelled by the farmers to our buyers were just a few hours away.
+
+
+
 
 ## Impact
 
