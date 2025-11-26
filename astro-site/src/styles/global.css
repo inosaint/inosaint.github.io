@@ -157,6 +157,29 @@ figcaption {
   margin: 0;
 }
 
+/* Image grid layouts */
+.image-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.image-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.image-grid-2 img,
+.image-grid-3 img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0;
+}
+
 /* Back link styles */
 .back-link {
   display: inline-block;
@@ -614,5 +637,11 @@ footer {
 
   .post .description {
     font-size: 1.1rem;
+  }
+
+  /* Image grids stack on mobile */
+  .image-grid-2,
+  .image-grid-3 {
+    grid-template-columns: 1fr;
   }
 }
