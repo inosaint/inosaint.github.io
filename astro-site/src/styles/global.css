@@ -324,7 +324,7 @@ figcaption {
 
 .post-header-meta {
   font-family: var(--font-family);
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   font-weight: 400;
   color: #5B5C7A;
   margin: 0;
@@ -344,7 +344,7 @@ figcaption {
 }
 
 .post .description {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #5B5C7A;
   margin-bottom: 2rem;
   line-height: 1.6;
