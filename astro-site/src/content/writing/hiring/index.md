@@ -6,7 +6,7 @@ date: 2021-08-19
 
 > "For every open job on your team, you need to spend one hour a day on recruiting-related activities. Cap that investment at 50% of your time."
 >
-> - [Rands](https://randsinrepose.com/archives/how-to-recruit/)
+> — [Rands](https://randsinrepose.com/archives/how-to-recruit/)
 
 I strongly believe that hiring is a critical focus area for a design leader. I've been part of hiring panels since 2015. I've seen companies usually do not focus on hiring flows leading them to have a bad experience for interviewing candidates. I gave a short talk about hiring designers at a friend's startup in 2018.
 
