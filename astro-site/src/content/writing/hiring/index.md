@@ -1,7 +1,7 @@
 ---
 title: Thoughts on Hiring
 description: Best practices for hiring designers
-year: "2021-08-19"
+date: "2021-08-19"
 ---
 
 > "For every open job on your team, you need to spend one hour a day on recruiting-related activities. Cap that investment at 50% of your time."

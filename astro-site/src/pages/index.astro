@@ -3,14 +3,74 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
-// Get all writing posts and sort by date (newest first)
-const allWritings = await getCollection('writing');
-const sortedWritings = allWritings.sort((a, b) => {
-  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
-});
+// Get all writing posts
+const internalWritings = await getCollection('writing');
+
+const externalWritings = [
+  {
+    title: 'Squads as a Growth Engine for Designers',
+    description: 'How we used squads to help our designers level up at Jiva',
+    url: 'https://medium.com/notes-from-the-fields/how-we-used-squads-to-help-our-designers-level-up-443fcbc52e2f',
+    image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*iuV8e1TmjIe0zsr8yQfXyA.jpeg',
+    date: new Date('2025-08-18')
+  },
+  {
+    title: 'Redesigning the Sahabat Jiva app',
+    description: 'From Field Insights to Better UX for our Sahabat Jivas',
+    url: 'https://medium.com/notes-from-the-fields/from-field-insights-to-better-ux-for-our-sahabat-jivas-3056b32ba51f',
+    image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3Fnwkn7IeOiYbTxz-n3K7w.jpeg',
+    date: new Date('2025-05-15')
+  },
+  {
+    title: 'How a sticker design became an unofficial Mascot',
+    description: 'The story of how a last-minute sticker design became a beloved company icon',
+    url: 'https://medium.com/notes-from-the-fields/more-than-swag-how-a-last-minute-sticker-became-a-company-icon-42d86246e736',
+    image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Nq0RLdn32pPVk-zLPFy-Cw.png',
+    date: new Date('2024-11-28')
+  },
+  {
+    title: 'Designing the Akar Design System',
+    description: 'Taming the chaos of hypergrowth with a lean approach to building a design system',
+    url: 'https://medium.com/notes-from-the-fields/taming-the-chaos-of-hypergrowth-our-lean-approach-to-building-a-design-system-part-1-2adbb24ddef0',
+    image: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*L1SeHFlgAyu3LkCQXR252g.png',
+    date: new Date('2024-10-17')
+  },
+  {
+    title: 'Gamify DesignOps with human connection',
+    description: 'A talk about bringing human connection into DesignOps',
+    url: 'https://www.youtube.com/watch?v=c__raLe34ZU',
+    image: '/sddefault.jpg',
+    date: new Date('2023-08-9')
+  },
+  {
+    title: 'How Gojek\'s design & research teams collaborate effectively across borders',
+    description: 'Insights on cross-border collaboration',
+    url: 'https://www.gojek.io/blog/near-far-wherever-we-are',
+    image: 'https://blog.gojek.io/content/images/2020/10/Blog-banners_Design-research-05.jpg',
+    date: new Date('2020-09-08')
+  }
+];
+
+// Combine and sort all writings by date (newest first)
+const allWritings = [
+  ...internalWritings.map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    url: `/writing/${post.slug}/`,
+    image: post.data.image,
+    imageUrl: post.data.image ? null : 'https://placehold.co/360x200',
+    date: new Date(post.data.date),
+    isInternal: true
+  })),
+  ...externalWritings.map((post) => ({
+    ...post,
+    imageUrl: post.image,
+    isInternal: false
+  }))
+].sort((a, b) => b.date.getTime() - a.date.getTime());
 
 // Get the 2 most recent posts for the home page
-const recentWritings = sortedWritings.slice(0, 2);
+const recentWritings = allWritings.slice(0, 2);
 
 // Get all projects and sort by year (newest first)
 const allProjects = await getCollection('projects');
@@ -65,6 +125,7 @@ const projects = sortedProjects.slice(0, 2);
               class="card-image"
               width={360}
               height={200}
+              densities={[1.5, 2]}
             />
           ) : (
             <img
@@ -88,24 +149,28 @@ const projects = sortedProjects.slice(0, 2);
     </div>
     <div class="grid">
       {recentWritings.map(writing => (
-        <a href={`/writing/${writing.slug}/`} class="card">
-          {writing.data.image ? (
+        <a href={writing.url} target={writing.isInternal ? undefined : "_blank"} rel={writing.isInternal ? undefined : "noopener noreferrer"} class="card">
+          {writing.image && writing.isInternal ? (
             <Image
-              src={writing.data.image}
-              alt={writing.data.title}
+              src={writing.image}
+              alt={writing.title}
               class="card-image"
               width={360}
               height={200}
+              densities={[1.5, 2]}
             />
           ) : (
             <img
-              src="https://placehold.co/360x200"
-              alt={writing.data.title}
+              src={writing.imageUrl}
+              alt={writing.title}
               class="card-image"
             />
           )}
-          <h3>{writing.data.title}</h3>
-          <p>{writing.data.description}</p>
+          <h3>
+            {writing.title}
+            {!writing.isInternal && <span class="sr-only"> (opens in new tab)</span>}
+          </h3>
+          <p>{writing.description}</p>
         </a>
       ))}
     </div>

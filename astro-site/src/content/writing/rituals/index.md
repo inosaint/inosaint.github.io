@@ -1,7 +1,7 @@
 ---
 title: Why Team Rituals are important
 description: Team rituals and building culture
-year: "2021-08-19"
+date: "2021-08-19"
 ---
 
 As the team grew, processes and rituals came into play.

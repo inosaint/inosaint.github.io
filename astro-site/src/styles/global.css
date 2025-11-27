@@ -88,6 +88,11 @@ p {
   margin-bottom: 1rem;
 }
 
+strong,
+b {
+  font-weight: 700;
+}
+
 a {
   color: var(--color-primary);
   text-decoration: underline;
@@ -105,7 +110,6 @@ blockquote {
   margin: 2rem 0;
   padding: 1rem 1.5rem;
   border-left: 4px solid var(--color-primary);
-  background-color: #f8f9fa;
   font-style: italic;
   color: var(--color-text-secondary);
 }
@@ -118,12 +122,23 @@ blockquote p:not(:last-child) {
   margin-bottom: 1rem;
 }
 
+blockquote ul,
+blockquote ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+blockquote li {
+  margin-bottom: 0;
+}
+
 /* Footnote styles */
 .footnotes {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 2px solid var(--color-gray-light);
-  font-size: 0.9rem;
+  border-top: 2px dotted var(--color-gray-light);
+  font-size: 0.8rem;
   color: var(--color-text-secondary);
 }
 
@@ -145,6 +160,14 @@ sup {
 sup a {
   text-decoration: none;
   font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Attribution styles */
+.attribution {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
 /* Image caption/figure styles */
@@ -156,7 +179,6 @@ figure.image-figure img {
   margin: 0;
   display: block;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 figcaption {
@@ -197,7 +219,6 @@ figcaption {
   height: auto;
   border-radius: 8px;
   margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .image-grid-2 figure,
@@ -295,7 +316,7 @@ figcaption {
 
 /* Post header layout */
 .post-header {
-  margin-bottom: 3rem;
+  margin-bottom: 0;
 }
 
 .post-header-meta-container {
@@ -308,7 +329,7 @@ figcaption {
 
 .post-header-meta {
   font-family: var(--font-family);
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   font-weight: 400;
   color: #5B5C7A;
   margin: 0;
@@ -328,9 +349,9 @@ figcaption {
 }
 
 .post .description {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #5B5C7A;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   line-height: 1.6;
 }
 
@@ -363,7 +384,6 @@ figcaption {
   height: auto;
   margin: 2rem 0;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .post ul,
@@ -442,7 +462,6 @@ figcaption {
   border-radius: 8px;
   margin-bottom: 1rem;
   object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .card h3 {
@@ -464,8 +483,9 @@ figcaption {
 
 .card:hover h3 {
   text-decoration: underline;
-  text-decoration-style: solid;
+  text-decoration-style: dotted;
   text-underline-offset: 3px;
+  opacity: 1;
 }
 
 .card:hover p {
