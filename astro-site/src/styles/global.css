@@ -163,6 +163,13 @@ sup a {
   color: var(--color-primary);
 }
 
+/* Attribution styles */
+.attribution {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
 /* Image caption/figure styles */
 figure.image-figure {
   margin: 2rem 0;
