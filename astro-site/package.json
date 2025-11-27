@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.16.0",
-    "rehype-figure": "^1.0.1"
+    "rehype-figure": "^1.0.1",
+    "remark-gfm": "^4.0.1"
   }
 }
