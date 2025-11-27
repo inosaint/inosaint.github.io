@@ -374,6 +374,10 @@ figcaption {
   line-height: 1.2;
 }
 
+.post h4 {
+  margin-bottom: 0.5rem;
+}
+
 .post p {
   margin-bottom: 1.25rem;
   line-height: 1.7;
