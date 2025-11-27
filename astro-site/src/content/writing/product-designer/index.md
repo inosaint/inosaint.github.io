@@ -1,8 +1,8 @@
 ---
 title: "What is a product designer?"
 description: "Reflections from a decade of designing products"
-date: "2025-01-01"
-image: "./product-designer-1.png"
+date: "2025-01-05"
+image: "./squiggle-labels-outline.jpg"
 ---
 
 A decade ago, the 'product designer' title was being used to refer to designers (and still is) working on physical products. The adoption of using it for software designers got a shot in the arm when [Facebook adopted it](https://qr.ae/pGQdVi) for their designers. Until then UI/UX was the term of choice for folks in the industry and used to indicate a specific job that the designer performed in the team. This was indicative of the shift from the delivery teams working with client requirements (enterprise first) to product teams (rapidly iterating consumer tech) which had to learn and uncover what was the best product they could build. Due to the scarcity of product designers in the space, companies started acquiring design agencies around the world[^1].
@@ -48,3 +48,5 @@ This is a quality which is rare to find. I feel this is because most designers t
 [^2]: **Silicon Valley "didn't think a designer could build a company" says Airbnb co-founder Brian Chesky** https://www.dezeen.com/2014/01/28/silicon-valley-didnt-think-a-designer-could-build-a-company-interview-airbnb-co-founder-brian-chesky/
 
 [^3]: **Pablo Stanley, Collection of Random Comics** https://thedesignteam.io/collection-of-random-comics-d66f32ee9c52
+
+4. **The Process of Design Squiggle by Damien Newman, thedesignsquiggle.com**
