@@ -137,7 +137,7 @@ blockquote li {
 .footnotes {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 2px solid var(--color-gray-light);
+  border-top: 2px dotted var(--color-gray-light);
   font-size: 0.8rem;
   color: var(--color-text-secondary);
 }
