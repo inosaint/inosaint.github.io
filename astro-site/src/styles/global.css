@@ -309,7 +309,7 @@ figcaption {
 
 /* Post header layout */
 .post-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 .post-header-meta-container {
