@@ -2,7 +2,7 @@
 title: "What is a product designer?"
 description: "Reflections from a decade of designing products"
 date: "2025-01-01"
-image: "./product-designer-1.png"
+image: ".squiggle-labels-outline.jpg"
 ---
 
 A decade ago, the 'product designer' title was being used to refer to designers (and still is) working on physical products. The adoption of using it for software designers got a shot in the arm when [Facebook adopted it](https://qr.ae/pGQdVi) for their designers. Until then UI/UX was the term of choice for folks in the industry and used to indicate a specific job that the designer performed in the team. This was indicative of the shift from the delivery teams working with client requirements (enterprise first) to product teams (rapidly iterating consumer tech) which had to learn and uncover what was the best product they could build. Due to the scarcity of product designers in the space, companies started acquiring design agencies around the world \[1\].
@@ -43,7 +43,7 @@ This is a quality which is rare to find. I feel this is because most designers t
 
 * Job descriptions could be honest up front of the kind of designer that they are looking for rather than getting ChatGPT to write it. There is no point lying about this, infact it just takes you lot longer to find someone.
 
-**Footnote:**
+#### Footnote:
 
 1. **John Maeda's Design in Tech report 2015, Slide 4** https://www.slideshare.net/slideshow/design-in-tech-report-2015-45858974/45858974
 2. **Silicon Valley "didn't think a designer could build a company" says Airbnb co-founder Brian Chesky** https://www.dezeen.com/2014/01/28/silicon-valley-didnt-think-a-designer-could-build-a-company-interview-airbnb-co-founder-brian-chesky/
