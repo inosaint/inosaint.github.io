@@ -11,7 +11,7 @@ The ‘product designer’ now had to start looking at what they are designing a
 
 But even then there were few orgs which took design seriously.
 
-![Source: 2014 interview in Dezeen[^2]](./product-designer-1.png)
+![Source: 2014 interview in Dezeen](./product-designer-1.png)[^2]
 
 Even today, most orgs don’t really provide a space for designers to thrive in the product space and even today, there are probably a handful of product designers and product orgs in the world, the rest is mostly good PR.
 
