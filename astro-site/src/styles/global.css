@@ -172,7 +172,6 @@ figure.image-figure img {
   margin: 0;
   display: block;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 figcaption {
@@ -213,7 +212,6 @@ figcaption {
   height: auto;
   border-radius: 8px;
   margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .image-grid-2 figure,
@@ -379,7 +377,6 @@ figcaption {
   height: auto;
   margin: 2rem 0;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .post ul,
@@ -458,7 +455,6 @@ figcaption {
   border-radius: 8px;
   margin-bottom: 1rem;
   object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .card h3 {
