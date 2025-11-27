@@ -35,6 +35,9 @@ It didn't make sense for them to keep our apps on their phones across seasons an
 
 - From the business side, this meant our customer acqusition funnel was fairly expensive and with the commissions and price fluctuations of the market, the Gross Contribution (GC) that we earned per kg was far below what we wanted to be at.
 
+## Role
+My role was a fluid one in the project where at the start I was leading the product design effort and managing stakeholders but eventually transitioned to co-owning the project and focusing on the digital marketing efforts over the 1 year of operation. 
+
 ## Solution
 
 ![Early Jiva Lite app wireframes](lite-wire.png "Early Jiva Lite app wireframes")
@@ -67,11 +70,11 @@ Our first version was built using Whatsapp Flows and simplified the crop buying 
 
 ### Preparing for Go-To-Market
 
-Onboarding internal teams
+**Onboarding internal teams**
 We ran sessions with our field agents, customer service agents and marketing teams to onboard them onto the pilot project. I prepared an "objection handling" (a FAQ document) for CX team to use for answering any queries they may receive on their channels.
 Speaking to our on-ground field agents helped us address their concerns about Jiva Lite and its impact on their operations.
 
-Selecting a region for piloting. 
+**Selecting a region for piloting**
 based on the time of the year and our micro-collector density, we decided to go with the districts closest to Makassar; Maros and Takalar. This meant that the distances to be travelled by the farmers to our buyers were just a few hours away.
 
 
@@ -80,3 +83,7 @@ based on the time of the year and our micro-collector density, we decided to go 
 ## Impact
 
 [Add metrics and impact]
+
+## Team
+It takes a village to run a project like this and almost everyone in the Jiva design team contributed towards this project. Sai and Tyo worked on the initial flow designs, Kesha on the UX copy, Karan and Bharath on the Service Design, Asa, Idul, Aldi and El contirbuted heavily on the User research side. 
+Nilesh, Shakti provided support on Product and Akshay Koul led the Engineering team with Kalpesh, Rajlakshmi on QA. DJ for Data Dashboards. Gada and Salma on Marketing. And we really couldnt have done as much as we did without our Jiva Lite Operators Erwin, Firman.
