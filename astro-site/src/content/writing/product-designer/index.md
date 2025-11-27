@@ -15,7 +15,7 @@ But even then there were few orgs which took design seriously.
 
 Even today, most orgs don’t really provide a space for designers to thrive in the product space and even today, there are probably a handful of product designers and product orgs in the world, the rest is mostly good PR.
 
-And what are the aspects of a product designer that sets them apart from other designers?
+**And what are the aspects of a product designer that sets them apart from other designers?**
 
 ### Quality
 
@@ -49,4 +49,4 @@ This is a quality which is rare to find. I feel this is because most designers t
 
 [^3]: **Pablo Stanley, Collection of Random Comics** https://thedesignteam.io/collection-of-random-comics-d66f32ee9c52
 
-4. **The Process of Design Squiggle by Damien Newman, thedesignsquiggle.com**
+<p class="attribution"> Attribution: Cover image courtesy <strong>'The Process of Design Squiggle' by Damien Newman, thedesignsquiggle.com</strong> </p>
