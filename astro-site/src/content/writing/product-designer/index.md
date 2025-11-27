@@ -2,7 +2,7 @@
 title: "What is a product designer?"
 description: "Reflections from a decade of designing products"
 date: "2025-01-01"
-image: "./product-designer-1.png"
+image: "./squiggle-labels-outline.jpg"
 ---
 
 A decade ago, the 'product designer' title was being used to refer to designers (and still is) working on physical products. The adoption of using it for software designers got a shot in the arm when [Facebook adopted it](https://qr.ae/pGQdVi) for their designers. Until then UI/UX was the term of choice for folks in the industry and used to indicate a specific job that the designer performed in the team. This was indicative of the shift from the delivery teams working with client requirements (enterprise first) to product teams (rapidly iterating consumer tech) which had to learn and uncover what was the best product they could build. Due to the scarcity of product designers in the space, companies started acquiring design agencies around the world[^1].
