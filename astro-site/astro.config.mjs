@@ -3,7 +3,7 @@ import rehypeFigure from 'rehype-figure';
 import remarkGfm from 'remark-gfm';
 
 export default defineConfig({
-  site: 'https://inosaint.github.io',
+  site: 'https://kenneth.dsouza.im',
   outDir: './dist',
   markdown: {
     remarkPlugins: [remarkGfm],

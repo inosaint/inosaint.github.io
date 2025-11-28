@@ -179,7 +179,7 @@ The site is configured for GitHub Pages deployment:
 
 1. Push changes to the `main` branch
 2. GitHub Actions automatically builds and deploys
-3. Site URL: `https://inosaint.github.io`
+3. Site URL: `https://kenneth.dsouza.im`
 
 To change the site URL, update `astro.config.mjs`:
 
