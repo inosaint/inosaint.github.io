@@ -24,7 +24,11 @@ const formatDate = (date: Date) => {
 };
 ---
 
-<BaseLayout title={entry.data.title}>
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  image={entry.data.image?.src || "/profile.png"}
+>
   <nav class="breadcrumb-header">
     <div class="breadcrumb">
       <a href="/" class="breadcrumb-link">Home</a>
