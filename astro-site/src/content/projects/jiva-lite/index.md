@@ -159,6 +159,6 @@ In the one year of operation, we scaled Jiva Lite from 0 to 600 registered users
 ## Team
 It takes a village to run a project like this and almost everyone in the Jiva design team contributed towards this project. I couldnt have done this without Karan owning the offline side, Nilesh running the product sprint and Shakti managing the JLO's. 
 
-Sai and Tyo worked on the initial flow designs and Niraj took the reigns towards the end, Kesha on the UX copy, and Karan and Bharath on the Service Design. 
+Nav, Sai and Tyo worked on the initial flow designs and Niraj took the reigns towards the end, Kesha on the UX copy, and Karan and Bharath on the Service Design. 
 Asa, Idul, Aldi and El contributed heavily on the User research side often intervening in our workflow to helpg guide our Farmers. 
 Akshay Koul led the Engineering team with Kalpesh and Mani, Rajlakshmi on QA. DJ for Data Dashboards. Gada and Salma on Marketing. And we really couldnt have done as much as we did without our Jiva Lite Operators Erwin, Firman.
