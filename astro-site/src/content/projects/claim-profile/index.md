@@ -5,10 +5,8 @@ doctors on Practo.com"
 year: "2016-2017"
 company: "Practo"
 image: "./practo-profile.png"
-<<<<<<< Updated upstream
 status: 'draft'
-=======
->>>>>>> Stashed changes
+
 ---
 
 ## Overview
