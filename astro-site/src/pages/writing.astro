@@ -3,7 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
-const internalWritings = await getCollection('writing');
+const internalWritings = await getCollection('writing', ({ data }) => {
+  return data.status === 'published';
+});
 
 const externalWritings = [
   {
