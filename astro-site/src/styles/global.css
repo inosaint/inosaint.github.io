@@ -467,7 +467,7 @@ figcaption {
 
 .card-image {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 5;
   background-color: var(--color-gray-light);
   border-radius: 8px;
   margin-bottom: 1rem;
