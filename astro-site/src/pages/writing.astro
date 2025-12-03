@@ -4,7 +4,8 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
 const internalWritings = await getCollection('writing', ({ data }) => {
-  return data.status === 'published';
+  // Filter out drafts - only show published posts
+  return data.status !== 'draft';
 });
 
 const externalWritings = [
