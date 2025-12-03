@@ -6,7 +6,6 @@ year: "2016-2017"
 company: "Practo"
 image: "./practo-profile.png"
 status: draft
-
 ---
 
 ## Overview

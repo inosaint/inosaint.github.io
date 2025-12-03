@@ -32,6 +32,14 @@
         "url": {
           "type": "string"
         },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "published"
+          ],
+          "default": "published"
+        },
         "$schema": {
           "type": "string"
         }
