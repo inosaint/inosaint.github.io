@@ -4,6 +4,7 @@ description: Team process and documentation
 date: "2021-08-19"
 ---
 
+
 A considerable amount of time in 'Year 1' of being a manager has been about setting up artifacts and processes. I was lucky to be part of an organization that had a documentation culture in its DNA. This was partly because we had Program Managers embedded within each team. This meant that Jira, Confluence and Asana were setup and maintained religiously, with weekly feature spec reviews [FSR] and ProdTech meetings to keep these upto date.
 
 ### Setting up Documentation spaces
@@ -19,7 +20,7 @@ However, we faced a problem with adoption of these processes. We lacked a progra
 1. Add more meetings in the calendar
 2. Be a bad cop
 
-### More meetings in the calendar
+#### More meetings in the calendar
 
 When your calendar is already full of meetings, you feel like staying away from setting up any more that will take away whatever little 'time for focus work' that is left in it. But given our problem, this seemed to be the most effective way to get things working.
 Our team was a 3 level hierarchy so each lead now had to setup two additional cadences into their calendar. One was a common stream leads cadence where each stream lead would come prepared to the biweeekly meeting with a progress update (which would be posted biweekly to the Asana board) Maji worked on a template for this.
@@ -27,6 +28,6 @@ Our team was a 3 level hierarchy so each lead now had to setup two additional ca
 The other meeting was with their stream where each of their reports could come with a similarly formatted update. This meeting helped stream leads prepare them for the stream leads meeting.
 You can also make these meetings async if everyone is diligent. The updates were a small part of the biweekly leads meeting.
 
-### Be a Bad Cop
+#### Be a Bad Cop
 
 Not all designers like following process. They may see it as additional work with low ROI or they may just not have enough time. You should take the time to communicate the problems that the process is going to solve and ask them for feedback on the process. Make it feel like they co-own the process. But if this fails, then you should be okay with being "bad cop". This would mean that you would need to set Slack reminders, add calendar invites and send DMs if everything fails. This is the way.
