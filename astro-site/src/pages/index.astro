@@ -3,8 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
-// Get all writing posts
-const internalWritings = await getCollection('writing');
+// Get all published writing posts
+const internalWritings = await getCollection('writing', ({ data }) => {
+  // Filter out drafts - only show published posts
+  return data.status !== 'draft';
+});
 
 const externalWritings = [
   {
@@ -72,8 +75,10 @@ const allWritings = [
 // Get the 2 most recent posts for the home page
 const recentWritings = allWritings.slice(0, 2);
 
-// Get all projects and sort by year (newest first)
-const allProjects = await getCollection('projects');
+// Get all published projects and sort by year (newest first)
+const allProjects = await getCollection('projects', ({ data }) => {
+  return data.status === 'published';
+});
 const sortedProjects = allProjects.sort((a, b) => {
   // Extract the starting year from the year string (e.g., "2023-2024" -> 2023)
   const yearA = parseInt(a.data.year.split('-')[0]);

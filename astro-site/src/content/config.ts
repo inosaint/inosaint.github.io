@@ -7,6 +7,7 @@ const writing = defineCollection({
     date: z.coerce.date(),
     image: image().optional(),
     url: z.string().optional(), // optional for external posts
+    status: z.enum(['draft', 'published']).default('published'),
   }),
 });
 
@@ -17,6 +18,7 @@ const projects = defineCollection({
     image: image().optional(),
     year: z.string().optional(),
     company: z.string().optional(),
+    status: z.enum(['draft', 'published']).default('published'),
   }),
 });
 
