@@ -114,7 +114,11 @@ const writings = [
           {writing.title}
           {!writing.isInternal && (
             <>
-              <sup class="external-link-icon" aria-hidden="true">[↗]</sup>
+              <sup class="external-link-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 3C3.22386 3 3 3.22386 3 3.5C3 3.77614 3.22386 4 3.5 4V3ZM8.5 3.5H9C9 3.22386 8.77614 3 8.5 3V3.5ZM8 8.5C8 8.77614 8.22386 9 8.5 9C8.77614 9 9 8.77614 9 8.5H8ZM2.64645 8.85355C2.45118 8.65829 2.45118 8.34171 2.64645 8.14645L5.82843 4.96447C6.02369 4.7692 6.34027 4.7692 6.53553 4.96447C6.7308 5.15973 6.7308 5.47631 6.53553 5.67157L3.35355 8.85355C3.15829 9.04882 2.84171 9.04882 2.64645 8.85355ZM3.5 4H8.5V3H3.5V4ZM8 3.5V8.5H9V3.5H8Z" fill="currentColor"/>
+                </svg>
+              </sup>
               <span class="sr-only"> (opens in new tab)</span>
             </>
           )}
