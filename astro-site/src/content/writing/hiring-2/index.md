@@ -7,7 +7,6 @@ status: 'draft'
 
 Over the last 2 months, I’ve been involved in building the product design team at Jiva. I’ve never had the opportunity to build a team from scratch and it felt scary at first. We had no defined process nor an evaluation criteria, just a product designer job description. It was well structured job description and spoke to the generalist designers we wanted to recruit but we were aware we needed to scale.
 
---- 
 
 There are lot of opinions out there about hiring, Many prefer visual portfolios, others vouch for take home assignments and a few years back, co-working sessions have started to get popular. None of these are actually wrong, they are just a reflection of the organisation that you are hiring for. It’s also the first hand experience of the team’s culture that the designer you are hiring will undergo and therefore designing it becomes important. 
 
