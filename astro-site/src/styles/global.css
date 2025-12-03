@@ -639,6 +639,20 @@ footer {
   margin-bottom: 0;
 }
 
+/* Claude logo styling */
+.claude-logo {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.claude-logo:hover {
+  opacity: 1;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   html {
@@ -731,15 +745,4 @@ footer {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
-  .claude-logo {
-    width: 20px;
-    height: 20px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-  .claude-logo:hover {
-    opacity: 1;
-}
 }
