@@ -491,8 +491,9 @@ figcaption {
   line-height: 1;
 }
 
-.external-link-icon svg {
-  display: inline-block;
+.external-link-icon .material-symbols-outlined {
+  font-size: 0.75em;
+  font-weight: 600;
   vertical-align: baseline;
 }
 
