@@ -482,21 +482,17 @@ figcaption {
   color: var(--color-primary);
   text-decoration: none;
   transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
 }
 
 .external-link-icon {
-  flex-shrink: 0;
-  opacity: 0.5;
-  font-size: 0.85em;
-  transition: opacity 0.2s, transform 0.2s;
+  opacity: 0.6;
+  font-size: 0.7em;
+  transition: opacity 0.2s;
+  margin-left: 0.15rem;
 }
 
 .card:hover .external-link-icon {
-  opacity: 0.8;
-  transform: translate(1px, -1px);
+  opacity: 0.9;
 }
 
 .card p {
