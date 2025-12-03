@@ -2,6 +2,7 @@
 title: Thoughts on Hiring, part 2
 description: Reflections on hiring based on my experience building the product design team at Jiva
 date: "2025-12-02"
+status: draft
 ---
 
 Over the last 2 months, I’ve been involved in building the product design team at Jiva. I’ve never had the opportunity to build a team from scratch and it felt scary at first. We had no defined process nor an evaluation criteria, just a product designer job description. It was well structured job description and spoke to the generalist designers we wanted to recruit but we were aware we needed to scale.
