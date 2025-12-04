@@ -3,6 +3,7 @@ title: Learnings from going International
 description: What I learnt from launching the app for different countries
 year: "2021"
 company: "Gojek"
+image: "./thai-resto.png"
 
 ---
 
