@@ -767,4 +767,9 @@ footer {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  /* Resume list mobile adjustments */
+  section ul {
+    padding-left: 1rem;
+  }
 }
