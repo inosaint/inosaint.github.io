@@ -430,6 +430,21 @@ figcaption {
   margin-bottom: 1.5rem;
 }
 
+.profile-container {
+  position: relative;
+  width: fit-content;
+}
+
+.postmark {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  top: -20px;
+  right: -30px;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
 .profile-photo {
   --r: 12px;
   width: 200px;
