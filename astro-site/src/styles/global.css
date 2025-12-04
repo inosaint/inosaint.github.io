@@ -774,6 +774,6 @@ footer {
 
   /* Resume list mobile adjustments */
   section ul {
-    padding-left: 1rem;
+    padding-left: 0;
   }
 }
