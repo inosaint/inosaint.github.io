@@ -435,11 +435,11 @@ figcaption {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  padding: var(--r);
+  padding: 12px 9px;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
   background:
     radial-gradient(50% 50%, #0000 65%, #fff 67%) round
-    var(--r) var(--r) / calc(2 * var(--r)) calc(2 * var(--r));
+    9px 12px / calc(2 * 9px) calc(2 * 12px);
   box-sizing: content-box;
 }
 
@@ -714,10 +714,13 @@ footer {
   }
 
   .profile-photo {
-    --r: 8px;
     width: 140px;
     height: 140px;
     margin: 0;
+    padding: 8px 6px;
+    background:
+      radial-gradient(50% 50%, #0000 65%, #fff 67%) round
+      6px 8px / calc(2 * 6px) calc(2 * 8px);
   }
 
   .intro-text h1 {
