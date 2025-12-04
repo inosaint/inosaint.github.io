@@ -83,7 +83,7 @@ h4 {
   font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 600;
-  margin: 0;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-text);
