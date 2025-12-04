@@ -433,8 +433,25 @@ figcaption {
 .profile-photo {
   width: 200px;
   height: 200px;
-  border-radius: 8px;
   object-fit: cover;
+  clip-path: polygon(
+    /* Top edge - scalloped */
+    8% 0%, 16% 0%, 24% 0%, 32% 0%, 40% 0%, 48% 0%, 56% 0%, 64% 0%, 72% 0%, 80% 0%, 88% 0%, 96% 0%,
+    /* Top-right corner */
+    100% 4%, 100% 12%,
+    /* Right edge - scalloped */
+    100% 20%, 100% 28%, 100% 36%, 100% 44%, 100% 52%, 100% 60%, 100% 68%, 100% 76%, 100% 84%, 100% 92%,
+    /* Bottom-right corner */
+    96% 100%, 88% 100%,
+    /* Bottom edge - scalloped */
+    80% 100%, 72% 100%, 64% 100%, 56% 100%, 48% 100%, 40% 100%, 32% 100%, 24% 100%, 16% 100%, 8% 100%,
+    /* Bottom-left corner */
+    4% 100%, 0% 96%,
+    /* Left edge - scalloped */
+    0% 92%, 0% 84%, 0% 76%, 0% 68%, 0% 60%, 0% 52%, 0% 44%, 0% 36%, 0% 28%, 0% 20%,
+    /* Top-left corner */
+    0% 12%, 0% 4%
+  );
 }
 
 /* Section styles */
@@ -711,9 +728,7 @@ footer {
     width: 140px;
     height: 140px;
     margin: 0;
-    border-radius: 8px;
-    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.8),
-                0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .intro-text h1 {
