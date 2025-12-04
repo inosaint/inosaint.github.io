@@ -60,7 +60,7 @@ const writings = [
     description: post.data.description,
     url: `/writing/${post.slug}/`,
     image: post.data.image,
-    imageUrl: post.data.image ? null : 'https://placehold.co/360x200',
+    imageUrl: post.data.image ? null : 'https://placehold.co/450x250',
     date: new Date(post.data.date),
     isInternal: true
   })),
@@ -85,14 +85,20 @@ const writings = [
 
   <div class="grid">
     {writings.map(writing => (
-      <a href={writing.url} target={writing.isInternal ? undefined : "_blank"} rel={writing.isInternal ? undefined : "noopener noreferrer"} class="card">
+      <a
+        href={writing.url}
+        target={writing.isInternal ? undefined : "_blank"}
+        rel={writing.isInternal ? undefined : "noopener noreferrer"}
+        class="card"
+        title={writing.isInternal ? undefined : `${writing.title} (opens in new tab)`}
+      >
         {writing.image && writing.isInternal ? (
           <Image
             src={writing.image}
             alt={writing.title}
             class="card-image"
-            width={360}
-            height={200}
+            width={450}
+            height={250}
             densities={[1.5, 2]}
           />
         ) : (
@@ -100,11 +106,20 @@ const writings = [
             src={writing.imageUrl}
             alt={writing.title}
             class="card-image"
+            width="450"
+            height="250"
           />
         )}
         <h3>
           {writing.title}
-          {!writing.isInternal && <span class="sr-only"> (opens in new tab)</span>}
+          {!writing.isInternal && (
+            <>
+              <sup class="external-link-icon" aria-hidden="true">
+                [<span class="material-symbols-outlined">arrow_outward</span>]
+              </sup>
+              <span class="sr-only"> (opens in new tab)</span>
+            </>
+          )}
         </h3>
         <p>{writing.description}</p>
       </a>

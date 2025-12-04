@@ -61,7 +61,7 @@ const allWritings = [
     description: post.data.description,
     url: `/writing/${post.slug}/`,
     image: post.data.image,
-    imageUrl: post.data.image ? null : 'https://placehold.co/360x200',
+    imageUrl: post.data.image ? null : 'https://placehold.co/450x250',
     date: new Date(post.data.date),
     isInternal: true
   })),
@@ -102,7 +102,7 @@ const projects = sortedProjects.slice(0, 2);
         Recently, I was a senior design manager at <a href="https://www.jiva.ag" target="_blank" rel="noopener noreferrer">Jiva<span class="sr-only"> (opens in new tab)</span></a> (2022-2025), an Agritech startup, where I built and led the product design and research team, working on a suite of mobile apps and web apps for users in rural Indonesia. You can read about the work we did in our Medium publication, <a href="https://medium.com/notes-from-the-fields" target="_blank" rel="noopener noreferrer">Notes from the Fields<span class="sr-only"> (opens in new tab)</span></a>.
       </p>
       <p>
-        Prior to this, I worked at <a href="https://www.gojek.com/en-id/" target="_blank" rel="noopener noreferrer">Gojek<span class="sr-only"> (opens in new tab)</span></a> managing a team of designers on the Merchant Platform aka <a href="https://gobiz.co.id/" target="_blank" rel="noopener noreferrer">GoBiz<span class="sr-only"> (opens in new tab)</span></a> and at <a href="https://www.practo.com/providers" target="_blank" rel="noopener noreferrer">Practo<span class="sr-only"> (opens in new tab)</span></a>, an Indian healthcare startup, working on their doctor facing products like <a href="https://www.practo.com/practo-pro-app" target="_blank" rel="noopener noreferrer">Practo Pro<span class="sr-only"> (opens in new tab)</span></a>.
+        Prior to this, I worked at <a href="https://www.gojek.com/en-id/" target="_blank" rel="noopener noreferrer">Gojek<span class="sr-only">(opens in new tab)</span></a>, the Indonesian SuperApp, heading design for their Merchant SuperApp aka <a href="https://web.archive.org/web/20220402184509/https://gobiz.co.id/" target="_blank" rel="noopener noreferrer">GoBiz<span class="sr-only"> (opens in new tab)</span></a>, and at <a href="https://www.practo.com/providers" target="_blank" rel="noopener noreferrer">Practo<span class="sr-only"> (opens in new tab)</span></a>, an Indian healthcare startup, working on their doctor facing products like <a href="https://www.practo.com/practo-pro-app" target="_blank" rel="noopener noreferrer">Practo Pro<span class="sr-only"> (opens in new tab)</span></a>.
       </p>
     </div>
     <div>
@@ -128,15 +128,17 @@ const projects = sortedProjects.slice(0, 2);
               src={project.data.image}
               alt={project.data.title}
               class="card-image"
-              width={360}
-              height={200}
+              width={450}
+              height={250}
               densities={[1.5, 2]}
             />
           ) : (
             <img
-              src="https://placehold.co/360x200"
+              src="https://placehold.co/450x250"
               alt={project.data.title}
               class="card-image"
+              width="450"
+              height="250"
             />
           )}
           <h3>{project.data.title}</h3>
@@ -154,14 +156,20 @@ const projects = sortedProjects.slice(0, 2);
     </div>
     <div class="grid">
       {recentWritings.map(writing => (
-        <a href={writing.url} target={writing.isInternal ? undefined : "_blank"} rel={writing.isInternal ? undefined : "noopener noreferrer"} class="card">
+        <a
+          href={writing.url}
+          target={writing.isInternal ? undefined : "_blank"}
+          rel={writing.isInternal ? undefined : "noopener noreferrer"}
+          class="card"
+          title={writing.isInternal ? undefined : `${writing.title} (opens in new tab)`}
+        >
           {writing.image && writing.isInternal ? (
             <Image
               src={writing.image}
               alt={writing.title}
               class="card-image"
-              width={360}
-              height={200}
+              width={450}
+              height={250}
               densities={[1.5, 2]}
             />
           ) : (
@@ -169,11 +177,20 @@ const projects = sortedProjects.slice(0, 2);
               src={writing.imageUrl}
               alt={writing.title}
               class="card-image"
+              width="450"
+              height="250"
             />
           )}
           <h3>
             {writing.title}
-            {!writing.isInternal && <span class="sr-only"> (opens in new tab)</span>}
+            {!writing.isInternal && (
+              <>
+                <sup class="external-link-icon" aria-hidden="true">
+                  [<span class="material-symbols-outlined">arrow_outward</span>]
+                </sup>
+                <span class="sr-only"> (opens in new tab)</span>
+              </>
+            )}
           </h3>
           <p>{writing.description}</p>
         </a>

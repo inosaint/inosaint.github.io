@@ -1,6 +1,6 @@
 ---
 title: "What is a product designer?"
-description: "Reflections from a decade of designing products"
+description: "Reflections from a decade of designing products and it means to be a product designer"
 date: "2025-01-01"
 image: "./squiggle-labels-outline.jpg"
 ---

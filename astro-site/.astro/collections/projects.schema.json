@@ -33,7 +33,8 @@
       },
       "required": [
         "title",
-        "description"
+        "description",
+        "year"
       ],
       "additionalProperties": false
     }
