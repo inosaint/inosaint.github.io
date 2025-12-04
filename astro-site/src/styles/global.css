@@ -83,7 +83,7 @@ h4 {
   font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 600;
-  margin: 0;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-text);
@@ -92,6 +92,10 @@ h4 {
 
 p {
   margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
 }
 
 strong,
@@ -682,7 +686,7 @@ footer {
   }
 
   body {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2rem;
     max-width: 100%;
   }
 
@@ -766,5 +770,16 @@ footer {
     margin: -1.5rem -1rem 1.5rem -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  /* Resume list mobile adjustments */
+  section ul {
+    padding-left: 0;
+  }
+
+  /* Resume header mobile - stack title and download */
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start !important;
   }
 }
