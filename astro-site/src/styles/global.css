@@ -430,11 +430,31 @@ figcaption {
   margin-bottom: 1.5rem;
 }
 
+.profile-container {
+  position: relative;
+  width: fit-content;
+}
+
+.postmark {
+  position: absolute;
+  width: 150px;
+  height: 75px;
+  top: -10px;
+  right: -40px;
+  pointer-events: none;
+}
+
 .profile-photo {
+  --r: 12px;
   width: 200px;
   height: 200px;
-  border-radius: 8px;
   object-fit: cover;
+  padding: var(--r);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  background:
+    radial-gradient(50% 50%, #0000 65%, #fff 67%) round
+    var(--r) var(--r) / calc(2 * var(--r)) calc(2 * var(--r));
+  box-sizing: content-box;
 }
 
 /* Section styles */
@@ -708,12 +728,10 @@ footer {
   }
 
   .profile-photo {
+    --r: 8px;
     width: 140px;
     height: 140px;
     margin: 0;
-    border-radius: 8px;
-    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.8),
-                0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .intro-text h1 {
