@@ -776,4 +776,10 @@ footer {
   section ul {
     padding-left: 0;
   }
+
+  /* Resume header mobile - stack title and download */
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
 }

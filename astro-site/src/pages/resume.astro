@@ -11,10 +11,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </nav>
 
-  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;">
+  <div class="resume-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; flex-wrap: wrap; gap: 0.5rem;">
     <h1 style="margin-bottom: 0;">Resume</h1>
-    <a href="/resume.pdf" download style="display: inline-flex; align-items: center; gap: 0.35rem;">
-      <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle; color: var(--color-primary); text-decoration: none;">download</span>
+    <a href="/resume.pdf" download style="display: inline-flex; align-items: center; gap: 0.35rem; text-decoration-color: var(--color-primary);">
+      <span class="material-symbols-outlined" style="font-size: 1rem; color: var(--color-primary); display: inline-block;">download</span>
       <span>Download</span>
     </a>
   </div>
