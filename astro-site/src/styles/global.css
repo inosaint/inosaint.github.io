@@ -441,6 +441,12 @@ figcaption {
     radial-gradient(50% 50%, #0000 65%, #fff 67%) round
     var(--r) var(--r) / calc(2 * var(--r)) calc(2 * var(--r));
   box-sizing: content-box;
+  mask-image:
+    radial-gradient(50% 50%, #000 65%, #0000 67%) round
+    var(--r) var(--r) / calc(2 * var(--r)) calc(2 * var(--r));
+  -webkit-mask-image:
+    radial-gradient(50% 50%, #000 65%, #0000 67%) round
+    var(--r) var(--r) / calc(2 * var(--r)) calc(2 * var(--r));
 }
 
 /* Section styles */
