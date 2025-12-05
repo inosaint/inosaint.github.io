@@ -554,7 +554,7 @@ footer {
 }
 
 .footer-line {
-  height: 12px;
+  height: 4px;
   width: 100%;
   background: repeating-linear-gradient(
     45deg,
@@ -567,8 +567,10 @@ footer {
     #ffffff 18px,
     #ffffff 24px
   );
+  /*
   border-top: 1px solid #d4af37;
   border-bottom: 1px solid #d4af37;
+  */
 }
 
 .footer-links-container {
