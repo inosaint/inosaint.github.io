@@ -554,9 +554,21 @@ footer {
 }
 
 .footer-line {
-  height: 3px;
-  background-color: var(--color-primary);
+  height: 12px;
   width: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #dc143c 0px,
+    #dc143c 6px,
+    #ffffff 6px,
+    #ffffff 12px,
+    #1e3a8a 12px,
+    #1e3a8a 18px,
+    #ffffff 18px,
+    #ffffff 24px
+  );
+  border-top: 1px solid #d4af37;
+  border-bottom: 1px solid #d4af37;
 }
 
 .footer-links-container {
