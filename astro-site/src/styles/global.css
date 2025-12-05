@@ -557,13 +557,13 @@ footer {
   height: 4px;
   width: 100%;
   background: repeating-linear-gradient(
-    45deg,
+    135deg,
     #dc143c 0px,
     #dc143c 6px,
     #ffffff 6px,
     #ffffff 12px,
-    #1e3a8a 12px,
-    #1e3a8a 18px,
+    #5B5FED 12px,
+    #5B5FED 18px,
     #ffffff 18px,
     #ffffff 24px
   );
