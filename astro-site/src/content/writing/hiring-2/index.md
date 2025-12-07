@@ -11,9 +11,9 @@ after being in the role of the hiring manager and co-designing Jiva's hiring pro
 
 ### 1. Your hiring process is a reflection of your culture
 
-The design hiring process isn't standardised. These days you'll see a variety of rounds; visual portfolios, take-home assignments, whiteboarding sessions, etc. The mix you choose isn't random; it's a *reflection* of your organisation's culture. You're designing a candidate's very first experience of how your team thinks and works.
+The design hiring process isn't standardised. These days you'll see a variety of rounds; visual portfolios, take-home assignments, whiteboarding sessions, etc. The mix you choose isn't random; it's a *reflection* of your organization's culture. You're designing a candidate's very first experience of how your team thinks and works.
 
-Different rounds signal different things. Asking for visual designs in a portfolio implies that your product team drives the flows and you need someone with strong visual craft. Take-home assignments (and their subsequent presentation) reveal the candidate's communication skills, which can be especially useful if your team works in a traditional "siloed" setup. Collaborative whiteboarding sessions show you how it feels to partner with them day-to-day but usually your organisation's designers work solo within their own teams.
+Different rounds signal different things. Asking for visual designs in a portfolio implies that your product team drives the flows and you need someone with strong visual craft. Take-home assignments (and their subsequent presentation) reveal the candidate's communication skills, which can be especially useful if your team works in a traditional "siloed" setup. Collaborative whiteboarding sessions show you how it feels to partner with them day-to-day but usually your organization's designers work solo within their own teams.
 
 None of these are inherently wrong. But if you are not mindful about your processes you end up unnecessarily making the candidate experience time consuming, anxiety-filled, and worse, you start evaluating candidates for the wrong set of attributes — a costly mistake that almost always leads to failure down the line. 
 <!-- (You can read about how we designed our product design hiring process at Jiva here.) -->
@@ -21,9 +21,9 @@ None of these are inherently wrong. But if you are not mindful about your proces
 
 ### 2. Today’s design team needs to be multi-faceted
 
-When I first started taking interviews (in 2015), my evaluation criteria naturally leaned toward a certain kind of product designer — usually someone whose strengths mirrored what **I** personally valued. That worked when every designer owned a single product end-to-end. But as the organisation grew, this approach started breaking down. Designers now had to work together, share problem spaces, and complement one another’s strengths rather than operate in isolation and we hadn't hired for that.
+When I first started taking interviews (in 2015), my evaluation criteria naturally leaned toward a certain kind of product designer — usually someone whose strengths mirrored what **I** personally valued. That worked when every designer owned a single product end-to-end. But as the organization grew, this approach started breaking down. Designers now had to work together, share problem spaces, and complement one another's strengths rather than operate in isolation and we hadn't hired for that.
 
-A better approach — and one I wish I had learnt earlier[^1] — is to step back and visualise your team’s skillset as a whole. One simple way to do this is by mapping your organisation’s design competencies onto a rough [spider chart or competency map](https://medium.com/shapingdesign/the-ux-spectrum-cb29f048faf9)[^2] and plotting each designer against it. It doesn’t need to be perfect; the point is to create a shared view of where your team is strong, where it’s weak, and if you’re overly dependent on the skills of a single person.  
+A better approach — and one I wish I had learnt earlier[^1] — is to step back and visualise your team's skillset as a whole. One simple way to do this is by mapping your organization's design competencies onto a rough [spider chart or competency map](https://medium.com/shapingdesign/the-ux-spectrum-cb29f048faf9)[^2] and plotting each designer against it. It doesn’t need to be perfect; the point is to create a shared view of where your team is strong, where it’s weak, and if you’re overly dependent on the skills of a single person.  
 
 ![UX Spectrum via Jason Mesut's Shaping Design series](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*Vi4kDiI5uLhlXJdztg7lwg.png)
 
@@ -36,7 +36,7 @@ In other words, what you need to realise is that you are not hiring an individua
 
 It’s called a design team for a reason. The product the user experiences should feel seamless, not like a patchwork of different personalities, preferences, or stylistic signatures. One of the biggest gaps in a skills-only evaluation is that it completely misses the *collaboration layer* of design: how someone shows up, how they listen, and how they work with others under pressure.  
 
-Your spider chart or competency map can show you strengths and weaknesses in craft, but it won’t tell you whether a candidate can actually work well with the rest of your organisation. That’s where cultural alignment matters. A designer who is stubborn, who refuses to take cross-functional feedback, or insists on “their way” will quickly become a bottleneck — no matter how talented they are.  
+Your spider chart or competency map can show you strengths and weaknesses in craft, but it won't tell you whether a candidate can actually work well with the rest of your organization. That’s where cultural alignment matters. A designer who is stubborn, who refuses to take cross-functional feedback, or insists on “their way” will quickly become a bottleneck — no matter how talented they are.  
 
 Getting people who play well together is one of the most underrated aspects of building a high-performing design org. A difficult personality erodes trust, slows down execution, and adds unnecessary emotional weight on everyone else — a mess that you, as the design manager, will spend a lot of time and energy sorting out.  
 
