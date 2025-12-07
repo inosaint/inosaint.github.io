@@ -1,5 +1,5 @@
 ---
-title: Team rituals and culture of the GoMerchant team
+title: Team rituals and culture of the GoMerchant Design Team
 description: Three meetings that helped us work remote and stay sane during the COVID pandemic
 date: "2021-08-19"
 image: './zoom.png'
