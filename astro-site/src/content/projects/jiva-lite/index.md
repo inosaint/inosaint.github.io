@@ -10,14 +10,14 @@ image: "./jivalite.jpg"
 
 When I joined Jiva in 2022, we had been leveraging collectors in rural areas to facilitate our business model.
 
-The harvest of a smallholder corn farmer is typically around 2.5k-3k tons. The economics of sending it to the buyer isnt economically viable for such a small quantity when you factor in labour cost & transport cost. Additionally the ability to evaluate quality at the farmer level is approximate.
+The harvest of a smallholder corn farmer is typically around 2.5k-3k tons. The economics of sending it to the buyer isn't economically viable for such a small quantity when you factor in labour cost & transport cost. Additionally the ability to evaluate quality at the farmer level is approximate.
 Collectors helped fill this gap by aggregating corn for dispatch from multiple farmers and using moisture meters to estimate quality of the corn. 
 
 [Pricing Graphic]
 [Corn quality (and pricing) is measured in terms of the moisture content of the corn kernels]
 
 Jiva’s business model was working with buyers to acquire purchase orders for the corn and coordinate with the collectors to dispatch to feedmills to get the best price. 
-This wasnt a disruptionary model. The concept of middlemen have always existed in agricultural systems. What was different was the concept of a single entity who’s presence across provinces helped get better prices. 
+This wasn't a disruptionary model. The concept of middlemen have always existed in agricultural systems. What was different was the concept of a single entity who's presence across provinces helped get better prices. 
 Our Collectors earned commission for selling through us and our Farmers got the best price. 
 
 But the question remained.. **could we do even better?** and that's where Jiva Lite came in.
@@ -95,10 +95,10 @@ On August 23rd, Saripuddin (seen in the cover image) became the first farmer to 
 >“I made over IDR 3,000,000 with my truck! I invite all my friends to send trucks using Jiva Lite.”
 > — Saripuddin
 
-Saripuddin immediately saw the value Jiva Lite brought to him and instantly became our ambasaddor convincing multiple farmers in his village to send us corn over the year.
+Saripuddin immediately saw the value Jiva Lite brought to him and instantly became our ambassador convincing multiple farmers in his village to send us corn over the year.
 Within a month, we hit the milestone of 50 MT and started thinking of the next iteration for Jiva Lite.
 
-Personally, the first transaction was a feeling unlike any other that my body had experienced. That day, I was unable to act rationally because I was completely blown away by the fact that 14 days after release we secured our first farmer and he saw the value we were providingx. 
+Personally, the first transaction was a feeling unlike any other that my body had experienced. That day, I was unable to act rationally because I was completely blown away by the fact that 14 days after release we secured our first farmer and he saw the value we were providing. 
 There was a lot of time and effort that went into reaching this exact point and it felt glorious.
 
 ## Learnings from the Pilot
@@ -150,7 +150,7 @@ We decided to look if any pre-existing solutions would help us solve this. After
 - We uncovered certain systemic issues like Farmer debt, Cash payments (to avoid tax), Drossing systems. We attempted to solve Drossing (separating Corn kernels from Cob) by procuring and 
 renting out drossing machines and even built a simple advertising based funnel to acquire potential customers for this service. but we couldn't solve for the others with our budgetary constraints.
 
-- Though I have attempted to write out the project in detail, there is still a lot that I feel I have left out because building a product and running it takes you in so many different directions. You encounter verious problems and inefficiencies and don't always end up solving them.
+- Though I have attempted to write out the project in detail, there is still a lot that I feel I have left out because building a product and running it takes you in so many different directions. You encounter various problems and inefficiencies and don't always end up solving them.
 The experience takes a lot out of you but in the end, I am glad I got the opportunity to build a product with this level of ownership.
 
 ## Impact

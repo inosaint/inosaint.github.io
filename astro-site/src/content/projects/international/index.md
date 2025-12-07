@@ -24,7 +24,7 @@ This project feeds back to the weekly SOS(Scrum of Scrums) that is run by the Pr
 
 When your product is designed to support a language which only uses latin glyphs, then it's easy to take it to other countries with minimal changes. However with GoBiz, we were designed to support the local language script i.e., Thai in Thailand, Vietnamese in Vietnam and Simplified Chinese in Singapore. This means that the font you use needs to support these scripts. Our brand typeface, Maison Neue, unfortunately wasn't able to support these scripts and the application defaulted to using system fonts. In Thai, this led to the font size and styling getting affected on the screen and we noticed that every merchant we visited during our pilot used accessibility settings to increase the font size breaking the UI.
 
-In Vietnamese, missing glyphs caused the text to awkwardly renders the missing glyph in another format.
+In Vietnamese, missing glyphs caused the text to awkwardly render the missing glyph in another format.
 
 Maison doesn't support the following vietnamese glyphs ờ ư ằ ố ế ữ ả ẻ ễ ỉ ỏ ủ ư ứ ừ ử ữ ự ỷ
 
