@@ -28,14 +28,14 @@ Maison Neue does not support several important Vietnamese glyphs such as ờ, ư
 
 To address this, I worked with the brand and design system leads to select a reliable fallback font. We chose Noto Sans, which is free, widely supported, and covered all the scripts we needed. Several months after the Thai launch, we also learned that printing receipts would require additional development to support Thai and Vietnamese fonts correctly.
 
-##### p.s. “wkwkwkwk” and “5555555” are common ways of typing laughter in Indonesian and Thai texting culture.
+##### P.S. "wkwkwkwk" and "5555555" are common ways of typing laughter in Indonesian and Thai texting culture.
 
-<div class="impact-images" style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem;">
+<div class="impact-images" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
 
 ![](./dogfooding.png)
 
 ![](./user-behaviour.png)
-    
+
 ![](./competitors.png)
 
 </div>
@@ -52,12 +52,12 @@ Developers manage strings using “keys,” and we needed a way to map each key 
 ![How we managed copy in Google Sheets](./copy-sheets.png)
 
 We also wanted screen references to help reviewers see copy in context. This was especially useful for UX writers in other countries, as well as QA and designers who did not speak the local languages. The release of Google Sheets’ “Insert picture in cell” feature was a huge help for this.
-Gojek eventually moved to using [Lokalise](https://lokalise.com) for it's copy management.
+Gojek eventually moved to using [Lokalise](https://lokalise.com) for its copy management.
 
 ### Learnings
 Scaling GoBiz across Thailand, Vietnam, and Singapore taught me that localisation is never something you add after the product is built. Even after launch, every new feature needs to be evaluated through the lens of each country. The same care you put into the initial rollout has to continue, otherwise the product quietly drifts back toward the needs of the base market.
 
-There’s also an organisational reality that often gets ignored. Supporting multiple markets properly sometimes requires reshaping how teams work, how decisions are made, and who is involved in the roadmap. But these shifts take time, and they rarely get prioritised unless there is a clear business outcome tied to them.
+There's also an organizational reality that often gets ignored. Supporting multiple markets properly sometimes requires reshaping how teams work, how decisions are made, and who is involved in the roadmap. But these shifts take time, and they rarely get prioritised unless there is a clear business outcome tied to them.
 
 At Gojek, this misalignment became clear. Each international market operated under its own brand and leadership, which meant we couldn’t consistently involve those teams in product planning. As a result, our roadmaps naturally skewed toward Indonesia, and we only built out some must-have features for other countries.  
 
