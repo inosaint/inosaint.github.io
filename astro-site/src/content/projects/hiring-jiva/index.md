@@ -2,7 +2,7 @@
 title: Hiring Product Designers at Jiva
 description: An overview of the product design hiring process at Jiva that we used to scale to 11+ designers
 year: "2022-2024"
-status: 'published'
+status: 'draft'
 
 ---
 

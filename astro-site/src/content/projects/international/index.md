@@ -4,7 +4,7 @@ description: What I learnt from launching the app for different countries
 year: "2021"
 company: "Gojek"
 image: "./thai-resto.png"
-
+status: 'published'
 ---
 
 At Practo, I had my first experience designing for markets outside of India. Singapore used to be a major market for the Practo Ray product, and features like Tooth Maps were developed specifically for their dentists. In 2015, when we started rolling out the doctor app to Malaysia, Indonesia, Philippines and Brazil, the major changes we made to the product stopped at currency and number formatting.
@@ -14,6 +14,8 @@ However when I had to port the GoBiz app to Thailand, I got to learn a lot.
 ### Collaboration and Organization
 
 GoBiz is a platform with other teams contributing to it so when we prepare for a new country launch, getting every team who is part of the launch involved is crucial.
+
+![The GoBiz International Design template in Asana](./asana.png)
 
 Given that the features and the needs may differ across countries, I wanted to organize our projects separately on Abstract. Moreover, each feature/module needs to be a separate sketch file within the project instead of pages within the same sketch file to help manage the size and reduce the interference from other changes in the Master.
 

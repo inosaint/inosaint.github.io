@@ -5,6 +5,7 @@ providers using Practo products"
 year: "2015-2016"
 company: "Practo"
 image: "./practo-pro.png"
+status: 'draft'
 ---
 
 ## Overview
