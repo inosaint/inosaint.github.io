@@ -6,8 +6,6 @@ company: "Jiva"
 image: "./jivalite.jpg"
 ---
 
-<!-- Add your project content here -->
-
 When I joined Jiva in 2022, we had been leveraging collectors in rural areas to facilitate our business model.
 
 The harvest of a smallholder corn farmer is typically around 2.5k-3k tons. The economics of sending it to the buyer isn't economically viable for such a small quantity when you factor in labour cost & transport cost. Additionally the ability to evaluate quality at the farmer level is approximate.
@@ -156,18 +154,13 @@ The experience takes a lot out of you but in the end, I am glad I got the opport
 ## Impact
 In the one year of operation, we scaled Jiva Lite from 0 to 600 registered users who sold 4102 MT of corn. With a margin of 100 IDR/kg, we generated around 24k USD of gross contribution (Additional earnings from sales from trading this corn added an additional 200 IDR/kg, which has not been counted here)
 
-<<<<<<< Updated upstream
-<div class="impact-images" style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem; margin: 2rem 0;">
+<div class="impact-images" style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem;">
+
 
 ![](./jl-impact-1.png)
 
 ![](./jl-impact-2.png)
 
-=======
-<div style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem; margin: 2rem 0;">
-  <img src="./jl-impact-1.png" alt="Slack Screenshot showing improvements in earnings for farmers" style="width: 100%; height: auto;" />
-  <img src="./jl-impact-2.png" alt="Slack Screenshot showing improvements in earnings for farmers, 2" style="width: 100%; height: auto;" />
->>>>>>> Stashed changes
 </div>
 
 Behaviourally though, we were about to bring meaningful improvements into the lives of the Farmers in a few provinces of South Sulawesi. Most farmers who transacted with us made about 2.5-3 million IDR(~$180 USD) more than they would otherwise.
