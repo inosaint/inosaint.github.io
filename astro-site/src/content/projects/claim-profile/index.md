@@ -16,7 +16,7 @@ This accounts for barely 50% of coverage in our T6 cities. So during the Q3-Q4 o
 objective of the unified app; Practo Partner, was to get more profiles published and live.
 
 Around November 2016, to get a profile live on Practo.com, a doctor needed to fill in 20 fields which
-were seperated into 2 forms. We had taken the approach as an informational option but realised that
+were separated into 2 forms. We had taken the approach as an informational option but realized that
 lot of profiles were not being completed and we did not communicate what was necessary to go live to
 a doctor within the app.
 
@@ -25,7 +25,7 @@ a doctor within the app.
 
 ## Understanding the problem
 
-As seen above, we did communicate that a profile was incomplete but the interface didnt
+As seen above, we did communicate that a profile was incomplete but the interface didn't
 communicate what was necessary for a doctor to go live. Our completion data showed us that major
 dropoffs occurred during profile completion, proof upload and clinic profile addition.
 
