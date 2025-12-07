@@ -180,6 +180,14 @@ sup a {
   line-height: 1.6;
 }
 
+/* Timestamp styles */
+.timestamp {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
 /* Image caption/figure styles */
 figure.image-figure {
   margin: 2rem 0;

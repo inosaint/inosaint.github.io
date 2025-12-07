@@ -69,6 +69,11 @@ const writings = [
     isInternal: false
   }))
 ].sort((a, b) => b.date.getTime() - a.date.getTime());
+
+// Date formatter function
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
 ---
 
 <BaseLayout title="Writing and Talks - Kenneth Mark Dsouza">
@@ -121,6 +126,7 @@ const writings = [
           )}
         </h3>
         <p>{writing.description}</p>
+        <p class="timestamp">{formatDate(writing.date)}</p>
       </a>
     ))}
   </div>
