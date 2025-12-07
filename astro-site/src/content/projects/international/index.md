@@ -1,6 +1,6 @@
 ---
-title: Learnings from going International
-description: What I learnt from launching the app for different countries
+title: Taking GoBiz to new international frontiers
+description: What I learnt from launching the GoBiz app for different Southeast Asian Countries
 year: "2021"
 company: "Gojek"
 image: "./thai-resto.png"
