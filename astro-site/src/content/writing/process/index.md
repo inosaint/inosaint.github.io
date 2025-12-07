@@ -2,12 +2,11 @@
 title: Beyond building processes
 description: Team process and documentation
 date: "2021-08-19"
+image: './process-1.png'
 ---
-
-
 A considerable amount of time in 'Year 1' of being a manager has been about setting up artifacts and processes. I was lucky to be part of an organization that had a documentation culture in its DNA. This was partly because we had Program Managers embedded within each team. This meant that Jira, Confluence and Asana were setup and maintained religiously, with weekly feature spec reviews [FSR] and ProdTech meetings to keep these upto date.
 
-### Setting up Documentation spaces
+#### Setting up Documentation spaces
 
 I find design documentation to be a critical part of the design process. I recommend every designer takes the time to document the project because apart from being a design artifact, that serves as a single point of truth, it also helps them when they have to write their performance reviews, promotion proposals and build their portfolio.
 

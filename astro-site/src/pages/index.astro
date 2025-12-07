@@ -87,6 +87,11 @@ const sortedProjects = allProjects.sort((a, b) => {
 
 // Get the 2 most recent projects for the home page
 const projects = sortedProjects.slice(0, 2);
+
+// Date formatter function
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
 ---
 
 <BaseLayout>
@@ -197,6 +202,7 @@ const projects = sortedProjects.slice(0, 2);
             )}
           </h3>
           <p>{writing.description}</p>
+          <div class="post-header-meta" style="margin-top: 16px;">{formatDate(writing.date)}</div>
         </a>
       ))}
     </div>
