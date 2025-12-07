@@ -1,5 +1,5 @@
 ---
-title: Beyond building processes
+title: Beyond building processes at GoMerchant Design Team
 description: Team process and documentation
 date: "2021-08-19"
 image: './process-1.png'
