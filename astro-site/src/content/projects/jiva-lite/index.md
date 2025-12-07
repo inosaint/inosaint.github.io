@@ -158,9 +158,9 @@ In the one year of operation, we scaled Jiva Lite from 0 to 600 registered users
 
 <div class="impact-images" style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem; margin: 2rem 0;">
 
-![Jiva Lite registered users growth](./jl-impact-1.png)
+![](./jl-impact-1.png)
 
-![Jiva Lite corn volume traded](./jl-impact-2.png)
+![](./jl-impact-2.png)
 
 </div>
 
