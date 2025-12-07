@@ -5,11 +5,7 @@ doctors on Practo.com"
 year: "2016-2017"
 company: "Practo"
 image: "./practo-profile.png"
-status: draft
-<<<<<<< HEAD:astro-site/src/content/projects/claim-profile /index.md
-
-=======
->>>>>>> 51e5f64 (Add status field for draft/published control):astro-site/src/content/projects/claim-profile/index.md
+status: 'draft'
 ---
 
 ## Overview

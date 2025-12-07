@@ -2,6 +2,7 @@
 title: Thoughts on Hiring
 description: Best practices for hiring designers based on my experiences hiring over the last 6 years
 date: "2021-08-19"
+image: './design-keliling.jpg'
 ---
 
 
@@ -29,3 +30,6 @@ I gave a short talk about hiring designers at a friend's startup in 2018 which c
 5. **Scaling the process:**
    If you have a lot of reqs to fill, you will need to get others to take part in the interview process.
    Playbooks and evaluation templates help scale the process while maintaining quality.
+   
+<p class="attribution"> Cover image: Taken at the end of the Bandung edition of <a href="https://www.linkedin.com/posts/trinugraha_gojekdesainkeliling-activity-6594891829370556416--yhf">Gojek Desain Keliling</a>, Gojek's attempt to recruit designers in a sort of reality contest where winners would get golden tickets
+   and a chance to be a part of the Gojek design team.</p>

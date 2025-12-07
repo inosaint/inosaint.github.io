@@ -1,6 +1,6 @@
 ---
 title: "What is a product designer?"
-description: "Reflections from a decade of designing products"
+description: "After a decade of designing products, I decided to take a attempt describing the role and qualities of a product designer"
 date: "2025-01-01"
 image: "./squiggle-labels-outline.jpg"
 ---
@@ -43,10 +43,13 @@ This is a quality which is rare to find. I feel this is because most designers t
 
 * Job descriptions could be honest up front of the kind of designer that they are looking for rather than getting ChatGPT to write it. There is no point lying about this, infact it just takes you lot longer to find someone.
 
+
 [^1]: **John Maeda's Design in Tech report 2015, Slide 4** https://www.slideshare.net/slideshow/design-in-tech-report-2015-45858974/45858974
 
 [^2]: **Silicon Valley "didn't think a designer could build a company" says Airbnb co-founder Brian Chesky** https://www.dezeen.com/2014/01/28/silicon-valley-didnt-think-a-designer-could-build-a-company-interview-airbnb-co-founder-brian-chesky/
 
 [^3]: **Pablo Stanley, Collection of Random Comics** https://thedesignteam.io/collection-of-random-comics-d66f32ee9c52
 
+
+<p class="attribution"> This post was my response to Sidu's <a href="https://sidu.in/essays/hiring-product-managers.html">Hiring Product Managers</a> and John Allspaw's <a href="https://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer/">On being a Senior Engineer</a>.</p>
 <p class="attribution"> Attribution: Cover image courtesy <strong>'The Process of Design Squiggle' by Damien Newman, thedesignsquiggle.com</strong> </p>
