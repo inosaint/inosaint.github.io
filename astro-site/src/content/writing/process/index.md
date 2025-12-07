@@ -8,7 +8,7 @@ A considerable amount of time in 'Year 1' of being a manager has been about sett
 
 #### Setting up Documentation spaces
 
-I find design documentation to be critical part of the design process. I recommend every designer takes the time to document the project because apart from being a design artifact, that serves as a single point of truth, it also helps them when they have to write their performance reviews, promotion proposals and build their portfolio.
+I find design documentation to be a critical part of the design process. I recommend every designer takes the time to document the project because apart from being a design artifact, that serves as a single point of truth, it also helps them when they have to write their performance reviews, promotion proposals and build their portfolio.
 
 I do not like Google Docs for documentation. Documentation spaces need to be a searchable wiki and ironically Google Docs is poor at providing this. At Practo, we already had Atlassian's Confluence setup when I joined, and at Gojek, Maji setup our Confluence spaces in 2019 and then the two of us started structuring and documenting our knowledge about the product and its processes. I created a design documentation template based on the product feature spec template and advocated for it.
 
@@ -22,7 +22,7 @@ However, we faced a problem with adoption of these processes. We lacked a progra
 #### More meetings in the calendar
 
 When your calendar is already full of meetings, you feel like staying away from setting up any more that will take away whatever little 'time for focus work' that is left in it. But given our problem, this seemed to be the most effective way to get things working.
-Our team was a 3 level hierarchy so each lead now had to setup two additional cadences into their calendar. One was a common stream leads cadence where each stream lead would come prepared to the biweeekly meeting with a progress update (which would be posted biweekly to the Asana board) Maji worked on a template for this.
+Our team was a 3 level hierarchy so each lead now had to setup two additional cadences into their calendar. One was a common stream leads cadence where each stream lead would come prepared to the biweekly meeting with a progress update (which would be posted biweekly to the Asana board) Maji worked on a template for this.
 
 The other meeting was with their stream where each of their reports could come with a similarly formatted update. This meeting helped stream leads prepare them for the stream leads meeting.
 You can also make these meetings async if everyone is diligent. The updates were a small part of the biweekly leads meeting.
