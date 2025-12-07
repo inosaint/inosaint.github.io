@@ -66,21 +66,21 @@ We offered farmers the option of selecting between 3 feedmills based on their co
 
 ### Preparing for Go-To-Market
 
-**Onboarding internal teams:**
+#### Onboarding internal teams:
 We ran sessions with our field agents, customer service agents and marketing teams to onboard them onto the pilot project. I prepared an "objection handling" (a FAQ document) for CX team to use for answering any queries they may receive on their channels.
 Speaking to our on-ground field agents helped us address their concerns about Jiva Lite and its impact on their operations.
 
-**Selecting a region for piloting:**
+#### Selecting a region for piloting:
 We had to negotiate with stakeholders for selecting regions due to concerns around our existing micro-collector density as well as time of the year and , we decided to go with the regencies closest to Makassar (South Sulawesi) ; Maros and Takalar. 
 This meant that the distances to be travelled by the farmers to our buyers were just a few hours away.
 
-**On field marketing:**
+#### On field marketing:
 We got 1 field marketer, Erwin, on loan from the growth team for the efforts on on-ground canvassing by meeting farmer groups (Gapoktans).
 
-**Website:**
+#### Jiva Lite Website:
 We built a website so that we could provide a social proof that Jiva Lite was infact an offering from Jiva and not a scam. The website had prices which we manually updated and directed users to the Whatsapp number.
 
-**Doing things that don't scale:**
+#### Doing things that don't scale:
 We didn't build an in-flow way to add a farmer's bank account details. We resorted instead to use a manual system of getting the information from the farmer and getting CX team to add them to the system. This enabled us to ship faster and prevented user error from entering the wrong information. Where possible we pre-filled dummy data (e.g., user address) in the backend because we didnt want to build without valdiating our idea at this stage.
 
 ## Post Launch of the MVP
@@ -100,15 +100,19 @@ Personally, the first transaction was a feeling unlike any other that my body ha
 There was a lot of time and effort that went into reaching this exact point and it felt glorious.
 
 ## Learnings from the Pilot
-**Selling breakdown:** we made a simple google sheets template to generate a breakdown that we sent to every farmer which helped them understand how much they were earning and what was the quality of their corn.
+#### Selling breakdown:
+We made a simple google sheets template to generate a breakdown that we sent to every farmer which helped them understand how much they were earning and what was the quality of their corn.
 
-**Backend Issues:** We had not handled user creation of churned/deleted users and this is what caused our first transaction to fail. (Murphy's Law, amirite?)
+#### Backend Issues: 
+We had not handled user creation of churned/deleted users and this is what caused our first transaction to fail. (Murphy's Law, amirite?)
 
 ![spiderkaran](./spiderkaran.png)
 
-**Changing behaviour isn't easy:** When farmers are used to dealing with a broken system, 'a too-good to be true' deal like Jiva Lite feels unrealistic. Furthermore, farmers and local buyers tend to have a personal relationship that isnt easy to overcome. At the end of the day, Jiva is an external entity while the buyer may be a neighbour, a relative or their money lender.
+#### Changing behaviour isn't easy:
+When farmers are used to dealing with a broken system, 'a too-good to be true' deal like Jiva Lite feels unrealistic. Furthermore, farmers and local buyers tend to have a personal relationship that isnt easy to overcome. At the end of the day, Jiva is an external entity while the buyer may be a neighbour, a relative or their money lender.
 
-**Flow still complex:** Without our on-field agents, getting users to navigate Whatsapp Flows wasnt easy. Whatsapp flows may seem simple to us, but for our target users, they were complex. We realized that just because they used Facebook and Whatsapp didn't mean that they were familiar navigating similar interfaces. We needed to re-do our flow.
+#### Flow still complex:
+Without our on-field agents, getting users to navigate Whatsapp Flows wasnt easy. Whatsapp flows may seem simple to us, but for our target users, they were complex. We realized that just because they used Facebook and Whatsapp didn't mean that they were familiar navigating similar interfaces. We needed to re-do our flow.
 
 ## Building V2
 
