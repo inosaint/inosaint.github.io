@@ -156,6 +156,11 @@ The experience takes a lot out of you but in the end, I am glad I got the opport
 ## Impact
 In the one year of operation, we scaled Jiva Lite from 0 to 600 registered users who sold 4102 MT of corn. With a margin of 100 IDR/kg, we generated around 24k USD of gross contribution (Additional earnings from sales from trading this corn added an additional 200 IDR/kg, which has not been counted here)
 
+<div style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem; margin: 2rem 0;">
+  <img src="./jl-impact-1.png" alt="Jiva Lite Impact Metric 1" style="width: 100%; height: auto;" />
+  <img src="./jl-impact-2.png" alt="Jiva Lite Impact Metric 2" style="width: 100%; height: auto;" />
+</div>
+
 Behaviourally though, we were about to bring meaningful improvements into the lives of the Farmers in a few provinces of South Sulawesi. Even after Jiva Lite shut down, a few of the farmers continued to deal directly with the collection centres and improve their collective earnings.
 
 ## Team
