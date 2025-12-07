@@ -1,7 +1,7 @@
 ---
 title: "What every young designer should know"
 description: "Advice for product designers fresh out of college or the first hire to a company"
-date: "2015-05-15"
+date: "2016-07-25"
 url: "https://uxdesign.cc/what-every-young-designer-should-know-abb2af79f43e"
 status: 'published'
 ---
