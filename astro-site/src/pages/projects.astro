@@ -34,15 +34,17 @@ const projects = allProjects.sort((a, b) => {
             src={project.data.image}
             alt={project.data.title}
             class="card-image"
-            width={360}
-            height={200}
+            width={450}
+            height={250}
             densities={[1.5, 2]}
           />
         ) : (
           <img
-            src="https://placehold.co/360x200"
+            src="https://placehold.co/450x250"
             alt={project.data.title}
             class="card-image"
+            width="450"
+            height="250"
           />
         )}
         <h3>{project.data.title}</h3>

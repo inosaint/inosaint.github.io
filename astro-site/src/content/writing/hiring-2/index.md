@@ -6,14 +6,14 @@ status: 'published'
 image: './whiteboard.JPG'
 ---
 
-There are lot of opinions out there about hiring. [Part 1](https://kenneth.dsouza.im/writing/hiring/) was written in 2020-21, when I was on interview panels for product design and product management. Whereas Part 2 consists of my reflections 
+There are lot of opinions out there about hiring. [Part 1](https://kenneth.dsouza.im/writing/hiring/) was written in 2020-21, when I was on interview panels for product design and product management. Whereas Part 2 consists of my reflections
 after being in the role of the hiring manager and co-designing Jiva's hiring process.
 
 ### 1. Your hiring process is a reflection of your culture
 
-The design hiring process isn’t standardised. These days you’ll see a variety of rounds; visual portfolios, take-home assignments, whiteboarding sessions, etc. The mix you choose isn’t random; it’s a *reflection* of your organisation’s culture. You’re designing a candidate’s very first experience of how your team thinks and works.
+The design hiring process isn't standardised. These days you'll see a variety of rounds; visual portfolios, take-home assignments, whiteboarding sessions, etc. The mix you choose isn't random; it's a *reflection* of your organisation's culture. You're designing a candidate's very first experience of how your team thinks and works.
 
-Different rounds signal different things. Asking for visual designs in a portfolio implies that your product team drives the flows and you need someone with strong visual craft. Take-home assignments (and their subsequent presentation) reveal the candidate’s communication skills, which can be especially useful if your team works in a traditional “siloed” setup. Collaborative whiteboarding sessions show you how it feels to partner with them day-to-day but usually your organisation's designers work solo within their own teams.
+Different rounds signal different things. Asking for visual designs in a portfolio implies that your product team drives the flows and you need someone with strong visual craft. Take-home assignments (and their subsequent presentation) reveal the candidate's communication skills, which can be especially useful if your team works in a traditional "siloed" setup. Collaborative whiteboarding sessions show you how it feels to partner with them day-to-day but usually your organisation's designers work solo within their own teams.
 
 None of these are inherently wrong. But if you are not mindful about your processes you end up unnecessarily making the candidate experience time consuming, anxiety-filled, and worse, you start evaluating candidates for the wrong set of attributes — a costly mistake that almost always leads to failure down the line. 
 <!-- (You can read about how we designed our product design hiring process at Jiva here.) -->

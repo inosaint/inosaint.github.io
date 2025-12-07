@@ -43,6 +43,7 @@ const fullImageUrl = new URL(image, siteUrl).href;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/liter" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
   </head>
   <body>
     <div class="container">
@@ -71,7 +72,9 @@ const fullImageUrl = new URL(image, siteUrl).href;
     <div id="colophon-modal" class="modal">
       <div class="modal-content">
         <button class="modal-close" id="modal-close">&times;</button>
-        <h2>Colophon</h2>
+        <h4>Colophon</h4>
+        
+        <br>
 
         <div class="colophon-section">
           <h3>Technology</h3>
@@ -81,7 +84,13 @@ const fullImageUrl = new URL(image, siteUrl).href;
         <div class="colophon-section">
           <h3>Typography</h3>
           <p><strong>Headings:</strong> <a href="https://fonts.google.com/specimen/Hanken+Grotesk" target="_blank" rel="noopener noreferrer">Hanken Grotesk</a> by Alfredo Marco Pradil</p>
-          <p><strong>Body:</strong> <a href="https://fonts.cdnfonts.com/css/liter" target="_blank" rel="noopener noreferrer">Liter</a></p>
+          <p><strong>Body:</strong> <a href="https://fonts.cdnfonts.com/css/liter" target="_blank" rel="noopener noreferrer">Liter by Anton Skugarov, Alexandr Ivanin</a></p>
+        </div>
+        
+        <div class="colophon-section">
+            coded with
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg" alt="Claude AI" class="claude-logo">
+            <span style="font-weight: 600; color: var(--text);">Claude</span>
         </div>
       </div>
     </div>

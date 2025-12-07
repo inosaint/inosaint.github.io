@@ -16,7 +16,7 @@ const projects = defineCollection({
     title: z.string(),
     description: z.string(),
     image: image().optional(),
-    year: z.string().optional(),
+    year: z.string(), // Required: format "YYYY" or "YYYY-YYYY"
     company: z.string().optional(),
     status: z.enum(['draft', 'published']).default('published'),
   }),
