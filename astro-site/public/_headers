@@ -1,0 +1,16 @@
+# Security headers for Cloudflare Pages / Netlify
+# Note: GitHub Pages does not support _headers files
+# To enable these headers, use Cloudflare Pages or Netlify
+
+/*
+  # Strict Transport Security (HSTS)
+  # Enforces HTTPS connections for 1 year, including subdomains
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # X-Content-Type-Options
+  # Prevents MIME-type sniffing
+  X-Content-Type-Options: nosniff
+
+  # Additional recommended headers
+  X-XSS-Protection: 1; mode=block
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
