@@ -4,21 +4,22 @@ description: "Redesigning the Sahabat Jiva Android app to fit the user's mental 
 year: "2022-2023"
 company: "Jiva"
 image: "./sjhome.webp"
+status: 'draft'
 ---
 
 <!-- Add your project content here -->
 
 When I joined Jiva in 2022, we had been leveraging collectors in rural areas to facilitate our business model.
 
-The harvest of a smallholder corn farmer is typically around 2.5k-3k tons. The economics of sending it to the buyer isnt economically viable for such a small quantity when you factor in labour cost & transport cost. Additionally the ability to evaluate quality at the farmer level is approximate. 
+The harvest of a smallholder corn farmer is typically around 2.5k-3k tons. The economics of sending it to the buyer isn't economically viable for such a small quantity when you factor in labour cost & transport cost. Additionally the ability to evaluate quality at the farmer level is approximate. 
 
 [Pricing Graphic]
 [Corn quality (and pricing) is measured in terms of the moisture content of the corn kernels]
 
 Collectors helped fill this gap by aggregating corn for dispatch from multiple farmers and using moisture meters to estimate quality of the corn. 
 
-Jiva’s business model was working with buyers to acquire purchase orders for the corn and coordinate with the collectors to dispatch to feedmills to get the best price. 
-This wasnt a disruptionary model. The concept of middlemen have always existed in agricultural systems. Jiva and it's Collectors operated at a country level scale that hadn't been tried before. 
+Jiva's business model was working with buyers to acquire purchase orders for the corn and coordinate with the collectors to dispatch to feedmills to get the best price.
+This wasn't a disruptionary model. The concept of middlemen have always existed in agricultural systems. Jiva and it's Collectors operated at a country level scale that hadn't been tried before. 
 The Sahabat Jiva android app was used by our Collectors to manage their Harvest Procurement, their Input sales (In the Agriculture business; Seeds, Chemicals, Fertilizers, Equipments are collectively termed as Inputs) and view their Earnings.
 
 ## Challenge

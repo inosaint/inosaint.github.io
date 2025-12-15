@@ -3,10 +3,10 @@ title: Designing the Inbox experience for GoBiz
 description: How we designed the in-app comms channel
 year: "2021"
 company: "Gojek"
-
+status: 'draft'
 ---
 
-The Chat SDK was built to support products wanting to integrate chat into their flows. However like many other platformized products, they end up being looked as solutions for use cases they were not designed for. The GoBiz inbox requirement wasn't my first experience with dog fooding, but it was one that I was able to influence positively for the benefit of the users.
+The Gojek Chat SDK was built to support products wanting to integrate chat into their flows. However like many other platformized products, they end up being looked as solutions for use cases they were not designed for. The GoBiz inbox requirement wasn't my first experience with dog fooding, but it was one that I was able to influence positively for the benefit of the users.
 
 We wanted to build an Inbox, an in-app channel for notifying our users. We just needed one-way communication. I do not understand the reason behind why product pushed to use the SDK, despite the arguments that the SDK wasn't able to support our web product and wasn't designed to communicate business updates.
 

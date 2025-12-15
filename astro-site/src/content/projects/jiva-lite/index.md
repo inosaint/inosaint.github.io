@@ -6,18 +6,16 @@ company: "Jiva"
 image: "./jivalite.jpg"
 ---
 
-<!-- Add your project content here -->
-
 When I joined Jiva in 2022, we had been leveraging collectors in rural areas to facilitate our business model.
 
-The harvest of a smallholder corn farmer is typically around 2.5k-3k tons. The economics of sending it to the buyer isnt economically viable for such a small quantity when you factor in labour cost & transport cost. Additionally the ability to evaluate quality at the farmer level is approximate.
+The harvest of a smallholder corn farmer is typically around 2.5k-3k tons. The economics of sending it to the buyer isn't economically viable for such a small quantity when you factor in labour cost & transport cost. Additionally the ability to evaluate quality at the farmer level is approximate.
 Collectors helped fill this gap by aggregating corn for dispatch from multiple farmers and using moisture meters to estimate quality of the corn. 
 
 [Pricing Graphic]
 [Corn quality (and pricing) is measured in terms of the moisture content of the corn kernels]
 
 Jiva’s business model was working with buyers to acquire purchase orders for the corn and coordinate with the collectors to dispatch to feedmills to get the best price. 
-This wasnt a disruptionary model. The concept of middlemen have always existed in agricultural systems. What was different was the concept of a single entity who’s presence across provinces helped get better prices. 
+This wasn't a disruptionary model. The concept of middlemen have always existed in agricultural systems. What was different was the concept of a single entity who's presence across provinces helped get better prices. 
 Our Collectors earned commission for selling through us and our Farmers got the best price. 
 
 But the question remained.. **could we do even better?** and that's where Jiva Lite came in.
@@ -68,21 +66,21 @@ We offered farmers the option of selecting between 3 feedmills based on their co
 
 ### Preparing for Go-To-Market
 
-**Onboarding internal teams:**
+#### Onboarding internal teams:
 We ran sessions with our field agents, customer service agents and marketing teams to onboard them onto the pilot project. I prepared an "objection handling" (a FAQ document) for CX team to use for answering any queries they may receive on their channels.
 Speaking to our on-ground field agents helped us address their concerns about Jiva Lite and its impact on their operations.
 
-**Selecting a region for piloting:**
+#### Selecting a region for piloting:
 We had to negotiate with stakeholders for selecting regions due to concerns around our existing micro-collector density as well as time of the year and , we decided to go with the regencies closest to Makassar (South Sulawesi) ; Maros and Takalar. 
 This meant that the distances to be travelled by the farmers to our buyers were just a few hours away.
 
-**On field marketing:**
+#### On field marketing:
 We got 1 field marketer, Erwin, on loan from the growth team for the efforts on on-ground canvassing by meeting farmer groups (Gapoktans).
 
-**Website:**
+#### Jiva Lite Website:
 We built a website so that we could provide a social proof that Jiva Lite was infact an offering from Jiva and not a scam. The website had prices which we manually updated and directed users to the Whatsapp number.
 
-**Doing things that don't scale:**
+#### Doing things that don't scale:
 We didn't build an in-flow way to add a farmer's bank account details. We resorted instead to use a manual system of getting the information from the farmer and getting CX team to add them to the system. This enabled us to ship faster and prevented user error from entering the wrong information. Where possible we pre-filled dummy data (e.g., user address) in the backend because we didnt want to build without valdiating our idea at this stage.
 
 ## Post Launch of the MVP
@@ -95,22 +93,26 @@ On August 23rd, Saripuddin (seen in the cover image) became the first farmer to 
 >“I made over IDR 3,000,000 with my truck! I invite all my friends to send trucks using Jiva Lite.”
 > — Saripuddin
 
-Saripuddin immediately saw the value Jiva Lite brought to him and instantly became our ambasaddor convincing multiple farmers in his village to send us corn over the year.
+Saripuddin immediately saw the value Jiva Lite brought to him and instantly became our ambassador convincing multiple farmers in his village to send us corn over the year.
 Within a month, we hit the milestone of 50 MT and started thinking of the next iteration for Jiva Lite.
 
-Personally, the first transaction was a feeling unlike any other that my body had experienced. That day, I was unable to act rationally because I was completely blown away by the fact that 14 days after release we secured our first farmer and he saw the value we were providingx. 
+Personally, the first transaction was a feeling unlike any other that my body had experienced. That day, I was unable to act rationally because I was completely blown away by the fact that 14 days after release we secured our first farmer and he saw the value we were providing. 
 There was a lot of time and effort that went into reaching this exact point and it felt glorious.
 
 ## Learnings from the Pilot
-**Selling breakdown:** we made a simple google sheets template to generate a breakdown that we sent to every farmer which helped them understand how much they were earning and what was the quality of their corn.
+#### Selling breakdown:
+We made a simple google sheets template to generate a breakdown that we sent to every farmer which helped them understand how much they were earning and what was the quality of their corn.
 
-**Backend Issues:** We had not handled user creation of churned/deleted users and this is what caused our first transaction to fail. (Murphy's Law, amirite?)
+#### Backend Issues: 
+We had not handled user creation of churned/deleted users and this is what caused our first transaction to fail. (Murphy's Law, amirite?)
 
 ![spiderkaran](./spiderkaran.png)
 
-**Changing behaviour isn't easy:** When farmers are used to dealing with a broken system, 'a too-good to be true' deal like Jiva Lite feels unrealistic. Furthermore, farmers and local buyers tend to have a personal relationship that isnt easy to overcome. At the end of the day, Jiva is an external entity while the buyer may be a neighbour, a relative or their money lender.
+#### Changing behaviour isn't easy:
+When farmers are used to dealing with a broken system, 'a too-good to be true' deal like Jiva Lite feels unrealistic. Furthermore, farmers and local buyers tend to have a personal relationship that isnt easy to overcome. At the end of the day, Jiva is an external entity while the buyer may be a neighbour, a relative or their money lender.
 
-**Flow still complex:** Without our on-field agents, getting users to navigate Whatsapp Flows wasnt easy. Whatsapp flows may seem simple to us, but for our target users, they were complex. We realized that just because they used Facebook and Whatsapp didn't mean that they were familiar navigating similar interfaces. We needed to re-do our flow.
+#### Flow still complex:
+Without our on-field agents, getting users to navigate Whatsapp Flows wasnt easy. Whatsapp flows may seem simple to us, but for our target users, they were complex. We realized that just because they used Facebook and Whatsapp didn't mean that they were familiar navigating similar interfaces. We needed to re-do our flow.
 
 ## Building V2
 
@@ -150,11 +152,22 @@ We decided to look if any pre-existing solutions would help us solve this. After
 - We uncovered certain systemic issues like Farmer debt, Cash payments (to avoid tax), Drossing systems. We attempted to solve Drossing (separating Corn kernels from Cob) by procuring and 
 renting out drossing machines and even built a simple advertising based funnel to acquire potential customers for this service. but we couldn't solve for the others with our budgetary constraints.
 
-- Though I have attempted to write out the project in detail, there is still a lot that I feel I have left out because building a product and running it takes you in so many different directions. You encounter verious problems and inefficiencies and don't always end up solving them.
+- Though I have attempted to write out the project in detail, there is still a lot that I feel I have left out because building a product and running it takes you in so many different directions. You encounter various problems and inefficiencies and don't always end up solving them.
 The experience takes a lot out of you but in the end, I am glad I got the opportunity to build a product with this level of ownership.
 
 ## Impact
-In the one year of operation, we scaled Jiva Lite from 0 to 600 registered users who sold 4102 MT of corn and with a margin of 100 IDR/kg we generated around 24k USD of gross contribution (sales from trading this corn by our own Collection Centres added an averge of additional 200 IDR/kg)
+In the one year of operation, we scaled Jiva Lite from 0 to 600 registered users who sold 4102 MT of corn. With a margin of 100 IDR/kg, we generated around 24k USD of gross contribution (Additional earnings from sales from trading this corn added an additional 200 IDR/kg, which has not been counted here)
+
+<div class="impact-images" style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem;">
+
+![](./jl-impact-1.png)
+
+![](./jl-impact-2.png)
+
+</div>
+
+Behaviourally though, we were about to bring meaningful improvements into the lives of the Farmers in a few provinces of South Sulawesi. Most farmers who transacted with us made about 2.5-3 million IDR(~$180 USD) more than they would otherwise.
+Even after Jiva Lite shut down, a few of the farmers continued to deal directly with the collection centres and improve their collective earnings.
 
 ## Team
 It takes a village to run a project like this and almost everyone in the Jiva design team contributed towards this project. I couldnt have done this without Karan owning the offline side, Nilesh running the product sprint and Shakti managing the JLO's. 
