@@ -26,6 +26,7 @@ const fullImageUrl = new URL(image, siteUrl).href;
 
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' https: data:; script-src 'self' 'unsafe-inline'; connect-src 'self';" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <title>{title}</title>
 
