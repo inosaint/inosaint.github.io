@@ -1,9 +1,9 @@
 ---
 title: "Building the Akar Design System"
-description: "Comprehensive design system with reusable components for agricultural technology platform"
+description: "The philosophy and design principles behind Jiva’s scalable design system"
 year: "2023-2024"
 company: "Jiva"
-image: "./akar-cover.png"
+image: "./akar.webp"
 ---
 
 ## Overview
