@@ -35,7 +35,7 @@ My role was a fluid one in the project where at the start I was leading the prod
 
 ## Solution
 
-![Early Jiva Lite app wireframes](lite-wire.png "Early Jiva Lite app wireframes")
+![Early Jiva Lite app wireframes](./lite-wire.png "Early Jiva Lite app wireframes")
 
 The first idea for Jiva Lite came out of our efforts to simplify the Sahabat Jiva App information architecture and workflows. But it took a few more months before we got a chance to try to solve this.
 The overwhelming idea at that time was to make another app albeit a "lite" one. But a few of us felt that Whatsapp was the way to go. So I used Landbot to quickly prototype how a Whatsapp based flow would look like.
