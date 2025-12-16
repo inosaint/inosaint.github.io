@@ -5,6 +5,7 @@ providers using Practo products"
 year: "2015-2016"
 company: "Practo"
 image: "./practo-pro.png"
+status: 'draft'
 ---
 
 ## Overview
@@ -34,7 +35,7 @@ The new application had to cater to these needs if it had to be a central point 
 these needs vary as per the standing of the doctor. For e.g., a just graduated doctor would seek to
 learn more from experienced doctors and would rarely have their own clinic while a doctor with 10
 years of experience would be focussing on setting up her own business and getting more patients.
-So first we needed to figure out the information architecture. We started putting all the existing parts
+First we needed to figure out the information architecture. We started putting all the existing parts
 of the various apps into an excel sheet to get an idea of what the pieces were and we also listed out
 features that we felt could be integrated into the app at a later stage.
 
@@ -50,8 +51,8 @@ would be for users of any of the apps. Thus we were able to finalise the informa
 
 ## Concepts
 Based on this information architecture, I created few app concepts which we evaluated before
-finalising on the one we would present to the stakeholders. The final concept was presented as a
-invision prototype.
+finalising on the one we would present to the stakeholders. The final concept was presented as an
+InVision prototype.
 
 [final information architecture]
 

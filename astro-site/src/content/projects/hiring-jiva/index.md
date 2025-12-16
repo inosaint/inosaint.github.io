@@ -1,6 +1,6 @@
 ---
 title: Hiring Product Designers at Jiva
-description: A look at the hiring process at Jiva that we used to build the team to 11 designers
+description: An overview of the product design hiring process at Jiva that we used to scale to 11+ designers
 year: "2022-2024"
 status: 'draft'
 
@@ -14,8 +14,8 @@ So with Nav's guidance, we designed a simple hiring flow keeping the good part o
 Our process therefore was quite simple; 
 
 ### Round 0: Shortlisting Candidates
-With our job description posted, we looked for candidates and their submissions to shortlist the ones we wanted to speak to. When Jiva was less known, we barely had any interested candidates and shortlisting was very easy. 
-But for the last set of job openings, we had a lot of demand making it impossible to screen effieciently. We encouraged people to send us Cover letters while applying rather than applying via the portal.
+With our job description posted, we looked for candidates and their submissions to shortlist the ones we wanted to speak to. When Jiva was less known, we barely had any interested candidates and shortlisting was very easy.
+But for the last set of job openings, we had a lot of demand making it impossible to screen efficiently. We encouraged people to send us Cover letters while applying rather than applying via the portal.
 This acted as a fairly effective screening condition as not many ended up emailing us.
 
 ### Round 1: Screening Call
