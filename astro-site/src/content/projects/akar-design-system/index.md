@@ -14,6 +14,18 @@ The Akar Design System was built to create consistency across Jiva's agricultura
 
 As Jiva's product ecosystem expanded, we needed a unified design language that could scale across multiple applications while maintaining consistency and efficiency.
 
+### What we needed to solve:
+
+**Scalable:** Lay the foundation for Jiva to scale across platforms and countries
+
+**Speed:** Designers had to hunt for colors/components across multiple Figma files
+
+**Output Quality:** Better handoff process to ensure that what's designed gets developed
+
+**Accessibility:** The fonts and colors used in the older app was not compliant with the minimum WCAG guidelines
+
+**Standardization:** A feel of coherence across the product
+
 ## Solution
 
 We developed a comprehensive design system that included:
