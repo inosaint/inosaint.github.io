@@ -6,9 +6,16 @@ company: "Jiva"
 image: "./akar.webp"
 ---
 
-## Overview
+Design systems often represent an aspirational milestone for product design teams. But they’re often seen as an all-or-nothing project — something that takes months of planning and effort, 
+while day-to-day product delivery suffers. When everything is moving at breakneck speed, it feels risky to divert resources into building a design system. 
+**But is it really?**
 
-The Akar Design System was built to create consistency across Jiva's agricultural technology platform, enabling faster development and better user experiences for farmers and agricultural stakeholders.
+In early 2022, Jiva was deep in the throes of hyper-growth, onboarding new team members almost every week. The chaos hit every part of the company, and the design team wasn’t immune. 
+Work was being duplicated across pods, our user experience was inconsistent, accessibility needs were being overlooked, and our app’s 
+performance was lagging behind.
+At the time, we had a Figma-style guide, but it simply wasn’t enough. We needed more than a set of visual guidelines — we needed a 
+comprehensive design system that could help us keep up with the rapid growth without adding friction to the process. And yet, we faced a tough constraint: 
+our design team was tiny (and growing), so we had to approach this in a _lean_ way.
 
 ## Challenge
 
