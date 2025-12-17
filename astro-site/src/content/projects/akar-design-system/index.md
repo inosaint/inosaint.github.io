@@ -147,13 +147,15 @@ iOS and Android’s XML system but we needed something that would support Jetpac
 The overall idea was straightforward. The engine should take in the 
 JSON file as the input, and spit out Compose Theming files that can be imported onto your project directly and the devs wouldn’t have to worry too much about the setup.
 
-<div class="impact-images" style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem; align-items: start;">
+<!-- <div class="impact-images" style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem; align-items: start;">
 
 <img src="/images/tokens-figma.gif" alt="Tokens in Figma" style="border-radius: 8px; width: 100%; height: auto; object-fit: contain;" />
 
 ![](./buttons.webp)
 
-</div>
+</div> -->
+
+![](./buttons.webp)
 
 And that’s how we placed the final piece of our design system jigsaw puzzle.
 
