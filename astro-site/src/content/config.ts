@@ -11,7 +11,7 @@ const writing = defineCollection({
   }),
 });
 
-const projects = defineCollection({
+const work = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
@@ -24,5 +24,5 @@ const projects = defineCollection({
 
 export const collections = {
   writing,
-  projects,
+  work,
 };

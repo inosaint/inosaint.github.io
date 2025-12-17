@@ -81,19 +81,19 @@ const allWritings = [
 // Get the 2 most recent posts for the home page
 const recentWritings = allWritings.slice(0, 2);
 
-// Get all published projects and sort by year (newest first)
-const allProjects = await getCollection('projects', ({ data }) => {
+// Get all published work and sort by year (newest first)
+const allWork = await getCollection('work', ({ data }) => {
   return data.status === 'published';
 });
-const sortedProjects = allProjects.sort((a, b) => {
+const sortedWork = allWork.sort((a, b) => {
   // Extract the starting year from the year string (e.g., "2023-2024" -> 2023)
   const yearA = parseInt(a.data.year.split('-')[0]);
   const yearB = parseInt(b.data.year.split('-')[0]);
   return yearB - yearA;
 });
 
-// Get the 2 most recent projects for the home page
-const projects = sortedProjects.slice(0, 2);
+// Get the 2 most recent work items for the home page
+const work = sortedWork.slice(0, 2);
 
 // Date formatter function
 const formatDate = (date: Date) => {
@@ -130,19 +130,19 @@ const formatDate = (date: Date) => {
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Work Section -->
   <section>
     <div class="section-header">
-      <h4>Projects</h4>
-      <a href="/projects" class="view-all">view all projects →</a>
+      <h4>Work</h4>
+      <a href="/work" class="view-all">view all work →</a>
     </div>
     <div class="grid">
-      {projects.map(project => (
-        <a href={`/projects/${project.slug}`} class="card">
-          {project.data.image ? (
+      {work.map(item => (
+        <a href={`/work/${item.slug}`} class="card">
+          {item.data.image ? (
             <Image
-              src={project.data.image}
-              alt={project.data.title}
+              src={item.data.image}
+              alt={item.data.title}
               class="card-image"
               width={450}
               height={250}
@@ -151,14 +151,14 @@ const formatDate = (date: Date) => {
           ) : (
             <img
               src="https://placehold.co/450x250"
-              alt={project.data.title}
+              alt={item.data.title}
               class="card-image"
               width="450"
               height="250"
             />
           )}
-          <h3>{project.data.title}</h3>
-          <p>{project.data.description}</p>
+          <h3>{item.data.title}</h3>
+          <p>{item.data.description}</p>
         </a>
       ))}
     </div>
