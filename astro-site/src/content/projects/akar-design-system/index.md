@@ -149,9 +149,8 @@ JSON file as the input, and spit out Compose Theming files that can be imported 
 
 <img src="/images/tokens-figma.gif" alt="Tokens in Figma" style="border-radius: 8px;" />
 
-![Buttons in Android Studio](./buttons.webp)
-
 And that’s how we placed the final piece of our design system jigsaw puzzle.
+
 
 ## Presenting the Akar Design Sytem: 
 All this while, we had been working hard on the system but we realised we didn’t have a name for our design system. We wanted something that resonated with the agritech space we were in, so we began brainstorming. Finally, with the help of Notion AI, we chose to go with Akar.
