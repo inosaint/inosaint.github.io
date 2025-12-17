@@ -4,15 +4,15 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects');
-  return projects.map(entry => ({
+  const work = await getCollection('work');
+  return work.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
 }
 
 type Props = {
-  entry: CollectionEntry<'projects'>;
+  entry: CollectionEntry<'work'>;
 };
 
 const { entry } = Astro.props;
@@ -28,7 +28,7 @@ const { Content } = await entry.render();
     <div class="breadcrumb">
       <a href="/" class="breadcrumb-link">Home</a>
       <span class="breadcrumb-separator">/</span>
-      <a href="/projects" class="breadcrumb-link">Projects</a>
+      <a href="/work" class="breadcrumb-link">Work</a>
       <span class="breadcrumb-separator">/</span>
       <span class="breadcrumb-current">{entry.data.title}</span>
     </div>
