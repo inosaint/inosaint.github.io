@@ -11,9 +11,6 @@ When I joined Jiva in 2022, we had been leveraging collectors in rural areas to 
 The harvest of a smallholder corn farmer is typically around 2.5k-3k tons. The economics of sending it to the buyer isn't economically viable for such a small quantity when you factor in labour cost & transport cost. Additionally the ability to evaluate quality at the farmer level is approximate.
 Collectors helped fill this gap by aggregating corn for dispatch from multiple farmers and using moisture meters to estimate quality of the corn. 
 
-[Pricing Graphic]
-[Corn quality (and pricing) is measured in terms of the moisture content of the corn kernels]
-
 Jiva’s business model was working with buyers to acquire purchase orders for the corn and coordinate with the collectors to dispatch to feedmills to get the best price. 
 This wasn't a disruptionary model. The concept of middlemen have always existed in agricultural systems. What was different was the concept of a single entity who's presence across provinces helped get better prices. 
 Our Collectors earned commission for selling through us and our Farmers got the best price. 
