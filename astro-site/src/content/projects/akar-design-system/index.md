@@ -149,7 +149,7 @@ JSON file as the input, and spit out Compose Theming files that can be imported 
 
 <div class="impact-images" style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem;">
 
-<img src="./tokens-figma.gif" alt="Tokens in Figma" style="border-radius: 8px;" />
+<img src="/images/tokens-figma.gif" alt="Tokens in Figma" style="border-radius: 8px;" />
 
 ![](./buttons.webp)
 
