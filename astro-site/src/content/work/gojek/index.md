@@ -17,12 +17,14 @@ With the formation of a merchant team in mid 2018, I was the designer tasked wit
 
 ![GoBiz Navigation; before and after](gobiz-nav.jpg)
 #### The objectives of the redesign were
-1. <ins>Scalability:</ins> The old app 'Go-Resto' was moving from being a food merchant app to a merchant app used by different kinds of merchants. So we needed an information architecture that would work for GoFood, GoPay, and other merchants 
-2. *UI refresh:* With the move, we rebranded from 'Go-Resto' to 'GoBiz' and adopted the newly minted [Asphalt 1.0](https://www.gojek.io/blog/of-dreams-deadlines-and-a-design-system)design language system. Due to the timing of the redesign, we were the first app in the Gojek ecosystem to be completely built on the new Asphalt design system. 
+1. <ins>Scalability:</ins> The old app 'Go-Resto' was moving from being a food merchant app to a merchant app used by different kinds of merchants. So we needed an information architecture that would work for GoFood, GoPay, and other merchants.
+2. <ins>UI refresh:</ins> With the move, we rebranded from 'Go-Resto' to 'GoBiz' and adopted the newly minted [Asphalt 1.0](https://www.gojek.io/blog/of-dreams-deadlines-and-a-design-system) design language system. Due to the timing of the redesign, we were the first app in the Gojek ecosystem to be completely built on the new Asphalt design system. 
 
 #### Design explorations:
 
+
 ![Redesigned screens in Sketch for GoBiz](gobiz-v1.png)
+
 #### User testing:
 We decided to have a pilot group of merchants for the release and the research team conducted a user diary research with them. 
 
