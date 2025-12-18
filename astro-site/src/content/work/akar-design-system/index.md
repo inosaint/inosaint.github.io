@@ -66,8 +66,7 @@ We analyzed their token structures, naming conventions, and the rationale behind
 
 ### Design Tokens
 
-Design tokens represent the small, repeated design decisions that make up a design system's visual style. They replace static values, such as hex codes for color, 
-with self-explanatory names. A token's value can be one of several things: a color, a typeface, a measurement, or even another token. 
+Design tokens represent the small, repeated design decisions that make up a design system's visual style. They replace static values, such as hex codes for color, with self-explanatory names. A token's value can be one of several things: a color, a typeface, a measurement, or even another token. 
 
 ![The way we envisioned our lean system to work inspired from Spotify’s Encore](design-system-philosophy.webp) [^1]
 
