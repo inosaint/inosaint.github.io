@@ -13,7 +13,7 @@ That push came in the form of a relative asking me to review their 'Vietnam Trav
 
 Planning holidays and building itineraries is a hobby of mine, so I had tried ChatGPT earlier to help with trip planning but I had found it lacking. It was great at generating rough to-dos for your trip like places to visit, etc which I believe it has adequate training data on and to be fair, it’s great for a normie. However, it fails miserably in many places like recommending good stays and other kinds of specialized interests and I've also observed that it tends to think about planning in terms of a western or american perspective. 
 
-So I started asking ChatGPT to visualize the itinerary on maps and when it created an html artifact, I asked it to iterated on the design and visuals. But there was a lot of back and forth to get something done and often subsequent generations rolled back changes I had made. Below are couple of variations of my iterations, ([left](./iterations/vietnam_12_day_itinerary_web.html)) from when I started to ([right](./iterations/Vietnam_12Day_Itinerary.html)) when I decided to get it to make it swiss-inspired.
+So I started asking ChatGPT to visualize the itinerary on maps and when it created an html artifact, I asked it to iterated on the design and visuals. But there was a lot of back and forth to get something done and often subsequent generations rolled back changes I had made. Below are couple of variations of my iterations, ([left](/vibe-coding/iterations/vietnam_12_day_itinerary_web.html)) from when I started to ([right](/vibe-coding/iterations/Vietnam_12Day_Itinerary.html)) when I decided to get it to make it swiss-inspired.
 
 <div class="impact-images" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
 
@@ -23,7 +23,7 @@ So I started asking ChatGPT to visualize the itinerary on maps and when it creat
 
 </div>
 
-I hit chatGPT's session limit and decided to move it to Claude. That's when it got easier. Claude's execution of my requests were better. You could see an invisible multiplier in place such that a 1x simple prompt gave a [10x output](vietnam_itinerary.html). 
+I hit chatGPT's session limit and decided to move it to Claude. That's when it got easier. Claude's execution of my requests were better. You could see an invisible multiplier in place such that a 1x simple prompt gave a [10x output](/vibe-coding/iterations/vietnam_itinerary.html). 
 
 ![My input was the chatGPT html](./claude-v1.png)
 
