@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/work/gojek/index.md",
+                "file": "src/content/writing/vibe-coding/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/content/work/gojek/index.md",
+                "file": "src/content/writing/vibe-coding/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/content/work/gojek/index.md",
+                "file": "src/content/writing/vibe-coding/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -156,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/content/work/gojek/index.md",
+                "file": "src/content/writing/vibe-coding/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -186,27 +186,41 @@
   },
   "active": "a69ee6a789446d23",
   "lastOpenFiles": [
-    "src/content/writing/as/Untitled.md",
+    "src/content/work/akar-design-system/index.md",
+    "src/content/writing/vibe-coding/index.md",
+    "src/content/writing/vibe-coding/claude-v1.png.sb-4b79f7e6-zEWbaM",
+    "src/content/writing/vibe-coding/chatgpt-v1.png.sb-4b79f7e6-i7BgIl",
+    "src/content/writing/vibe-coding/git25.png",
+    "().md",
+    "src/content/writing/vibe-coding/budgie.png",
+    "src/content/writing/vibe-coding/Screenshot 2025-12-22 at 2.46.44 PM.png",
+    "src/content/writing/vibe-coding/chatgpt-final.png",
+    "src/content/writing/vibe-coding/chatgpt-v2.png",
+    "src/content/writing/vibe-coding/chatgpt-v1.png",
+    "src/content/writing/vibe-coding/claude-v1.png",
+    "src/content/writing/vibe-coding/Screenshot 2025-12-22 at 2.33.07 PM.png",
+    "src/content/writing/vibe-coding/Screenshot 2025-12-22 at 2.33.28 PM.png",
+    "src/content/writing/vibe-coding/Screenshot 2025-12-22 at 2.33.45 PM.png",
+    "src/content/writing/vibe-coding/iterations/Vietnam_12Day_Itinerary.html",
+    "src/content/writing/vibe-coding/iterations/vietnam_itinerary.html",
+    "src/content/writing/vibe-coding/iterations/vietnam_12_day_itinerary_web.html",
+    "src/content/writing/vibe-coding/iterations",
+    "src/content/writing/vibe-coding/untitled folder",
+    "Untitled.md",
     "src/content/work/gojek/index.md",
+    "src/content/writing/vibe-coding",
+    "src/content/writing/as/Untitled.md",
     "src/content/writing/as",
     "src/content/work/hel/Untitled.md",
     "src/content/writing/rituals/index.md",
     "src/content/work/hel",
     "src/content/work/template-work/Untitled/Untitled.md",
     "src/content/templates/template-writing/index.md",
-    "src/content/templates/template-writing",
     "src/content/templates/template-work/index.md",
-    "src/content/templates/template-work",
-    "src/content/templates",
-    "src/content/work/template-work/Untitled",
     "src/content/writing/Untitled/Untitled.md",
     "src/content/work/template-work/index.md",
-    "src/content/work/template-work",
-    "src/templates",
     "src/content/writing/template-writing/index.md",
-    "src/content/writing/template-writing",
     "src/content/template-work/index.md",
-    "src/content/template-work",
     "src/content/writing/solo-designer/index.md",
     "src/content/writing/solo-designer/index 1.md",
     "src/content/work/sahabat-jiva-redesign/index.md",
@@ -216,21 +230,7 @@
     "src/templates/Template 1/index.md",
     "src/templates/Template/index.md",
     "src/content/work/Template/index.md",
-    "src/content/work/jiva-lite/dross.png",
     "src/content/work/practo-pro/index.md",
-    "src/content/work/jiva-lite/index.md",
-    "src/content/work/international/index.md",
-    "src/content/work/international/dogfooding.png",
-    "src/content/work/hiring-jiva/index.md",
-    "src/content/work/gobiz-inbox/index.md",
-    "src/content/work/claim-profile/index.md",
-    "src/content/work/gojek/midtrans-onboarding-2.png",
-    "src/content/work/gojek/midtrans-onboarding-1.png",
-    "src/content/work/gojek/Gobiz-Web2.png",
-    "src/content/work/gojek/Gobiz-web.png",
-    "src/content/work/gojek/QRIS-gobiz.webp",
-    "src/content/work/gojek/midtrans-onboarding-impact.png",
-    "src/content/work/gojek/gobiz-nav.jpg",
-    "src/content/work/gojek/gobiz-order.png"
+    "src/content/work/jiva-lite/index.md"
   ]
 }

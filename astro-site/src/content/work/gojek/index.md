@@ -23,7 +23,9 @@ With the formation of a merchant team in mid 2018, I was the designer tasked wit
 #### Design explorations:
 
 
+
 ![Redesigned screens in Sketch for GoBiz](gobiz-v1.png)
+
 
 #### User testing:
 We decided to have a pilot group of merchants for the release and the research team conducted a user diary research with them. 
