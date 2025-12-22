@@ -1,7 +1,7 @@
 ---
 title: "Jiva Lite"
 description: "Building a farmer-centric experience for buying Corn in rural Indonesia leveraging Whatsapp"
-year: "2023-2024"
+year: "2024-2025"
 company: "Jiva"
 image: "./jivalite.jpg"
 ---
