@@ -186,6 +186,8 @@
   },
   "active": "a69ee6a789446d23",
   "lastOpenFiles": [
+    "public/favicon-192x192.png",
+    "public/favicon-180x180.png",
     "public/favicon.png",
     "public/ade3da72d798ba1e685c225006e18b0f7d1942e8136be5f07257c25c7c903476.png",
     "public/favicon.svg",
@@ -206,8 +208,6 @@
     "src/content/writing/vibe-coding/iterations/vietnam_12_day_itinerary_web.html",
     "src/content/writing/vibe-coding/index.md",
     "src/content/writing/vibe-coding/git25.png",
-    "src/content/writing/vibe-coding/claude.png",
-    "src/content/writing/vibe-coding/claude-v1.png",
     "src/content/templates/template-writing/index.md",
     "src/content/templates/template-work/index.md",
     "().md",

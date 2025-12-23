@@ -5,7 +5,7 @@ date: 2025-12-22
 status: published
 image: git25.png
 ---
-*Disclaimer: I had a shortlived career as a front end dev (IE7 era) at TCS when I began my career post-engineering in 2010, so I am familiar with the basics of web development. Hence vibe-coding on web may be slightly easier for me to grok then someone non-technical who is trying it out.*
+<div class="note">Disclaimer: I had a shortlived career as a front end dev (IE7 era) at TCS when I began my career post-engineering in 2010, so I am familiar with the basics of web development. Hence vibe-coding on web may be slightly easier for me to grok then someone non-technical who is trying it out.</div>
 
 In October, when I started off my break, I wanted to explore vibe coding but the choices are overwhelming. Up till then, my exposure to LLMs had been to use ChatGPT to edit blog posts and using Midjourney for creating assets for Meta Ads and VC pitch decks. Attending Razorpay’s Design x AI in November helped me understand the realities of vibe coding and prompting but I needed an extra push.
 
