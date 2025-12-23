@@ -127,7 +127,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: '"';
+  content: '“';
   position: absolute;
   left: 1rem;
   top: 1rem;
