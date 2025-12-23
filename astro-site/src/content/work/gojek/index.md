@@ -3,7 +3,7 @@ title: Designing for Gojek's Merchants
 description: A brief overview of the work I did at GoBiz, Gojek's Merchant Platform
 year: 2019-2021
 company: Gojek
-status: published
+status: draft
 image: QRIS-gobiz.webp
 ---
 
