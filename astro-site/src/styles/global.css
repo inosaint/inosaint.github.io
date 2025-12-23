@@ -134,7 +134,7 @@ blockquote::before {
   font-size: 6rem;
   line-height: 1;
   color: #E8C77E;
-  font-family: var(--font-heading);
+  font-family: var(--font-family);
   font-weight: 600;
 }
 
