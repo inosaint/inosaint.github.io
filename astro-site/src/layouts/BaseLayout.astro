@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import PostHog from '../components/posthog.astro';
 
 interface Props {
   title?: string;
@@ -25,10 +26,13 @@ const fullImageUrl = new URL(image, siteUrl).href;
     <meta name="description" content={description} />
 
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' https: data:; script-src 'self' 'unsafe-inline'; connect-src 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' https: data:; script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com; connect-src 'self' https://us.i.posthog.com;" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <title>{title}</title>
+
+    <!-- PostHog Analytics -->
+    <PostHog />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
