@@ -147,9 +147,9 @@ We decided to look if any pre-existing solutions would help us solve this. After
 ![Some ads we made for recruiting drossers](./dross.png)
 
 - We uncovered certain systemic issues like Farmer debt, Cash payments (to avoid tax), Drossing systems. We attempted to solve Drossing (separating Corn kernels from Cob) by procuring and 
-renting out drossing machines and even built a simple advertising based funnel to acquire potential customers for this service. but we couldn't solve for the others with our budgetary constraints.
+renting out drossing machines and even built a simple advertising based funnel to acquire potential customers for this service. But we couldn't solve for the others with our budgetary constraints and the high level of risk associated with them.
 
-- Though I have attempted to write out the project in detail, there is still a lot that I feel I have left out because building a product and running it takes you in so many different directions. You encounter various problems and inefficiencies and don't always end up solving them.
+- Though I have attempted to write out the project in detail, there is still a lot that I feel I have left out because building a product and running it takes you in so many different directions. You encounter various problems and inefficiencies, some you solve and others you can't.
 The experience takes a lot out of you but in the end, I am glad I got the opportunity to build a product with this level of ownership.
 
 ## Impact
