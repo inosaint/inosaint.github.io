@@ -13,21 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/writing/product-designer/index.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "index"
-            }
-          },
-          {
-            "id": "9ca18f1f6a69899f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/content/work/international/index.md",
+                "file": "src/content/work/gojek/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -35,8 +21,7 @@
               "title": "index"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -109,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/content/work/international/index.md",
+                "file": "Untitled.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for Untitled"
             }
           },
           {
@@ -128,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/content/work/international/index.md",
+                "file": "Untitled.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from Untitled"
             }
           },
           {
@@ -171,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/content/work/international/index.md",
+                "file": "Untitled.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Untitled"
             }
           }
         ]
@@ -199,20 +184,27 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "9ca18f1f6a69899f",
+  "active": "a69ee6a789446d23",
   "lastOpenFiles": [
+    "().md",
+    "src/content/work/gojek/Early-explorations.png",
+    "src/content/work/gojek/rough-sketches.png",
+    "src/content/work/gojek/Usage-data.png",
+    "src/content/work/gojek/Screenshot 2026-01-20 at 2.25.36 PM.png",
+    "src/content/work/gojek/Screenshot 2026-01-20 at 2.25.44 PM.png",
+    "src/content/work/gojek/Screenshot 2026-01-20 at 2.25.50 PM.png",
+    "src/content/work/gojek/GoBiz-ratings.webp",
+    "src/content/work/gojek/1*j3tGYn7EvCzlh46jk5cyPw.webp",
     "src/content/writing/product-designer/index.md",
+    "src/content/work/jiva-lite/index.md",
+    "src/content/work/gojek/index.md",
     "src/content/work/akar-design-system/index.md",
+    "Untitled.canvas",
+    "src/content/writing/vibe-coding/index.md",
     "src/content/work/international/index.md",
     "public/favicon-192x192.png",
     "public/favicon-180x180.png",
-    "public/favicon.png",
-    "public/ade3da72d798ba1e685c225006e18b0f7d1942e8136be5f07257c25c7c903476.png",
-    "public/favicon.svg",
     "public/favicon.ico",
-    "public/favicon-48x48.png",
-    "public/favicon-32x32.png",
-    "public/favicon-16x16.png",
     "src/components/posthog.astro",
     "src/components",
     "public/vibe-coding/iterations/vietnam_itinerary.html",
@@ -220,16 +212,11 @@
     "public/vibe-coding/iterations/Vietnam_12Day_Itinerary.html",
     "public/vibe-coding/iterations",
     "public/vibe-coding",
-    "src/content/writing/vibe-coding/v1-prototype.png",
-    "src/content/writing/vibe-coding/productivize.png",
     "src/content/writing/vibe-coding/iterations/vietnam_itinerary.html",
     "src/content/writing/vibe-coding/iterations/vietnam_12_day_itinerary_web.html",
-    "src/content/writing/vibe-coding/index.md",
     "src/content/templates/template-writing/index.md",
     "src/content/templates/template-work/index.md",
-    "().md",
     "Untitled.md",
-    "src/content/work/gojek/index.md",
     "src/content/writing/as/Untitled.md",
     "src/content/work/hel/Untitled.md",
     "src/content/writing/rituals/index.md",
@@ -244,8 +231,6 @@
     "src/content/writing/Template 1/index.md",
     "src/templates/template-writing/index.md",
     "src/templates/template-work/index.md",
-    "src/templates/Template 1/index.md",
-    "src/templates/Template/index.md",
-    "src/content/work/Template/index.md"
+    "src/templates/Template 1/index.md"
   ]
 }
