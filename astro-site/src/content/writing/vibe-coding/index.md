@@ -41,7 +41,8 @@ It took me about 40 iterations[^1] to get to a state I was comfortable sharing w
 1. When I moved the html to Claude, it removed the 'Made by ChatGPT' label in the markup. Jealousy?
 2. Claude struggled a lot to add it's own logo into the markup and I had to write the markup in the end.
 
-This project gave me sort of confidence to build further. The itinerary generator was not what I would have wanted to build, but [Budgie](https://kenneth.dsouza.im/budgie/) was.  The time to build Budgie was faster. I now had Claude Pro subscription and quickly hit the weekly limit and had to stop so the v1 of Budgie took a week longer than expected to ship.
+This project gave me sort of confidence to build further. The itinerary generator was not what I would have wanted to build, but [Budgie](https://kenneth.dsouza.im/budgie/) was.  The time to build Budgie was faster. I now had Claude Pro subscription and quickly hit the weekly limit and had to stop so the v1 of Budgie took a week longer than expected to ship. Update: I shipped an [updated version of Budgie](https://budgie.travel) over the Christmas holidays.
+
 
 ![Final version of Budgie](budgie.png)
 This was before Claude's release of Skills and I tried out using Projects for this. There was no Figma involved, just prompting and reading through CSS classes. There were some parts that I had to step into debug but largely this was coded by Claude.
