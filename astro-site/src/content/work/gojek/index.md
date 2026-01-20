@@ -7,7 +7,7 @@ status: published
 image: QRIS-gobiz.webp
 ---
 
-## Role
+### Role
 From 2019-2022, I worked on the merchant side of Gojek. GoBiz, Gojek's merchant platform, catered to 1M+ merchants across Indonesia, Vietnam(closed down in Sep 2024) and Thailand (sold to AirAsia in July 2021). The GoBiz Platform served GoFood merchants, GoPay Micro-merchants, as well as Enterprise merchants.
 
 I started off as the designer tasked with redesigning the GoBiz Android app and eventually moved to lead the design on the GoBiz Platform contributing towards the design of the GoBiz app and website, the Spots app and the Midtrans website. Over this period of time, the design team at GoBiz grew to 12 designers with the mergers and acquisitions of Midtrans, Kartuku and Moka POS before eventually breaking up pre-IPO. 
