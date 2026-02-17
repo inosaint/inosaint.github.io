@@ -474,6 +474,62 @@ figcaption {
   line-height: 1.7;
 }
 
+/* Post Layout with TOC */
+.post-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Table of Contents */
+.toc {
+  position: sticky;
+  top: 6rem;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 0.5rem;
+}
+
+.toc-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  display: block;
+  transition: color 0.2s;
+}
+
+.toc-link:hover {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.toc-link-active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Mobile: hide TOC and use single column */
+@media (max-width: 1024px) {
+  .post-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .toc {
+    display: none;
+  }
+}
+
 /* Layout */
 .container {
   max-width: 900px;

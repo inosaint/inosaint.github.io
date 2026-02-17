@@ -55,13 +55,14 @@ Developers manage strings using “keys,” and we needed a way to map each key 
 ![How we managed copy in Google Sheets](./copy-sheets.png)
 
 We also wanted screen references to help reviewers see copy in context. This was especially useful for UX writers in other countries, as well as QA and designers who did not speak the local languages. The release of Google Sheets’ “Insert picture in cell” feature was a huge help for this.
-Gojek eventually moved to using [Lokalise](https://lokalise.com) for its copy management.
+Gojek eventually moved to using [Lokalise](https://lokalise.com) for its copy management [^1] 
+
+[^1]: You can read more about their International copy process on the blog by the Thai and Viet UX writer https://www.gojek.io/blog/language-no-bar-how-we-localise-ux-copies-at-gojek
 
 ### Learnings
-Scaling GoBiz across Thailand, Vietnam, and Singapore taught me that localisation is never something you add after the product is built. Even after launch, every new feature needs to be evaluated through the lens of each country. The same care you put into the initial rollout has to continue, otherwise the product quietly drifts back toward the needs of the base market.
+- Scaling GoBiz across Thailand, Vietnam, and Singapore taught me that localisation is never something you add after the product is built. Even after launch, every new feature needs to be evaluated through the lens of each country. The same care you put into the initial rollout has to continue, otherwise the product quietly drifts back toward the needs of the base market.
 
-There's also an organizational reality that often gets ignored. Supporting multiple markets properly sometimes requires reshaping how teams work, how decisions are made, and who is involved in the roadmap. But these shifts take time, and they rarely get prioritised unless there is a clear business outcome tied to them.
-
+- There's also an organizational reality that often gets ignored. Supporting multiple markets properly sometimes requires reshaping how teams work, how decisions are made, and who is involved in the roadmap. But these shifts take time, and they rarely get prioritised unless there is a clear business outcome tied to them. 
 At Gojek, this misalignment became clear. Each international market operated under its own brand and leadership, which meant we couldn’t consistently involve those teams in product planning. As a result, our roadmaps naturally skewed toward Indonesia, and we only built out some must-have features for other countries.  
 
 ### Closing thoughts

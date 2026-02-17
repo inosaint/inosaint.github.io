@@ -16,7 +16,7 @@ type Props = {
 };
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, headings } = await entry.render();
 ---
 
 <BaseLayout
@@ -34,28 +34,97 @@ const { Content } = await entry.render();
     </div>
   </nav>
 
-  <article class="post">
-    <div class="post-header">
-      <h1>{entry.data.title}</h1>
-      <p class="description">{entry.data.description}</p>
-      {(entry.data.company || entry.data.year) && (
-        <div class="post-header-meta-container">
-          {entry.data.company && (
-            <span class="post-header-meta">{entry.data.company}</span>
-          )}
-          {entry.data.year && (
-            <span class="post-header-meta">{entry.data.year}</span>
-          )}
+  <div class="post-layout">
+    <article class="post">
+      <div class="post-header">
+        <h1>{entry.data.title}</h1>
+        <p class="description">{entry.data.description}</p>
+        {(entry.data.company || entry.data.year) && (
+          <div class="post-header-meta-container">
+            {entry.data.company && (
+              <span class="post-header-meta">{entry.data.company}</span>
+            )}
+            {entry.data.year && (
+              <span class="post-header-meta">{entry.data.year}</span>
+            )}
+          </div>
+        )}
+      </div>
+
+      {entry.data.image && (
+        <div class="post-header-image">
+          <Image src={entry.data.image} alt={entry.data.title} width={1200} height={600} />
         </div>
       )}
-    </div>
 
-    {entry.data.image && (
-      <div class="post-header-image">
-        <Image src={entry.data.image} alt={entry.data.title} width={1200} height={600} />
-      </div>
+      <Content />
+    </article>
+
+    {headings.length > 0 && (
+      <nav class="toc" aria-label="Table of contents">
+        <ul class="toc-list">
+          {headings.filter((heading) => heading.depth === 2).map((heading) => (
+            <li class={`toc-item toc-level-${heading.depth}`}>
+              <a href={`#${heading.slug}`} class="toc-link">
+                {heading.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     )}
+  </div>
 
-    <Content />
-  </article>
+  <script>
+    // Smooth scroll for TOC links
+    document.addEventListener('DOMContentLoaded', () => {
+      const tocLinks = document.querySelectorAll('.toc-link');
+
+      tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+
+            // Update URL without jumping
+            history.pushState(null, '', targetId);
+          }
+        });
+      });
+
+      // Highlight active section in TOC
+      const observerOptions = {
+        rootMargin: '-100px 0px -66%',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const id = entry.target.getAttribute('id');
+          const tocLink = document.querySelector(`.toc-link[href="#${id}"]`);
+
+          if (entry.isIntersecting && tocLink) {
+            // Remove active class from all links
+            document.querySelectorAll('.toc-link').forEach(link => {
+              link.classList.remove('toc-link-active');
+            });
+
+            // Add active class to current link
+            tocLink.classList.add('toc-link-active');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all headings
+      document.querySelectorAll('.post h2[id], .post h3[id], .post h4[id]').forEach((heading) => {
+        observer.observe(heading);
+      });
+    });
+  </script>
 </BaseLayout>
