@@ -33,7 +33,8 @@
               "title": "Release Notes 1.11.5"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -201,8 +202,11 @@
     "src/content/work/gojek/rough-sketches.png",
     "src/content/work/gojek/GoBiz-ratings.webp",
     "src/content/work/gojek/Early-explorations.png",
+<<<<<<< Updated upstream
     "src/content/writing/toko-poster",
     "src/content/writing/toko-poster/index.md",
+=======
+>>>>>>> Stashed changes
     "src/content/work/sahabat-jiva-redesign/sjappOld.png",
     "src/content/work/sahabat-jiva-redesign/sjUserResearch.webp",
     "src/content/work/sahabat-jiva-redesign/sjStakeholders.webp",
@@ -218,6 +222,10 @@
     "().md",
     "src/content/writing/toko-poster",
     "src/content/work/practo-pro/index.md",
+<<<<<<< Updated upstream
+=======
+    "src/content/writing/toko-poster/index.md",
+>>>>>>> Stashed changes
     "public/Kenneths Resume 16022026.pdf",
     "Kenneths Resume 16022026.pdf",
     "Untitled",
@@ -228,6 +236,10 @@
     "src/content/work/sahabat-jiva-redesign/index.md",
     "src/content/work/jiva-lite/index.md",
     "node_modules/zod-to-json-schema/dist-test-v3/esm/node_modules/zod/v4/locales/ko.js",
+<<<<<<< Updated upstream
+=======
+    "node_modules/zod-to-json-schema/dist-test-v4/cjs/node_modules/zod/v4/locales/km.js",
+>>>>>>> Stashed changes
     "node_modules/astro/README.md",
     "node_modules/axobject-query/README.md",
     "node_modules/boolbase/README.md",
