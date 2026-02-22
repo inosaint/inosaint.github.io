@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "src/content/work/gojek/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "index"
             }
           },
           {
@@ -33,8 +33,7 @@
               "title": "Release Notes 1.11.5"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -197,35 +196,29 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "9be13d8b3a9ff2b0",
+  "active": "a69ee6a789446d23",
   "lastOpenFiles": [
+    "src/content/work/gojek/Gobiz-web3.png",
+    "src/content/work/gojek/image-174.png",
+    "src/content/writing/toko-poster/index.md",
+    "README.md",
     "src/content/work/gojek/rough-sketches.png",
     "src/content/work/gojek/GoBiz-ratings.webp",
     "src/content/work/gojek/Early-explorations.png",
-<<<<<<< Updated upstream
-    "src/content/writing/toko-poster",
-    "src/content/writing/toko-poster/index.md",
-=======
->>>>>>> Stashed changes
     "src/content/work/sahabat-jiva-redesign/sjappOld.png",
     "src/content/work/sahabat-jiva-redesign/sjUserResearch.webp",
     "src/content/work/sahabat-jiva-redesign/sjStakeholders.webp",
     "src/content/work/sahabat-jiva-redesign/sjRoadmap.png",
     "src/content/work/sahabat-jiva-redesign/sjPlanning.png",
     "src/content/work/sahabat-jiva-redesign/sjMeetingUsers.webp",
-    "src/content/work/sahabat-jiva-redesign/DocumentingPatterns.webp",
+    "().md",
+    "src/content/writing/toko-poster",
     "public/kenneth's presentation (1).pdf",
-    "public/images/spots-new-design/image-011.png",
     "public/images/spots-new-design",
     "public/images/kenneths-presentation",
     "public/Spots_-_New_Design.pdf",
-    "().md",
     "src/content/writing/toko-poster",
     "src/content/work/practo-pro/index.md",
-<<<<<<< Updated upstream
-=======
-    "src/content/writing/toko-poster/index.md",
->>>>>>> Stashed changes
     "public/Kenneths Resume 16022026.pdf",
     "Kenneths Resume 16022026.pdf",
     "Untitled",
@@ -236,10 +229,6 @@
     "src/content/work/sahabat-jiva-redesign/index.md",
     "src/content/work/jiva-lite/index.md",
     "node_modules/zod-to-json-schema/dist-test-v3/esm/node_modules/zod/v4/locales/ko.js",
-<<<<<<< Updated upstream
-=======
-    "node_modules/zod-to-json-schema/dist-test-v4/cjs/node_modules/zod/v4/locales/km.js",
->>>>>>> Stashed changes
     "node_modules/astro/README.md",
     "node_modules/axobject-query/README.md",
     "node_modules/boolbase/README.md",
@@ -255,7 +244,6 @@
     "node_modules/rehype-figure/node_modules/@types/hast/README.md",
     "node_modules/rehype-figure/node_modules/@types/unist/README.md",
     "node_modules/rehype-figure/node_modules/unist-util-visit-parents/readme.md",
-    "node_modules/rehype-figure/node_modules/unist-util-visit/readme.md",
     "Untitled.canvas"
   ]
 }
