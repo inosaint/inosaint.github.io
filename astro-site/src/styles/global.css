@@ -542,7 +542,6 @@ figcaption {
   grid-template-columns: 1fr auto;
   gap: 2rem;
   align-items: start;
-  margin-bottom: 3rem;
 }
 
 .intro-text h1 {
