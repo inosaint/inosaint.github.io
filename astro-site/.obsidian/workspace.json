@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/work/sahabat-jiva-redesign/index.md",
+                "file": "src/content/work/gojek/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -198,7 +198,6 @@
   },
   "active": "a69ee6a789446d23",
   "lastOpenFiles": [
-    "src/content/work/gojek/index.md",
     "src/content/work/gojek/Gobiz-web3.png",
     "src/content/work/gojek/image-174.png",
     "src/content/writing/toko-poster/index.md",
@@ -211,6 +210,7 @@
     "src/content/work/sahabat-jiva-redesign/sjStakeholders.webp",
     "src/content/work/sahabat-jiva-redesign/sjRoadmap.png",
     "src/content/work/sahabat-jiva-redesign/sjPlanning.png",
+    "src/content/work/sahabat-jiva-redesign/sjMeetingUsers.webp",
     "().md",
     "src/content/writing/toko-poster",
     "public/kenneth's presentation (1).pdf",
@@ -223,6 +223,7 @@
     "Kenneths Resume 16022026.pdf",
     "Untitled",
     "Readme 1.md",
+    "src/content/work/gojek/index.md",
     "src/content/work/gobiz-inbox/index.md",
     "src/content/work/claim-profile/index.md",
     "src/content/work/sahabat-jiva-redesign/index.md",

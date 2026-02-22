@@ -74,7 +74,7 @@ We experimented with spacing and separators, navigation menu designs and modal o
 ![](Gobiz-web.png)
 
 
-![Sorry for the poor image quality](Gobiz-web2.png)
+![After our redesign with Asphalt Web](Gobiz-web3.png)
 
 #### What we could not do:
 * Fix the information architecture issues in every page. 
