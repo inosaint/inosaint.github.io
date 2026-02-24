@@ -75,7 +75,6 @@ We experimented with spacing and separators, navigation menu designs and modal o
 
 
 ![After our redesign with Asphalt Web](Gobiz-web3.png)
-
 #### What we could not do:
 * Fix the information architecture issues in every page. 
 * Figure out a table design that works well on mobile and desktop
@@ -85,7 +84,7 @@ The GoMart designers were able to use the design system and build their module o
 
 
 ## The Spots app:
-![](spots.png)
+![Left: Original, Right: Redesigned](spots.png)
 The SPOTS app was a point of sales app on a Landi device. We were selling these to offline merchants to let them collect payment via offline modes like credit card, debit card and QR. 
 
 The app they were using was a reskinned version of the default app provided by Landi(image on the left). 
@@ -95,8 +94,6 @@ I was asked to help out with it and I worked on a refresh for the app on a short
 ![](QRIS-gobiz.webp)
 
 We later integrated this into the POS application on the GoBiz app. 
-
-In 2024 during a visit to McDonalds, I chanced upon 
 
 # Midtrans:
 In 2020, the Midtrans merchant onboarding was prioritized due to an external collaboration with Whatsapp. 
