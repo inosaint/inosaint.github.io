@@ -77,6 +77,7 @@ We got 1 field marketer, Erwin, on loan from the growth team for the efforts on 
 #### Jiva Lite Website:
 We built a website so that we could provide a social proof that Jiva Lite was infact an offering from Jiva and not a scam. The website had prices which we manually updated and directed users to the Whatsapp number.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kCQByHg5kBI?si=MZe2Z8pwF-LeETQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 #### Doing things that don't scale:
 We didn't build an in-flow way to add a farmer's bank account details. We resorted instead to use a manual system of getting the information from the farmer and getting CX team to add them to the system. This enabled us to ship faster and prevented user error from entering the wrong information. Where possible we pre-filled dummy data (e.g., user address) in the backend because we didnt want to build without valdiating our idea at this stage.
 

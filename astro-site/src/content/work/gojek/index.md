@@ -12,7 +12,7 @@ From 2019-2022, I worked on the merchant side of Gojek. GoBiz, Gojek's merchant 
 
 I started off as the designer tasked with redesigning the GoBiz Android app and eventually moved to lead the design on the GoBiz Platform contributing towards the design of the GoBiz app and website, the Spots app and the Midtrans website. Over this period of time, the design team at GoBiz grew to 12 designers with the mergers and acquisitions of Midtrans, Kartuku and Moka POS before eventually breaking up pre-IPO. 
 
-## GoBiz app:
+## GoBiz app
 [GO-RESTO](https://www.gojek.io/blog/whats-cooking-diving-into-kitchens-for-gobiz) ,released on 2017,  was the app that our GO-FOOD partner merchants would use to receive orders, manage their catalogue and other restaurant information.  But with the creation of the Merchant vertical, now GO-RESTO was to have a much larger vision. I joined the team as their designer in 2018 and worked on the redesign to convert it into a Super app. 
 
 When we started working on this, we were worried that our users would feel isolated by this change in the interface which were driven by our business needs. 
@@ -53,7 +53,7 @@ Based on the feedback, we took a call to re-instate the customer number back on 
 
 The ratings of the GoBiz Super app saw a positive growth from 3.7 when we started work to 4.5+ post release[^1].
 
-## GoBiz Dashboard:
+## GoBiz Dashboard
 Sometimes you just inherit a product that has not been loved. The GoBiz dashboard was built for enterprise merchants by forking an internal portal. The portal was built on an internal front end framework “[Tanjidor](https://en.wikipedia.org/wiki/Tanjidor)” and the designers used to design in the browser and this meant that there were no design files. This meant that there was a dependency on the existing designers. So we decided to pick it up as a design initiative.
 
 #### Objectives of the redesign:
@@ -83,7 +83,7 @@ We experimented with spacing and separators, navigation menu designs and modal o
 The GoMart designers were able to use the design system and build their module on the Dashboard with limited dependency on our team. 
 
 
-## The Spots app:
+## The Spots app
 ![Left: Original, Right: Redesigned](spots.png)
 The SPOTS app was a point of sales app on a Landi device. We were selling these to offline merchants to let them collect payment via offline modes like credit card, debit card and QR. 
 
@@ -95,7 +95,7 @@ I was asked to help out with it and I worked on a refresh for the app on a short
 
 We later integrated this into the POS application on the GoBiz app. 
 
-# Midtrans:
+# Midtrans
 In 2020, the Midtrans merchant onboarding was prioritized due to an external collaboration with Whatsapp. 
 
 ![](midtrans-old.png)

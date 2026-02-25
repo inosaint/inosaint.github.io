@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/work/sahabat-jiva-redesign/index.md",
+                "file": "src/content/work/jiva-lite/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -198,7 +198,9 @@
   },
   "active": "a69ee6a789446d23",
   "lastOpenFiles": [
+    "src/content/work/jiva-lite/jivalite.jpg",
     "src/content/work/gojek/index.md",
+    "src/content/work/sahabat-jiva-redesign/originalSJapp.png",
     "src/content/work/sahabat-jiva-redesign/index.md",
     "src/content/writing/toko-poster/index.md",
     "src/content/writing/toko-poster",
@@ -212,7 +214,6 @@
     "src/content/work/sahabat-jiva-redesign/sjUserResearch.webp",
     "src/content/work/sahabat-jiva-redesign/sjStakeholders.webp",
     "src/content/work/sahabat-jiva-redesign/sjRoadmap.png",
-    "src/content/work/sahabat-jiva-redesign/sjPlanning.png",
     "().md",
     "public/kenneth's presentation (1).pdf",
     "public/images/spots-new-design",
