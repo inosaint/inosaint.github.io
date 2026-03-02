@@ -1,8 +1,8 @@
 ---
 title: Midjourneying through Indonesia
 description: this is a description
-date: 2/03/2026
+date: 2026-03-02
 status: draft
-image:
+image: double_diamond.png
 ---
 hello

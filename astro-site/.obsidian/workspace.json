@@ -214,6 +214,10 @@
   "active": "fa64cf4b0f3b9451",
   "lastOpenFiles": [
     "src/content/writing/long-live-design-process/index.md",
+    "src/content/writing/long-live-design-process/claude-paper.png",
+    "src/content/writing/long-live-design-process/Screenshot 2026-02-25 at 1.22.15 PM.png.sb-9c485e8d-i45gGB",
+    "src/content/writing/long-live-design-process/Screenshot 2026-02-25 at 1.22.15 PM.png",
+    "src/content/writing/toko-poster/index.md",
     "src/content/writing/hiring/index.md",
     "src/content/writing/design-tools-decade/index.md",
     "src/content/writing/long-live-design-process/Design_Sprints.png",
@@ -225,14 +229,11 @@
     "src/content/work/gojek/index.md",
     "src/content/work/sahabat-jiva-redesign/originalSJapp.png",
     "src/content/work/sahabat-jiva-redesign/index.md",
-    "src/content/writing/toko-poster/index.md",
     "src/content/writing/toko-poster",
     "src/content/work/gojek/Gobiz-web3.png",
     "src/content/work/gojek/image-174.png",
     "README.md",
     "src/content/work/gojek/rough-sketches.png",
-    "src/content/work/gojek/GoBiz-ratings.webp",
-    "src/content/work/gojek/Early-explorations.png",
     "().md",
     "public/kenneth's presentation (1).pdf",
     "public/images/spots-new-design",
@@ -245,7 +246,6 @@
     "Readme 1.md",
     "src/content/work/gobiz-inbox/index.md",
     "src/content/work/claim-profile/index.md",
-    "node_modules/zod-to-json-schema/dist-test-v3/esm/node_modules/zod/v4/locales/ko.js",
     "node_modules/astro/README.md",
     "node_modules/axobject-query/README.md",
     "node_modules/boolbase/README.md",
@@ -258,7 +258,6 @@
     "node_modules/anymatch/README.md",
     "node_modules/@shikijs/engine-javascript/README.md",
     "node_modules/@shikijs/engine-oniguruma/README.md",
-    "node_modules/rehype-figure/node_modules/@types/hast/README.md",
     "Untitled.canvas"
   ]
 }
