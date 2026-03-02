@@ -1,5 +1,5 @@
 ---
-title: The design process is dead, long life the design process
+title: The design process is dead, long live the design process
 description: I’ve been building with AI for the past few months and I dont think the design process is dead.
 date: 2026-03-02
 status: published
