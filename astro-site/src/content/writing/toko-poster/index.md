@@ -1,7 +1,7 @@
 ---
 title: Midjourneying through Indonesia
 description: this is a description
-date: this is where you will add date
+date: 2/03/2026
 status: draft
 image:
 ---
