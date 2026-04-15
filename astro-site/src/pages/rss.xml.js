@@ -47,12 +47,15 @@ export async function GET(context) {
     })
     .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 
+  const feedUrl = new URL('rss.xml', context.site).href;
+
   return rss({
     title: 'Kenneth Mark Dsouza — Writing',
     description:
       'Writing from Kenneth Mark Dsouza, a Product Design Manager with experience building and leading design teams in India and Indonesia.',
     site: context.site,
     items,
-    customData: `<language>en-us</language>`,
+    xmlns: { atom: 'http://www.w3.org/2005/Atom' },
+    customData: `<language>en-us</language><atom:link href="${feedUrl}" rel="self" type="application/rss+xml" />`,
   });
 }
