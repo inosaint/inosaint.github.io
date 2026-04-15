@@ -11,7 +11,9 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
     "astro": "^6.1.6",
+    "markdown-it": "^14.1.1",
     "rehype-figure": "^1.0.1",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "sanitize-html": "^2.17.2"
   }
 }
