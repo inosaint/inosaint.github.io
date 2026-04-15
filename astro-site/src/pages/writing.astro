@@ -84,12 +84,21 @@ const formatDate = (date: Date) => {
 ---
 
 <BaseLayout title="Writing and Talks - Kenneth Mark Dsouza">
-  <nav class="breadcrumb-header">
+  <nav class="breadcrumb-header breadcrumb-header--with-actions">
     <div class="breadcrumb">
       <a href="/" class="breadcrumb-link">Home</a>
       <span class="breadcrumb-separator">/</span>
       <span class="breadcrumb-current">Writing</span>
     </div>
+    <a
+      href="/rss.xml"
+      class="rss-link"
+      title="Subscribe to the writing RSS feed"
+      aria-label="Subscribe to the writing RSS feed"
+    >
+      <span class="material-symbols-outlined" aria-hidden="true">rss_feed</span>
+      <span class="rss-link-label">RSS</span>
+    </a>
   </nav>
 
   <h1 style="margin-bottom: 3rem;">Writing and Talks</h1>
