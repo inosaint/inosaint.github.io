@@ -357,8 +357,10 @@ figcaption {
   color: var(--color-primary);
 }
 
-.rss-link .material-symbols-outlined {
-  font-size: 1.15rem;
+.rss-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
 }
 
 /* Back link styles */
