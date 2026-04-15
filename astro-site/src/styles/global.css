@@ -336,6 +336,33 @@ figcaption {
   font-weight: 500;
 }
 
+.breadcrumb-header--with-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rss-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.rss-link:hover {
+  color: var(--color-primary);
+}
+
+.rss-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
+}
+
 /* Back link styles */
 .back-link {
   display: inline-block;

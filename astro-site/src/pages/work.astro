@@ -28,7 +28,7 @@ const work = allWork.sort((a, b) => {
 
   <div class="grid">
     {work.map(item => (
-      <a href={`/work/${item.slug}`} class="card">
+      <a href={`/work/${item.id}`} class="card">
         {item.data.image ? (
           <Image
             src={item.data.image}
