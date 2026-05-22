@@ -78,6 +78,7 @@ We got 1 field marketer, Erwin, on loan from the growth team for the efforts on 
 We built a website so that we could provide a social proof that Jiva Lite was infact an offering from Jiva and not a scam. The website had prices which we manually updated and directed users to the Whatsapp number.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kCQByHg5kBI?si=MZe2Z8pwF-LeETQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 #### Doing things that don't scale:
 We didn't build an in-flow way to add a farmer's bank account details. We resorted instead to use a manual system of getting the information from the farmer and getting CX team to add them to the system. This enabled us to ship faster and prevented user error from entering the wrong information. Where possible we pre-filled dummy data (e.g., user address) in the backend because we didnt want to build without valdiating our idea at this stage.
 
@@ -164,7 +165,7 @@ In the one year of operation, we scaled Jiva Lite from 0 to 600 registered users
 
 </div>
 
-Behaviourally though, we were about to bring meaningful improvements into the lives of the Farmers in a few provinces of South Sulawesi. Most farmers who transacted with us made about 2.5-3 million IDR(~$180 USD) more than they would otherwise.
+Behaviourally though, we were able to bring meaningful improvements into the lives of the Farmers in a few provinces of South Sulawesi. Most farmers who transacted with us made about 2.5-3 million IDR(~$180 USD) more than they would otherwise.
 Even after Jiva Lite shut down, a few of the farmers continued to deal directly with the collection centres and improve their collective earnings.
 
 ## Team
