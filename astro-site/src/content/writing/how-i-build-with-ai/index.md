@@ -20,7 +20,7 @@ Although I started using Claude via the cloud setup and moved to Claude Desktop,
 
 I don't use skills, etc at the start. I feel [they are over-rated](https://blog.jim-nielsen.com/2026/opacity-of-generative-tools/) and is like outsourcing your design decisions. I don't work with an org or a design system so making my own 'design.md' feels unnecessary. I rather spend this time finding references and making mood boards. I don't build complicated technical systems, so I don't worry about code quality either. Most of my projects are a single HTML file. YMMV.
 ### Rinse and Repeat
-While I rarely use skills while pro, sub-agents is something I've started to adopt. For e.g, for [grindsize.in](grindsize.in), where scaling the project would expect me to do repeated tasks, I employ 2 [sub-agents](https://github.com/inosaint/grinder-calibrator/tree/main/.claude/agents). I don't write these sub-agents, but just like my approach with skills, I ask Claude to generate them for me. When defining skills, I do specify the kind of model I want to power the sub-agent based on the task complexity and for token conservation. 
+While I rarely use skills while pro, sub-agents is something I've started to adopt. For e.g, for [grindsize.in](https://grindsize.in), where scaling the project would expect me to do repeated tasks, I employ 2 [sub-agents](https://github.com/inosaint/grinder-calibrator/tree/main/.claude/agents). I don't write these sub-agents, but just like my approach with skills, I ask Claude to generate them for me. When defining skills, I do specify the kind of model I want to power the sub-agent based on the task complexity and for token conservation. 
 
 The process of creating sub-agents is similar to my process of creating skills. I make Claude create an outcome I plan. I test and review it. I make changes where required. Once I'm certain of the quality of the outcome, I check with Claude about making the process into an agent/skill. A point to note is that at times, certain process may work better as code rather than an agent. Listen to Claude.
 ### Tests, Evals...  🚀
@@ -39,4 +39,4 @@ Another thing I wish I did more of is *evals*. Evals helps me when I don't under
 --
 
 
-*If you are non-technical and want to learn how to to use AI to build, you can check out my free guide at [howtoaicode.com](howtoaicode.com)*
+*If you are non-technical and want to learn how to to use AI to build, you can check out my free guide at [howtoaicode.com](https://howtoaicode.com)*
