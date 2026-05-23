@@ -15,5 +15,8 @@
     "rehype-figure": "^1.0.1",
     "remark-gfm": "^4.0.1",
     "sanitize-html": "^2.17.2"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }
