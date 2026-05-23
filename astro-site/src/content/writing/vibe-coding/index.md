@@ -70,4 +70,8 @@ Honestly, LLMs have been able to help me overcome the barriers I used to face wi
 -  Setup a free Github account and connect Claude to it. This will help with your versioning and the ability to roll back any unexpected changes. I personally prefer Github desktop over terminal and if you are new, I suggest you try that.
 
 
+--
+
+*If you are non-technical and want to learn how to to use AI to build, you can check out my free guide at [howtoaicode.com](https://howtoaicode.com)*
+
 [^1]: At times, some of Claude's prompts generated multiple iterations so iteration 40 was more like 10 prompts into the conversation.
