@@ -27,12 +27,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/writing/how-i-build-with-ai/index.md",
+                "file": "src/content/writing/vibe-coding/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "index"
+            }
+          },
+          {
+            "id": "3bd3bf7ae225732c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           },
           {
@@ -48,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -211,54 +225,54 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fa64cf4b0f3b9451",
+  "active": "3bd3bf7ae225732c",
   "lastOpenFiles": [
-    "src/content/writing/how-i-build-with-ai/exhume.png",
-    "src/content/writing/how-i-build-with-ai/exhume.PNG",
-    "src/content/writing/how-i-build-with-ai/IMG_8206.PNG",
-    "src/content/writing/how-i-build-with-ai/variant.png",
-    "src/content/writing/how-i-build-with-ai/Screenshot 2026-05-22 at 2.30.53 PM.png",
-    "grindsize.md",
-    "src/content/writing/how-i-build-with-ai/index.md",
-    "src/content/writing/how-i-build-with-ai/grindsize.png",
-    "src/content/writing/how-i-build-with-ai/Screenshot 2026-05-22 at 2.28.02 PM.png",
+    "src/content/work/akar-design-system/index.md",
     "().md",
-    "src/content/writing/how-i-build-with-ai/how-i-build.png.sb-a0773456-CHVgVc",
-    "src/content/writing/long-live-design-process/index.md",
-    "src/content/writing/how-i-build-with-ai/how-i-build.png",
-    "src/content/work/jiva-lite/index.md",
-    "src/content/writing/how-i-build-with-ai",
-    "src/content/work/sahabat-jiva-redesign/index.md",
-    "src/content/work/gojek/index.md",
-    "src/content/writing/long-live-design-process/jivalite-ground.png",
-    "src/content/writing/long-live-design-process/rip-design-process.png",
-    "src/content/writing/long-live-design-process/Frame@2x.png",
-    "src/content/writing/toko-poster/index.md",
-    "src/content/writing/hiring/index.md",
-    "src/content/writing/long-live-design-process/Screenshot 2026-02-25 at 1.22.15 PM.png.sb-9c485e8d-i45gGB",
-    "src/content/writing/design-tools-decade/index.md",
-    "src/content/writing/long-live-design-process",
-    "src/content/writing/toko-poster",
-    "README.md",
-    "public/kenneth's presentation (1).pdf",
-    "public/images/spots-new-design",
-    "public/images/kenneths-presentation",
-    "public/Spots_-_New_Design.pdf",
-    "src/content/work/practo-pro/index.md",
-    "public/Kenneths Resume 16022026.pdf",
-    "Readme 1.md",
-    "src/content/work/gobiz-inbox/index.md",
-    "src/content/work/claim-profile/index.md",
-    "node_modules/astro/README.md",
-    "node_modules/axobject-query/README.md",
-    "node_modules/boolbase/README.md",
-    "node_modules/svgo/README.md",
-    "node_modules/zod-to-json-schema/dist-test-v3/cjs/node_modules/zod/README.md",
+    "grindsize.md",
+    "node_modules/astro/dist/markdown/index.js",
+    "node_modules/astro/dist/markdown/index.d.ts",
+    "node_modules/astro/dist/markdown",
+    "node_modules/astro/dist/core/i18n/domain.js",
+    "node_modules/js-yaml/lib/index_vite_proxy.tmp.mjs",
+    "node_modules/js-yaml/dist/js-yaml.mjs.map",
+    "node_modules/entities/escape.d.ts",
+    "node_modules/entities/dist/commonjs/generated/encode-html.js.map",
+    "node_modules/entities/dist/commonjs/generated/encode-html.js",
+    "node_modules/entities/dist/commonjs/generated/encode-html.d.ts.map",
+    "node_modules/sanitize-html/node_modules/escape-string-regexp/readme.md",
+    "src/content/writing/secret-sauce/index.md",
+    "dist/_astro/process-1.CV5EKp2r_138Hc3.webp",
+    "dist/_astro/process-1.CV5EKp2r_NiB3J.webp",
+    "dist/_astro/process-1.CV5EKp2r_pF5pj.webp",
+    "dist/_astro/v1-prototype.dy-ZzyjU_Z10gfrE.webp",
+    "dist/_astro/process-1.CV5EKp2r_2e458Y.webp",
+    "dist/_astro/claude-v1.BesYFJEs_Z1ynsVd.webp",
+    "dist/_astro/solo-designer-jobs-1.Btry25tV_Z2gsTrL.webp",
+    "dist/_astro/solo-designer-jobs-1.Btry25tV_Z21OzSP.webp",
+    "dist/_astro/git25.BC8fC5yH_1Wd7dv.webp",
+    "dist/_astro/git25.BC8fC5yH_Z10wLGp.webp",
+    "node_modules/hast-util-to-parse5/node_modules/space-separated-tokens/readme.md",
     "node_modules/hast-util-to-parse5/node_modules/property-information/readme.md",
-    "node_modules/hast-util-to-parse5/readme.md",
-    "node_modules/anymatch/node_modules/picomatch/README.md",
-    "node_modules/anymatch/node_modules/picomatch/CHANGELOG.md",
-    "node_modules/anymatch/README.md",
+    "node_modules/hast-util-to-parse5/node_modules/comma-separated-tokens/readme.md",
+    "node_modules/mdast-util-find-and-replace/node_modules/escape-string-regexp/readme.md",
+    "node_modules/csso/node_modules/css-tree/node_modules/mdn-data/css/readme.md",
+    "node_modules/csso/node_modules/css-tree/node_modules/mdn-data/README.md",
+    "node_modules/csso/node_modules/css-tree/node_modules/mdn-data/CHANGELOG.md",
+    "node_modules/is-inside-container/node_modules/is-docker/readme.md",
+    "node_modules/hast-util-to-html/node_modules/space-separated-tokens/readme.md",
+    "node_modules/hast-util-to-html/node_modules/property-information/readme.md",
+    "node_modules/hast-util-to-html/node_modules/comma-separated-tokens/readme.md",
+    "node_modules/parse5/node_modules/entities/readme.md",
+    "node_modules/hast-util-from-parse5/node_modules/hastscript/node_modules/hast-util-parse-selector/readme.md",
+    "node_modules/hast-util-from-parse5/node_modules/hastscript/node_modules/space-separated-tokens/readme.md",
+    "node_modules/hast-util-from-parse5/node_modules/hastscript/node_modules/comma-separated-tokens/readme.md",
+    "node_modules/hast-util-from-parse5/node_modules/hastscript/readme.md",
+    "node_modules/hast-util-from-parse5/node_modules/property-information/readme.md",
+    "node_modules/rehype-figure/node_modules/unist-util-visit/node_modules/@types/unist/README.md",
+    "node_modules/rehype-figure/node_modules/unist-util-visit/node_modules/unist-util-visit-parents/readme.md",
+    "node_modules/rehype-figure/node_modules/unist-util-visit/node_modules/unist-util-is/readme.md",
+    "node_modules/hastscript/node_modules/@types/hast/node_modules/@types/unist/README.md",
     "Untitled.canvas"
   ]
 }
