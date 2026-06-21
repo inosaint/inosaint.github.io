@@ -1,10 +1,10 @@
 ---
-title: "Fixing the Information Architecture of the Sahabat Jiva app"
-description: "Redesigning the Sahabat Jiva Android app to fit the user's mental model and making it an intuitive experience"
-year: "2022-2023"
-company: "Jiva"
-image: "./sjhome.webp"
-status: 'draft'
+title: Fixing the Information Architecture of the Sahabat Jiva app
+description: Redesigning the Sahabat Jiva Android app to fit the user's mental model and making it an intuitive experience
+year: 2022-2023
+company: Jiva
+image: ./sjhome.webp
+status: published
 ---
 
 <!-- Add your project content here -->
@@ -38,7 +38,7 @@ What this really meant was that the Android app was not the primary channel used
 
 There were even cases where our field agents (Activation Co-ordinators, Finance Co-ordinators) may actually be the operators of the application as it had been mandated to digitize every transaction that flows through the system.
 
-So our data had been lying all this while about product adoption and usage.
+This was not a scalable business model as it was dependant on having more feet on ground to increase transactions. Our data had been lying all this while about product adoption and usage.
 
 ## Solution
 
@@ -46,7 +46,31 @@ Can you really solve a problem this systemic and prevalent at so many different 
 
 For sure! but could we do it at one go? No way. 
 
-I advocated to break these problems into multiple phases and prioritized the Information Architecture overhaul as the first step.
+I advocated to break these problems into multiple phases. The goal here was to ship small and impactful to show value in the larger project to the stakeholders. Given the state the app was in, any change we brought in was definitely a net positive to our users. 
 
+In this case study, I will talk about the first phase; the Information Architecture overhaul.
+
+--- 
+
+Before we began redesigning, we needed to deeply understand our users’ mental models — how they think about tasks, organize information, and navigate the app.
+
+To do this, we took a mixed-method research approach, combining qualitative and quantitative inputs from multiple sources:
+
+**Card Sorting with Users:** 
+On the ground, we spoke to users and conducted card sorting exercises to learn how users perceived and grouped key features. This gave us foundational insights into user mental models and navigation logic.
+
+**Usage Data and CX Reports:** 
+We analyzed historical usage data from CleverTap, Mixpanel, and UXCam, alongside customer experience reports, to surface patterns, popular flows, and pain points. One of our takeaways was that over the years, the quality of in-app tracking had degraded and the data we had couldn't be relied on.
+
+**Competitive Research:** 
+We reviewed similar apps to understand how they structured information and workflows. This helped us identify best practices we could adapt to Jiva’s context.
+
+**Stakeholder Interviews and Workshops:** 
+As we knew that our data was in-accurate and prone to telling the wrong story, we had to rely on doing some qualitative research. We held workshops with branch managers, trainers, and on-ground teams. Their first-hand experience highlighted key gaps and opportunities that might not surface through analytics alone.
 
 ## Impact
+
+
+## Conclusion
+
+

@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "src/content/work/sahabat-jiva-redesign/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "index"
             }
           },
           {
@@ -227,6 +227,11 @@
   },
   "active": "3bd3bf7ae225732c",
   "lastOpenFiles": [
+    "src/content/work/sahabat-jiva-redesign/miro-board-competitors.webp",
+    "src/content/work/sahabat-jiva-redesign/competitor-analysis.png",
+    "src/content/work/sahabat-jiva-redesign/early-roadmap.png",
+    "src/content/work/sahabat-jiva-redesign/preflight.png",
+    "README.md",
     "src/content/work/akar-design-system/index.md",
     "().md",
     "grindsize.md",
@@ -249,9 +254,6 @@
     "dist/_astro/process-1.CV5EKp2r_2e458Y.webp",
     "dist/_astro/claude-v1.BesYFJEs_Z1ynsVd.webp",
     "dist/_astro/solo-designer-jobs-1.Btry25tV_Z2gsTrL.webp",
-    "dist/_astro/solo-designer-jobs-1.Btry25tV_Z21OzSP.webp",
-    "dist/_astro/git25.BC8fC5yH_1Wd7dv.webp",
-    "dist/_astro/git25.BC8fC5yH_Z10wLGp.webp",
     "node_modules/hast-util-to-parse5/node_modules/space-separated-tokens/readme.md",
     "node_modules/hast-util-to-parse5/node_modules/property-information/readme.md",
     "node_modules/hast-util-to-parse5/node_modules/comma-separated-tokens/readme.md",
@@ -271,8 +273,6 @@
     "node_modules/hast-util-from-parse5/node_modules/property-information/readme.md",
     "node_modules/rehype-figure/node_modules/unist-util-visit/node_modules/@types/unist/README.md",
     "node_modules/rehype-figure/node_modules/unist-util-visit/node_modules/unist-util-visit-parents/readme.md",
-    "node_modules/rehype-figure/node_modules/unist-util-visit/node_modules/unist-util-is/readme.md",
-    "node_modules/hastscript/node_modules/@types/hast/node_modules/@types/unist/README.md",
     "Untitled.canvas"
   ]
 }
