@@ -41,7 +41,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/work/sahabat-jiva-redesign/index.md",
+                "file": "src/content/writing/how-i-build-with-ai/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -227,6 +227,7 @@
   },
   "active": "3bd3bf7ae225732c",
   "lastOpenFiles": [
+    "src/content/work/sahabat-jiva-redesign/index.md",
     "src/content/work/sahabat-jiva-redesign/miro-board-competitors.webp",
     "src/content/work/sahabat-jiva-redesign/competitor-analysis.png",
     "src/content/work/sahabat-jiva-redesign/early-roadmap.png",
@@ -253,7 +254,6 @@
     "dist/_astro/v1-prototype.dy-ZzyjU_Z10gfrE.webp",
     "dist/_astro/process-1.CV5EKp2r_2e458Y.webp",
     "dist/_astro/claude-v1.BesYFJEs_Z1ynsVd.webp",
-    "dist/_astro/solo-designer-jobs-1.Btry25tV_Z2gsTrL.webp",
     "node_modules/hast-util-to-parse5/node_modules/space-separated-tokens/readme.md",
     "node_modules/hast-util-to-parse5/node_modules/property-information/readme.md",
     "node_modules/hast-util-to-parse5/node_modules/comma-separated-tokens/readme.md",
