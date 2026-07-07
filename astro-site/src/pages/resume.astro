@@ -1,8 +1,65 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const leadershipHighlights = [
+  'Built and scaled design teams across Practo, Gojek, and Jiva (from leading the GoMerchants design function in a 100+ designer org like Gojek to building the product design team at Jiva.ag)',
+  'Defined performance ladders for Product Design and UX Writing, and authored annual reviews, growth plans, and promotion recommendations.',
+  'Established weekly design critiques, biweekly cross-functional product reviews, and documentation systems to improve alignment, cross-pollination and decision velocity.',
+  'Led end-to-end hiring across multiple roles, including campus hiring (NID, IIT-G) and product management interview panels.',
+  'Directed design systems work across web and mobile, including Jiva’s multi-platform Akar design system.'
+];
+
+const experience = [
+  {
+    company: 'Jiva AG',
+    role: 'Senior Design Manager',
+    period: 'Jan 2022 - Sept 2025',
+    details: [
+      'Led the product design function across five mobile apps and internal tools serving Indonesia’s agriculture supply chain.',
+      'Designed products for 100k+ farmers, 5,400 collectors, and 4,900 retailers.',
+      'Co-led Jiva Lite, a WhatsApp-based assistant that helped farmers improve their sales by $180 on avg.',
+      'Led design for Crop Doctor, an AI-powered interface inside the Farmer App for diagnosing crop disease.',
+      'Directed the design system, Akar, and oversaw it’s implementation across Jiva’s ecosystem of apps.'
+    ]
+  },
+  {
+    company: 'Gojek',
+    role: 'Senior Design Manager',
+    period: 'Dec 2017 - Jan 2022',
+    details: [
+      'Headed the Merchant Platform design team across multiple merchant-facing products; ads, pos, payment gateways and merchant platforms.',
+      'Led the redesign of GoBiz as it evolved from a restaurant management tool into a broader merchant platform.',
+      'Improved information architecture across products serving 1.5M+ merchants.',
+      'Designed for regional expansion across Thailand, Vietnam, and Singapore.',
+      'Introduced team rituals and cross-functional alignment practices as the organization scaled.'
+    ]
+  },
+  {
+    company: 'Practo',
+    role: 'Senior Designer',
+    period: 'Apr 2014 - Nov 2017',
+    details: [
+      'Worked on doctor-facing products including Practo Ray and was the design owner for Practo Partner.',
+      'Led the Material redesign of the Practo Partner Android app and oversaw the redesign of the iOS app.',
+      'Helped unify multiple provider-facing products into a more cohesive platform.',
+      'Grew with the team from design intern to senior designer as the practice scaled from 4 to 32 designers.'
+    ]
+  },
+  {
+    company: 'TCS',
+    role: 'Assistant Systems Engineer',
+    period: 'Nov 2010 - May 2012',
+    details: [
+      'Started in engineering, working with Java and middleware applications before moving toward HTML, CSS, JavaScript frameworks, and Visual design with Photoshop.'
+    ]
+  }
+];
 ---
 
-<BaseLayout title="Resume - Kenneth Mark Dsouza">
+<BaseLayout
+  title="Resume - Kenneth Mark Dsouza"
+  description="Resume of Kenneth Mark Dsouza, a product design leader with experience in design leadership, team building, design systems, and product work across India and Indonesia."
+>
   <nav class="breadcrumb-header">
     <div class="breadcrumb">
       <a href="/" class="breadcrumb-link">Home</a>
@@ -11,79 +68,141 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </nav>
 
-  <div class="resume-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; flex-wrap: wrap; gap: 0.5rem;">
-    <h1 style="margin-bottom: 0;">Resume</h1>
-    <span style="display: inline-flex; align-items: center; gap: 0.35rem;">
-      <span class="material-symbols-outlined" style="font-size: 1rem; color: var(--color-primary);">download</span>
-      <a href="/resume.pdf" download>Download</a>
+  <div class="resume-header">
+    <h1>Resume</h1>
+    <span class="resume-download">
+      <span class="material-symbols-outlined resume-download__icon">download</span>
+      <a href="/kenneths_resume.pdf" download="kenneths_resume.pdf">Download</a>
     </span>
   </div>
 
-  <section style="margin-bottom: 3rem;">
-
+  <section class="resume-section">
     <p>
-      Born and brought up in the coastal city of Mangalore in a Roman catholic household, I pursued a career as an engineer until by a spot of luck I came across the field of design.
-      Post a Master's degree (Information and Interface Design, 2012-2015) from the National Institute of Design, I started my practice as a digital product designer. 
-      Now with 11+ years of experience, I am currently a senior design manager with a keen interest in growing designers, building great teams and psychological safety.
+      Born and brought up in the coastal city of Mangalore in a Roman Catholic household, I pursued a career as an engineer until, by a spot of luck, I came across the field of design. After a Master&apos;s degree in Information and Interface Design from the National Institute of Design, I began my practice as a digital product designer.
     </p>
     <p>
-      In my spare time, I like to travel to new places, make <a href="https://www.instagram.com/filtercoffeeconnoisseur/" target="_blank" rel="noopener noreferrer">coffee content</a>, read <a href="https://www.goodreads.com/user/show/86283809-kenneth-dsouza" target="_blank" rel="noopener noreferrer"> non-fiction and contemporary fiction </a>, collect graphic art and write short stories and <a href="https://aninosaintlife.wordpress.com/category/travels/" target="_blank" rel="noopener noreferrer">travelogues</a>.
+      Now with 12+ years of experience, I am a product design leader with a keen interest in growing designers, building strong teams, and creating psychological safety.
+    </p>
+    <p>
+      In my spare time, I like to travel to new places, make <a href="https://www.instagram.com/filtercoffeeconnoisseur/" target="_blank" rel="noopener noreferrer">coffee content<span class="sr-only"> (opens in new tab)</span></a>, read <a href="https://www.goodreads.com/user/show/86283809-kenneth-dsouza" target="_blank" rel="noopener noreferrer">non-fiction and contemporary fiction<span class="sr-only"> (opens in new tab)</span></a>, collect graphic art, and write short stories and <a href="https://aninosaintlife.wordpress.com/category/travels/" target="_blank" rel="noopener noreferrer">travelogues<span class="sr-only"> (opens in new tab)</span></a>.
     </p>
     <p>
       Want to work with me or discuss a cool project that you are working on?
     </p>
     <p>
-      Write me an email at kennethmdesouza [at] gmail [dot] com or DM me <a href="https://twitter.com/Kenneth" target="_blank" rel="noopener noreferrer">@kenneth</a>
+      Write me an email at kennethmdesouza [at] gmail [dot] com or DM me <a href="https://twitter.com/Kenneth" target="_blank" rel="noopener noreferrer">@kenneth<span class="sr-only"> (opens in new tab)</span></a>.
     </p>
   </section>
 
-  <section style="margin-bottom: 3rem;">
+  <section class="resume-section">
+    <h4>Leadership and Organizational Impact</h4>
+    <ul class="resume-list">
+      {leadershipHighlights.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="resume-section">
     <h4>Work Experience</h4>
 
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--color-text); margin-bottom: 0.5rem;">Senior Design Manager</h3>
-      <p style="color: var(--color-text-secondary); margin-bottom: 0.75rem;">Jiva AG • Jan 2022 - Sept 2025</p>
-      <ul style="padding-left: 0; margin-bottom: 0;">
-        <li>Head of Product Design team of 10+ designers (product designers, ux writers and user researchers)</li>
-        <li>Responsible for the design of multiple mobile apps (Sahabat Jiva app, Jiva Agro app, Jiva Petani app, etc) and desktop interfaces</li>
-        <li>Directed the design of our internal design system – Akar</li>
-      </ul>
-    </div>
-
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--color-text); margin-bottom: 0.5rem;">Senior Design Manager</h3>
-      <p style="color: var(--color-text-secondary); margin-bottom: 0.75rem;">Gojek • Dec 2017 - Jan 2022</p>
-      <ul style="padding-left: 0; margin-bottom: 0;">
-        <li>Head of Merchant Platform design team of 10+ product designers across multiple products</li>
-        <li>Responsible for the design of all Merchant facing products ranging from GoFood Resto Management to the Midtrans Payment Gateway across region</li>
-        <li>Helped build the team and design processes as we scaled from a small team to 100+ designers and I grew from Senior Designer to Senior Design Manager</li>
-      </ul>
-    </div>
-
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--color-text); margin-bottom: 0.5rem;">Senior Designer</h3>
-      <p style="color: var(--color-text-secondary); margin-bottom: 0.75rem;">Practo • Apr 2014 - Nov 2017</p>
-      <ul style="padding-left: 0; margin-bottom: 0;">
-        <li>Worked on the Doctor facing products like Practo Ray and was the Design Owner for Practo Partner.</li>
-        <li>Led the effort for the Material redesign of the Practo Partner android app and oversaw the redesign of the iOS app.</li>
-        <li>Helped build the team and design processes as we scaled from 4 to 32 designers and was part of it from Intern to Senior Designer</li>
-      </ul>
+    <div class="experience-list">
+      {experience.map((item) => (
+        <article class="experience-item">
+          <h3>{item.role}</h3>
+          <p class="experience-meta">{item.company} • {item.period}</p>
+          <ul class="resume-list">
+            {item.details.map((detail) => (
+              <li>{detail}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section>
+  <section class="resume-section">
     <h4>Education</h4>
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="color: var(--color-text); margin-bottom: 0.5rem;">Masters in Design</h3>
-      <p style="margin-bottom: 0;">National Institute of Design</p>
-      <p style="color: var(--color-text-secondary); margin-bottom: 0;">Information & Interface Design</p>
-      <p style="color: var(--color-text-secondary); margin-bottom: 0;">2012 - 2015</p>
+
+    <div class="education-item">
+      <h3>Master&apos;s in Design</h3>
+      <p>National Institute of Design</p>
+      <p class="education-meta">Information and Interface Design</p>
+      <p class="education-meta">2012 - 2015</p>
     </div>
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="color: var(--color-text); margin-bottom: 0.5rem;">Bachelors of Engineering</h3>
-      <p style="margin-bottom: 0;">NMAMIT (VTU)</p>
-      <p style="color: var(--color-text-secondary); margin-bottom: 0;">Electronics & Communications</p>
-      <p style="color: var(--color-text-secondary); margin-bottom: 0;">2006 - 2010</p>
+
+    <div class="education-item">
+      <h3>Bachelor&apos;s of Engineering</h3>
+      <p>NMAMIT (VTU)</p>
+      <p class="education-meta">Electronics and Communications</p>
+      <p class="education-meta">2006 - 2010</p>
     </div>
   </section>
+
+  <style>
+    .resume-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .resume-header h1 {
+      margin-bottom: 0;
+    }
+
+    .resume-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .resume-download__icon {
+      font-size: 1rem;
+      color: var(--color-primary);
+    }
+
+    .resume-section {
+      margin-bottom: 3rem;
+    }
+
+    .resume-section h4 {
+      margin-bottom: 1rem;
+    }
+
+    .resume-list {
+      margin-bottom: 0;
+      padding-left: 1.5rem;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .experience-item h3,
+    .education-item h3 {
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-meta,
+    .education-meta {
+      color: var(--color-text-secondary);
+    }
+
+    .experience-meta {
+      margin-bottom: 0.75rem;
+    }
+
+    .education-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .education-item p {
+      margin-bottom: 0;
+    }
+  </style>
 </BaseLayout>

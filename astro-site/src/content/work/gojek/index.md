@@ -28,7 +28,7 @@ We did a merchant segmentation study and then selected a few merchants from each
 
 #### Design Process:
 
-![Rough Sketches](rough-sketches.png)
+![Rough Sketches](rough-sketches.webp)
 ![One of the early iterations](Early-explorations.png)
 ![Redesigned screens in Sketch for GoBiz](gobiz-v1.png)
 

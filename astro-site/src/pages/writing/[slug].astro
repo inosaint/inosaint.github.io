@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { Image, getImage } from 'astro:assets';
+import { YouTube } from 'astro-embed';
 
 export async function getStaticPaths() {
   const writings = await getCollection('writing');
@@ -68,6 +69,6 @@ const formatDate = (date: Date) => {
       </div>
     )}
 
-    <Content />
+    <Content components={{ YouTube }} />
   </article>
 </BaseLayout>

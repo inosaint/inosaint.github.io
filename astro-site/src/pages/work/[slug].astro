@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { Image, getImage } from 'astro:assets';
+import { YouTube } from 'astro-embed';
 
 export async function getStaticPaths() {
   const work = await getCollection('work');
@@ -69,7 +70,7 @@ const socialImage = entry.data.image
         </div>
       )}
 
-      <Content />
+      <Content components={{ YouTube }} />
     </article>
 
     {headings.length > 0 && (
