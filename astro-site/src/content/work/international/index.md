@@ -35,11 +35,11 @@ We chose Noto Sans, which is free, widely supported, and covered all the scripts
 
 <div class="impact-images" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
 
-![Placing an order to test our flow](./dogfooding.png)
+![Placing an order to test our flow](./dogfooding.webp)
 
-![Observing how they track orders](./user-behaviour.png)
+![Observing how they track orders](./user-behaviour.webp)
 
-![Checking out the competitors](./competitors.png)
+![Checking out the competitors](./competitors.webp)
 
 </div>
 

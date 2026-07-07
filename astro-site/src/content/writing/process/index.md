@@ -2,7 +2,7 @@
 title: Beyond building processes at GoMerchant Design Team
 description: Team process and documentation
 date: "2021-08-19"
-image: './process-1.png'
+image: './process-1.webp'
 ---
 A considerable amount of time in 'Year 1' of being a manager has been about setting up artifacts and processes. I was lucky to be part of an organization that had a documentation culture in its DNA. This was partly because we had Program Managers embedded within each team. This meant that Jira, Confluence and Asana were setup and maintained religiously, with weekly feature spec reviews [FSR] and ProdTech meetings to keep these upto date.
 

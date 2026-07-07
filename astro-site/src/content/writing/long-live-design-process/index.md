@@ -17,7 +17,7 @@ The real design process was about making, testing, failing and learning – all 
 
 But when you are building products for users who aren’t like you, there is no replacement for the process. 
 
-![Speaking to Farmers to understand their decision making when it comes to selling their harvests](jivalite-ground.png)
+![Speaking to Farmers to understand their decision making when it comes to selling their harvests](jivalite-ground.webp)
 
 At Jiva.ag, we were building for rural Indonesia. Our users weren’t digital natives but often humans with limited technical literacy. We couldn’t really design products and systems for them sitting in our AC offices. We needed to spend time with them – mapping their world and understanding their ways. We tested with scrappy prototypes, iterating upon and validating ideas until we sat down to build. That’s how we understood how our customers used the internet, how they made decisions, and what mattered to them.
 
@@ -28,4 +28,3 @@ Yes, AI can help close the loop faster. But without a process, we would have des
 [^2]: "Design fixation is a well-documented cognitive bias where a designer becomes stuck on a limited set of ideas, often influenced by prior knowledge, previous solutions, or dominant trends," explains design psychology expert Rachel A. Wood. [More here](https://www.livingetc.com/advice/what-is-design-fixation).
 [^3]: Cover image courtesy: [The Double Diamond from the Design Council UK](https://www.designcouncil.org.uk/our-resources/the-double-diamond/)
 [^4]: Design Sprint image: [Courtesy Wikipedia](https://en.wikipedia.org/wiki/Design_sprint).
-
