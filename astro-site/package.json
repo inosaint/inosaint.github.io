@@ -13,6 +13,7 @@
     "@astrojs/rss": "^4.0.18",
     "astro": "^6.3.7",
     "astro-embed": "^0.13.1",
+    "astro-expressive-code": "^0.44.0",
     "markdown-it": "^14.1.1",
     "rehype-figure": "^1.0.1",
     "remark-gfm": "^4.0.1",
