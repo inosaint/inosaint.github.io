@@ -18,7 +18,7 @@ Today most LLMs can easily generate a chart from a single prompt. At times, LLMs
 
 Data-Vizard is different. It breaks the task into a series of smaller steps where the human makes the important decisions and AI helps automate the work in between.
 
-![v0.1.0 of data-vizard](./plugin.png)
+![v0.1.0 of data-vizard](./plugin.jpg)
 
 The first version consisted of five skills:
 
@@ -59,7 +59,7 @@ Beyond learning how to publish and update an npm package, building and testing i
 
 ### Conclusion:
 
-![The plugin in progress](./plugin-workflow.png)
+![The plugin in progress](./plugin-workflow.jpg)
 
 Building data-vizard has helped me drift back into creating data visualizations. I used it to create this data viz of the [ongoing Fifa worldcup](https://astral-willow-xyk8.here.now) and this visualization of [London Salary data](https://devoted-huckle-mtxv.here.now). 
 
@@ -67,4 +67,4 @@ Like I said, Data-Vizard is still evolving, and I have plenty more ideas I'd lik
 
 --
 
-*P.s. If you are interested in having me host a workshop, please reach out to me on [X](https://x.com/kenneth), [bsky](https://bsky.app/profile/ken.cv) or [Instagram](instagram.com/kennethmdesouza)* 
+*P.s. If you are interested in having me host a workshop, please reach out to me on [X](https://x.com/kenneth), [bsky](https://bsky.app/profile/ken.cv) or [Instagram](https://instagram.com/kennethmdesouza)* 

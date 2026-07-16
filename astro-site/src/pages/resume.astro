@@ -9,6 +9,66 @@ const leadershipHighlights = [
   'Directed design systems work across web and mobile, including Jiva’s multi-platform Akar design system.'
 ];
 
+const selectedWritingAndSpeaking = [
+  {
+    title: 'An insider’s guide to a Job hunt',
+    description: 'A short talk I give to design school students, from the perspective of a hiring manager, who are about to sit for their college placements.',
+    url: 'https://pitch.com/v/an-insiders-guide-to-the-job-hunt-d34c3u'
+  },
+  {
+    title: 'Near, far, wherever we are',
+    description: 'Transcribed from a talk that Feby (researcher) and I (designer) gave during the pandemic about working in teams across international borders.',
+    url: 'https://medium.com/gojekengineering/near-far-wherever-we-are-7cab5bf5e84a'
+  },
+  {
+    title: 'Gamify DesignOps with human connection',
+    description: 'I spoke to Kavan Antani, CEO of Indiefolio, as part of the podcast series \'DesignOops\' centring around design operations and management.',
+    url: 'https://www.youtube.com/watch?si=OelOeq1IM6Mt-JBJ&v=c__raLe34ZU&feature=youtu.be'
+  },
+  {
+    title: 'What is a product designer?',
+    description: 'A reflection of what it means to be a product designer in the software industry.',
+    url: 'https://kenneth.dsouza.im/writing/product-designer/'
+  },
+  {
+    title: 'Squads as a growth engine for designers',
+    description: 'Wrote about how we leveraged squads to help designers in the team grow.',
+    url: 'https://medium.com/notes-from-the-fields/how-we-used-squads-to-help-our-designers-level-up-443fcbc52e2f'
+  },
+  {
+    title: 'Archive of my newsletter for Design Managers',
+    description: 'Between 2020-2023, I wrote 22 newsletters on the topics like building career ladders, hiring designers, building inclusive processes and much more.',
+    url: 'https://buttondown.com/kenneth/archive/'
+  }
+];
+
+const elsewhereOnTheInternet = [
+  {
+    title: "On Designing team growth on the 'NewCampus blog'",
+    year: '2023',
+    description: 'Saloni and I were interviewed about how the NewCampus courses have impacted our working style at Jiva.',
+    url: 'https://web.archive.org/web/20250523201511/https://www.newcampus.com/conversations/kenneth-saloni-on-designing-team-growth'
+  },
+  {
+    title: "Creating a stand-out portfolio: Advice from design leaders on the 'Obvious blog'",
+    year: '2021',
+    description: 'A summary writeup of a twitter space a few of us did with Obvious regarding hiring designers.',
+    url: 'https://web.archive.org/web/20220203064925/https://obvious.in/blog/creating-a-stand-out-design-portfolio'
+  },
+  {
+    title: "Challenges with Transitioning to a Design Manager from an IC role on the 'Ownpath blog'",
+    year: '2021',
+    description: 'This is an excerpt from my fireside chat with Ownpath in 2021.',
+    url: 'https://web.archive.org/web/20250213163033/https://www.ownpath.com/blog/kenneth-dsouza-on-challenges-with-transitioning-to-a-design-manager-from-an-ic-role'
+  },
+  {
+    title: "What Designers Want on 'The Hard Copy'",
+    year: '2019',
+    description: 'Quoted: “I treat the interview process as a reflection of the org. Are they using a generic job description? Are they able to communicate well during the process?” — Kenneth D’Souza, Product Designer, Gojek',
+    url: 'https://thehardcopy.co/what-designers-want/'
+  }
+];
+
 const experience = [
   {
     company: 'Jiva AG',
@@ -104,6 +164,17 @@ const experience = [
   </section>
 
   <section class="resume-section">
+    <h4>Selected Writing and Speaking</h4>
+    <ul class="resume-list">
+      {selectedWritingAndSpeaking.map((item) => (
+        <li>
+          <a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}<span class="sr-only"> (opens in new tab)</span></a>: {item.description}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="resume-section">
     <h4>Work Experience</h4>
 
     <div class="experience-list">
@@ -137,6 +208,40 @@ const experience = [
       <p class="education-meta">Electronics and Communications</p>
       <p class="education-meta">2006 - 2010</p>
     </div>
+  </section>
+
+  <section class="resume-section">
+    <h4>Certifications</h4>
+
+    <div class="education-item">
+      <h3><a href="https://web.archive.org/web/20250618213436/https://www.newcampus.com/sprints/leadership-essentials" target="_blank" rel="noopener noreferrer">Leadership Essentials<span class="sr-only"> (opens in new tab)</span></a></h3>
+      <p>NewCampus</p>
+      <p class="education-meta">2023</p>
+    </div>
+
+    <div class="education-item">
+      <h3><a href="https://web.archive.org/web/20250514165419/https://www.newcampus.com/sprints/management-essentials" target="_blank" rel="noopener noreferrer">Management Essentials<span class="sr-only"> (opens in new tab)</span></a></h3>
+      <p>NewCampus</p>
+      <p class="education-meta">2022</p>
+    </div>
+
+    <div class="education-item">
+      <h3>Design Management Cohort</h3>
+      <p>Ownpath, with Meredith Black, Kristin Skinner and Alysha Naples</p>
+      <p class="education-meta">2020</p>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h4>Elsewhere on the Internet</h4>
+    <ul class="resume-list">
+      {elsewhereOnTheInternet.map((item) => (
+        <li>
+          <a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}<span class="sr-only"> (opens in new tab)</span></a>
+          {item.year && <span class="experience-meta"> ({item.year})</span>}: {item.description}
+        </li>
+      ))}
+    </ul>
   </section>
 
   <style>
