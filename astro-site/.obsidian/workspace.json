@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/writing/how-i-build-with-ai/index.md",
+                "file": "src/content/writing/data-vizard/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Untitled"
             }
           },
           {
@@ -227,11 +227,22 @@
   },
   "active": "3bd3bf7ae225732c",
   "lastOpenFiles": [
+    "src/content/writing/data-vizard/sonnet46.png",
+    "src/content/writing/data-vizard/gpt55.png",
+    "src/content/writing/data-vizard/viz-c3.png",
+    "src/content/writing/data-vizard/vizc-2.jpeg",
+    "src/content/writing/data-vizard/viz-c1.jpeg",
+    "src/content/writing/data-vizard/Screenshot 2026-07-11 at 3.49.59 PM.png",
+    "src/content/writing/data-vizard/Screenshot 2026-07-11 at 3.49.52 PM.png",
+    "src/content/writing/data-vizard/cand_096.png",
+    "src/content/writing/data-vizard/DSC05589.jpeg",
+    "src/content/writing/data-vizard/DSC05468.jpeg",
+    "src/content/writing/secret-sauce/index.md",
+    "src/content/writing/data-vizard/Untitled.md",
+    "src/content/writing/data-vizard",
+    "src/content/writing/secret-sauce/whiteboard.JPG",
+    "src/content/writing/how-i-build-with-ai/index.md",
     "src/content/work/sahabat-jiva-redesign/index.md",
-    "src/content/work/sahabat-jiva-redesign/miro-board-competitors.webp",
-    "src/content/work/sahabat-jiva-redesign/competitor-analysis.png",
-    "src/content/work/sahabat-jiva-redesign/early-roadmap.png",
-    "src/content/work/sahabat-jiva-redesign/preflight.png",
     "README.md",
     "src/content/work/akar-design-system/index.md",
     "().md",
@@ -245,15 +256,7 @@
     "node_modules/entities/escape.d.ts",
     "node_modules/entities/dist/commonjs/generated/encode-html.js.map",
     "node_modules/entities/dist/commonjs/generated/encode-html.js",
-    "node_modules/entities/dist/commonjs/generated/encode-html.d.ts.map",
     "node_modules/sanitize-html/node_modules/escape-string-regexp/readme.md",
-    "src/content/writing/secret-sauce/index.md",
-    "dist/_astro/process-1.CV5EKp2r_138Hc3.webp",
-    "dist/_astro/process-1.CV5EKp2r_NiB3J.webp",
-    "dist/_astro/process-1.CV5EKp2r_pF5pj.webp",
-    "dist/_astro/v1-prototype.dy-ZzyjU_Z10gfrE.webp",
-    "dist/_astro/process-1.CV5EKp2r_2e458Y.webp",
-    "dist/_astro/claude-v1.BesYFJEs_Z1ynsVd.webp",
     "node_modules/hast-util-to-parse5/node_modules/space-separated-tokens/readme.md",
     "node_modules/hast-util-to-parse5/node_modules/property-information/readme.md",
     "node_modules/hast-util-to-parse5/node_modules/comma-separated-tokens/readme.md",
@@ -270,9 +273,6 @@
     "node_modules/hast-util-from-parse5/node_modules/hastscript/node_modules/space-separated-tokens/readme.md",
     "node_modules/hast-util-from-parse5/node_modules/hastscript/node_modules/comma-separated-tokens/readme.md",
     "node_modules/hast-util-from-parse5/node_modules/hastscript/readme.md",
-    "node_modules/hast-util-from-parse5/node_modules/property-information/readme.md",
-    "node_modules/rehype-figure/node_modules/unist-util-visit/node_modules/@types/unist/README.md",
-    "node_modules/rehype-figure/node_modules/unist-util-visit/node_modules/unist-util-visit-parents/readme.md",
     "Untitled.canvas"
   ]
 }
