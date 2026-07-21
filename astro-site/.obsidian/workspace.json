@@ -41,7 +41,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/writing/data-vizard/index.md",
+                "file": "src/content/work/gobiz-inbox/index.md",
                 "mode": "source",
                 "source": true
               },
@@ -227,10 +227,13 @@
   },
   "active": "3bd3bf7ae225732c",
   "lastOpenFiles": [
+    "src/content/work/international/launch-thai.png",
+    "src/content/work/international/image (17).png",
+    "src/content/work/sahabat-jiva-redesign/index.md",
+    "src/content/writing/data-vizard/index.md",
     "src/content/writing/data-vizard/plugin-workflow.jpg",
     "src/content/writing/data-vizard/plugin.jpg",
     "src/content/writing/how-i-build-with-ai/index.md",
-    "src/content/writing/data-vizard/index.md",
     "src/content/writing/data-vizard/plugin-workflow.png.sb-99176dc3-I4Xvvn",
     "src/content/writing/data-vizard/plugin-workflow.png",
     "src/content/writing/data-vizard/Screenshot 2026-07-14 at 5.12.58 PM.png",
@@ -269,10 +272,7 @@
     "src/content/writing/data-vizard/vizc-4.jpeg",
     "src/content/writing/data-vizard/DSC05438.jpeg",
     "src/content/work/gobiz-inbox/index.md",
-    "src/content/writing/vibe-coding/index.md",
     "src/content/writing/data-vizard/sonnet46.png",
-    "src/content/writing/data-vizard/gpt55.png",
-    "src/content/writing/data-vizard/viz-c3.png",
     "Untitled.canvas"
   ]
 }

@@ -4,7 +4,7 @@ description: Redesigning the Sahabat Jiva Android app to fit the user's mental m
 year: 2022-2023
 company: Jiva
 image: ./sjhome.webp
-status: published
+status: draft
 ---
 
 <!-- Add your project content here -->
