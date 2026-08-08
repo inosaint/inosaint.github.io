@@ -16,3 +16,9 @@ Thumbs.db
 # IDE
 .vscode
 .idea
+
+# Astro build cache
+.astro
+
+# Obsidian vault config
+.obsidian
