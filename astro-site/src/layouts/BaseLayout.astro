@@ -9,6 +9,7 @@ interface Props {
   imageType?: string;
   imageWidth?: number;
   imageHeight?: number;
+  wide?: boolean;
 }
 
 const {
@@ -17,7 +18,8 @@ const {
   image = "/images/profile.png",
   imageType,
   imageWidth,
-  imageHeight
+  imageHeight,
+  wide = false
 } = Astro.props;
 
 const siteUrl = "https://kenneth.dsouza.im";
@@ -98,7 +100,7 @@ const resolvedImageType = imageType ?? inferMimeType(image);
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container">
+    <div class={wide ? "container container-wide" : "container"}>
       <slot />
 
       <footer>
@@ -130,7 +132,7 @@ const resolvedImageType = imageType ?? inferMimeType(image);
 
         <div class="colophon-section">
           <h3>Technology</h3>
-          <p>This site is designed in [Figma](https://www.figma.com) and built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>, a modern static site generator. The site is hosted on GitHub Pages.</p>
+          <p>This site is designed in <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">Figma</a> and built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>, a modern static site generator. The site is hosted on GitHub Pages.</p>
         </div>
 
         <div class="colophon-section">

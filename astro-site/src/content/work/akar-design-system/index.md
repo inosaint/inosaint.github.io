@@ -1,5 +1,5 @@
 ---
-title: "Building the Akar Design System"
+title: "Jiva's Akar Design System"
 description: "The philosophy and design principles behind Jiva’s scalable design system"
 year: "2023-2024"
 company: "Jiva"

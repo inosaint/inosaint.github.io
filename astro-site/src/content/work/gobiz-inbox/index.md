@@ -2,63 +2,45 @@
 title: Designing the Inbox experience for GoBiz
 description: How we designed the in-app comms channel
 year: "2021"
-company: "Gojek"
-status: 'draft'
+company: Gojek
+status: draft
 ---
 
-The Gojek Chat SDK was built to support products wanting to integrate chat into their flows. However like many other platformized products, they end up being looked as solutions for use cases they were not designed for. The GoBiz inbox requirement wasn't my first experience with dog fooding, but it was one that I was able to influence positively for the benefit of the users.
+GoBiz is the superapp for Gojek's merchant partners. Gojek's 
+1 million+ merchants used it daily to interact with their customers; food merchants accepted incoming orders, micro-merchants viewed their incoming payments, businesses setup their ads, managed their offline orders using the POS, etc. 
 
-We wanted to build an Inbox, an in-app channel for notifying our users. We just needed one-way communication. I do not understand the reason behind why product pushed to use the SDK, despite the arguments that the SDK wasn't able to support our web product and wasn't designed to communicate business updates.
+### Building a communication layer 
 
-### Chat is chat, not inbox:
+Our merchant marketing team historically relied on emails, and youtube to communicate to the customers. However most of our merchants weren't 'email' users and may not even have access to the emails they had used to signup anymore. Without a reliable communication channel, getting adoption to our newer features was difficult. So one of the important platform features we wanted to build to support this was a in-app notification centre.
 
-I created a document to explain what that decision meant for the app.
-If we use the chat sdk, then in the future as other teams build on the chat platform, we should plan to group all kinds of chat in a single space. This would align with the mental model of the user. This space would be the go-to place to follow up on your "conversations", whether its about onboarding a new outlet or following up about your GoFresh order.
+The main Gojek app had adopted a Chat-like interface to be it's communication layer along with the Shuffle card framework. However like many other platformised products, the GoChat SDK ended up being promoted for integration across other Gojek apps.  We wanted to build an Inbox, an in-app channel for notifying our users. We just needed one-way communication. The Chat SDK was built for two-way communication for the Gojek mobile app. It didn't have a web equivalent while GoBiz needed the Inbox to work on web as well due to our quest for platform parity. Our bigger customers and business owners tended to only use the web interface. We needed a solution that had a plan to scale beyond the mobile and we found that the current implementation of the GoChat SDK lacking.
 
-_Decision:_ We decided that all chats will show up in Inbox but we will need to visually separate them from the business chats. This is something that the Chat team had not yet designed for.
+### Why this project?
 
-### Where should Inbox/chat go?
+As a platform designer on the B2B side, this wasn't my first experience with dog-fooding, but it was one that I was able to influence positively for the benefit of the users. That's why I chose to include project in my portfolio so that I can illustrate my approach when I encounter such decisions. 
 
-Given that Inbox is something we are considering for communication, it should be easily accessible and indicate unread chats. Given the current structure of the GoBiz app, we could only think of 2 possible positions for the Inbox.
+### Visualize your argument
 
-However neither of these positions fulfill the conditions of
+Decisions like this are often taken in isolation without understanding how they impact the product or its users. They are taken by leadership because of internal OKRs, a new business strategy or pivot in company positioning. I've seen rebrands being approved, new apps being created, internal tooling being exposed to customers, and so many more situations where the product vision takes a side-line. 
 
-1. Visibility of new messages: The red dot on Lainnya can't showcase a number since there are several other modules which have a no-number indication.
+As a design owner for a product, I would want what is best for it and it's users. My strength lies in creating visual assets that can help communicate this. I make mockups and use them to create a document of possible directions and it's impact on the product in the future. 
 
-2. Accessible from various parts of our app: A gofood merchant would jump right to the Orders inbox when they open the app and has no need to aware of this "notification'
+![First draft of the document I created for this project](chat-doc.png)
 
-_Decision:_ However without the redesign being prioritized, we decided to keep the entry point on the top right of the 'Lainnya' page.
+### Align stakeholders
 
-### Shuffle vs Inbox:
+Share the document with them and invite them for a meeting where you can discuss the PRD. The format of this meeting depends on the problem you have at hand. Raise concerns on the decision's impact, offer them alternatives from your document. If you can get buy-in from other product and engineering peers prior to the meeting, you will help.
 
-1. Currently there can be overlaps. Overlaps may lead to reduction in importance of Inbox content.
+![Today vs Future: as other teams adopt the Chat SDK, all conversation channels would eventually live together in a single Inbox](chat-today-vs-future.webp)
 
-2. Can 'Promo' channel in Inbox be completely replaced by a shuffle card channel on lainnya? because promos need segmentation. Inbox may not work that way.
+### Prototype and Test
 
-_Decision:_ No decision yet
+Even with this, you will need data for your argument which you won't have at hand. If you have a robust research set up, then the next step is to conduct user research. We created 2 prototypes to run the test with our merchants.
 
-### Design iterations
+<div class="photo-stack">
+  <img src="/images/gobiz-prototype-1.webp" alt="Prototype 1: a simple list of channels, where users need an additional click to see the full message" />
+  <img src="/images/gobiz-prototype-2.webp" alt="Prototype 2: a richer chat window that surfaces the latest message and CTAs upfront, without an extra click" />
+</div>
 
-The Inbox requirement wasn't a new one. 11 months ago, Saneef had worked on how we could introduce communication channels(banner and inbox) in our /existing/ app. [(Aside: His redesign had 'Inbox' as a tab on the bottom navigation)](https://share.goabstract.com/8af61eee-de93-4f63-b0f8-64922742a29e?mode=design&sha=875263ee629f633ddd9229602605e3870884c3da)
+Our research showed us that the SDK implementation wouldn't meet our user's needs and was complex for them. The research supported moving to a simpler version and we were able to align the SDK team to provide a view that would let us create that experience for our users.
 
-What was good about this iteration was that latest messages would be visible on the Lainnya page with a way for users to filter different kinds of messages. However this design wouldn't scale well if there were many channels. Think how filters work on Gojek Home's shuffles. Same problem.
-
-When we decided to adopt the Chat SDK, it came with a constraint that the view would be a chat window.
-
-So this constraint causes us to have limited explorations for the channel view. Based on this, here are two iterations that could be possible.
-
-#### Iteration 1:
-
-Iteration 1 is having a list of channels on the second page, but without the full message so users would need to make an additional click through to get the full message.
-
-#### Iteration 2:
-
-This exploration attempts to use a notifier informing user about a new message. It could include the text of the message or a generic '1 new message'. In the chat window, we can see the latest message of a channel up front without clicking again to see the message. Even CTAs could be visible here.
-
-So we went ahead with user-testing with both these iterations, and 'Iteration 2' came out successful.
-
-#### Key Learnings from the research
-
-1. People may ignore the position of the Inbox because of its proximity to the logout button
-
-2. The inbox icon was not understood, so we switched to the envelope icon and called it 'Kotak Pesan'

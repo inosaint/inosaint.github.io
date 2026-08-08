@@ -490,6 +490,45 @@ figcaption {
   border-radius: 8px;
 }
 
+/* A standalone "---" in post body markdown renders as this asterism (scene break) */
+.post hr {
+  border: none;
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+.post hr::before {
+  content: "\00B7 \00B7 \00B7";
+  color: var(--color-text-secondary);
+  letter-spacing: 0.5em;
+}
+
+.post .photo-stack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post .photo-stack img {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 0;
+  height: auto;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .post .photo-stack {
+    flex-direction: column;
+  }
+
+  .post .photo-stack img {
+    width: 100%;
+  }
+}
+
 .post ul,
 .post ol {
   margin-bottom: 1.25rem;
@@ -527,6 +566,10 @@ figcaption {
   margin-bottom: 0.5rem;
 }
 
+.toc-item.toc-level-3 {
+  padding-left: 0.75rem;
+}
+
 .toc-link {
   color: var(--color-text-secondary);
   text-decoration: none;
@@ -561,6 +604,17 @@ figcaption {
 .container {
   max-width: 900px;
   margin: 0 auto;
+}
+
+.container-wide {
+  max-width: 1100px;
+}
+
+/* Keep long-form prose at a readable line length even in the wide container;
+   grids/cards and the work-page TOC layout are unaffected since they don't use these classes. */
+.container-wide .post:not(.post-layout .post),
+.container-wide .resume-section {
+  max-width: 800px;
 }
 
 /* Header styles */
