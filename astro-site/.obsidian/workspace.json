@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/work/sahabat-jiva-redesign/index.md",
+                "file": "src/content/writing/death-rebirth/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -22,47 +22,20 @@
             }
           },
           {
-            "id": "fa64cf4b0f3b9451",
+            "id": "8a909cd0fe67b10d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/writing/vibe-coding/index.md",
+                "file": "src/content/work/gobiz-inbox/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "index"
-            }
-          },
-          {
-            "id": "3bd3bf7ae225732c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/content/writing/data-vizard/index.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "index"
-            }
-          },
-          {
-            "id": "d811aba10c4e31a3",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.11.5"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.11.5"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "inbo",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -115,7 +88,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -225,28 +199,43 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "3bd3bf7ae225732c",
+  "active": "a69ee6a789446d23",
   "lastOpenFiles": [
-    "src/content/writing/data-vizard/plugin-workflow.jpg",
-    "src/content/writing/data-vizard/plugin.jpg",
-    "src/content/writing/how-i-build-with-ai/index.md",
+    "src/content/work/gobiz-inbox/index.md",
+    "src/content/writing/death-rebirth/index.md",
+    "src/components/SectionBreak.astro",
+    "src/content/writing/product-designer/index.md",
+    "src/content/work/international/index.md",
+    "src/content/writing/death-rebirth/comb-designer.png",
+    "src/content/writing/death-rebirth/papercut_x_httpss.mj.runP_YHw07_JgI_a_vintage_style_mock_adve_fd160cde-bfa3-4052-bccb-ea3de47156d7_1.png",
+    "src/content/writing/death-rebirth/rebirth.png",
+    "src/content/writing/death-rebirth/rebirth3.png",
+    "src/content/writing/death-rebirth/papercut_x_A_renaissance_painting_style_resurrection_image_wh_506eb40b-9cf0-4fbe-8b8b-783fa8a067a5_2.png",
+    "src/content/writing/death-rebirth/rebirth2.png.sb-99176dc3-ADGGXL",
+    "src/content/writing/death-rebirth/rebirth2.png",
+    "src/content/writing/death-rebirth/papercut_x_A_renaissance_painting_style_resurrection_image_wh_13e160d7-ae49-4865-9007-6107f2b60167_2.png",
+    "src/content/writing/death-rebirth/papercut_x_A_renaissance_painting_style_resurrection_image_wh_13e160d7-ae49-4865-9007-6107f2b60167_3.png",
+    "src/content/writing/death-rebirth/rebirth.png.sb-99176dc3-uOwBr5",
+    "src/content/writing/death-rebirth",
+    "src/content/work/gobiz-inbox/index.md.tmp.40899.97ad9db615cc",
+    "public/images/gobiz-prototype-2.webp",
+    "public/images/gobiz-prototype-1.webp",
+    "src/content/work/sahabat-jiva-redesign/index.md",
+    "src/content/work/claim-profile/index.md",
+    "src/content/writing/vibe-coding/index.md",
+    "src/content/work/gojek/index.md",
+    "src/content/work/practo-pro/index.md",
+    "src/content/work/akar-design-system/index.md",
+    "src/content/work/hiring-jiva/index.md",
+    "src/pages/writing.astro.tmp.40899.1a1a310d5584",
     "src/content/writing/data-vizard/index.md",
+    "src/content/writing/how-i-build-with-ai/index.md",
     "src/content/writing/data-vizard/plugin-workflow.png.sb-99176dc3-I4Xvvn",
-    "src/content/writing/data-vizard/plugin-workflow.png",
-    "src/content/writing/data-vizard/Screenshot 2026-07-14 at 5.12.58 PM.png",
     "src/content/writing/data-vizard/plugin.png.sb-99176dc3-tvc4k3",
-    "src/content/writing/data-vizard/plugin.png",
-    "src/content/writing/data-vizard/Screenshot 2026-07-02 at 7.46.59 PM.png",
     "node_modules/url-extras/index.d.ts",
     "node_modules/url-extras/readme.md",
     "node_modules/url-extras/package.json",
-    "node_modules/url-extras/index.js",
-    "node_modules/url-extras/license",
-    "node_modules/expressive-code/LICENSE",
     "node_modules/expressive-code/README.md",
-    "node_modules/expressive-code/package.json",
-    "node_modules/expressive-code/dist/index.js.map",
-    "node_modules/expressive-code/dist/index.js",
     "node_modules/rehype-expressive-code/README.md",
     "node_modules/@ctrl/tinycolor/README.md",
     "node_modules/@expressive-code/plugin-text-markers/README.md",
@@ -257,22 +246,6 @@
     "node_modules/util-deprecate/History.md",
     "node_modules/util-deprecate/README.md",
     "node_modules/postcss-selector-parser/README.md",
-    "node_modules/postcss-selector-parser/CHANGELOG.md",
-    "node_modules/postcss-selector-parser/API.md",
-    "node_modules/hast-util-to-string/readme.md",
-    "node_modules/cssesc/README.md",
-    "node_modules/bcp-47-match/readme.md",
-    "node_modules/hast-util-has-property/readme.md",
-    "node_modules/direction/readme.md",
-    "node_modules/postcss-nested/README.md",
-    "node_modules/hast-util-select/readme.md",
-    "src/content/writing/data-vizard/vizc-4.jpeg",
-    "src/content/writing/data-vizard/DSC05438.jpeg",
-    "src/content/work/gobiz-inbox/index.md",
-    "src/content/writing/vibe-coding/index.md",
-    "src/content/writing/data-vizard/sonnet46.png",
-    "src/content/writing/data-vizard/gpt55.png",
-    "src/content/writing/data-vizard/viz-c3.png",
     "Untitled.canvas"
   ]
 }

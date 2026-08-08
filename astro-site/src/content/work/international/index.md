@@ -12,14 +12,17 @@ By 2015, we began rolling out the Practo Ray app to Malaysia, Indonesia, the Phi
 
 Scaling the GoBiz app to Thailand, Vietnam, and Singapore was completely different. Just translating the interface was not an option. We did research to understand local restaurant workflows (e.g., Hawker Centres in Singapore), worked with the local team to understand local terminologies and cultural nuances, and studied how food ordering worked.
 
-### Collaboration and Organization
+## Role
+As the design owner for the GoBiz Platform, I led the design, managed the project, took part in research and built re-usable checklists for all the three country launches for the GoBiz mobile app.
+
+## Collaboration and Organization
 But first, every project needs a start. GoBiz functioned as a platform with multiple teams contributing to it. So when we prepared for a new country launch, it became crucial to have a transparent and collaborative approach. That's where Asana came in. I created the 'GoBiz International Design' template and assigned tasks to the different designers. This functioned as our team's design tracker and was referenced during the weekly SOS meetings (Scrum of Scrums) run by the program managers.
 
 ![The GoBiz International Design template in Asana](./asana.png)
 
 For the design work itself, we set up a new Sketch file in Abstract for every country launch instead of adding changes to the existing files. This kept file sizes manageable and reduced merge conflicts in the Master branch. It also made it much easier for other teams to locate the relevant designs without needing to check with us.
 
-### Typography
+## Typography
 Designing for languages that use only Latin characters is fairly straightforward because most fonts support them. But when you need to support non-latin scripts like Thai, Vietnamese, and Simplified Chinese, things get a little complicated typographically.
 Our brand typeface, Maison Neue, did not support these scripts, so the app fell back to system fonts. In Thailand, this caused visible inconsistencies in size and styling.
 This led to many merchants using their device accessibility settings to increase their font size, which caused our layouts to break.
@@ -43,7 +46,7 @@ We chose Noto Sans, which is free, widely supported, and covered all the scripts
 
 </div>
 
-### Managing Copy
+## Managing Copy
 Managing design files is relatively easy compared to managing multi-country copy. When we started supporting multiple languages, tools like Lokalise did not exist in our workflow. We relied entirely on Google Docs and Google Sheets.
 
 ![How we managed copy in Google Docs](./copy-doc.png)
@@ -59,13 +62,13 @@ Gojek eventually moved to using [Lokalise](https://lokalise.com) for its copy ma
 
 [^1]: You can read more about their International copy process on the blog by the Thai and Viet UX writer https://www.gojek.io/blog/language-no-bar-how-we-localise-ux-copies-at-gojek
 
-### Learnings
+## Learnings
 - Scaling GoBiz across Thailand, Vietnam, and Singapore taught me that localisation is never something you add after the product is built. Even after launch, every new feature needs to be evaluated through the lens of each country. The same care you put into the initial rollout has to continue, otherwise the product quietly drifts back toward the needs of the base market.
 
 - There's also an organizational reality that often gets ignored. Supporting multiple markets properly sometimes requires reshaping how teams work, how decisions are made, and who is involved in the roadmap. But these shifts take time, and they rarely get prioritised unless there is a clear business outcome tied to them. 
 At Gojek, this misalignment became clear. Each international market operated under its own brand and leadership, which meant we couldn’t consistently involve those teams in product planning. As a result, our roadmaps naturally skewed toward Indonesia, and we only built out some must-have features for other countries.  
 
-### Closing thoughts
+## Closing thoughts
 
 Gojek eventually exited Thailand and Vietnam, and its presence in Singapore today is minimal. Looking back, designing GoBiz for other countries was a highly rewarding and learning experience. I got to experience new cultures and work with people from different nationalities. Those lessons stayed with us long after the product lines, org charts, and roadmaps changed.
 

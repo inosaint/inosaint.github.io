@@ -7,7 +7,7 @@ status: published
 image: QRIS-gobiz.webp
 ---
 
-### Role
+## Role
 From 2019-2022, I worked on the merchant side of Gojek. GoBiz, Gojek's merchant platform, catered to 1M+ merchants across Indonesia, Vietnam(closed down in Sep 2024) and Thailand (sold to AirAsia in July 2021). The GoBiz Platform served GoFood merchants, GoPay Micro-merchants, as well as Enterprise merchants.
 
 I started off as the designer tasked with redesigning the GoBiz Android app and eventually moved to lead the design on the GoBiz Platform contributing towards the design of the GoBiz app and website, the Spots app and the Midtrans website. Over this period of time, the design team at GoBiz grew to 12 designers with the mergers and acquisitions of Midtrans, Kartuku and Moka POS before eventually breaking up pre-IPO. 
@@ -89,13 +89,13 @@ The SPOTS app was a point of sales app on a Landi device. We were selling these 
 
 The app they were using was a reskinned version of the default app provided by Landi(image on the left). 
 
-I was asked to help out with it and I worked on a refresh for the app on a short timeline(image on the right) 
+I was asked to help out with it and I worked on a refresh for the app on a short timeline(image on the right). The design is inspired from Square's POS app and styled by Gojek's Asphalt design system components.
 
 ![](QRIS-gobiz.webp)
 
-We later integrated this into the POS application on the GoBiz app. 
+ This design was the foundation on top of which our POS SDK was built. We sold this to our enterprise customers (you may still see it at a McD self-serve kiosk in Jakarta) and also integrated it into the GoBiz app for small businesses to use it.
 
-# Midtrans
+## Midtrans
 In 2020, the Midtrans merchant onboarding was prioritized due to an external collaboration with Whatsapp. 
 
 ![](midtrans-old.png)
@@ -111,7 +111,7 @@ So we shipped the new onboarding and saw lot of reduction in the drop offs.
 
 ![](midtrans-onboarding-impact.png)
 
-### Outcome:
+#### Outcome:
 This project exposed most of the team to the ‘merchant onboarding’ problem space and a surprising side-effect of this was that project handover of the ‘corporate onboarding’ project could be handled by Hendri when Riyadhi was affected by Covid-19.
 
 #### Miscellaneous:

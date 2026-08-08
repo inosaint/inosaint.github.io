@@ -36,6 +36,7 @@ const socialImage = entry.data.image
   imageType="image/png"
   imageWidth={socialImage ? 1200 : 800}
   imageHeight={socialImage ? 630 : 800}
+  wide
 >
   <nav class="breadcrumb-header">
     <div class="breadcrumb">
@@ -76,7 +77,7 @@ const socialImage = entry.data.image
     {headings.length > 0 && (
       <nav class="toc" aria-label="Table of contents">
         <ul class="toc-list">
-          {headings.filter((heading) => heading.depth === 2).map((heading) => (
+          {headings.filter((heading) => heading.depth === 2 || heading.depth === 3).map((heading) => (
             <li class={`toc-item toc-level-${heading.depth}`}>
               <a href={`#${heading.slug}`} class="toc-link">
                 {heading.text}

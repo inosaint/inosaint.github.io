@@ -1,10 +1,10 @@
 ---
-title: Fixing the Information Architecture of the Sahabat Jiva app
+title: Sahabat Jiva app; IA overhaul
 description: Redesigning the Sahabat Jiva Android app to fit the user's mental model and making it an intuitive experience
 year: 2022-2023
 company: Jiva
 image: ./sjhome.webp
-status: published
+status: draft
 ---
 
 <!-- Add your project content here -->

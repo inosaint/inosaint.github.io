@@ -42,6 +42,27 @@ const selectedWritingAndSpeaking = [
   }
 ];
 
+const workshops = [
+  {
+    title: 'Interactive DataViz Using AI Coding at VizChitra 2026',
+    date: 'July 3, 2026',
+    description: 'A sold-out workshop at VizChitra 2026 on building interactive data visualizations with AI coding tools.',
+    url: 'https://vizchitra.com/2026/sessions/interactive-dataviz-using-ai-coding'
+  },
+  {
+    title: 'Agentic Coding Workshop at CEC, Mangalore',
+    date: 'April 29, 2026',
+    description: 'Introduced Computer Science and Design students to Agentic Coding at Canara Engineering College. My second IRL workshop on the topic.',
+    url: 'https://x.com/kenneth/status/2049520004182515961'
+  },
+  {
+    title: 'AI Workshop at NID',
+    date: 'March 5, 2026',
+    description: 'AI workshop hosted at the National Institute of Design, India.',
+    url: 'https://x.com/nid_india/status/2029866422168428610'
+  }
+];
+
 const elsewhereOnTheInternet = [
   {
     title: "On Designing team growth on the 'NewCampus blog'",
@@ -74,6 +95,10 @@ const experience = [
     company: 'Jiva AG',
     role: 'Senior Design Manager',
     period: 'Jan 2022 - Sept 2025',
+    photos: [
+      { src: '/images/jiva-workshop-1.webp', alt: 'The Jiva team gathered around a table with laptops in Bali', width: 1000, height: 563 },
+      { src: '/images/jiva-workshop-2.webp', alt: 'Field visit with the Jiva team', width: 1000, height: 623 }
+    ],
     details: [
       'Led the product design function across five mobile apps and internal tools serving Indonesia’s agriculture supply chain.',
       'Designed products for 100k+ farmers, 5,400 collectors, and 4,900 retailers.',
@@ -86,6 +111,10 @@ const experience = [
     company: 'Gojek',
     role: 'Senior Design Manager',
     period: 'Dec 2017 - Jan 2022',
+    photos: [
+      { src: '/images/gojek-workshop-1.webp', alt: 'The Gojek design team at a Desain Keliling design QnA and hiring event', width: 778, height: 613 },
+      { src: '/images/gojek-workshop-2.webp', alt: 'Kenneth with the Gojek design team', width: 1000, height: 752 }
+    ],
     details: [
       'Headed the Merchant Platform design team across multiple merchant-facing products; ads, pos, payment gateways and merchant platforms.',
       'Led the redesign of GoBiz as it evolved from a restaurant management tool into a broader merchant platform.',
@@ -98,6 +127,10 @@ const experience = [
     company: 'Practo',
     role: 'Senior Designer',
     period: 'Apr 2014 - Nov 2017',
+    photos: [
+      { src: '/images/practo-workshop-1.webp', alt: 'The Practo team wearing "Geek Mode Active" t-shirts at a hackathon' },
+      { src: '/images/practo-workshop-2.webp', alt: 'The Practo engineering team debugging together at their desks' }
+    ],
     details: [
       'Worked on doctor-facing products including Practo Ray and was the design owner for Practo Partner.',
       'Led the Material redesign of the Practo Partner Android app and oversaw the redesign of the iOS app.',
@@ -119,6 +152,7 @@ const experience = [
 <BaseLayout
   title="Resume - Kenneth Mark Dsouza"
   description="Resume of Kenneth Mark Dsouza, a product design leader with experience in design leadership, team building, design systems, and product work across India and Indonesia."
+  wide
 >
   <nav class="breadcrumb-header">
     <div class="breadcrumb">
@@ -128,12 +162,26 @@ const experience = [
     </div>
   </nav>
 
-  <div class="resume-header">
-    <h1>Resume</h1>
-    <span class="resume-download">
-      <span class="material-symbols-outlined resume-download__icon">download</span>
-      <a href="/kenneths_resume.pdf" download="kenneths_resume.pdf">Download</a>
-    </span>
+  <div class="resume-intro">
+    <div class="resume-header">
+      <h1>Resume</h1>
+      <a href="/kenneths_resume.pdf" download="kenneths_resume.pdf" class="resume-download">
+        <span class="material-symbols-outlined resume-download__icon">download</span>
+        Download
+      </a>
+    </div>
+    <div class="profile-container">
+      <img
+        src="/images/profile.png"
+        alt="Kenneth Mark Dsouza"
+        class="profile-photo"
+      />
+      <img
+        src="/images/postmark.svg"
+        alt=""
+        class="postmark"
+      />
+    </div>
   </div>
 
   <section class="resume-section">
@@ -144,7 +192,7 @@ const experience = [
       Now with 12+ years of experience, I am a product design leader with a keen interest in growing designers, building strong teams, and creating psychological safety.
     </p>
     <p>
-      In my spare time, I like to travel to new places, make <a href="https://www.instagram.com/filtercoffeeconnoisseur/" target="_blank" rel="noopener noreferrer">coffee content<span class="sr-only"> (opens in new tab)</span></a>, read <a href="https://www.goodreads.com/user/show/86283809-kenneth-dsouza" target="_blank" rel="noopener noreferrer">non-fiction and contemporary fiction<span class="sr-only"> (opens in new tab)</span></a>, collect graphic art, and write short stories and <a href="https://aninosaintlife.wordpress.com/category/travels/" target="_blank" rel="noopener noreferrer">travelogues<span class="sr-only"> (opens in new tab)</span></a>.
+      In my spare time, I like to travel to new places, make <a href="https://www.instagram.com/filtercoffeeconnoisseur/" target="_blank" rel="noopener noreferrer">coffee content<span class="sr-only"> (opens in new tab)</span></a>, read <a href="https://www.goodreads.com/user/show/86283809-kenneth-dsouza" target="_blank" rel="noopener noreferrer">non-fiction and contemporary fiction<span class="sr-only"> (opens in new tab)</span></a>, collect graphic art, and write short stories and <a href="https://aninosaintlife.wordpress.com/category/travels/" target="_blank" rel="noopener noreferrer">travelogues<span class="sr-only"> (opens in new tab)</span></a>. I currently host <a href="https://designdemonights.com" target="_blank" rel="noopener noreferrer">designdemonights.com<span class="sr-only"> (opens in new tab)</span></a>, where designers can showcase the projects they are working on.
     </p>
     <p>
       Want to work with me or discuss a cool project that you are working on?
@@ -182,6 +230,13 @@ const experience = [
         <article class="experience-item">
           <h3>{item.role}</h3>
           <p class="experience-meta">{item.company} • {item.period}</p>
+          {item.photos && (
+            <div class="workshop-photos">
+              {item.photos.map((photo) => (
+                <img src={photo.src} alt={photo.alt} width={photo.width ?? 1000} height={photo.height ?? 750} loading="lazy" />
+              ))}
+            </div>
+          )}
           <ul class="resume-list">
             {item.details.map((detail) => (
               <li>{detail}</li>
@@ -190,6 +245,23 @@ const experience = [
         </article>
       ))}
     </div>
+  </section>
+
+  <section class="resume-section">
+    <h4>Workshops</h4>
+
+    <div class="workshop-photos">
+      <img src="/images/vizchitra-workshop-1.webp" alt="Group photo of workshop participants at VizChitra 2026" width="1000" height="667" loading="lazy" />
+      <img src="/images/vizchitra-workshop-2.webp" alt="Kenneth presenting an introduction slide at the VizChitra 2026 workshop" width="1000" height="667" loading="lazy" />
+    </div>
+
+    <ul class="resume-list">
+      {workshops.map((item) => (
+        <li>
+          <a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}<span class="sr-only"> (opens in new tab)</span></a><span class="experience-meta"> ({item.date})</span>: {item.description}
+        </li>
+      ))}
+    </ul>
   </section>
 
   <section class="resume-section">
@@ -245,13 +317,51 @@ const experience = [
   </section>
 
   <style>
+    .workshop-photos {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .workshop-photos img {
+      flex: 1 1 0;
+      min-width: 0;
+      width: 0;
+      height: 260px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 640px) {
+      .workshop-photos {
+        flex-direction: column;
+      }
+
+      .workshop-photos img {
+        width: 100%;
+      }
+    }
+
+    .resume-intro {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+
+    .resume-intro .profile-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
     .resume-header {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      max-width: 800px;
+      margin-bottom: 0;
     }
 
     .resume-header h1 {
@@ -262,6 +372,7 @@ const experience = [
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
+      text-decoration: none;
     }
 
     .resume-download__icon {
