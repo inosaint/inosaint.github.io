@@ -2,7 +2,7 @@
 title: Death and rebirth of the product designer
 description: What is next for the product designer archetype?
 date: 08/08/2026
-status: draft
+status: published
 image: rebirth.png
 ---
 A few months ago, there was a time where you couldn't go a week without a new company (or influencer) proclaiming that ‘design is dead’ and touting their product or workflow as the one that killed design. [I don’t think design is dying](http://kenneth.dsouza.im/writing/long-live-design-process/), but the role of the designer in the org is undergoing its next evolution.
@@ -25,14 +25,20 @@ One thing common in all these three directions is the expectation that the desig
 ![](comb-designer.png)
 
 ### Combing over AI's bald spots
-Another thing that is common in these three directions is that these are all tasks that  AI isn’t able to perform[^1]. So the industry expects that product designers can step in to comb over the bald spots that AI is showing. 
+Another thing that is common in these three directions is that these are all tasks that  AI isn’t able to perform[^1]. So the industry expects that product designers can step in to comb over the bald spots that AI is showing and craft a new hair style.
 
 >AI can generate assets but not define a brand, AI can create visualizations but not craft an immersive narrative, AI can create prototypes but not ensure coherence.
 
 But working on these tasks expects you to switch between different cognitive states. Doing this over a course of a workday can get mentally draining as your brain struggles to keep up. Add to this that there are new developments ever other week in the field of AI. That's a [recipe for burnout](https://www.hkdca.com/wp-content/uploads/2026/02/ai-doesent-reduce-work-it-intensifies-it-harvard.pdf)).
 
+### Left, Right or Center Partitions
+Product designers today are working at the cutting edge in a way that would have been hard to imagine even a year ago. They have access to tools and a real chance to bring their visions to life. 
 
+Your work no longer has to be defined by your job. You can establish an identity outside of it—one that is actually your own. If you look closely at the work of the best designers out there right now, that's what they are doing. They are keeping their strengths and utilising technology to build on that strength. You have the agency too. Don't let the noise drown you out. Take the time to find that one skill that you want to retain in the age of generative AI, that which brings you joy, and polish it. 
+
+After all, you are still [a product designer](https://kenneth.dsouza.im/writing/product-designer/). AI can't take that away unless you let it.
 
 [^1]: as of August 2026
 
 <p class="attribution"> Attribution: Both images have been generated using Midjourney 8.2</p>
+<p class="attribution"> Thanks to <a href="https://www.debanshubhaumik.com">Debanshu, <a href="https://mnsvz23.github.io/website-2026/">Manas</a> and <a href="https://tanvibhakta.in/">Tanvi</a> for providing feedback on the early draft.</p>
