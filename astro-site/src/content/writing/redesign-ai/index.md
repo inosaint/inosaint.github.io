@@ -17,7 +17,7 @@ and how —sref 3308034111 looks like
 
 ![](./3308034111.webp)
 
-But together they created a beautiful output—greater than the sum of its parts to me. I felt this sref would create some lovely landscapes but I also wondered if I could make a website that was inspired from this visual style.  (aside: I’ve been tinkering with a LLM workflow to generate websites from an image moodboard) 
+But together they created a beautiful output—greater than the sum of its parts to me. I felt this sref would create some lovely landscapes but I also wondered if I could make a website that was inspired from this visual style.  (aside: I’ve been tinkering with a LLM workflow to generate websites from an image moodboard) 
 
 But hey i’m not really a visual designer but the more I looked at this, I felt that perhaps I could use elements from this as marginalia on a website—little pieces of animated movement.
 
@@ -44,16 +44,16 @@ Next I felt that I could add some sort of visual-shader to the mix. Shader-study
 
 ![](./shader-study.webp)
 
-The website now looked complete but the theme park now looked out of place visually. Early feedback also pointed out what I felt, so I decided to re-do the themepark using the shapes. This time Opus added the floating balloons. Very interesting.
+The website now looked complete but the theme park now looked out of place visually. Early feedback also pointed out what I felt, so I decided to re-do the themepark using the shapes. This time Opus added the floating balloons. Not me. Opus. Very interesting.
 
 ![](./shapes-projects.webp)
 
-I also explored if the project list could work as shapes. Very bad idea. Because there's also another aspect to the page's design. The generative element. Each time you load the page, the grid changes, the theme-park changes, the balloons generate at random positions, a subtle hint to the behaviour of LLMs.
+I also explored if the project list could work as shapes. Very bad idea. Because there's also another aspect to the page's design. The generative element. Each time you load the page, the grid changes, the theme-park changes, the balloons generate at random positions—a subtle hint to the non-deterministic behaviour of LLMs.
 
 ### But what about the type? 
-The project started with an illustration as a starting point and went into designing like an artist making little studies before the actual painting but the typography wasn't thought of at all. Choosing type is ofcourse hard. I was looking at [Littleplains.com](https://littleplains.com) and found [Pangram Pangram](https://pangrampangram.com) and liked [PP Museum](https://pangrampangram.com/products/museum) and [PP Model](https://pangrampangram.com/products/model) but sadly, their EULA restricts free use from web so I went back to looking. 
+The project started with an illustration as a starting point and went into designing like an artist making little studies before the actual painting but the typography wasn't thought of at all. Choosing type is of course hard. I was looking at [Littleplains.com](https://littleplains.com) and found [Pangram Pangram](https://pangrampangram.com) and liked [PP Museum](https://pangrampangram.com/products/museum) and [PP Model](https://pangrampangram.com/products/model) but sadly, their EULA restricts free use from web so I went back to looking. 
 
-My name starts with the letter K and I have strong opinions about it but I've not actually written it down. I had shared an early version of the page to [Pooja](https://www.matratype.com/about) (btw she was the one who gave me feedback to use the shapes throughout and I changed the theme-park implementation) and she asked me to verbalise what I meant. It was there at the back of my head but writing it down helps. While [Clash Display](https://www.fontshare.com/fonts/clash-display) is lovely, I hate how it's K looks like. I prefer type where the K has balanced arms (like in [Gill Sans](https://en.wikipedia.org/wiki/Gill_Sans)) or one where the leg is larger(like in [Cabinet](https://www.fontshare.com/fonts/cabinet-grotesk)). A more traditional view some might say. 
+My name starts with the letter K and I have strong opinions about it but I've not actually written it down. I had shared an early version of the page to [Pooja](https://www.matratype.com/about) (btw she was the one who gave me feedback to use the shapes throughout) and she asked me to verbalise what I meant. It was there at the back of my head but writing it down helps. While [Clash Display](https://www.fontshare.com/fonts/clash-display) is lovely, I hate how it's K looks like. I prefer type where the K has balanced arms (like in [Gill Sans](https://en.wikipedia.org/wiki/Gill_Sans)) or one where the leg is larger(like in [Cabinet](https://www.fontshare.com/fonts/cabinet-grotesk)). A more traditional view some might say. 
 
 So with that clarity, I went back to looking specifically at the K's (but am also a sucker for nice humanist 'a's) and felt that '[Plus Jakarta Sans](https://www.fontshare.com/fonts/plus-jakarta-sans)' fits my needs. That it was designed by [TokoType](https://tokotype.com) and is named Jakarta was just a happy coincidence.
 
