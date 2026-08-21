@@ -21,7 +21,7 @@ This wasn't a disruptionary model. The concept of middlemen have always existed 
 The Sahabat Jiva android app was used by our Collectors to manage their Harvest Procurement, their Input sales (In the Agriculture business; Seeds, Chemicals, Fertilizers, Equipments are collectively termed as Inputs) and view their Earnings.
 
 ## Challenge
-Jiva had started off in the pandemic and we hadnt got a chance to observe our users on the ground.  Moving to mobile apps had led to most of our transactions now flowing through a digital channel.  However our qualitative research, quickly showed us that our users really struggled with our app. 
+Jiva had started off in the pandemic and we hadn't got a chance to observe our users on the ground. Moving to mobile apps had led to most of our transactions now flowing through a digital channel. However our qualitative research, quickly showed us that our users really struggled with our app. 
 
 These could be narrowed down to
 1. The app's localization was a mess since there had not been a dedicated UX Writer who was involved in the app in the past which led to wrong translations, english terms in various pages and alien terminology being used.
@@ -73,6 +73,9 @@ I've done these kind of projects many times over the years and it's fairly easy 
 The data from all these sources can be overwhelming to deal with and the team often got stuck on how to go ahead. I had to step in to give direction on what we need to do next and keep moving forward.
 
 
+From our conversations with 
+
+![](user-testing-designs.png)
 
 ## Impact
 
