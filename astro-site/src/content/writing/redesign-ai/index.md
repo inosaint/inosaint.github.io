@@ -50,6 +50,15 @@ The website now looked complete but the theme park now looked out of place visua
 
 I also explored if the project list could work as shapes. Very bad idea. Because there's also another aspect to the page's design. The generative element. Each time you load the page, the grid changes, the theme-park changes, the balloons generate at random positions, a subtle hint to the behaviour of LLMs.
 
+### But what about the type? 
+The project started with an illustration as a starting point and went into designing like an artist making little studies before the actual painting but the typography wasn't thought of at all. Choosing type is ofcourse hard. I was looking at [Littleplains.com](https://littleplains.com) and found [Pangram Pangram](https://pangrampangram.com) and liked [PP Museum](https://pangrampangram.com/products/museum) and [PP Model](https://pangrampangram.com/products/model) but sadly, their EULA restricts free use from web so I went back to looking. 
+
+My name starts with the letter K and I have strong opinions about it but I've not actually written it down. I had shared an early version of the page to [Pooja](https://www.matratype.com/about) (btw she was the one who gave me feedback to use the shapes throughout and I changed the theme-park implementation) and she asked me to verbalise what I meant. It was there at the back of my head but writing it down helps. While [Clash Display](https://www.fontshare.com/fonts/clash-display) is lovely, I hate how it's K looks like. I prefer type where the K has balanced arms (like in [Gill Sans](https://en.wikipedia.org/wiki/Gill_Sans)) or one where the leg is larger(like in [Cabinet](https://www.fontshare.com/fonts/cabinet-grotesk)). A more traditional view some might say. 
+
+So with that clarity, I went back to looking specifically at the K's (but am also a sucker for nice humanist 'a's) and felt that '[Plus Jakarta Sans](https://www.fontshare.com/fonts/plus-jakarta-sans)' fits my needs. That it was designed by [TokoType](https://tokotype.com) and is named Jakarta was just a happy coincidence.
+
+---
+
 There's still work to be done of course. The image and video previews aren't there yet. I need to re-document that. I have also put-off writing about each project so far. Some do have their readme's but I should spend some time in the next month documenting the process behind the other work. 
 
 Anyways go check out the current version of the site: https://kenneth.dsouza.im/ai/
