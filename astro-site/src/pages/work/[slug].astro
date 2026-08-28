@@ -27,6 +27,45 @@ const socialImage = entry.data.image
       format: 'png'
     })
   : null;
+const siteUrl = 'https://kenneth.dsouza.im';
+const pageUrl = `${siteUrl}/work/${entry.id}/`;
+
+// Case studies are articles about a project, so describe both: an Article that can
+// rank, referencing the CreativeWork it documents.
+const schema = [
+  {
+    '@type': 'Article',
+    '@id': `${pageUrl}#article`,
+    headline: entry.data.title,
+    description: entry.data.description,
+    url: pageUrl,
+    author: { '@id': `${siteUrl}/#person` },
+    publisher: { '@id': `${siteUrl}/#person` },
+    isPartOf: { '@id': `${siteUrl}/#website` },
+    mainEntityOfPage: pageUrl,
+    about: { '@id': `${pageUrl}#project` },
+    ...(socialImage ? { image: new URL(socialImage.src, siteUrl).href } : {}),
+  },
+  {
+    '@type': 'CreativeWork',
+    '@id': `${pageUrl}#project`,
+    name: entry.data.title,
+    description: entry.data.description,
+    creator: { '@id': `${siteUrl}/#person` },
+    ...(entry.data.year ? { dateCreated: entry.data.year } : {}),
+    ...(entry.data.company
+      ? { sourceOrganization: { '@type': 'Organization', name: entry.data.company } }
+      : {}),
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Work', item: `${siteUrl}/work` },
+      { '@type': 'ListItem', position: 3, name: entry.data.title, item: pageUrl },
+    ],
+  },
+];
 ---
 
 <BaseLayout
@@ -36,6 +75,9 @@ const socialImage = entry.data.image
   imageType="image/png"
   imageWidth={socialImage ? 1200 : 800}
   imageHeight={socialImage ? 630 : 800}
+  type="article"
+  noindex={entry.data.status === 'draft'}
+  schema={schema}
   wide
 >
   <nav class="breadcrumb-header">

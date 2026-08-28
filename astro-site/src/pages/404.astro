@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const recentWriting = (await getCollection('writing', ({ data }) => data.status === 'published'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 4);
+
+const recentWork = (await getCollection('work', ({ data }) => data.status === 'published'))
+  .sort((a, b) => b.data.year.localeCompare(a.data.year))
+  .slice(0, 4);
+---
+
+<BaseLayout
+  title="Page not found — Kenneth Mark Dsouza"
+  description="That page doesn't exist. Here's a way back to the work and writing."
+  noindex
+  wide
+>
+  <section class="notfound-head">
+    <div class="notfound-stamp" aria-hidden="true">
+      <span class="notfound-code">404</span>
+      <img src="/images/postmark.svg" alt="" class="notfound-postmark" width="174" height="40" />
+    </div>
+
+    <h1>Return to sender</h1>
+    <h3>This address doesn't exist — the page may have moved, or the link may have a typo.</h3>
+  </section>
+
+  <p class="notfound-aside">
+    Followed a link here from somewhere else? I'd like to know —
+    <a href="https://x.com/kenneth" target="_blank" rel="noopener noreferrer">X</a>
+    or <a href="https://bsky.app/profile/ken.cv" target="_blank" rel="noopener noreferrer">Bluesky</a>.
+  </p>
+
+  <div class="notfound-columns">
+    <section>
+      <div class="section-header">
+        <h4>Recent work</h4>
+        <a href="/work" class="view-all">view all work →</a>
+      </div>
+      <ul class="notfound-list">
+        {recentWork.map(item => (
+          <li>
+            <a href={`/work/${item.id}`}>{item.data.title}</a>
+            <span class="notfound-meta">{item.data.year}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h4>Recent writing</h4>
+        <a href="/writing" class="view-all">view all writing →</a>
+      </div>
+      <ul class="notfound-list">
+        {recentWriting.map(item => (
+          <li>
+            <a href={item.data.url ?? `/writing/${item.id}`}>{item.data.title}</a>
+            <span class="notfound-meta">{item.data.date.getUTCFullYear()}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+
+  <p class="notfound-home">
+    Or head back to the <a href="/">homepage</a>.
+  </p>
+</BaseLayout>
+
+<style>
+  /* The numeral is the stamp; the postmark cancels it, as on the homepage photo. */
+  .notfound-stamp {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .notfound-code {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(7rem, 17vw, 11.5rem);
+    font-weight: 600;
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+    color: var(--color-primary);
+  }
+
+  /* Struck across the last digit only, then trailing off past it.
+     Natural 174:40 proportions; anchored to the final numeral, not centred. */
+  .notfound-postmark {
+    position: absolute;
+    top: 50%;
+    left: 62%;
+    width: clamp(160px, 30vw, 265px);
+    height: auto;
+    transform: translateY(-45%) rotate(-8deg);
+    pointer-events: none;
+  }
+
+  /* Deliberately quieter than the global h1 — the numeral carries the page. */
+  .notfound-head h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .notfound-head h3 {
+    font-size: 1rem;
+    max-width: 34rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .notfound-aside {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 3rem;
+  }
+
+  .notfound-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 3rem;
+  }
+
+  .notfound-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .notfound-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dotted var(--color-gray-light);
+  }
+
+  .notfound-list li:last-child {
+    border-bottom: none;
+  }
+
+  .notfound-meta {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .notfound-home {
+    margin-top: 2.5rem;
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 700px) {
+    .notfound-columns {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .notfound-stamp {
+      animation: notfound-settle 0.5s ease-out both;
+    }
+  }
+
+  @keyframes notfound-settle {
+    from {
+      opacity: 0;
+      transform: translateY(-6px) rotate(-1.5deg);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>

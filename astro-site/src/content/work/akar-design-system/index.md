@@ -1,9 +1,9 @@
 ---
-title: "Jiva's Akar Design System"
-description: "The philosophy and design principles behind Jiva’s scalable design system"
-year: "2023-2024"
-company: "Jiva"
-image: "./akar.webp"
+title: Jiva's Akar Design System
+description: The philosophy and design principles behind Jiva’s scalable design system
+year: 2022-2023
+company: Jiva
+image: ./akar.webp
 ---
 
 Design systems often represent an aspirational milestone for product design teams. But they’re often seen as an all-or-nothing project — something that takes months of planning and effort, 
@@ -146,7 +146,7 @@ iOS and Android’s XML system but we needed something that would support Jetpac
 The overall idea was straightforward. The engine should take in the 
 JSON file as the input, and spit out Compose Theming files that can be imported onto your project directly and the devs wouldn’t have to worry too much about the setup.
 
-<img src="/images/tokens-figma.gif" alt="Tokens in Figma" loading="lazy" style="border-radius: 8px;" />
+<video src="/images/tokens-figma.mp4" autoplay loop muted playsinline aria-label="Tokens in Figma" style="border-radius: 8px; width: 100%;"></video>
 
 And that’s how we placed the final piece of our design system jigsaw puzzle.
 

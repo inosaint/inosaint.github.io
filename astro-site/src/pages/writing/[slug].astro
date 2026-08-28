@@ -28,6 +28,33 @@ const socialImage = entry.data.image
     })
   : null;
 
+const siteUrl = 'https://kenneth.dsouza.im';
+const pageUrl = `${siteUrl}/writing/${entry.id}/`;
+
+const schema = [
+  {
+    '@type': 'BlogPosting',
+    '@id': `${pageUrl}#article`,
+    headline: entry.data.title,
+    description: entry.data.description,
+    url: pageUrl,
+    datePublished: entry.data.date.toISOString(),
+    author: { '@id': `${siteUrl}/#person` },
+    publisher: { '@id': `${siteUrl}/#person` },
+    isPartOf: { '@id': `${siteUrl}/#website` },
+    mainEntityOfPage: pageUrl,
+    ...(socialImage ? { image: new URL(socialImage.src, siteUrl).href } : {}),
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Writing', item: `${siteUrl}/writing` },
+      { '@type': 'ListItem', position: 3, name: entry.data.title, item: pageUrl },
+    ],
+  },
+];
+
 // Format date
 const formatDate = (date: Date) => {
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -41,6 +68,10 @@ const formatDate = (date: Date) => {
   imageType="image/png"
   imageWidth={socialImage ? 1200 : 800}
   imageHeight={socialImage ? 630 : 800}
+  type="article"
+  publishedDate={entry.data.date}
+  noindex={entry.data.status === 'draft'}
+  schema={schema}
   wide
 >
   <nav class="breadcrumb-header">
