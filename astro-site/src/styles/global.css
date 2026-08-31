@@ -271,12 +271,26 @@ figcaption {
   margin: 2rem 0;
 }
 
+.video-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
 .image-grid-2 img,
-.image-grid-3 img {
+.image-grid-3 img,
+.video-grid-3 video {
   width: 100%;
   height: auto;
   border-radius: 8px;
   margin: 0;
+}
+
+.video-grid-3 video {
+  display: block;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
 }
 
 .image-grid-2 figure,
@@ -1001,6 +1015,11 @@ footer {
     margin: -1.5rem -1rem 1.5rem -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  /* Vertical story videos stay side by side — stacked they'd be far too tall */
+  .video-grid-3 {
+    gap: 0.5rem;
   }
 
   /* Resume list mobile adjustments */
