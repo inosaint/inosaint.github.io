@@ -24,3 +24,6 @@ pnpm-debug.log*
 *.swp
 *.swo
 *~
+
+# local reference material, not shipped with the site
+public/inspiration/
