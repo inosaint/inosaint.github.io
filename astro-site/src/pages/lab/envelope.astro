@@ -1,0 +1,1771 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+// --- Sheet 1: Work -------------------------------------------------------
+const work = (await getCollection('work', ({ data }) => data.status === 'published'))
+  .sort((a, b) => parseInt(b.data.year.split('-')[0]) - parseInt(a.data.year.split('-')[0]))
+  .slice(0, 3)
+  .map((item) => ({
+    title: item.data.title,
+    meta: item.data.year,
+    url: `/work/${item.id}`,
+    image: item.data.image ?? null,
+    imageUrl: null as string | null,
+    external: false,
+  }));
+
+// --- Sheet 2: Writing ----------------------------------------------------
+// A short external list mirrors the homepage; the study only needs the newest few.
+const externalWritings = [
+  {
+    title: 'Squads as a Growth Engine for Designers',
+    url: 'https://medium.com/notes-from-the-fields/how-we-used-squads-to-help-our-designers-level-up-443fcbc52e2f',
+    imageUrl: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*iuV8e1TmjIe0zsr8yQfXyA.jpeg',
+    date: new Date('2025-08-18'),
+  },
+  {
+    title: 'Redesigning the Sahabat Jiva app',
+    url: 'https://medium.com/notes-from-the-fields/from-field-insights-to-better-ux-for-our-sahabat-jivas-3056b32ba51f',
+    imageUrl: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3Fnwkn7IeOiYbTxz-n3K7w.jpeg',
+    date: new Date('2025-05-15'),
+  },
+  {
+    title: 'How a sticker design became an unofficial Mascot',
+    url: 'https://medium.com/notes-from-the-fields/more-than-swag-how-a-last-minute-sticker-became-a-company-icon-42d86246e736',
+    imageUrl: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Nq0RLdn32pPVk-zLPFy-Cw.png',
+    date: new Date('2024-11-28'),
+  },
+];
+
+const writing = [
+  ...(await getCollection('writing', ({ data }) => data.status === 'published')).map((post) => ({
+    title: post.data.title,
+    date: new Date(post.data.date),
+    url: post.data.url ?? `/writing/${post.id}/`,
+    image: post.data.image ?? null,
+    imageUrl: null as string | null,
+    external: Boolean(post.data.url),
+  })),
+  ...externalWritings.map((post) => ({ ...post, image: null, external: true })),
+]
+  .sort((a, b) => b.date.getTime() - a.date.getTime())
+  .slice(0, 3)
+  .map((post) => ({
+    title: post.title,
+    meta: post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' }),
+    url: post.url,
+    image: post.image,
+    imageUrl: post.imageUrl,
+    external: post.external,
+  }));
+
+// --- Sheet 3: Projects ---------------------------------------------------
+// These live outside the content collections, so they carry a monogram instead
+// of a thumbnail.
+const projects = [
+  { title: 'AI Projects', meta: 'Tinkering', url: 'https://kenneth.dsouza.im/ai/', mono: 'AI', image: null, imageUrl: null, external: true },
+  { title: 'Design Demo Nights', meta: 'Community', url: 'https://designdemonights.com', mono: 'DD', image: null, imageUrl: null, external: true },
+  { title: 'Travelogues', meta: 'Writing', url: 'https://aninosaintlife.wordpress.com/category/travels/', mono: 'TR', image: null, imageUrl: null, external: true },
+];
+
+const sheets = [
+  { id: 'work', label: 'Work', href: '/work', items: work },
+  { id: 'writing', label: 'Writing', href: '/writing', items: writing },
+  { id: 'projects', label: 'Projects', href: 'https://kenneth.dsouza.im/ai/', items: projects },
+];
+
+// --- Stickers: interests, lifted from the resume -------------------------
+const stickers = [
+  { id: 'coffee', emoji: '☕️', label: 'Filter coffee', url: 'https://www.instagram.com/filtercoffeeconnoisseur/', art: '/images/stickers/filter-coffee.svg', artW: 82, artH: 66, tip: '@filtercoffeeconnoisseur' },
+  { id: 'books', emoji: '📚', label: 'Reading', url: 'https://www.goodreads.com/user/show/86283809-kenneth-dsouza', art: '/images/stickers/goodreads.svg', artW: 132, artH: 33, tip: 'What I\u2019m reading' },
+  { id: 'nights', emoji: '🌙', label: 'Demo Nights', url: 'https://designdemonights.com', art: '/images/stickers/demo-nights.webp', artW: 96, artH: 106, tip: 'designdemonights.com' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Envelope — a landing page study</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Slackside+One&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    <link href="https://fonts.cdnfonts.com/css/liter" rel="stylesheet" crossorigin="anonymous" />
+  </head>
+
+  <body>
+    <div class="lab-stage">
+        <div class="lab-canvas" id="lab-canvas">
+          <span class="lab-ground" aria-hidden="true"></span>
+          <span class="env-shadow" id="env-shadow" aria-hidden="true"></span>
+
+          <!-- Envelope ----------------------------------------------------->
+          <div class="env-scene" id="env-scene">
+            <button class="env" id="env" type="button" aria-describedby="env-hint">
+              <span class="sr-only">Open the envelope, then drag it around</span>
+
+              <!-- Front: the addressed face -->
+              <span class="env-face env-front" aria-hidden="true">
+                <span class="env-address">
+                  <span class="env-name">Kenneth Mark Dsouza</span>
+                  <span class="env-title">Product Design Manager</span>
+                  <span class="env-blurb">I design digital products, explore emerging tech and build things that live on the internet.</span>
+                </span>
+                <span class="env-stamp">
+                  <span class="env-stamp-paper">
+                    <img src="/images/stamp-portrait.webp" alt="" width="800" height="800" class="env-photo" />
+                  </span>
+                  <svg class="env-cancel" viewBox="0 0 200 130">
+                    <defs>
+                      <path id="env-arc-top" d="M 25 65 A 40 40 0 0 1 105 65" />
+                      <path id="env-arc-bottom" d="M 21 65 A 44 44 0 0 0 109 65" />
+                    </defs>
+                    <circle cx="65" cy="65" r="52" />
+                    <text text-anchor="middle"><textPath href="#env-arc-top" startOffset="50%" text-anchor="middle" dx="0.7">HELLO FROM</textPath></text>
+                    <text text-anchor="middle"><textPath href="#env-arc-bottom" startOffset="50%" text-anchor="middle" dx="0.7">BENGALURU</textPath></text>
+                    <g class="env-waves">
+                    <path d="M30 48 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0" />
+                    <path d="M30 60 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0" />
+                    <path d="M30 72 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0" />
+                    <path d="M30 84 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0" />
+                    </g>
+                  </svg>
+                </span>
+              </span>
+
+              <!-- Back: an inland letter card. Closed, the message panel is
+                   folded up behind the address panel and the side tabs gummed
+                   over it. Open, the whole thing lies flat — which is the point:
+                   nothing has to be threaded in front of the letters. -->
+              <span class="env-face env-back" aria-hidden="true">
+                <span class="env-inside"></span>
+                <span class="env-fold env-fold-l"><i></i></span>
+                <span class="env-fold env-fold-r"><i></i></span>
+                <span class="env-fold env-fold-t"><i></i></span>
+                <span class="env-fold env-fold-b">
+                  <i></i>
+                  <span class="env-heart" aria-hidden="true">
+                    <svg viewBox="0 0 24 26">
+                      <path class="env-heart-lo" d="M12 20.7 3.8 12.5a5 5 0 0 1 7.1-7.1L12 6.5l1.1-1.1a5 5 0 1 1 7.1 7.1z" />
+                      <path class="env-heart-hi" d="M12 20.7 3.8 12.5a5 5 0 0 1 7.1-7.1L12 6.5l1.1-1.1a5 5 0 1 1 7.1 7.1z" />
+                      <path class="env-heart-fill" d="M12 20.7 3.8 12.5a5 5 0 0 1 7.1-7.1L12 6.5l1.1-1.1a5 5 0 1 1 7.1 7.1z" />
+                    </svg>
+                  </span>
+                </span>
+                <span class="env-seal"></span>
+              </span>
+            </button>
+          </div>
+
+          <!-- Letters ------------------------------------------------------>
+          {sheets.map((sheet, i) => (
+            <article
+              class="sheet"
+              data-sheet={i}
+              data-tone={['cream', 'blue', 'tan'][i]}
+              tabindex="0"
+              aria-label={`${sheet.label} — drag, or use arrow keys to move`}
+            >
+              <header class="sheet-head">
+                <span class="sheet-icon" aria-hidden="true">
+                  {i === 0 && (
+                    <svg viewBox="0 0 24 24"><path d="M3 7.5h18v12H3z" /><path d="M8.5 7.5v-2a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v2" /></svg>
+                  )}
+                  {i === 1 && (
+                    <svg viewBox="0 0 24 24"><path d="M4 20l4.5-1.2L20 7.3l-3.3-3.3L5.2 15.5z" /><path d="M15.6 5.1l3.3 3.3" /></svg>
+                  )}
+                  {i === 2 && (
+                    <svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z" /></svg>
+                  )}
+                </span>
+                <h2>{sheet.label}</h2>
+              </header>
+
+              <ul class="sheet-items">
+                {sheet.items.map((item) => (
+                  <li>
+                    <a
+                      href={item.url}
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noopener noreferrer' : undefined}
+                    >
+                      {item.image ? (
+                        <Image src={item.image} alt="" class="sheet-thumb" width={120} height={90} densities={[2]} />
+                      ) : item.imageUrl ? (
+                        <img src={item.imageUrl} alt="" class="sheet-thumb" width="120" height="90" loading="lazy" />
+                      ) : (
+                        <span class="sheet-thumb sheet-mono">{(item as any).mono}</span>
+                      )}
+                      <span class="sheet-text">
+                        <span class="sheet-title">{item.title}</span>
+                        <span class="sheet-meta">{item.meta}</span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              <a href={sheet.href} class="sheet-all">all {sheet.label.toLowerCase()} →</a>
+            </article>
+          ))}
+
+          <!-- Stickers ----------------------------------------------------->
+          {stickers.map((sticker, i) => (
+            <div
+              class={sticker.art ? 'sticker sticker-art' : 'sticker'}
+              data-sticker={i}
+              style={sticker.art ? `--art-w:${sticker.artW}px` : undefined}
+              tabindex={sticker.art ? undefined : 0}
+              role={sticker.art ? undefined : 'button'}
+              aria-label={sticker.art ? undefined : `${sticker.label} sticker — drag, or use arrow keys to move`}
+            >
+              {sticker.art ? (
+                <a href={sticker.url} target="_blank" rel="noopener noreferrer" draggable="false">
+                  <img src={sticker.art} alt={sticker.label} width={sticker.artW} height={sticker.artH} draggable="false" />
+                  <span class="sticker-tip">{sticker.tip}</span>
+                </a>
+              ) : (
+                <>
+                  <span class="sticker-emoji" aria-hidden="true">{sticker.emoji}</span>
+                  <span class="sticker-label">{sticker.label}</span>
+                </>
+              )}
+            </div>
+          ))}
+
+        </div>
+      </div>
+
+      <p class="lab-hint" id="env-hint">Tap to open</p>
+
+    <!-- Emotes rise here rather than inside the card: the message panel is
+         folded through 180deg, so anything parented to it arrives mirrored. -->
+    <div class="heart-stream" id="heart-stream" aria-hidden="true"></div>
+
+      <!-- Footer: pinned to the foot of the stage, where the ground band always
+           reaches, so light type is safe at every viewport. -->
+      <footer class="lab-footer">
+        <nav aria-label="More about this site">
+          <a href="/resume">Resume</a>
+          <button type="button" id="colophon-btn">Colophon</button>
+        </nav>
+        <nav aria-label="Elsewhere">
+          <a href="https://x.com/kenneth" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://bsky.app/profile/ken.cv" target="_blank" rel="noopener noreferrer">Bluesky</a>
+          <a href="https://github.com/inosaint" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </footer>
+
+      <!-- This page deliberately skips BaseLayout, so the colophon is restated
+           here rather than shared. -->
+      <div class="lab-modal" id="colophon-modal" role="dialog" aria-modal="true" aria-labelledby="colophon-title" hidden>
+        <div class="lab-modal-panel">
+          <button type="button" class="lab-modal-close" id="colophon-close" aria-label="Close">&times;</button>
+          <h2 id="colophon-title">Colophon</h2>
+
+          <section>
+            <h3>Technology</h3>
+            <p>
+              Designed in <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">Figma</a>
+              and built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>,
+              a static site generator. Hosted on GitHub Pages.
+            </p>
+          </section>
+
+          <section>
+            <h3>Typography</h3>
+            <p>
+              <strong>Hand:</strong>
+              <a href="https://fonts.google.com/specimen/Slackside+One" target="_blank" rel="noopener noreferrer">Slackside One</a>
+              by Tanukifont, under the SIL Open Font License.
+            </p>
+            <p>
+              <strong>Display:</strong>
+              <a href="https://departuremono.com" target="_blank" rel="noopener noreferrer">Departure Mono</a>
+              by Helena Zhang, under the SIL Open Font License.
+            </p>
+            <p>
+              <strong>Headings:</strong>
+              <a href="https://fonts.google.com/specimen/Hanken+Grotesk" target="_blank" rel="noopener noreferrer">Hanken Grotesk</a>
+              by Alfredo Marco Pradil.
+            </p>
+            <p>
+              <strong>Body:</strong>
+              <a href="https://fonts.cdnfonts.com/css/liter" target="_blank" rel="noopener noreferrer">Liter</a>
+              by Anton Skugarov and Alexandr Ivanin.
+            </p>
+          </section>
+
+          <section>
+            <h3>Art direction</h3>
+            <p>
+              The paper-cut look began as a Midjourney style reference,
+              <code>--sref 635740225</code>.
+            </p>
+          </section>
+
+          <p class="lab-modal-foot">Coded with Claude.</p>
+        </div>
+      </div>
+  </body>
+</html>
+
+
+<style is:global>
+  /* Self-hosted: the nav's face, and the only webfont here not from a CDN. */
+  @font-face {
+    font-family: 'Departure Mono';
+    src: url('/fonts/DepartureMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    /* Palette taken from the paper-cut references. In those, the envelope is
+       one flat pink and every fold reads as a thin darker line, not a tint. */
+    --blush: #f2d5cb;
+    --ground: #56904f;
+    --pink: #f4a7be;
+    --pink-seam: #e2879f;
+    --crease: rgba(16, 40, 26, 0.15);
+    --ink: #10281a;
+    --letter-cream: #f3f1e8;
+    --letter-blue: #8fb2de;
+    --letter-tan: #e3cfb9;
+    --mark: #3d6fd8;
+    --font-body: 'Liter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* The hand writes the address — the one thing on a real envelope that IS
+       handwritten. The display face does the labels, stickers, footer and
+       colophon: the printed matter around it. */
+    --font-hand: 'Slackside One', 'Bradley Hand', cursive;
+    --font-display: 'Departure Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--blush);
+    font-size: 18px;
+    line-height: 1.6;
+    overflow: hidden;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  /* One viewport, no scroll timeline: the card opens on a tap. */
+  .lab-stage {
+    position: relative;
+    height: 100svh;
+    overflow: hidden;
+    background: var(--blush);
+    isolation: isolate;
+  }
+
+  /* Paper grain over the whole scene — the thing that keeps flat colour from
+     reading as vector art. */
+  .lab-stage::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+    /* Two frequencies: a coarse fibre for the tooth of the stock, a fine one
+       for the print grain over it. */
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23c)' opacity='0.34'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='1' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23f)' opacity='0.2'/%3E%3C/svg%3E");
+  }
+
+  /* Everything is composed on a fixed canvas and scaled to fit, so the collage
+     holds its arrangement at any viewport instead of reflowing. The box itself
+     is a layout profile the script swaps between landscape and portrait, hence
+     the custom properties rather than literals.
+
+     Centred by absolute offsets, not by the stage's alignment: once the canvas
+     is wider than the viewport — every phone — an overflowing grid item stops
+     being centred and pins to one side. */
+  .lab-canvas {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--cw, 1000px);
+    height: var(--ch, 560px);
+    z-index: 1;
+    transform: translate(-50%, -50%) translateY(var(--shift, 0)) scale(var(--fit, 1));
+    transform-origin: center center;
+  }
+
+  .lab-canvas > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* In the canvas rather than the stage, so the horizon stays glued to the card
+     at every scale. Wide enough to run past any viewport once scaled. */
+  .lab-canvas > .lab-ground {
+    left: -1600px;
+    top: var(--horizon);
+    width: 4200px;
+    height: 1600px;
+    background: var(--ground);
+    z-index: 0;
+  }
+
+  .env-shadow {
+    width: calc(var(--ew) * 1.06);
+    height: calc(var(--ew) * 0.05);
+    z-index: 1;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(16, 40, 26, 0.32), transparent);
+    opacity: var(--shadow, 1);
+    pointer-events: none;
+  }
+
+  /* --- The card --------------------------------------------------------- */
+
+  .env-scene {
+    width: var(--ew);
+    height: var(--eh);
+    /* Tied to the card, or the same rotation reads as a different lens once the
+       portrait profile shrinks it. */
+    perspective: calc(var(--ew) * 3.2);
+    z-index: 3;
+  }
+
+  .env {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateY(var(--lift, 0px)) rotateY(var(--flip, 0deg)) scale(var(--zoom, 1));
+    /* No filter here: a filter forces transform-style back to flat, which
+       defeats backface-visibility and shows the front through the back. */
+  }
+
+  .lab-canvas[data-done] .env { cursor: grab; }
+  .lab-canvas[data-done] .env:active { cursor: grabbing; }
+  .lab-canvas[data-done] .env,
+  .lab-canvas[data-done] .sheet { touch-action: none; }
+
+  .env:focus-visible { outline: 3px solid var(--ink); outline-offset: 10px; }
+
+  .env-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+  }
+
+  .env-front {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: calc(20px * var(--face));
+    padding: calc(34px * var(--face)) calc(32px * var(--face));
+    background: var(--pink);
+    border-radius: calc(7px * var(--face));
+    box-shadow: 0 16px 30px rgba(16, 40, 26, 0.16);
+    overflow: hidden;
+  }
+
+  /* The back must not clip or flatten: its panels swing right out of it. */
+  .env-back {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    background: none;
+    overflow: visible;
+  }
+
+  /* The address panel, uncovered once the card is open. Same pink as every
+     other panel — its outline IS the four creases the flaps hinge on, which is
+     the only thing that should distinguish them. */
+  .env-inside {
+    position: absolute;
+    inset: 0;
+    background: var(--pink);
+    border-radius: calc(7px * var(--face));
+    box-shadow: inset 0 0 0 1.5px var(--crease);
+    transform: translateZ(1px);
+  }
+
+  .env-fold {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+
+  /* The narrow top flap, gummed down over the address panel. */
+  .env-fold-t {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--top-h);
+    transform-origin: 50% 0%;
+    transform: translateZ(2px) rotateX(var(--open-t, 0deg));
+  }
+
+  /* Tapered like the side tabs: full width at the crease, narrowing toward its
+     free edge. */
+  .env-fold-t i {
+    border-radius: calc(7px * var(--face)) calc(7px * var(--face)) 0 0;
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+  }
+
+  .env-fold i {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--pink);
+    /* No cast shadow. A flap folded through 180deg carries its shadow round
+       with it, so what was a downward shadow behind the closed panel became an
+       upward smear across the crease once open. The crease lines are what say
+       "this is folded"; they do not need help. */
+  }
+
+  /* The message panel: folded up behind the address panel when closed, hinged
+     on the bottom crease, swinging down to lie flat below it. */
+  .env-fold-b {
+    inset: 0;
+    transform-origin: 50% 100%;
+    transform: translateZ(2px) rotateX(var(--open-b, 0deg));
+  }
+
+  .env-fold-b i { border-radius: calc(7px * var(--face)); }
+
+  /* Side tabs, chamfered like the real card's, gummed over the message panel. */
+  .env-fold-l,
+  .env-fold-r {
+    top: 0;
+    width: var(--tab-w);
+    height: 100%;
+  }
+
+  .env-fold-l {
+    left: 0;
+    transform-origin: 0% 50%;
+    transform: translateZ(3px) rotateY(var(--open-l, 0deg));
+  }
+
+  .env-fold-r {
+    right: 0;
+    transform-origin: 100% 50%;
+    transform: translateZ(3px) rotateY(var(--open-r, 0deg));
+  }
+
+  /* Swapped: the chamfer now tapers toward the fold rather than away from it,
+     so each tab widens as it leaves the crease. */
+  .env-fold-l i { clip-path: polygon(0 0, 100% 9%, 100% 91%, 0 100%); }
+  .env-fold-r i { clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 91%); }
+
+  /* A heart pressed into the message panel, the section below the crease.
+     Filled in a darker shade of the stock, so nothing reads except the press. */
+  .env-heart {
+    position: absolute;
+    left: 50%;
+    /* Measured from the panel's LOCAL top, which the 180deg fold turns into the
+       visual bottom — so this sits low on the opened sheet, under the fan.
+       Subtracting moves it DOWN on screen, for the same reason. */
+    top: calc(22% - 50px * var(--face));
+    width: calc(22px * var(--face));
+    /* The panel folds open through 180deg and carries its contents round with
+       it, so the heart turns itself back the right way up. That counter-turn is
+       also what made it visible on the SEALED card the first time it lived
+       here: turned away from the viewer but still painted. Culling the back
+       face means it can only ever show once the panel has actually opened.
+       The depth is NEGATIVE for the same reason the rotation is countered: the
+       fold reverses its local Z, so +0.5px buried the heart behind its own
+       panel. */
+    transform: translate(-50%, -50%) translateZ(-0.5px) rotateX(180deg);
+    backface-visibility: hidden;
+  }
+
+  .env-heart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* The press is two offset copies of the shape rather than a CSS filter: a
+     filter anywhere inside a preserve-3d subtree forces it to flatten, which
+     cost the card its depth sorting and let the front face show through once
+     opened. Drawn dark-above, light-below, then the shape over both. */
+  .env-heart-hi { fill: rgba(255, 255, 255, 0.55); transform: translateY(1px); }
+  .env-heart-lo { fill: rgba(16, 40, 26, 0.18); transform: translateY(-1px); }
+
+  /* A darker shade of the envelope's own pink, so it reads as pressed into the
+     stock rather than printed onto it. */
+  .env-heart-fill { fill: var(--pink-seam); }
+
+  .env-seal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: calc(34px * var(--face));
+    height: calc(34px * var(--face));
+    margin: calc(-17px * var(--face)) 0 0 calc(-17px * var(--face));
+    border-radius: 50%;
+    background: var(--pink-seam);
+    opacity: var(--seal, 1);
+    transform: translateZ(1px);
+  }
+
+  /* --- The addressed face ----------------------------------------------- */
+  /* Everything here is sized off --face, so the whole address side rescales
+     with the card when the portrait profile takes over. */
+
+  /* The button this sits in centres its text by default, which left the name
+     and the title floating off the ruled lines below them — invisible in the
+     grotesk, obvious once mono widened the address block. */
+  .env-address {
+    align-self: end;
+    text-align: left;
+    /* Indented the way a hand-addressed envelope is: the writing starts well
+       in from the fold, not hard against it. Scales with the card. */
+    padding-left: calc(50px * var(--face));
+    /* Sits off the bottom fold rather than on it. */
+    padding-bottom: calc(20px * var(--face));
+  }
+
+  .env-name {
+    display: block;
+    font-family: var(--font-hand);
+    /* Slackside has a small x-height on a large em, so it sets much smaller
+       than its nominal size suggests and needs roughly double to read at the
+       same optical weight. Long ascenders want the leading back, too. */
+    font-size: calc(2.6rem * var(--face));
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+
+  .env-title {
+    display: block;
+    font-family: var(--font-hand);
+    font-size: calc(1.48rem * var(--face));
+    line-height: 1.3;
+    color: rgba(16, 40, 26, 0.58);
+    margin-top: calc(4px * var(--face));
+    max-width: 24ch;
+  }
+
+  /* The note written under the address. */
+  .env-blurb {
+    display: block;
+    font-family: var(--font-hand);
+    font-size: calc(1.36rem * var(--face));
+    line-height: 1.15;
+    color: rgba(16, 40, 26, 0.72);
+    margin-top: calc(12px * var(--face));
+    /* ch scales with the type, so this had to come in as the size went up or
+       the note would run under the stamp. */
+    max-width: 26ch;
+  }
+
+  .env-stamp { position: relative; align-self: start; }
+
+  /* The padding is exactly one perforation radius, and the box shrink-wraps the
+     photo, so the dot pattern only ever shows as the scalloped edge. */
+  .env-stamp-paper {
+    --r: calc(7px * var(--face));
+    display: inline-block;
+    padding: var(--r);
+    background: radial-gradient(50% 50%, #0000 65%, var(--letter-cream) 67%) round var(--r) var(--r) /
+      calc(2 * var(--r)) calc(2 * var(--r));
+    /* Sits on the envelope as its own piece of paper, so it casts rather than
+       glows: a tight dark shadow following the scalloped perforation. */
+    filter: drop-shadow(0 1px 2px rgba(16, 40, 26, 0.16));
+  }
+
+  .env-photo {
+    display: block;
+    width: calc(126px * var(--face));
+    height: calc(126px * var(--face));
+    object-fit: cover;
+  }
+
+  /* The cancel: a ring with its legend split across the top and bottom arcs,
+     and the wavy strike running out of it across the stamp. The box is wider
+     than it is tall because those lines carry on past the ring. */
+  .env-cancel {
+    position: absolute;
+    width: calc(190px * var(--face, 1));
+    height: calc(124px * var(--face, 1));
+    left: calc(-88px * var(--face, 1));
+    top: calc(44px * var(--face, 1));
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .env-cancel circle {
+    fill: none;
+    stroke: rgba(16, 40, 26, 0.45);
+    stroke-width: 1.6;
+  }
+
+  .env-cancel text {
+    /* Revealed only once the fonts have settled; see below. */
+    opacity: 0;
+    fill: rgba(16, 40, 26, 0.5);
+    font-size: 9px;
+    letter-spacing: 1.4px;
+    font-family: var(--font-heading);
+  }
+
+  :root.fonts-ready .env-cancel text {
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+  }
+
+  .env-waves path {
+    fill: none;
+    stroke: rgba(16, 40, 26, 0.45);
+    stroke-width: 1.3;
+    stroke-linecap: round;
+  }
+
+  /* --- Letters ---------------------------------------------------------- */
+  /* With the card flat, these simply sit on top of it — no interleaving. */
+
+  .sheet {
+    width: var(--sheet-w);
+    height: var(--sheet-h);
+    /* The side margin is what makes the entries sit ON the sheet rather than
+       run to its cut edge. */
+    padding: calc(18px * var(--sheet-face)) calc(22px * var(--sheet-face)) calc(14px * var(--sheet-face));
+    display: flex;
+    flex-direction: column;
+    /* The same softened corner as the card and the colophon: one stock. */
+    border-radius: 7px;
+    box-shadow: 0 10px 22px rgba(16, 40, 26, 0.18);
+    z-index: 6;
+    opacity: 0;
+    /* Invisible is not intangible: without this the hidden letters swallow the
+       tap meant for the card, and their links fire. */
+    pointer-events: none;
+  }
+
+  .sheet[data-tone='cream'] { background: var(--letter-cream); }
+  .sheet[data-tone='blue']  { background: var(--letter-blue); }
+  .sheet[data-tone='tan']   { background: var(--letter-tan); }
+
+  .lab-canvas[data-done] .sheet { cursor: grab; }
+  .lab-canvas[data-done] .sheet[data-dragging] { cursor: grabbing; z-index: 9; }
+
+  /* Icon over an underlined label, as in the second reference. */
+  /* Icon and label were two inline boxes sitting on a text baseline, which put
+     the icon's optical centre above the word's. A centred flex row aligns them
+     to each other instead. */
+  .sheet-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(7px * var(--sheet-face));
+    margin-bottom: calc(12px * var(--sheet-face));
+  }
+
+  /* The label carries the rule beneath it, so it is taller than the icon by
+     that much; the icon takes the same padding to keep the two centred on the
+     word rather than on the rule. */
+  .sheet-icon {
+    display: flex;
+    padding-bottom: calc(6px * var(--sheet-face));
+  }
+
+  .sheet-icon svg {
+    display: block;
+    width: calc(20px * var(--sheet-face));
+    height: calc(20px * var(--sheet-face));
+    fill: none;
+    stroke: var(--mark);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .sheet-head h2 {
+    font-family: var(--font-display);
+    font-size: calc(0.66rem * var(--sheet-face));
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mark);
+    margin: 0;
+    padding-bottom: calc(5px * var(--sheet-face));
+    border-bottom: 1px solid var(--mark);
+  }
+
+  /* The entries sit together at a fixed rhythm; the letter's spare height
+     collects BELOW them, which is the margin before the foot link. Sharing the
+     space out instead just pushed the entries apart as the letter grew. */
+  .sheet-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: calc(6px * var(--sheet-face));
+    margin-top: calc(10px * var(--sheet-face));
+  }
+
+  .sheet-items li { margin: 0; }
+
+  .sheet-items a {
+    display: grid;
+    grid-template-columns: calc(64px * var(--sheet-face)) 1fr;
+    gap: calc(11px * var(--sheet-face));
+    align-items: center;
+    padding: calc(4px * var(--sheet-face)) calc(3px * var(--sheet-face));
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .sheet-items a:hover { background: rgba(16, 40, 26, 0.07); }
+
+  .sheet-thumb {
+    width: calc(64px * var(--sheet-face));
+    height: calc(48px * var(--sheet-face));
+    object-fit: cover;
+    background: rgba(16, 40, 26, 0.08);
+    /* The same white margin the die-cut stickers carry. A ring rather than the
+       sticker's stacked shadows: these are rectangles, so a plain outline
+       traces them exactly and costs far less to paint. */
+    box-shadow:
+      0 0 0 calc(3px * var(--sheet-face)) #fff,
+      0 2px 5px rgba(16, 40, 26, 0.22);
+  }
+
+  .sheet-mono {
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: calc(0.72rem * var(--sheet-face));
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--mark);
+  }
+
+  .sheet-text { min-width: 0; }
+
+  .sheet-title {
+    font-family: var(--font-display);
+    font-size: calc(0.76rem * var(--sheet-face));
+    line-height: 1.3;
+    /* Two lines, then ellipsis — the letter height is fixed. */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .sheet-meta {
+    display: block;
+    font-family: var(--font-display);
+    font-size: calc(0.62rem * var(--sheet-face));
+    color: rgba(16, 40, 26, 0.55);
+    margin-top: 2px;
+  }
+
+  .sheet-all {
+    margin-top: calc(14px * var(--sheet-face));
+    font-family: var(--font-display);
+    font-size: calc(0.62rem * var(--sheet-face));
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: var(--mark);
+    text-align: center;
+  }
+
+  /* --- Stickers --------------------------------------------------------- */
+
+  .sticker {
+    display: flex;
+    align-items: center;
+    gap: calc(6px * var(--sticker-face));
+    padding: calc(7px * var(--sticker-face)) calc(12px * var(--sticker-face)) calc(7px * var(--sticker-face)) calc(9px * var(--sticker-face));
+    background: var(--letter-cream);
+    border-radius: 999px;
+    /* The pale outline is the die-cut edge. */
+    box-shadow:
+      0 0 0 3px var(--letter-cream),
+      0 5px 12px rgba(16, 40, 26, 0.2);
+    font-family: var(--font-display);
+    font-size: calc(0.62rem * var(--sticker-face));
+    color: var(--ink);
+    white-space: nowrap;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    /* Above the letters and the card — they sit on the whole collage. */
+    z-index: 11;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .lab-canvas[data-done] .sheet,
+  .lab-canvas[data-done] .sticker { pointer-events: auto; }
+
+  .sticker[data-dragging] { cursor: grabbing; z-index: 12; }
+
+  .sticker:focus-visible { outline: 3px solid var(--mark); outline-offset: 6px; }
+
+
+  /* An art sticker: the die-cut shape itself, no pill and no label. The white
+     outline is two stacked drop-shadows, which follow the artwork's silhouette
+     the way a real die cut does — a border would follow the bounding box. */
+  .sticker-art {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    text-shadow: none;
+  }
+
+  .sticker-art a {
+    display: block;
+    line-height: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Anchors and images start the browser's OWN drag-and-drop on pointerdown,
+     which fires pointercancel and kills ours — so the art stickers could not be
+     moved at all. Opt both out. */
+  .sticker-art a,
+  .sticker-art img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  .sticker-art img {
+    display: block;
+    width: calc(var(--art-w, 94px) * var(--sticker-face, 1));
+    height: auto;
+    /* A real die cut has a hard white margin, not a halo. Blurred shadows give
+       a glow; these are zero-blur copies offset in eight directions, which
+       compound into a solid outline that still follows the artwork's silhouette
+       rather than its bounding box. The last one is the lift off the page. */
+    filter:
+      drop-shadow(1.4px 0 0 #fff) drop-shadow(-1.4px 0 0 #fff)
+      drop-shadow(0 1.4px 0 #fff) drop-shadow(0 -1.4px 0 #fff)
+      drop-shadow(1px 1px 0 #fff) drop-shadow(-1px 1px 0 #fff)
+      drop-shadow(1px -1px 0 #fff) drop-shadow(-1px -1px 0 #fff)
+      drop-shadow(0 5px 10px rgba(16, 40, 26, 0.32));
+  }
+
+  .sticker-tip {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 9px);
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 5px 9px;
+    background: var(--ink);
+    color: var(--letter-cream);
+    font-family: var(--font-display, monospace);
+    font-size: 0.56rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+  }
+
+  .sticker-art:hover .sticker-tip,
+  .sticker-art:focus-within .sticker-tip { opacity: 1; }
+
+  .sticker-emoji { font-size: calc(1rem * var(--sticker-face)); line-height: 1; }
+
+  /* --- Hint ------------------------------------------------------------- */
+
+  /* --- Heart emotes ------------------------------------------------------ */
+
+  .heart-stream {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 25;
+  }
+
+  .heart-stream span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    color: var(--pink-seam);
+    animation: heart-rise 1.7s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
+    will-change: transform, opacity;
+  }
+
+  .heart-stream svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  @keyframes heart-rise {
+    0% { opacity: 0; transform: translate(0, 0) scale(0.35) rotate(var(--r, 0deg)); }
+    14% { opacity: 1; }
+    100% { opacity: 0; transform: translate(var(--dx, 0), -170px) scale(1.1) rotate(var(--r, 0deg)); }
+  }
+
+  .env-heart { cursor: pointer; }
+
+  .lab-hint {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 2.5rem;
+    text-align: center;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: var(--hint, 1);
+    transition: opacity 0.15s linear;
+    pointer-events: none;
+    margin: 0;
+    z-index: 15;
+  }
+
+
+  /* --- Letterpress ------------------------------------------------------- */
+  /* Type pressed into the stock rather than sitting on it: a dark edge above,
+     a light one below. On dark ink the highlight does the work; on the tonal
+     grey of the cancel, the shadow does. */
+
+  .env-name,
+  .env-title,
+  .env-blurb {
+    text-shadow:
+      -1px -1px 0 rgba(16, 40, 26, 0.07),
+      0 1px 0 rgba(255, 255, 255, 0.34);
+  }
+
+  /* SVG ignores text-shadow, so the whole mark is imprinted with stacked drop
+     shadows instead. */
+  .env-cancel {
+    filter:
+      drop-shadow(-1px -1px 0 rgba(16, 40, 26, 0.14))
+      drop-shadow(1px 1px 0 rgba(255, 255, 255, 0.38));
+  }
+
+  /* The letters take the same press as the card face: the type sits in the
+     stock rather than on it. */
+  .sheet-head h2,
+  .sheet-title,
+  .sheet-meta,
+  .sheet-all,
+  .sheet-mono,
+  .sticker {
+    text-shadow:
+      -1px -1px 0 rgba(16, 40, 26, 0.07),
+      0 1px 0 rgba(255, 255, 255, 0.34);
+  }
+
+  /* SVG ignores text-shadow, so the icons are pressed with drop-shadows. */
+  .sheet-icon svg {
+    filter:
+      drop-shadow(-1px -1px 0 rgba(16, 40, 26, 0.07))
+      drop-shadow(0 1px 0 rgba(255, 255, 255, 0.34));
+  }
+
+  /* --- Footer and colophon ---------------------------------------------- */
+  /* Outside .lab-stage, which isolates its own grain overlay, so these need no
+     z-index arms race with it — only with each other. */
+
+  .lab-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.85rem 1.25rem;
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .lab-footer nav { display: flex; gap: 1rem; }
+
+  .lab-footer a,
+  .lab-footer button {
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .lab-footer a:hover,
+  .lab-footer button:hover { color: #fff; text-decoration: underline; }
+
+  .lab-footer a:focus-visible,
+  .lab-footer button:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+  .lab-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(16, 40, 26, 0.55);
+  }
+
+  .lab-modal[hidden] { display: none; }
+
+  .lab-modal-panel {
+    position: relative;
+    width: min(30rem, 100%);
+    max-height: 80svh;
+    overflow-y: auto;
+    padding: 1.75rem 1.5rem 1.5rem;
+    /* A sheet, not a dialog: stock colour, its own grain, and the soft edge
+       shading of a page lifted off a pile. */
+    background-color: var(--letter-cream);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.34' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23p)' opacity='0.3'/%3E%3C/svg%3E");
+    background-blend-mode: multiply;
+    /* The same softened corner the card has, so the sheet reads as cut from
+       the same stock. */
+    border-radius: 7px;
+    box-shadow:
+      0 24px 60px rgba(16, 40, 26, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      inset 0 -14px 22px -14px rgba(16, 40, 26, 0.16);
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  .lab-modal-panel h2,
+  .lab-modal-panel h3 {
+    text-shadow:
+      -1px -1px 0 rgba(16, 40, 26, 0.06),
+      0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+
+  .lab-modal-panel code {
+    font-family: var(--font-display);
+    font-size: 0.92em;
+    padding: 0.1em 0.35em;
+    background: rgba(16, 40, 26, 0.06);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .lab-modal-panel h2 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+  }
+
+  .lab-modal-panel h3 {
+    font-family: var(--font-display);
+    font-size: 0.66rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mark);
+    margin: 0 0 0.35rem;
+  }
+
+  .lab-modal-panel section { margin-bottom: 1.25rem; }
+  .lab-modal-panel p { margin: 0 0 0.35rem; }
+  .lab-modal-panel a { color: var(--mark); }
+
+  .lab-modal-foot {
+    font-family: var(--font-display);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(16, 40, 26, 0.55);
+    margin: 0;
+  }
+
+  .lab-modal-close {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.6rem;
+    background: none;
+    border: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: rgba(16, 40, 26, 0.5);
+    cursor: pointer;
+  }
+
+  .lab-modal-close:hover { color: var(--ink); }
+</style>
+
+<script>
+  // Text on a path is re-measured when a webfont swaps in, so the cancel's
+  // legend re-centres itself mid-load and lands differently on each refresh.
+  // Reveal it only once the fonts have settled, so it is laid out once.
+  const markFontsReady = () => document.documentElement.classList.add('fonts-ready');
+  if (document.fonts?.ready) document.fonts.ready.then(markFontsReady);
+  else markFontsReady();
+</script>
+
+<script>
+  type Rest = { x: number; y: number; r: number };
+
+  /** One composition. Everything downstream — the canvas box, the card, the
+   *  horizon, the resting places — is read from the active profile, so the page
+   *  can hold a landscape and a portrait arrangement without two code paths. */
+  type Layout = {
+    canvasW: number;
+    canvasH: number;
+    envW: number;
+    envH: number;
+    /** The narrow top flap. */
+    topH: number;
+    tabW: number;
+    /** Scales the address side's type and stamp with the card. */
+    face: number;
+    /** The flat card is ~2.9x the closed card's height, so it steps back. */
+    openZoom: number;
+    /** The card's centre. Its bottom edge is the horizon, by construction. */
+    envY: number;
+    sheetW: number;
+    sheetH: number;
+    sheetFace: number;
+    /** Stickers scale on their own, so the letters can grow without them. */
+    stickerFace: number;
+    /** Portrait cannot show the flat card as anything but pink slivers between
+     *  the letters, so there it fades out as it unfolds. */
+    fadeCard: boolean;
+    /** A cascade must paint downwards — each letter over the TAIL of the one
+     *  above — or the letter on top hides the next one's heading. The fan wants
+     *  the opposite: the middle letter in front. */
+    cascade: boolean;
+    sheets: Rest[];
+    stickers: Rest[];
+    /** px kept clear at the foot of the stage for the hint. */
+    hintReserve: number;
+    /** Portrait has no room to play the fold: it starts open. */
+    instant: boolean;
+  };
+
+  // Landscape. The canvas box matches a typical window's aspect so nothing is
+  // wasted at the sides, and the card takes ~47% of it — about 40% of the page.
+  const WIDE: Layout = {
+    canvasW: 1000,
+    canvasH: 560,
+    envW: 690,
+    envH: 380,
+    topH: 100,
+    tabW: 70,
+    face: 1,
+    openZoom: 0.62,
+    envY: 300,
+    sheetW: 280,
+    sheetH: 344,
+    sheetFace: 1,
+    stickerFace: 1,
+    fadeCard: false,
+    cascade: false,
+    // Spread almost the full canvas, overlapping by ~30–60px — enough to read as
+    // a dealt hand, not enough to cover a neighbour's list. The outer two
+    // deliberately overhang the opened card, which reads as their backdrop.
+    // Index order is Work, Writing, Projects; Writing sits in the middle, so
+    // the centre coordinate belongs to index 1.
+    sheets: [
+      { x: 250, y: 300, r: -5 },
+      { x: 500, y: 250, r: 0 },
+      { x: 720, y: 292, r: 4 },
+    ],
+    // The letters now claim the middle band, so the stickers take the sky above
+    // and the lawn below rather than the side margins.
+    // Three now, so they sit as a triangle around the opened letters rather
+    // than as two rows.
+    // Clear of the letters: Work now reaches x 110-390 and y 128-472, which the
+    // old bottom-left spot sat inside. This one drops into the gap beneath the
+    // fan, on the grass.
+    stickers: [
+      { x: 165, y: 70, r: -10 },
+      { x: 820, y: 60, r: 7 },
+      { x: 500, y: 496, r: -6 },
+    ],
+    hintReserve: 80,
+    instant: false,
+  };
+
+  // Portrait. A phone cannot hold three letters side by side, so they cascade
+  // straight down the canvas instead, and the tall canvas puts the spare height
+  // to work as sky above and lawn below.
+  //
+  // The box's aspect matches a phone's usable area, so `fit` is limited by width
+  // and height at once and none of the screen is left over.
+  const TALL: Layout = {
+    canvasW: 460,
+    canvasH: 1040,
+    envW: 420,
+    envH: 231,
+    topH: 61,
+    tabW: 42,
+    face: 0.6,
+    // Nothing to step back from: the flat card still fits the tall canvas.
+    openZoom: 1,
+    envY: 440,
+    sheetW: 320,
+    sheetH: 360,
+    sheetFace: 1.3,
+    stickerFace: 0.85,
+    fadeCard: true,
+    cascade: true,
+    // A cascade in reading order, stepping 240 — two thirds of a letter — so the
+    // covered part of each is only its tail: the heading and the first two
+    // entries of every letter stay in the clear.
+    sheets: [
+      { x: 216, y: 250, r: -3 },
+      { x: 248, y: 490, r: 3 },
+      { x: 210, y: 730, r: -2 },
+    ],
+    // Two rows in the bands the cascade leaves free. The lower one stops short
+    // of the canvas foot, which the fixed footer covers.
+    stickers: [
+      { x: 92, y: 48, r: -10 },
+      { x: 300, y: 54, r: 7 },
+      { x: 240, y: 958, r: -5 },
+    ],
+    hintReserve: 0,
+    instant: true,
+  };
+
+  const MAX_FIT = 1.9; // the canvas may scale up, or a big screen wastes itself
+  const OPEN_MS = 2200;
+  const DRAG_SLOP = 6; // px of travel before a press counts as a drag, not a click
+
+  type Pos = { x: number; y: number };
+
+  const canvas = document.getElementById('lab-canvas') as HTMLElement | null;
+  const stage = document.querySelector('.lab-stage') as HTMLElement | null;
+  const scene = document.getElementById('env-scene') as HTMLElement | null;
+  const env = document.getElementById('env') as HTMLElement | null;
+  const hint = document.getElementById('env-hint') as HTMLElement | null;
+  const shadow = document.getElementById('env-shadow') as HTMLElement | null;
+  const sheetEls = Array.from(document.querySelectorAll<HTMLElement>('.sheet'));
+  const stickerEls = Array.from(document.querySelectorAll<HTMLElement>('.sticker'));
+
+  if (canvas && stage && scene && env) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const clamp01 = (n: number) => (n < 0 ? 0 : n > 1 ? 1 : n);
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+    // Progress within one phase of the timeline.
+    const seg = (p: number, a: number, b: number) => clamp01((p - a) / (b - a));
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+    const easeInOut = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    let L: Layout = WIDE;
+
+    /** The horizon sits just ABOVE the closed card's bottom edge, so the base
+     *  overlaps the green and the card reads as standing on the surface. Level
+     *  with the base it only ever looks like it is touching a line. */
+    const groundY = () => L.envY + L.envH / 2 - L.envH * 0.1;
+    const envRest = (): Rest => ({ x: L.canvasW / 2, y: L.envY, r: 0 });
+
+    type Movable = {
+      el: HTMLElement;
+      i: number;
+      kind: 'env' | 'sheet' | 'sticker';
+      /** Set once a visitor drags it; from then on the timeline leaves it alone. */
+      custom: Pos | null;
+      half: { w: number; h: number };
+    };
+
+    const movables: Movable[] = [
+      { el: scene, i: 0, kind: 'env', custom: null, half: { w: 0, h: 0 } },
+      ...sheetEls.map((el, i) => ({
+        el, i, kind: 'sheet' as const, custom: null, half: { w: 0, h: 0 },
+      })),
+      ...stickerEls.map((el, i) => ({
+        el, i, kind: 'sticker' as const, custom: null, half: { w: 0, h: 0 },
+      })),
+    ];
+
+    const restOf = (m: Movable): Rest =>
+      m.kind === 'env' ? envRest() : m.kind === 'sheet' ? L.sheets[m.i] : L.stickers[m.i];
+
+    const measure = () => {
+      movables.forEach((m) => {
+        m.half = { w: m.el.offsetWidth / 2, h: m.el.offsetHeight / 2 };
+      });
+    };
+
+    let fit = 1;
+    let p = 0;
+    let done = false;
+    let manualFlips = 0;
+    let pinned = false; // ?p= is holding the timeline still
+
+    const applyLayout = (next: Layout) => {
+      L = next;
+      const s = canvas.style;
+      s.setProperty('--cw', `${L.canvasW}px`);
+      s.setProperty('--ch', `${L.canvasH}px`);
+      s.setProperty('--ew', `${L.envW}px`);
+      s.setProperty('--eh', `${L.envH}px`);
+      s.setProperty('--top-h', `${L.topH}px`);
+      s.setProperty('--tab-w', `${L.tabW}px`);
+      s.setProperty('--face', String(L.face));
+      s.setProperty('--horizon', `${groundY()}px`);
+      s.setProperty('--sheet-w', `${L.sheetW}px`);
+      s.setProperty('--sheet-h', `${L.sheetH}px`);
+      s.setProperty('--sheet-face', String(L.sheetFace));
+      s.setProperty('--sticker-face', String(L.stickerFace));
+      canvas.dataset.layout = L === TALL ? 'tall' : 'wide';
+      // Positions dragged in the old composition mean nothing in the new one.
+      movables.forEach((m) => { m.custom = null; });
+    };
+
+    const place = (m: Movable, x: number, y: number, rot: number, scale = 1, opacity = 1) => {
+      m.el.style.transform =
+        `translate(${x - m.half.w}px, ${y - m.half.h}px) rotate(${rot}deg) scale(${scale})`;
+      m.el.style.opacity = String(opacity);
+    };
+
+    function render() {
+      done = p >= 0.999;
+      if (done) canvas.dataset.done = '';
+      else delete canvas.dataset.done;
+
+      const cx = L.canvasW / 2;
+
+      // 1. Turn the card over. Taps after it has opened add half-turns.
+      const flip = easeInOut(seg(p, 0, 0.3)) * 180 + manualFlips * 180;
+      env.style.setProperty('--flip', `${flip}deg`);
+
+      // 2. Break the seal, then unfold: side tabs first, then the message panel
+      //    swings down. The card steps back and lifts as it does, so the flat
+      //    sheet — nearly three times as tall as the closed card — stays in frame.
+      env.style.setProperty('--seal', String(1 - seg(p, 0.3, 0.36)));
+      const tabs = easeInOut(seg(p, 0.34, 0.58));
+      env.style.setProperty('--open-l', `${tabs * -180}deg`);
+      env.style.setProperty('--open-r', `${tabs * 180}deg`);
+      const unfold = easeInOut(seg(p, 0.4, 0.7));
+      const top = easeInOut(seg(p, 0.44, 0.72));
+      env.style.setProperty('--open-t', `${top * 180}deg`);
+      env.style.setProperty('--open-b', `${unfold * -180}deg`);
+      const zoom = lerp(1, L.openZoom, unfold);
+      env.style.setProperty('--zoom', String(zoom));
+      // Unfolded the sheet runs from -(H/2 + top flap) to +(H/2 + message
+      // panel); lift by the centre of THAT, scaled, to keep it in frame.
+      const sheetMid = (L.envH - L.topH) / 2;
+      const lift = unfold * -sheetMid * L.openZoom;
+      env.style.setProperty('--lift', `${lift}px`);
+
+      // 3. The letters are revealed lying on the opened card, then fan out.
+      //    Splitting the vertical and horizontal easing arcs them apart.
+      const reveal = seg(p, 0.58, 0.7);
+      movables.forEach((m) => {
+        if (m.kind !== 'sheet') return;
+        const rest = restOf(m);
+        const start = 0.64 + m.i * 0.04;
+        const ty = easeOut(seg(p, start, start + 0.24));
+        // Every window has to close by p = 1, or the last letter is left short
+        // of its resting place for good — portrait, which pins p at 1, would
+        // never show the composition as laid out.
+        const tx = easeOut(seg(p, start + 0.04, start + 0.28));
+        m.el.style.zIndex = m.custom ? '9' : L.cascade ? String(6 + m.i) : m.i === 1 ? '7' : '6';
+        if (m.custom) {
+          place(m, m.custom.x, m.custom.y, rest.r);
+          return;
+        }
+        // They start stacked on the address panel, revealed as the card opens.
+        const fromX = cx + (m.i === 0 ? 0 : m.i === 1 ? -40 : 40);
+        place(
+          m,
+          lerp(fromX, rest.x, tx),
+          lerp(L.envY, rest.y, ty),
+          lerp(0, rest.r, tx),
+          1,
+          reveal
+        );
+      });
+
+      // 4. Stickers scatter last.
+      movables.forEach((m) => {
+        if (m.kind !== 'sticker') return;
+        const rest = restOf(m);
+        const t = easeOut(seg(p, 0.78 + m.i * 0.02, 0.9 + m.i * 0.02));
+        if (m.custom) {
+          place(m, m.custom.x, m.custom.y, rest.r);
+          return;
+        }
+        place(
+          m,
+          lerp(cx, rest.x, t),
+          lerp(L.envY, rest.y, t),
+          lerp(0, rest.r, t),
+          lerp(0.4, 1, t),
+          clamp01(t * 4)
+        );
+      });
+
+      // 5. The card itself only moves if dragged.
+      const envM = movables[0];
+      const ex = envM.custom?.x ?? cx;
+      const ey = envM.custom?.y ?? L.envY;
+      // Flat, the card is wider and taller than the portrait canvas, so all a
+      // visitor would see of it is pink slivers in the seams of the cascade —
+      // reading as a glitch, not as paper. It bows out instead.
+      const cardFade = L.fadeCard ? 1 - unfold : 1;
+      place(envM, ex, ey, 0, 1, cardFade);
+      scene.style.pointerEvents = cardFade < 0.02 ? 'none' : '';
+      if (shadow) {
+        // Track the paper's real lowest point, not the closed card's: the
+        // message panel only swings past the body's edge in the back half of
+        // its arc, and the whole card is lifted and scaled while it does. Miss
+        // either and the card drifts off its own shadow as it opens.
+        const drop = Math.max(0, -Math.cos(unfold * Math.PI));
+        const foot = ey + lift + zoom * (L.envH / 2 + L.envH * drop);
+        shadow.style.transform =
+          `translate(${ex - shadow.offsetWidth / 2}px, ${foot - shadow.offsetHeight / 2}px)`;
+        // It softens as the card steps back, but never leaves the paper.
+        shadow.style.setProperty('--shadow', String(lerp(1, 0.5, easeInOut(seg(p, 0.4, 0.7))) * cardFade));
+      }
+
+      if (hint) hint.style.setProperty('--hint', p > 0.001 ? '0' : '1');
+    }
+
+    // Hovering the pressed heart streams emotes, the way a reaction button does
+    // on a live stream. They are spawned in a fixed overlay in SCREEN space, so
+    // none of the card's 3D — the fold's mirroring, its zoom, its lift — has to
+    // be undone to place them.
+    const heart = document.querySelector('.env-heart') as HTMLElement | null;
+    const stream = document.getElementById('heart-stream');
+    if (heart && stream) {
+      let beat = 0;
+      const emit = () => {
+        const r = heart.getBoundingClientRect();
+        if (!r.width) return;
+        const el = document.createElement('span');
+        el.style.left = `${r.left + r.width / 2 + (Math.random() * 20 - 10)}px`;
+        el.style.top = `${r.top + r.height / 2}px`;
+        el.style.setProperty('--dx', `${Math.random() * 80 - 40}px`);
+        el.style.setProperty('--r', `${Math.random() * 44 - 22}deg`);
+        el.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 20.7 3.8 12.5a5 5 0 0 1 7.1-7.1L12 6.5l1.1-1.1a5 5 0 1 1 7.1 7.1z"/></svg>';
+        stream.appendChild(el);
+        el.addEventListener('animationend', () => el.remove());
+      };
+      heart.addEventListener('pointerenter', () => {
+        if (reduced.matches || beat) return;
+        emit();
+        beat = window.setInterval(emit, 170);
+      });
+      const stop = () => {
+        window.clearInterval(beat);
+        beat = 0;
+      };
+      heart.addEventListener('pointerleave', stop);
+      heart.addEventListener('pointercancel', stop);
+    }
+
+    // Portrait screens get the portrait composition; the threshold is above 1
+    // so a nearly-square window still reads as tall rather than squeezing the
+    // landscape fan into nothing.
+    const pickLayout = () => (stage.clientWidth / stage.clientHeight < 1.15 ? TALL : WIDE);
+
+    const resize = () => {
+      const pad = 32;
+      const next = pickLayout();
+      if (next !== L) applyLayout(next);
+      // The portrait card has no room for the tap-then-open beat, so it opens on
+      // arrival — unless ?p= is pinning a frame for inspection.
+      if (L.instant && !pinned && p < 1 && !raf) p = 1;
+      // Scale to the stage minus a reserved strip, then lift by half of it, so
+      // the hint at the bottom always has clear space however short the
+      // viewport is. It may scale up, or a large screen wastes itself.
+      fit = Math.min(
+        (stage.clientWidth - pad) / L.canvasW,
+        (stage.clientHeight - pad - L.hintReserve) / L.canvasH,
+        MAX_FIT
+      );
+      canvas.style.setProperty('--fit', String(fit));
+      canvas.style.setProperty('--shift', `${-L.hintReserve / 2}px`);
+      measure();
+      render();
+    };
+
+    // --- Opening ----------------------------------------------------------
+    let raf = 0;
+    const openCard = () => {
+      if (raf || p > 0) return;
+      const t0 = performance.now();
+      const step = (now: number) => {
+        p = clamp01((now - t0) / OPEN_MS);
+        render();
+        if (p < 1) raf = requestAnimationFrame(step);
+        else raf = 0;
+      };
+      raf = requestAnimationFrame(step);
+    };
+
+    // --- Dragging ---------------------------------------------------------
+    // Letters and the card only become draggable once it has opened; stickers
+    // are draggable from the moment they land.
+    movables.forEach((m) => {
+      let origin: { px: number; py: number; x: number; y: number } | null = null;
+      let moved = false;
+
+      const canDrag = () => (m.kind === 'sticker' ? true : done);
+
+      m.el.addEventListener('pointerdown', (e: PointerEvent) => {
+        if (!canDrag() || e.button !== 0) return;
+        const current = m.custom ?? restOf(m);
+        origin = { px: e.clientX, py: e.clientY, x: current.x, y: current.y };
+        moved = false;
+        // Capture is deliberately NOT taken here. While a pointer is captured
+        // the click fires at the capture target, so capturing on pointerdown
+        // sends it to this div instead of the link inside — and the link never
+        // opens. It is taken below, once a drag has actually begun.
+      });
+
+      m.el.addEventListener('pointermove', (e: PointerEvent) => {
+        if (!origin) return;
+        const dx = e.clientX - origin.px;
+        const dy = e.clientY - origin.py;
+        // A finger wobbles more than a mouse does; at one threshold a tap on
+        // touch reads as a drag and the link never fires.
+        const slop = e.pointerType === 'mouse' ? DRAG_SLOP : DRAG_SLOP * 2;
+        if (!moved && Math.hypot(dx, dy) < slop) return;
+        if (!moved) {
+          moved = true;
+          m.el.dataset.dragging = '';
+          // Now it is a drag, so take the pointer: the gesture should keep
+          // tracking even if it leaves the element.
+          m.el.setPointerCapture(e.pointerId);
+        }
+        // Pointer travel is in screen pixels; the canvas is scaled.
+        m.custom = { x: origin.x + dx / fit, y: origin.y + dy / fit };
+        place(m, m.custom.x, m.custom.y, restOf(m).r);
+        // The contact shadow is placed in render(), which a drag does not run;
+        // without this the card slides out from under its own shadow.
+        if (m.kind === 'env') render();
+        e.preventDefault();
+      });
+
+      const end = (e: PointerEvent) => {
+        if (!origin) return;
+        origin = null;
+        delete m.el.dataset.dragging;
+        if (m.el.hasPointerCapture(e.pointerId)) m.el.releasePointerCapture(e.pointerId);
+        // Swallow the click that follows a drag, so dragging a sticker by its
+        // link doesn't also navigate. It must then be disarmed: a drag that
+        // ends off the element produces no click at all, and the listener would
+        // sit armed and eat the next genuine one.
+        if (moved) {
+          const swallow = (c: Event) => {
+            c.preventDefault();
+            c.stopPropagation();
+          };
+          m.el.addEventListener('click', swallow, { capture: true, once: true });
+          setTimeout(() => m.el.removeEventListener('click', swallow, true), 60);
+        }
+      };
+      m.el.addEventListener('pointerup', end);
+      m.el.addEventListener('pointercancel', end);
+
+      if (m.kind !== 'env') {
+        m.el.addEventListener('keydown', (e: KeyboardEvent) => {
+          const step = e.shiftKey ? 24 : 8;
+          const delta: Record<string, [number, number]> = {
+            ArrowLeft: [-step, 0], ArrowRight: [step, 0],
+            ArrowUp: [0, -step], ArrowDown: [0, step],
+          };
+          const move = delta[e.key];
+          if (!move) return;
+          e.preventDefault();
+          const current = m.custom ?? restOf(m);
+          m.custom = { x: current.x + move[0], y: current.y + move[1] };
+          place(m, m.custom.x, m.custom.y, restOf(m).r);
+        });
+      }
+    });
+
+    // A tap opens the card; once it is open, a tap turns it over.
+    env.addEventListener('click', () => {
+      if (done) {
+        manualFlips += 1;
+        render();
+      } else {
+        openCard();
+      }
+    });
+
+    window.addEventListener('resize', resize);
+
+    // ?p=0.55 pins the timeline for inspecting a single frame.
+    const forced = new URLSearchParams(location.search).get('p');
+    if (forced !== null && !Number.isNaN(Number(forced))) {
+      p = clamp01(Number(forced));
+      pinned = true;
+    } else if (reduced.matches) p = 1;
+
+    applyLayout(pickLayout());
+    resize();
+  }
+</script>
+
+<script>
+  // The colophon: a dialog small enough not to need focus management beyond
+  // returning the caller's focus.
+  const colophon = document.getElementById('colophon-modal');
+  const colophonBtn = document.getElementById('colophon-btn');
+  const colophonClose = document.getElementById('colophon-close');
+
+  const closeColophon = () => {
+    if (!colophon || colophon.hidden) return;
+    colophon.hidden = true;
+    colophonBtn?.focus();
+  };
+
+  colophonBtn?.addEventListener('click', () => {
+    if (!colophon) return;
+    colophon.hidden = false;
+    colophonClose?.focus();
+  });
+
+  colophonClose?.addEventListener('click', closeColophon);
+  // Backdrop only: a click inside the panel must not close it.
+  colophon?.addEventListener('click', (e) => {
+    if (e.target === colophon) closeColophon();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeColophon();
+  });
+</script>

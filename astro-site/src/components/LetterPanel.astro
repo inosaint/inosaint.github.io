@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+
+/** One panel of the unfolded letter: an icon, an underlined label, its entries. */
+interface Props {
+  label: string;
+  href: string;
+  icon: 0 | 1 | 2;
+  items: {
+    title: string;
+    meta: string;
+    url: string;
+    image?: any;
+    imageUrl?: string | null;
+    mono?: string;
+    external?: boolean;
+  }[];
+}
+
+const { label, href, icon, items } = Astro.props;
+---
+
+<div class="panel-body">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">
+      {icon === 0 && (
+        <svg viewBox="0 0 24 24"><path d="M3 7.5h18v12H3z" /><path d="M8.5 7.5v-2a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v2" /></svg>
+      )}
+      {icon === 1 && (
+        <svg viewBox="0 0 24 24"><path d="M4 20l4.5-1.2L20 7.3l-3.3-3.3L5.2 15.5z" /><path d="M15.6 5.1l3.3 3.3" /></svg>
+      )}
+      {icon === 2 && (
+        <svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z" /></svg>
+      )}
+    </span>
+    <h2>{label}</h2>
+  </header>
+
+  <ul class="panel-items">
+    {items.map((item) => (
+      <li>
+        <a
+          href={item.url}
+          target={item.external ? '_blank' : undefined}
+          rel={item.external ? 'noopener noreferrer' : undefined}
+        >
+          {item.image ? (
+            <Image src={item.image} alt="" class="panel-thumb" width={140} height={105} densities={[2]} />
+          ) : item.imageUrl ? (
+            <img src={item.imageUrl} alt="" class="panel-thumb" width="140" height="105" loading="lazy" />
+          ) : (
+            <span class="panel-thumb panel-mono">{item.mono}</span>
+          )}
+          <span class="panel-text">
+            <span class="panel-title">{item.title}</span>
+            <span class="panel-meta">{item.meta}</span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <a href={href} class="panel-all">all {label.toLowerCase()} →</a>
+</div>
