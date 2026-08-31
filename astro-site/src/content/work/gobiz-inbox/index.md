@@ -4,6 +4,7 @@ description: How we designed the in-app comms channel
 year: "2021"
 company: Gojek
 status: draft
+tags: [merchant-tools, mobile, indonesia, notifications]
 ---
 
 GoBiz is the superapp for Gojek's merchant partners. Gojek's 

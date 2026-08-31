@@ -5,6 +5,7 @@ year: 2019-2021
 company: Gojek
 status: published
 image: QRIS-gobiz.webp
+tags: [merchant-tools, indonesia, mobile, design-leadership]
 ---
 
 ## Role

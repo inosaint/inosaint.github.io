@@ -3,6 +3,7 @@ title: Thoughts on Hiring
 description: Best practices for hiring designers based on my experiences hiring over the last 6 years
 date: "2021-08-19"
 image: './design-keliling.jpg'
+tags: [hiring, design-leadership]
 ---
 
 

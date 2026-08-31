@@ -4,6 +4,7 @@ description: Reflections on hiring based on my experience building the product d
 date: "2025-12-07"
 status: 'published'
 image: './whiteboard.JPG'
+tags: [hiring, team-building, design-leadership, agritech]
 ---
 
 There are lot of opinions out there about hiring. [Part 1](https://kenneth.dsouza.im/writing/hiring/) was written in 2020-21, when I was on interview panels for product design and product management. Whereas Part 2 consists of my reflections

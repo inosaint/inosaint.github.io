@@ -5,6 +5,7 @@ year: "2021"
 company: "Gojek"
 image: "./thai-header.jpeg"
 status: 'published'
+tags: [merchant-tools, localization, southeast-asia, mobile]
 ---
 At Practo, I had my first experience designing for markets outside India. Singapore was one of the strongest regions for the Practo Ray product, and it encouraged us to build features tailored to their dentists like [Dental Charting](https://help.practo.com/practo-ray/emr/dental-emr/all-about-dental-charting/).
 

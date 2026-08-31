@@ -4,6 +4,7 @@ description: What building an AI-assisted workflow for interactive data visualiz
 date: 2026-07-16
 status: published
 image: ./viz-c1.jpeg
+tags: [ai-design, ai-practice, agentic-coding, data-visualization]
 ---
 We hosted a third [in-person workshop this year at VizChitra 2026](https://vizchitra.com/2026/sessions/interactive-dataviz-using-ai-coding). This time it was a bit different. Usually the workshop is structured around getting folks to create their first online artifact using AI. But for VizChitra, we decided to get people to visualize a dataset into an interactive artifact. This meant we had to teach people the process behind making a visualization before asking them to  create one. 
 

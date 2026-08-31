@@ -5,6 +5,7 @@ year: 2015-2016
 company: Practo
 image: ./practo-pro.png
 status: draft
+tags: [healthcare, india, mobile, design-systems, information-architecture, research]
 ---
 
 ## Overview

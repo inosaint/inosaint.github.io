@@ -4,6 +4,7 @@ description: I’ve been building with AI for the past few months and I dont thi
 date: 2026-03-02
 status: published
 image: ./rip-design-process.png
+tags: [ai-design, ai-industry, process, product-design]
 ---
 Over the last couple of decades, people have tried to tame and commoditize the design process into a neat package especially in the software startup world.
 

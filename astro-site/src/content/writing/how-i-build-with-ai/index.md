@@ -4,6 +4,7 @@ description: A short overview of how I use AI when making my projects
 date: 2026-05-21
 status: published
 image: ./how-i-build.png
+tags: [ai-design, ai-practice, agentic-coding, prototyping]
 ---
 I've been making stuff almost every week (like this [threejs space-viz](https://eternal-nebula-33dy.here.now/) this week), not everything I make ends up being shared but there's a particular method to my madness.
 

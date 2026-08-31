@@ -4,6 +4,7 @@ description: The philosophy and design principles behind Jiva’s scalable desig
 year: 2022-2023
 company: Jiva
 image: ./akar.webp
+tags: [design-systems, design-ops, mobile]
 ---
 
 Design systems often represent an aspirational milestone for product design teams. But they’re often seen as an all-or-nothing project — something that takes months of planning and effort, 

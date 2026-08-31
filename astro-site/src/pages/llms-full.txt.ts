@@ -1,5 +1,16 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { APIRoute } from 'astro';
+import {
+  certifications,
+  education,
+  elsewhereOnTheInternet,
+  experience,
+  leadershipHighlights,
+  resumeIntro,
+  resumeTags,
+  selectedWritingAndSpeaking,
+  workshops,
+} from '../data/resume';
 
 const SITE = 'https://kenneth.dsouza.im';
 
@@ -29,6 +40,41 @@ ${entry.data.description}
 
 ${toPlainText(entry.body ?? '')}`;
 
+const resumeSection = () => `Source: ${SITE}/resume
+Tags: ${resumeTags.join(', ')}
+
+${resumeIntro.join('\n\n')}
+
+### Experience
+
+${experience
+  .map((item) => `${item.role}, ${item.company} (${item.period})\n${item.details.map((d) => `- ${d}`).join('\n')}`)
+  .join('\n\n')}
+
+### Leadership and organizational impact
+
+${leadershipHighlights.map((item) => `- ${item}`).join('\n')}
+
+### Selected writing and speaking
+
+${selectedWritingAndSpeaking.map((item) => `- ${item.title} (${item.url}): ${item.description}`).join('\n')}
+
+### Workshops
+
+${workshops.map((item) => `- ${item.title} (${item.date}, ${item.url}): ${item.description}`).join('\n')}
+
+### Education
+
+${education.map((item) => `- ${item.qualification}, ${item.institution} — ${item.detail} (${item.period})`).join('\n')}
+
+### Certifications
+
+${certifications.map((item) => `- ${item.title}, ${item.institution} (${item.year})`).join('\n')}
+
+### Elsewhere on the internet
+
+${elsewhereOnTheInternet.map((item) => `- ${item.title} (${item.year}, ${item.url}): ${item.description}`).join('\n')}`;
+
 export const GET: APIRoute = async () => {
   const work = (await getCollection('work', ({ data }) => data.status === 'published'))
     .sort((a, b) => b.data.year.localeCompare(a.data.year))
@@ -36,7 +82,12 @@ export const GET: APIRoute = async () => {
       section(
         entry,
         `${SITE}/work/${entry.id}/`,
-        [entry.data.company && `Company: ${entry.data.company}`, `Year: ${entry.data.year}`]
+        [
+          entry.data.company && `Company: ${entry.data.company}`,
+          `Year: ${entry.data.year}`,
+          entry.data.updated && `Updated: ${entry.data.updated.toISOString().slice(0, 10)}`,
+          entry.data.tags.length && `Tags: ${entry.data.tags.join(', ')}`,
+        ]
           .filter(Boolean)
           .join('\n'),
       ),
@@ -48,7 +99,13 @@ export const GET: APIRoute = async () => {
       section(
         entry,
         entry.data.url ?? `${SITE}/writing/${entry.id}/`,
-        `Published: ${entry.data.date.toISOString().slice(0, 10)}`,
+        [
+          `Published: ${entry.data.date.toISOString().slice(0, 10)}`,
+          entry.data.updated && `Updated: ${entry.data.updated.toISOString().slice(0, 10)}`,
+          entry.data.tags.length && `Tags: ${entry.data.tags.join(', ')}`,
+        ]
+          .filter(Boolean)
+          .join('\n'),
       ),
     );
 
@@ -69,6 +126,12 @@ ${work.join('\n\n---\n\n')}
 # Writing
 
 ${writing.join('\n\n---\n\n')}
+
+---
+
+# Resume
+
+${resumeSection()}
 `;
 
   return new Response(body, {

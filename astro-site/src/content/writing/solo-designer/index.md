@@ -3,6 +3,7 @@ title: Evaluating that Solo Designer job
 description: What to look for when joining a startup as the solo designer
 date: "2024-02-12"
 image: "./solo-designer-jobs-1.png"
+tags: [career, hiring, startups]
 ---
 
 You often see people stating that they are joining as a solo designer in a Startup and want advice. Them being the solo designer shouldn’t directly impact their effectiveness.

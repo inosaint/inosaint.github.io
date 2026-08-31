@@ -4,6 +4,7 @@ description: The behind the scenes of how I went about designing the new version
 date: 2026-08-21
 status: published
 image: ./alien-world.webp
+tags: [ai-design, ai-practice, process, design-tools]
 ---
 So a few weeks ago, I saw this post by [sgtsref](https://x.com/sergeantsref/status/2081999093677936900?s=20) and was enamoured by the rough lines and the color palette. I wanted to do something with it. I eventually gave in and bought a midjourney basic account to play with that sref combo.
 

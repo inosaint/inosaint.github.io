@@ -3,7 +3,7 @@ title: Hiring Product Designers at Jiva
 description: An overview of the product design hiring process at Jiva that we used to scale to 11+ designers
 year: "2022-2024"
 status: 'draft'
-
+tags: [hiring, team-building, design-leadership, agritech]
 ---
 
 When I joined Jiva in January of 2022, as the Senior Design Manager of Product Design, we were a team of 2; me and Sai. We had to start building a team. I’ve never had the opportunity to build a team from scratch and it felt scary at first.

@@ -5,6 +5,7 @@ year: 2023-2024
 company: Jiva
 image: ./cover-sj.JPG
 status: published
+tags: [agritech, indonesia, mobile, information-architecture, research]
 ---
 
 <!-- Add your project content here -->

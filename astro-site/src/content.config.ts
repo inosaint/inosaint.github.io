@@ -7,6 +7,10 @@ const writing = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
+    // Set only when a published post is materially revised; drives the
+    // freshness line in llms.txt so agents can tell a stale cache from a new one.
+    updated: z.coerce.date().optional(),
+    tags: z.array(z.string()).default([]),
     image: image().optional(),
     url: z.string().optional(), // optional for external posts
     status: z.enum(['draft', 'published']).default('published'),
@@ -20,6 +24,8 @@ const work = defineCollection({
     description: z.string(),
     image: image().optional(),
     year: z.string(), // Required: format "YYYY" or "YYYY-YYYY"
+    updated: z.coerce.date().optional(),
+    tags: z.array(z.string()).default([]),
     company: z.string().optional(),
     status: z.enum(['draft', 'published']).default('published'),
   }),

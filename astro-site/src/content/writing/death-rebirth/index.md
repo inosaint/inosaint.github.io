@@ -4,6 +4,7 @@ description: What is next for the product designer archetype?
 date: 08/08/2026
 status: published
 image: rebirth.png
+tags: [ai-design, ai-industry, product-design, career]
 ---
 A few months ago, there was a time where you couldn't go a week without a new company (or influencer) proclaiming that ‘design is dead’ and touting their product or workflow as the one that killed design. [I don’t think design is dying](http://kenneth.dsouza.im/writing/long-live-design-process/), but the role of the designer in the org is undergoing its next evolution.
 

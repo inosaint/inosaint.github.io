@@ -3,6 +3,7 @@ title: An Insider's perspective on Design in Tech 2024
 description: Reflections on the state of design leadership and the industry in India and Indonesia
 date: "2024-01-01"
 image: "./4IiQQOEdmqPcCsjTqlta-1.png"
+tags: [design-industry, design-leadership, india, indonesia]
 ---
 
 After the Great Layoffs, I've been seeing too many people declaring the [death](https://www.fastcompany.com/91027996/the-big-design-freak-out-a-generation-of-design-leaders-grapple-with-their-future) of [design](https://medium.com/@martynreding/how-to-survive-the-design-leadership-reckoning-ff2856bf4733) leadership and with the rise of AI, the death of the digital design industry as well. but I find that it's a poorly informed take and no offence, but in my opinion, written by outsiders or written about a specific industry/region/designer. In fact, there are a lot of highly [priced](https://maven.com/rachel-kobetz/dls-career-architecture) [leadership](https://www.designdept.co/series/design-leadership-fundamentals) [training](https://www.aiga.org/design/design-leadership) courses out there these days.

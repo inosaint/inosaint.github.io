@@ -4,6 +4,7 @@ description: or How I stopped procrastinating and started to love vibe-coding
 date: 2025-12-22
 status: published
 image: git25.png
+tags: [ai-practice, agentic-coding, prototyping]
 ---
 <div class="note">Disclaimer: I had a shortlived career as a front end dev (IE7 era) at TCS when I began my career post-engineering in 2010, so I am familiar with the basics of web development. Hence vibe-coding on web may be slightly easier for me to grok then someone non-technical who is trying it out.</div>
 
