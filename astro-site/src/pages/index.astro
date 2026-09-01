@@ -1686,14 +1686,25 @@ const stickers = [
   const TALL: Layout = {
     canvasW: 460,
     canvasH: 1040,
-    envW: 420,
-    envH: 231,
-    topH: 61,
-    tabW: 42,
-    face: 0.6,
+    // Closed size wasn't tracking canvasW — the fit is height-bound here (the
+    // tall canvas exists for the cascade, not the card), so a card sized well
+    // under canvasW read as small even at fit=1. Sized up to it instead, with
+    // topH/tabW scaled by the same ratio so the flaps keep their proportions.
+    envW: 460,
+    envH: 253,
+    topH: 67,
+    tabW: 46,
+    // 0.6 made the address text (title, blurb especially) run under 11px once
+    // fit was applied — fine for a glimpse before the auto-open, unreadable
+    // once the closed card became something a visitor actually lingers on.
+    // The blurb has three lines of headroom below it before the card's own
+    // fixed height clips anything, so there's room to grow.
+    face: 0.8,
     // Nothing to step back from: the flat card still fits the tall canvas.
     openZoom: 1,
-    envY: 440,
+    // Below canvas centre (520) by the same fraction WIDE sits below its own
+    // centre, so the closed card doesn't read as pinned to the top half.
+    envY: 560,
     sheetW: 320,
     sheetH: 360,
     sheetFace: 1.3,
@@ -1782,6 +1793,19 @@ const stickers = [
 
     const restOf = (m: Movable): Rest =>
       m.kind === 'env' ? envRest() : m.kind === 'sheet' ? L.sheets[m.i] : L.stickers[m.i];
+
+    // Dragging (pointer or arrow keys) is otherwise unbounded, and the stage
+    // clips rather than scrolls — so a letter or sticker pushed past the edge
+    // is gone for good, with no way to bring it back. Keep the whole element
+    // inside the canvas, which `fit` already guarantees fits the stage.
+    const clampToCanvas = (m: Movable, x: number, y: number): Pos => {
+      const maxX = Math.max(L.canvasW - m.half.w, m.half.w);
+      const maxY = Math.max(L.canvasH - m.half.h, m.half.h);
+      return {
+        x: Math.min(Math.max(x, m.half.w), maxX),
+        y: Math.min(Math.max(y, m.half.h), maxY),
+      };
+    };
 
     const measure = () => {
       movables.forEach((m) => {
@@ -2047,7 +2071,7 @@ const stickers = [
           m.el.setPointerCapture(e.pointerId);
         }
         // Pointer travel is in screen pixels; the canvas is scaled.
-        m.custom = { x: origin.x + dx / fit, y: origin.y + dy / fit };
+        m.custom = clampToCanvas(m, origin.x + dx / fit, origin.y + dy / fit);
         place(m, m.custom.x, m.custom.y, restOf(m).r);
         // The contact shadow is placed in render(), which a drag does not run;
         // without this the card slides out from under its own shadow.
@@ -2087,7 +2111,7 @@ const stickers = [
           if (!move) return;
           e.preventDefault();
           const current = m.custom ?? restOf(m);
-          m.custom = { x: current.x + move[0], y: current.y + move[1] };
+          m.custom = clampToCanvas(m, current.x + move[0], current.y + move[1]);
           place(m, m.custom.x, m.custom.y, restOf(m).r);
         });
       }
