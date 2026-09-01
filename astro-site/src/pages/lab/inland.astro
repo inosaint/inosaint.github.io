@@ -1,0 +1,1061 @@
+---
+import { getCollection } from 'astro:content';
+import LetterPanel from '../../components/LetterPanel.astro';
+
+// --- Sheet 1: Work -------------------------------------------------------
+const work = (await getCollection('work', ({ data }) => data.status === 'published'))
+  .sort((a, b) => parseInt(b.data.year.split('-')[0]) - parseInt(a.data.year.split('-')[0]))
+  .slice(0, 3)
+  .map((item) => ({
+    title: item.data.title,
+    meta: item.data.year,
+    url: `/work/${item.id}`,
+    image: item.data.image ?? null,
+    imageUrl: null as string | null,
+    external: false,
+  }));
+
+// --- Sheet 2: Writing ----------------------------------------------------
+// A short external list mirrors the homepage; the study only needs the newest few.
+const externalWritings = [
+  {
+    title: 'Squads as a Growth Engine for Designers',
+    url: 'https://medium.com/notes-from-the-fields/how-we-used-squads-to-help-our-designers-level-up-443fcbc52e2f',
+    imageUrl: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*iuV8e1TmjIe0zsr8yQfXyA.jpeg',
+    date: new Date('2025-08-18'),
+  },
+  {
+    title: 'Redesigning the Sahabat Jiva app',
+    url: 'https://medium.com/notes-from-the-fields/from-field-insights-to-better-ux-for-our-sahabat-jivas-3056b32ba51f',
+    imageUrl: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3Fnwkn7IeOiYbTxz-n3K7w.jpeg',
+    date: new Date('2025-05-15'),
+  },
+  {
+    title: 'How a sticker design became an unofficial Mascot',
+    url: 'https://medium.com/notes-from-the-fields/more-than-swag-how-a-last-minute-sticker-became-a-company-icon-42d86246e736',
+    imageUrl: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Nq0RLdn32pPVk-zLPFy-Cw.png',
+    date: new Date('2024-11-28'),
+  },
+];
+
+const writing = [
+  ...(await getCollection('writing', ({ data }) => data.status === 'published')).map((post) => ({
+    title: post.data.title,
+    date: new Date(post.data.date),
+    url: post.data.url ?? `/writing/${post.id}/`,
+    image: post.data.image ?? null,
+    imageUrl: null as string | null,
+    external: Boolean(post.data.url),
+  })),
+  ...externalWritings.map((post) => ({ ...post, image: null, external: true })),
+]
+  .sort((a, b) => b.date.getTime() - a.date.getTime())
+  .slice(0, 3)
+  .map((post) => ({
+    title: post.title,
+    meta: post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' }),
+    url: post.url,
+    image: post.image,
+    imageUrl: post.imageUrl,
+    external: post.external,
+  }));
+
+// --- Sheet 3: Projects ---------------------------------------------------
+// These live outside the content collections, so they carry a monogram instead
+// of a thumbnail.
+const projects = [
+  { title: 'AI Projects', meta: 'Tinkering', url: 'https://kenneth.dsouza.im/ai/', mono: 'AI', image: null, imageUrl: null, external: true },
+  { title: 'Design Demo Nights', meta: 'Community', url: 'https://designdemonights.com', mono: 'DD', image: null, imageUrl: null, external: true },
+  { title: 'Travelogues', meta: 'Writing', url: 'https://aninosaintlife.wordpress.com/category/travels/', mono: 'TR', image: null, imageUrl: null, external: true },
+];
+
+const sheets = [
+  { id: 'work', label: 'Work', href: '/work', items: work },
+  { id: 'writing', label: 'Writing', href: '/writing', items: writing },
+  { id: 'projects', label: 'Projects', href: 'https://kenneth.dsouza.im/ai/', items: projects },
+];
+
+// --- Stickers: interests, lifted from the resume -------------------------
+const stickers = [
+  { id: 'coffee', emoji: '☕️', label: 'Filter coffee', url: 'https://www.instagram.com/filtercoffeeconnoisseur/' },
+  { id: 'books', emoji: '📚', label: 'Reading', url: 'https://www.goodreads.com/user/show/86283809-kenneth-dsouza', art: '/images/stickers/goodreads.svg', artW: 132, artH: 33, tip: 'What I\u2019m reading' },
+  { id: 'nights', emoji: '🌙', label: 'Demo Nights', url: 'https://designdemonights.com', art: '/images/stickers/demo-nights.webp', artW: 92, artH: 102, tip: 'designdemonights.com' },
+];
+---
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Inland letter — a landing page study</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    <link href="https://fonts.cdnfonts.com/css/liter" rel="stylesheet" crossorigin="anonymous" />
+  </head>
+
+  <body>
+    <div class="lab-stage">
+      <div class="lab-canvas" id="lab-canvas">
+        <span class="lab-ground" aria-hidden="true"></span>
+        <span class="card-shadow" id="card-shadow" aria-hidden="true"></span>
+
+        <div class="card-scene" id="card-scene">
+          <button class="card" id="card" type="button" aria-describedby="card-hint">
+            <span class="sr-only">Open the letter</span>
+
+            <!-- Closed: the address panel, printed on the outside -->
+            <span class="card-face card-front">
+              <span class="front-address">
+                <span class="front-name">Kenneth Mark Dsouza</span>
+                <span class="front-title">Product Design Manager</span>
+                <span class="front-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+              </span>
+              <span class="front-stamp" aria-hidden="true">
+                <span class="front-stamp-paper">
+                  <img src="/images/stamp-portrait.webp" alt="" width="800" height="800" class="front-photo" />
+                </span>
+                <svg class="front-cancel" viewBox="0 0 200 130">
+                  <defs>
+                    <path id="front-arc-top" d="M 25 65 A 40 40 0 0 1 105 65" />
+                    <path id="front-arc-bottom" d="M 27 65 A 38 38 0 0 0 103 65" />
+                  </defs>
+                  <circle cx="65" cy="65" r="52" />
+                  <text><textPath href="#front-arc-top" startOffset="50%" text-anchor="middle">HELLO FROM</textPath></text>
+                  <text><textPath href="#front-arc-bottom" startOffset="50%" text-anchor="middle">BENGALURU</textPath></text>
+                  <g class="front-waves">
+                  <path d="M30 48 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0" />
+                  <path d="M30 60 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0" />
+                  <path d="M30 72 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0" />
+                  <path d="M30 84 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0" />
+                  </g>
+                </svg>
+              </span>
+            </span>
+
+            <!-- Open: the centre panel is one section, and the two gummed flaps
+                 fold out either side to become the other two. Nothing has to be
+                 threaded in front of anything — the sheet just lies flat. -->
+            <span class="card-face card-back">
+              <span class="panel panel-centre">
+                <LetterPanel label={sheets[0].label} href={sheets[0].href} icon={0} items={sheets[0].items} />
+              </span>
+
+              <!-- The back is mirrored, so its local left lands on the right. -->
+              <span class="flap flap-a">
+                <span class="flap-skin"></span>
+                <span class="panel panel-side">
+                  <LetterPanel label={sheets[1].label} href={sheets[1].href} icon={1} items={sheets[1].items} />
+                </span>
+              </span>
+              <span class="flap flap-b">
+                <span class="flap-skin"></span>
+                <span class="panel panel-side">
+                  <LetterPanel label={sheets[2].label} href={sheets[2].href} icon={2} items={sheets[2].items} />
+                </span>
+              </span>
+
+              <!-- The gummed side tabs, as on the envelope study. -->
+              <span class="tab tab-l"><i></i></span>
+              <span class="tab tab-r"><i></i></span>
+
+              <span class="card-seal" aria-hidden="true"></span>
+            </span>
+          </button>
+        </div>
+
+        {stickers.map((sticker, i) => (
+          <div
+            class={sticker.art ? 'sticker sticker-art' : 'sticker'}
+            data-sticker={i}
+            style={sticker.art ? `--art-w:${sticker.artW}px` : undefined}
+            tabindex={sticker.art ? undefined : 0}
+            role={sticker.art ? undefined : 'button'}
+            aria-label={sticker.art ? undefined : `${sticker.label} sticker — drag, or use arrow keys to move`}
+          >
+            {sticker.art ? (
+              <a href={sticker.url} target="_blank" rel="noopener noreferrer" draggable="false">
+                <img src={sticker.art} alt={sticker.label} width={sticker.artW} height={sticker.artH} draggable="false" />
+                <span class="sticker-tip">{sticker.tip}</span>
+              </a>
+            ) : (
+              <>
+                <span class="sticker-emoji" aria-hidden="true">{sticker.emoji}</span>
+                <span class="sticker-label">{sticker.label}</span>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <p class="lab-hint" id="card-hint">Tap to open</p>
+
+    <!-- Mobile: the opened letter, stacked and scrollable. -->
+    <div class="lab-mobile">
+      <header class="mobile-head">
+        <span class="mobile-stamp">
+          <img src="/images/stamp-portrait.webp" alt="" width="800" height="800" />
+        </span>
+        <span>
+          <span class="mobile-name">Kenneth Mark Dsouza</span>
+          <span class="mobile-title">Product Design Manager</span>
+        </span>
+      </header>
+      {sheets.map((sheet, i) => (
+        <section class="mobile-panel">
+          <LetterPanel label={sheet.label} href={sheet.href} icon={i as 0 | 1 | 2} items={sheet.items} />
+        </section>
+      ))}
+      <footer class="mobile-stickers">
+        {stickers.map((sticker) => (
+          <span class="mobile-sticker">
+            <span aria-hidden="true">{sticker.emoji}</span> {sticker.label}
+          </span>
+        ))}
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    --blush: #f2d5cb;
+    --ground: #56904f;
+    --pink: #f4a7be;
+    --pink-fold: #f6b6c8;
+    --paper: #f3f1e8;
+    --paper-alt: #ece9dc;
+    --crease: rgba(16, 40, 26, 0.16);
+    --ink: #10281a;
+    --mark: #3d6fd8;
+    --font-body: 'Liter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--blush);
+    font-size: 18px;
+    line-height: 1.6;
+    overflow: hidden;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .lab-stage {
+    position: relative;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: var(--blush);
+    isolation: isolate;
+  }
+
+  .lab-stage::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23c)' opacity='0.34'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='1' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23f)' opacity='0.2'/%3E%3C/svg%3E");
+  }
+
+  /* Positioned by its own centre rather than left to grid alignment: the
+     canvas box is 1000px wide, so on any narrower screen it overflows, and an
+     overflowing grid item falls back to start alignment — which parked the
+     whole composition off to one side. */
+  .lab-canvas {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1000px;
+    height: 560px;
+    flex: none;
+    z-index: 1;
+    transform: translate(-50%, -50%) translateY(var(--shift, 0)) scale(var(--fit, 1));
+    transform-origin: center center;
+  }
+
+  .lab-canvas > * { position: absolute; top: 0; left: 0; }
+
+  .lab-canvas > .lab-ground {
+    left: -1600px;
+    top: 452px;
+    width: 4200px;
+    height: 1200px;
+    background: var(--ground);
+    z-index: 0;
+  }
+
+  .card-shadow {
+    width: 600px;
+    height: 22px;
+    z-index: 1;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(16, 40, 26, 0.4), transparent);
+    opacity: var(--shadow, 1);
+    pointer-events: none;
+  }
+
+  /* --- The card --------------------------------------------------------- */
+
+  .card-scene {
+    width: 690px;
+    height: 380px;
+    perspective: 2400px;
+    z-index: 3;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateY(var(--lift, 0px)) rotateY(var(--flip, 0deg)) scale(var(--zoom, 1));
+  }
+
+  .lab-canvas[data-done] .card { cursor: default; }
+
+  .card:focus-visible { outline: 3px solid var(--ink); outline-offset: 10px; }
+
+  .card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+  }
+
+  .card-front {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    padding: 38px 36px;
+    background: var(--pink);
+    border-radius: 7px;
+    box-shadow: 0 16px 30px rgba(16, 40, 26, 0.16);
+    overflow: hidden;
+  }
+
+  .front-address { align-self: end; }
+
+  .front-name {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.66rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+
+  .front-title {
+    display: block;
+    font-size: 0.94rem;
+    line-height: 1.35;
+    color: rgba(16, 40, 26, 0.6);
+    margin-top: 8px;
+    max-width: 22ch;
+  }
+
+  .front-lines { display: block; margin-top: 20px; }
+
+  .front-lines span {
+    display: block;
+    height: 1px;
+    background: rgba(16, 40, 26, 0.18);
+    margin-bottom: 11px;
+  }
+  .front-lines span:nth-child(1) { width: 56%; }
+  .front-lines span:nth-child(2) { width: 68%; }
+  .front-lines span:nth-child(3) { width: 40%; }
+
+  /* Letterpress: type pressed into the stock rather than sitting on it. */
+  .front-name,
+  .front-title {
+    text-shadow:
+      -1px -1px 0 rgba(16, 40, 26, 0.16),
+      0 1px 0 rgba(255, 255, 255, 0.55);
+  }
+
+  .front-lines span { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); }
+
+  /* SVG ignores text-shadow, so the whole mark is imprinted instead. */
+  /* The cancel: a ring with its legend split across the top and bottom arcs,
+     and the wavy strike running out of it across the stamp. The box is wider
+     than it is tall because those lines carry on past the ring. */
+  .front-stamp { position: relative; align-self: start; }
+
+  /* The padding is exactly one perforation radius, and the box shrink-wraps the
+     photo, so the dot pattern only ever shows as the scalloped edge. */
+  .front-stamp-paper {
+    --r: 7px;
+    display: inline-block;
+    padding: var(--r);
+    background: radial-gradient(50% 50%, #0000 65%, var(--paper) 67%) round var(--r) var(--r) /
+      calc(2 * var(--r)) calc(2 * var(--r));
+    /* Sits on the envelope as its own piece of paper, so it casts rather than
+       glows: a tight dark shadow following the scalloped perforation. */
+    filter: drop-shadow(0 1px 2px rgba(16, 40, 26, 0.16));
+  }
+
+  .front-photo {
+    display: block;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+  }
+
+  .front-cancel {
+    position: absolute;
+    width: calc(190px * var(--face, 1));
+    height: calc(124px * var(--face, 1));
+    left: calc(-88px * var(--face, 1));
+    top: calc(44px * var(--face, 1));
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .front-cancel circle {
+    fill: none;
+    stroke: rgba(16, 40, 26, 0.45);
+    stroke-width: 1.6;
+  }
+
+  .front-cancel text {
+    fill: rgba(16, 40, 26, 0.5);
+    font-size: 9px;
+    letter-spacing: 1.4px;
+    font-family: var(--font-heading);
+  }
+
+  .front-waves path {
+    fill: none;
+    stroke: rgba(16, 40, 26, 0.45);
+    stroke-width: 1.3;
+    stroke-linecap: round;
+  }
+
+  /* The back must not clip or flatten: the flaps swing right out of it. */
+  .card-back {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    overflow: visible;
+  }
+
+  .panel {
+    position: absolute;
+    inset: 0;
+    background: var(--paper);
+    border-radius: 5px;
+    box-shadow: 0 10px 24px rgba(16, 40, 26, 0.14);
+  }
+
+  .panel-centre { transform: translateZ(1px); }
+
+  /* One stock throughout: the folds are read as thin darker creases rather
+     than as panels in different tints. */
+  .panel-side { background: var(--paper); }
+  .flap-a .panel-side { border-bottom: 1px solid var(--crease); }
+  .flap-b .panel-side { border-top: 1px solid var(--crease); }
+
+  .flap {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    transform-style: preserve-3d;
+  }
+
+  /* Hinged on the centre panel's edges: folded in over it when closed, swung
+     out flat beside it when open. */
+  .flap-a {
+    top: -250px;
+    transform-origin: 50% 100%;
+    transform: translateZ(3px) rotateX(var(--open-a, 180deg));
+  }
+
+  .flap-b {
+    top: 100%;
+    transform-origin: 50% 0%;
+    transform: translateZ(3px) rotateX(var(--open-b, -180deg));
+  }
+
+  /* The gummed outer face, seen while the flap is still folded over. */
+  .flap-skin {
+    position: absolute;
+    inset: 0;
+    background: var(--pink-fold);
+    border-radius: 5px;
+    backface-visibility: hidden;
+    /* Turned to face the other way, so it shows only while the flap is folded
+       over and is culled once it swings open onto its printed side. */
+    transform: rotateY(180deg) translateZ(1px);
+  }
+
+  .flap .panel-side { backface-visibility: hidden; }
+
+  .tab {
+    position: absolute;
+    top: 0;
+    width: 62px;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
+
+  .tab-l {
+    left: 0;
+    transform-origin: 0% 50%;
+    transform: translateZ(4px) rotateY(var(--tab-l, 0deg));
+  }
+
+  .tab-r {
+    right: 0;
+    transform-origin: 100% 50%;
+    transform: translateZ(4px) rotateY(var(--tab-r, 0deg));
+  }
+
+  .tab i {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--pink);
+  }
+
+  /* Chamfered, like the real card's. */
+  .tab-l i { clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 91%); }
+  .tab-r i { clip-path: polygon(0 0, 100% 9%, 100% 91%, 0 100%); }
+
+  .card-seal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border-radius: 50%;
+    background: #e2879f;
+    opacity: var(--seal, 1);
+    transform: translateZ(5px);
+  }
+
+  /* --- Panel contents --------------------------------------------------- */
+
+  /* A strip, not a column: the label sits at the left and the entries run
+     across it. */
+  .panel-body {
+    position: absolute;
+    inset: 0;
+    padding: 26px 34px;
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .panel-head { text-align: left; }
+
+  .panel-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: var(--mark);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .panel-head h2 {
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--mark);
+    margin: 5px 0 0;
+    padding-bottom: 5px;
+    display: inline-block;
+    border-bottom: 1px solid var(--mark);
+  }
+
+  .panel-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .panel-items li { margin: 0; }
+
+  .panel-items a {
+    display: block;
+    padding: 4px;
+    padding: 4px;
+    text-decoration: none;
+    color: var(--ink);
+    border-radius: 3px;
+  }
+
+  .panel-items a:hover { background: rgba(61, 111, 216, 0.09); }
+
+  .panel-thumb {
+    display: block;
+    width: 100%;
+    height: 92px;
+    object-fit: cover;
+    background: rgba(16, 40, 26, 0.08);
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+
+  .panel-mono {
+    display: grid;
+    place-items: center;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--mark);
+  }
+
+  .panel-text { min-width: 0; }
+
+  .panel-title {
+    font-size: 0.78rem;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .panel-meta {
+    display: block;
+    font-size: 0.66rem;
+    color: rgba(16, 40, 26, 0.55);
+    margin-top: 2px;
+  }
+
+  .panel-all {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: var(--mark);
+    margin-top: 8px;
+  }
+
+  /* --- Stickers --------------------------------------------------------- */
+
+  .sticker {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px 7px 9px;
+    background: var(--paper);
+    border-radius: 999px;
+    box-shadow:
+      0 0 0 3px var(--paper),
+      0 5px 12px rgba(16, 40, 26, 0.2);
+    font-size: 0.68rem;
+    color: var(--ink);
+    white-space: nowrap;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    z-index: 11;
+    opacity: 0;
+    /* Invisible is not intangible: without this they swallow the tap meant for
+       the card, and their links fire. */
+    pointer-events: none;
+  }
+
+  .lab-canvas[data-done] .sticker { pointer-events: auto; }
+  .sticker[data-dragging] { cursor: grabbing; z-index: 12; }
+  .sticker:focus-visible { outline: 3px solid var(--mark); outline-offset: 6px; }
+
+  /* An art sticker: the die-cut shape itself, no pill and no label. The white
+     outline is stacked drop-shadows, which follow the artwork's silhouette the
+     way a real die cut does — a border would follow the bounding box. */
+  .sticker-art {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    text-shadow: none;
+  }
+
+  .sticker-art a {
+    display: block;
+    line-height: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Anchors and images start the browser's OWN drag-and-drop on pointerdown,
+     which fires pointercancel and kills ours — so the art stickers could not be
+     moved at all. Opt both out. */
+  .sticker-art a,
+  .sticker-art img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  .sticker-art img {
+    display: block;
+    width: calc(var(--art-w, 94px) * var(--sticker-face, 1));
+    height: auto;
+    /* A real die cut has a hard white margin, not a halo. Blurred shadows give
+       a glow; these are zero-blur copies offset in eight directions, which
+       compound into a solid outline that still follows the artwork's silhouette
+       rather than its bounding box. The last one is the lift off the page. */
+    filter:
+      drop-shadow(1.4px 0 0 #fff) drop-shadow(-1.4px 0 0 #fff)
+      drop-shadow(0 1.4px 0 #fff) drop-shadow(0 -1.4px 0 #fff)
+      drop-shadow(1px 1px 0 #fff) drop-shadow(-1px 1px 0 #fff)
+      drop-shadow(1px -1px 0 #fff) drop-shadow(-1px -1px 0 #fff)
+      drop-shadow(0 5px 10px rgba(16, 40, 26, 0.32));
+  }
+
+  .sticker-tip {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 9px);
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 5px 9px;
+    background: var(--ink);
+    color: var(--letter-cream);
+    font-family: var(--font-display, monospace);
+    font-size: 0.56rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+  }
+
+  .sticker-art:hover .sticker-tip,
+  .sticker-art:focus-within .sticker-tip { opacity: 1; }
+
+  .sticker-emoji { font-size: 1rem; line-height: 1; }
+
+  /* --- Mobile ----------------------------------------------------------- */
+  /* A phone gets the letter already open, laid out as a plain scrolling stack.
+     Nobody wants to tap and sit through a fold animation on a small screen. */
+
+  .lab-mobile { display: none; }
+
+  @media (max-width: 720px) {
+    body { overflow: auto; }
+    .lab-stage, .lab-hint { display: none; }
+    .lab-mobile { display: block; padding: 0 0 3rem; }
+
+    .mobile-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 1.5rem 1.25rem;
+    }
+
+    .mobile-stamp {
+      --r: 6px;
+      display: inline-block;
+      flex: none;
+      padding: var(--r);
+      background: radial-gradient(50% 50%, #0000 65%, var(--paper) 67%) round var(--r) var(--r) /
+        calc(2 * var(--r)) calc(2 * var(--r));
+    }
+
+    .mobile-stamp img { display: block; width: 68px; height: 68px; object-fit: cover; }
+
+    .mobile-name {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .mobile-title {
+      display: block;
+      font-size: 0.8rem;
+      color: rgba(16, 40, 26, 0.6);
+    }
+
+    /* Each panel is a sheet of the same stock, creased apart. */
+    .mobile-panel {
+      position: relative;
+      margin: 0 1rem 1rem;
+      background: var(--paper);
+      border-radius: 5px;
+      box-shadow: 0 8px 20px rgba(16, 40, 26, 0.14);
+    }
+
+    .mobile-panel + .mobile-panel { border-top: 1px solid var(--crease); }
+
+    /* The strip layout has no room to run sideways here. */
+    /* On the card the body is absolutely positioned inside a fixed-size panel;
+       here it has to drive the panel's height instead. */
+    .mobile-panel .panel-body {
+      position: static;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 18px 16px;
+      align-items: start;
+    }
+
+    .mobile-panel .panel-items { grid-template-columns: 1fr; gap: 10px; }
+    .mobile-panel .panel-title { font-size: 0.8rem; }
+    .mobile-panel .panel-meta { font-size: 0.68rem; }
+    .mobile-panel .panel-thumb { width: 100%; height: 120px; }
+    .mobile-panel .panel-all { font-size: 0.66rem; }
+    .mobile-panel .panel-head h2 { font-size: 0.8rem; }
+
+    .mobile-stickers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0.5rem 1.25rem;
+    }
+
+    .mobile-sticker {
+      padding: 7px 13px;
+      background: var(--paper);
+      border-radius: 999px;
+      box-shadow: 0 3px 9px rgba(16, 40, 26, 0.18);
+      font-size: 0.78rem;
+    }
+  }
+
+  .lab-hint {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 2.5rem;
+    text-align: center;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: var(--hint, 1);
+    transition: opacity 0.15s linear;
+    pointer-events: none;
+    margin: 0;
+    z-index: 15;
+  }
+</style>
+
+<script>
+  const CANVAS_W = 1000;
+  const CANVAS_H = 560;
+  const CARD_H = 380;
+  const OPEN_ZOOM = 0.58; // 380 + 250 + 250 tall once open, so it steps back
+  const CARD = { x: CANVAS_W / 2, y: 300 };
+  const HINT_RESERVE = 80;
+  const MAX_FIT = 1.9;
+  const OPEN_MS = 2000;
+  const DRAG_SLOP = 6;
+
+  type Pos = { x: number; y: number };
+  type Rest = Pos & { r: number };
+
+  const canvas = document.getElementById('lab-canvas') as HTMLElement | null;
+  const stage = document.querySelector('.lab-stage') as HTMLElement | null;
+  const scene = document.getElementById('card-scene') as HTMLElement | null;
+  const card = document.getElementById('card') as HTMLElement | null;
+  const shadow = document.getElementById('card-shadow') as HTMLElement | null;
+  const hint = document.getElementById('card-hint') as HTMLElement | null;
+  const stickerEls = Array.from(document.querySelectorAll<HTMLElement>('.sticker'));
+
+  if (canvas && stage && scene && card) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    // Below the opened sheet, on the grass.
+    const STICKER_REST: Rest[] = [
+      { x: 130, y: 80, r: -12 },
+      { x: 862, y: 74, r: 8 },
+      { x: 150, y: 452, r: -5 },
+    ];
+
+    const clamp01 = (n: number) => (n < 0 ? 0 : n > 1 ? 1 : n);
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+    const seg = (p: number, a: number, b: number) => clamp01((p - a) / (b - a));
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+    const easeInOut = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const halves = new Map<HTMLElement, { w: number; h: number }>();
+    const custom = new Map<HTMLElement, Pos>();
+    const measure = () => {
+      [scene, shadow, ...stickerEls].forEach((el) => {
+        if (el) halves.set(el, { w: el.offsetWidth / 2, h: el.offsetHeight / 2 });
+      });
+    };
+
+    let fit = 1;
+    let p = 0;
+    let done = false;
+
+    const put = (el: HTMLElement, x: number, y: number, rot = 0, scale = 1, opacity = 1) => {
+      const h = halves.get(el) ?? { w: 0, h: 0 };
+      el.style.transform =
+        `translate(${x - h.w}px, ${y - h.h}px) rotate(${rot}deg) scale(${scale})`;
+      el.style.opacity = String(opacity);
+    };
+
+    function render() {
+      done = p >= 0.999;
+      if (done) canvas.dataset.done = '';
+      else delete canvas.dataset.done;
+
+      // 1. Turn the card over to its inside.
+      card.style.setProperty('--flip', `${easeInOut(seg(p, 0, 0.32)) * 180}deg`);
+
+      // 2. Break the gum, then swing each flap out flat. Staggered, so it reads
+      //    as two separate creases rather than one symmetrical machine.
+      card.style.setProperty('--seal', String(1 - seg(p, 0.32, 0.38)));
+      const a = easeInOut(seg(p, 0.36, 0.68));
+      const b = easeInOut(seg(p, 0.44, 0.76));
+      card.style.setProperty('--open-a', `${lerp(180, 0, a)}deg`);
+      card.style.setProperty('--open-b', `${lerp(-180, 0, b)}deg`);
+      const open = Math.max(a, b);
+      card.style.setProperty('--zoom', String(lerp(1, OPEN_ZOOM, open)));
+      // Closed it rests low, on the ground line. Opened it is far taller, so it
+      // rises to sit centred in the frame.
+      card.style.setProperty('--lift', `${open * (CANVAS_H / 2 - CARD.y)}px`);
+      // The side tabs let go first — they are only gummed edges.
+      const tabs = easeInOut(seg(p, 0.32, 0.6));
+      card.style.setProperty('--tab-l', `${tabs * -180}deg`);
+      card.style.setProperty('--tab-r', `${tabs * 180}deg`);
+
+      // 3. Stickers scatter onto the grass once the sheet is open.
+      stickerEls.forEach((el, i) => {
+        const rest = STICKER_REST[i];
+        const t = easeOut(seg(p, 0.62 + i * 0.03, 0.86 + i * 0.03));
+        const moved = custom.get(el);
+        if (moved) { put(el, moved.x, moved.y, rest.r); return; }
+        put(el, lerp(CARD.x, rest.x, t), lerp(CARD.y, rest.y, t),
+            lerp(0, rest.r, t), lerp(0.4, 1, t), clamp01(t * 4));
+      });
+
+      put(scene, CARD.x, CARD.y);
+      if (shadow) {
+        const z = lerp(1, OPEN_ZOOM, easeInOut(seg(p, 0.36, 0.76)));
+        const rise = easeInOut(seg(p, 0.36, 0.76)) * (CANVAS_H / 2 - CARD.y);
+        put(shadow, CARD.x, CARD.y + rise + (CARD_H / 2) * z, 0, z);
+        shadow.style.setProperty('--shadow', String(lerp(1, 0.5, easeInOut(seg(p, 0.36, 0.76)))));
+      }
+      if (hint) hint.style.setProperty('--hint', p > 0.001 ? '0' : '1');
+    }
+
+    const resize = () => {
+      const pad = 32;
+      fit = Math.min(
+        (stage.clientWidth - pad) / CANVAS_W,
+        (stage.clientHeight - pad - HINT_RESERVE) / CANVAS_H,
+        MAX_FIT
+      );
+      canvas.style.setProperty('--fit', String(fit));
+      canvas.style.setProperty('--shift', `${-HINT_RESERVE / 2}px`);
+      measure();
+      render();
+    };
+
+    let raf = 0;
+    card.addEventListener('click', () => {
+      if (raf || p > 0) return;
+      const t0 = performance.now();
+      const step = (now: number) => {
+        p = clamp01((now - t0) / OPEN_MS);
+        render();
+        raf = p < 1 ? requestAnimationFrame(step) : 0;
+      };
+      raf = requestAnimationFrame(step);
+    });
+
+    // Stickers stay draggable once they land.
+    stickerEls.forEach((el, i) => {
+      let origin: { px: number; py: number; x: number; y: number } | null = null;
+      let moved = false;
+
+      el.addEventListener('pointerdown', (e: PointerEvent) => {
+        if (e.button !== 0) return;
+        const cur = custom.get(el) ?? { x: STICKER_REST[i].x, y: STICKER_REST[i].y };
+        origin = { px: e.clientX, py: e.clientY, x: cur.x, y: cur.y };
+        moved = false;
+        el.setPointerCapture(e.pointerId);
+      });
+
+      el.addEventListener('pointermove', (e: PointerEvent) => {
+        if (!origin) return;
+        const dx = e.clientX - origin.px;
+        const dy = e.clientY - origin.py;
+        if (!moved && Math.hypot(dx, dy) < DRAG_SLOP) return;
+        moved = true;
+        el.dataset.dragging = '';
+        // Pointer travel is in screen pixels; the canvas is scaled.
+        custom.set(el, { x: origin.x + dx / fit, y: origin.y + dy / fit });
+        const c = custom.get(el)!;
+        put(el, c.x, c.y, STICKER_REST[i].r);
+        e.preventDefault();
+      });
+
+      const end = (e: PointerEvent) => {
+        if (!origin) return;
+        origin = null;
+        delete el.dataset.dragging;
+        if (el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId);
+      };
+      el.addEventListener('pointerup', end);
+      el.addEventListener('pointercancel', end);
+
+      el.addEventListener('keydown', (e: KeyboardEvent) => {
+        const step = e.shiftKey ? 24 : 8;
+        const d: Record<string, [number, number]> = {
+          ArrowLeft: [-step, 0], ArrowRight: [step, 0],
+          ArrowUp: [0, -step], ArrowDown: [0, step],
+        };
+        const m = d[e.key];
+        if (!m) return;
+        e.preventDefault();
+        const cur = custom.get(el) ?? { x: STICKER_REST[i].x, y: STICKER_REST[i].y };
+        custom.set(el, { x: cur.x + m[0], y: cur.y + m[1] });
+        const c = custom.get(el)!;
+        put(el, c.x, c.y, STICKER_REST[i].r);
+      });
+    });
+
+    window.addEventListener('resize', resize);
+
+    // ?p=0.55 pins the timeline for inspecting a single frame.
+    const forced = new URLSearchParams(location.search).get('p');
+    if (forced !== null && !Number.isNaN(Number(forced))) p = clamp01(Number(forced));
+    else if (reduced.matches) p = 1;
+
+    resize();
+  }
+</script>

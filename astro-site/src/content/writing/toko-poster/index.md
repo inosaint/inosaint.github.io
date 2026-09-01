@@ -48,7 +48,7 @@ Getting a Midjourney Pro account, helped fill this gap. The team didn't need to 
 
 ## Speeding up a feature
 
-Around the same time, [Juneza](https://www.junezaniyazi.com) was working with the retailers and noticed an un-met iser need. Our retailers needed help marketing their store and with liquidating their stock. Solving this problem was important to us as we were about to launch our own Agri-brand; Jivaprodi.
+Around the same time, [Juneza](https://www.junezaniyazi.com) was working with the retailers and noticed an un-met user need. Our retailers needed help marketing their store and with liquidating their stock. Solving this problem was important to us as we were about to launch our own Agri-brand; Jivaprodi.
 
 ![](juneza-r2.webp)
 
