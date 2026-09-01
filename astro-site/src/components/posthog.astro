@@ -8,4 +8,27 @@
         defaults: '2025-11-30',
         person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
     })
+
+    // Outbound links, captured by hand rather than relying on autocapture:
+    // autocapture is gated by a project-level toggle in PostHog, so a site can
+    // sit there sending nothing but $pageview without any local sign of it.
+    // Lives in this component so every page that loads PostHog gets it.
+    document.addEventListener('click', function (e) {
+        var link = e.target instanceof Element ? e.target.closest('a') : null;
+        if (!link || !link.href) return;
+        // Only real navigations off the site: not mailto:, tel:, #anchors or
+        // same-host links, which are already visible as $pageview.
+        if (link.protocol !== 'http:' && link.protocol !== 'https:') return;
+        if (link.hostname === window.location.hostname) return;
+        try {
+            window.posthog && window.posthog.capture('outbound_link_click', {
+                url: link.href,
+                domain: link.hostname,
+                link_text: (link.innerText || link.getAttribute('aria-label') || '').trim().slice(0, 120),
+                source_page: window.location.pathname,
+            });
+        } catch (err) {
+            /* analytics is never load-bearing */
+        }
+    }, true); // capture phase, so a handler that stops propagation cannot hide the click
 </script>
