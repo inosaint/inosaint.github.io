@@ -2146,6 +2146,29 @@ const stickers = [
 
     window.addEventListener('resize', resize);
 
+    // Each letter is placed by its centre — translate(x - half.w, y - half.h) —
+    // so its measured height has to be final before it can land correctly. It
+    // is not: the letters size themselves from their contents, and the contents
+    // reflow when the webfonts arrive. First load measures against the fallback
+    // face and places every letter off by the difference; a reload looks right
+    // only because the fonts come from cache in time. So measure again once the
+    // fonts are in.
+    if (document.fonts) {
+      document.fonts.ready.then(() => { measure(); render(); });
+    }
+
+    // And again for anything else that changes a letter's size after paint — a
+    // late thumbnail, a second font swap. Transforms do not affect border-box
+    // size, so re-placing cannot retrigger this.
+    if ('ResizeObserver' in window) {
+      let queued = 0;
+      const ro = new ResizeObserver(() => {
+        cancelAnimationFrame(queued);
+        queued = requestAnimationFrame(() => { measure(); render(); });
+      });
+      sheetEls.forEach((el) => ro.observe(el));
+    }
+
     // ?p=0.55 pins the timeline for inspecting a single frame.
     const forced = new URLSearchParams(location.search).get('p');
     if (forced !== null && !Number.isNaN(Number(forced))) {
