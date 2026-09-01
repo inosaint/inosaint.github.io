@@ -1625,7 +1625,7 @@ const stickers = [
     stickers: Rest[];
     /** px kept clear at the foot of the stage for the hint. */
     hintReserve: number;
-    /** Portrait has no room to play the fold: it starts open. */
+    /** Skip the tap-to-open beat and arrive with the card already unfolded. */
     instant: boolean;
   };
 
@@ -1698,7 +1698,7 @@ const stickers = [
     sheetH: 360,
     sheetFace: 1.3,
     stickerFace: 0.85,
-    fadeCard: true,
+    fadeCard: false,
     cascade: true,
     // A cascade in reading order, stepping 240 — two thirds of a letter — so the
     // covered part of each is only its tail: the heading and the first two
@@ -1719,8 +1719,12 @@ const stickers = [
       { x: 387, y: 721, r: -5 },
       { x: 15, y: 923, r: -9 },
     ],
-    hintReserve: 0,
-    instant: true,
+    // Portrait plays the fold too: the canvas is width-limited on a phone, so
+    // the closed card lands at ~85% of the screen — the envelope is the whole
+    // point of arriving here, and skipping it gave a phone the payoff without
+    // the moment. The reserve is the strip the hint sits in.
+    hintReserve: 70,
+    instant: false,
   };
 
   const MAX_FIT = 1.9; // the canvas may scale up, or a big screen wastes itself
