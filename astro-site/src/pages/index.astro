@@ -501,6 +501,20 @@ const stickers = [
 
       <p class="lab-hint" id="env-hint">Tap to open</p>
 
+      <!-- The art stickers' die-cut edge. Lives in the document because a CSS
+           filter: url() can only reference a filter defined in the same one. -->
+      <svg width="0" height="0" aria-hidden="true" focusable="false" style="position: absolute">
+        <filter id="die-cut" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+          <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="fat" />
+          <feFlood flood-color="#fff" result="white" />
+          <feComposite in="white" in2="fat" operator="in" result="edge" />
+          <feMerge>
+            <feMergeNode in="edge" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </svg>
+
     <!-- Emotes rise here rather than inside the card: the message panel is
          folded through 180deg, so anything parented to it arrives mirrored. -->
     <div class="heart-stream" id="heart-stream" aria-hidden="true"></div>
@@ -1314,16 +1328,15 @@ const stickers = [
     display: block;
     width: calc(var(--art-w, 94px) * var(--sticker-face, 1));
     height: auto;
-    /* A real die cut has a hard white margin, not a halo. Blurred shadows give
-       a glow; these are zero-blur copies offset in eight directions, which
-       compound into a solid outline that still follows the artwork's silhouette
-       rather than its bounding box. The last one is the lift off the page. */
-    filter:
-      drop-shadow(1.4px 0 0 #fff) drop-shadow(-1.4px 0 0 #fff)
-      drop-shadow(0 1.4px 0 #fff) drop-shadow(0 -1.4px 0 #fff)
-      drop-shadow(1px 1px 0 #fff) drop-shadow(-1px 1px 0 #fff)
-      drop-shadow(1px -1px 0 #fff) drop-shadow(-1px -1px 0 #fff)
-      drop-shadow(0 5px 10px rgba(16, 40, 26, 0.32));
+    /* A real die cut has a hard white margin, not a halo, and it follows the
+       artwork's silhouette rather than its bounding box. #die-cut does that in
+       a single pass: dilate the alpha, flood it white, lay the art back on top.
+       It replaced eight zero-blur drop-shadows stacked in one chain — each link
+       re-expands the filter region, and on mobile Chrome and WebKit that hit
+       the region cap and cropped the result to a rectangle, which is exactly
+       the bounding box the technique existed to avoid. One pass computes the
+       region once, and the filter declares it outright. */
+    filter: url(#die-cut) drop-shadow(0 5px 10px rgba(16, 40, 26, 0.32));
   }
 
   .sticker-tip {
