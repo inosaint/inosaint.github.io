@@ -316,9 +316,26 @@ const stickers = [
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Render-blocking on purpose: Slackside writes the address and Hanken
+         sets the stamp's cancel, which is the whole of the first paint here. -->
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&display=swap" rel="stylesheet" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Slackside+One&display=swap" rel="stylesheet" crossorigin="anonymous" />
-    <link href="https://fonts.cdnfonts.com/css/liter" rel="stylesheet" crossorigin="anonymous" />
+    <!-- Liter is the body face, and nothing on the closed card is set in it —
+         it is first needed inside the letters, which are two seconds of opening
+         away. Loaded off the critical path (a print stylesheet does not block
+         rendering) and switched on the moment it arrives. It also lives on a
+         third origin, so the handshake gets a head start of its own. -->
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+    <link
+      href="https://fonts.cdnfonts.com/css/liter"
+      rel="stylesheet"
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link href="https://fonts.cdnfonts.com/css/liter" rel="stylesheet" crossorigin="anonymous" />
+    </noscript>
   </head>
 
   <body>
@@ -470,7 +487,33 @@ const stickers = [
         </div>
       </div>
 
+      <!-- Once the card is open its face is turned away, so the two things it
+           was carrying — whose page this is, and what he does — have nowhere
+           left to live. The bar restates the first and puts the second behind
+           About. Held back until the card opens: before that the envelope says
+           both, and a header would only talk over it. -->
+      <header class="lab-topbar" id="lab-topbar">
+        <!-- Home, which from home is a reload: the way back to the closed
+             envelope once the letters have been dragged around. -->
+        <a class="lab-topbar-name" href="/">Kenneth Mark Dsouza</a>
+        <button type="button" id="about-btn">About</button>
+      </header>
+
       <p class="lab-hint" id="env-hint">Tap to open</p>
+
+      <!-- The art stickers' die-cut edge. Lives in the document because a CSS
+           filter: url() can only reference a filter defined in the same one. -->
+      <svg width="0" height="0" aria-hidden="true" focusable="false" style="position: absolute">
+        <filter id="die-cut" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+          <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="fat" />
+          <feFlood flood-color="#fff" result="white" />
+          <feComposite in="white" in2="fat" operator="in" result="edge" />
+          <feMerge>
+            <feMergeNode in="edge" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </svg>
 
     <!-- Emotes rise here rather than inside the card: the message panel is
          folded through 180deg, so anything parented to it arrives mirrored. -->
@@ -489,6 +532,17 @@ const stickers = [
           <a href="https://github.com/inosaint" target="_blank" rel="noopener noreferrer">GitHub</a>
         </nav>
       </footer>
+
+      <!-- The envelope's front, restated. Same panel as the colophon: one
+           stock for everything printed around the collage. -->
+      <div class="lab-modal" id="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-title" hidden>
+        <div class="lab-modal-panel">
+          <button type="button" class="lab-modal-close" id="about-close" aria-label="Close">&times;</button>
+          <h2 id="about-title">Kenneth Mark Dsouza</h2>
+          <p class="lab-modal-role">Product Design Manager</p>
+          <p>I design digital products, explore emerging tech and build things that live on the internet.</p>
+        </div>
+      </div>
 
       <!-- This page deliberately skips BaseLayout, so the colophon is restated
            here rather than shared. -->
@@ -975,17 +1029,16 @@ const stickers = [
   }
 
   .env-cancel text {
-    /* Revealed only once the fonts have settled; see below. */
-    opacity: 0;
+    /* Painted straight away in the fallback face rather than held back until
+       the webfont lands: the stamp is the first thing on the page and a blank
+       ring for the length of a font request read as broken. Text on a path
+       re-measures when Hanken swaps in, so the legend does shift slightly on
+       the arc — but it is centred on the path at both sizes (startOffset 50%
+       with text-anchor middle), so it re-centres rather than sliding off. */
     fill: rgba(16, 40, 26, 0.5);
     font-size: 9px;
     letter-spacing: 1.4px;
     font-family: var(--font-heading);
-  }
-
-  :root.fonts-ready .env-cancel text {
-    opacity: 1;
-    transition: opacity 0.2s ease-out;
   }
 
   .env-waves path {
@@ -1275,16 +1328,15 @@ const stickers = [
     display: block;
     width: calc(var(--art-w, 94px) * var(--sticker-face, 1));
     height: auto;
-    /* A real die cut has a hard white margin, not a halo. Blurred shadows give
-       a glow; these are zero-blur copies offset in eight directions, which
-       compound into a solid outline that still follows the artwork's silhouette
-       rather than its bounding box. The last one is the lift off the page. */
-    filter:
-      drop-shadow(1.4px 0 0 #fff) drop-shadow(-1.4px 0 0 #fff)
-      drop-shadow(0 1.4px 0 #fff) drop-shadow(0 -1.4px 0 #fff)
-      drop-shadow(1px 1px 0 #fff) drop-shadow(-1px 1px 0 #fff)
-      drop-shadow(1px -1px 0 #fff) drop-shadow(-1px -1px 0 #fff)
-      drop-shadow(0 5px 10px rgba(16, 40, 26, 0.32));
+    /* A real die cut has a hard white margin, not a halo, and it follows the
+       artwork's silhouette rather than its bounding box. #die-cut does that in
+       a single pass: dilate the alpha, flood it white, lay the art back on top.
+       It replaced eight zero-blur drop-shadows stacked in one chain — each link
+       re-expands the filter region, and on mobile Chrome and WebKit that hit
+       the region cap and cropped the result to a rectangle, which is exactly
+       the bounding box the technique existed to avoid. One pass computes the
+       region once, and the filter declares it outright. */
+    filter: url(#die-cut) drop-shadow(0 5px 10px rgba(16, 40, 26, 0.32));
   }
 
   .sticker-tip {
@@ -1471,6 +1523,70 @@ const stickers = [
   .lab-footer a:focus-visible,
   .lab-footer button:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 
+  /* The bar answers to the same fixed, uppercase Departure Mono as the footer;
+     only the ink differs, because the top of the stage is blush and the foot is
+     the green ground band. */
+  .lab-topbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.85rem 1.25rem;
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    /* Nothing to say until the card is open, and nothing to catch a drag with
+       either — the letters can be thrown up here. */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease-out;
+  }
+
+  /* data-done lives on the canvas, which is inside .lab-stage — the bar, like
+     the hint and the footer, is a sibling of the stage rather than of the
+     canvas, so it cannot reach that attribute with a combinator. render()
+     mirrors the flag onto the root element instead. */
+  :root.card-open .lab-topbar {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lab-topbar-name,
+  .lab-topbar button {
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    /* The same ink as a letter's own heading — the bar is uppercase Departure
+       Mono like those headings are, so anything lighter read as a different,
+       fainter class of type sitting above the collage. */
+    color: var(--head-ink);
+  }
+
+  .lab-topbar-name { text-decoration: none; }
+
+  .lab-topbar button {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .lab-topbar-name:hover,
+  .lab-topbar button:hover { text-decoration: underline; }
+
+  .lab-topbar-name:focus-visible,
+  .lab-topbar button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lab-topbar { transition: none; }
+  }
+
   .lab-modal {
     position: fixed;
     inset: 0;
@@ -1540,6 +1656,15 @@ const stickers = [
     margin: 0 0 0.35rem;
   }
 
+  .lab-modal-panel .lab-modal-role {
+    font-family: var(--font-display);
+    font-size: 0.62rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(16, 40, 26, 0.55);
+    margin: -0.15rem 0 0.6rem;
+  }
+
   .lab-modal-panel section { margin-bottom: 1.25rem; }
   .lab-modal-panel p { margin: 0 0 0.35rem; }
   .lab-modal-panel a { color: var(--mark); }
@@ -1579,15 +1704,6 @@ const stickers = [
 
   .lab-modal-close:hover { color: var(--ink); }
 </style>
-
-<script>
-  // Text on a path is re-measured when a webfont swaps in, so the cancel's
-  // legend re-centres itself mid-load and lands differently on each refresh.
-  // Reveal it only once the fonts have settled, so it is laid out once.
-  const markFontsReady = () => document.documentElement.classList.add('fonts-ready');
-  if (document.fonts?.ready) document.fonts.ready.then(markFontsReady);
-  else markFontsReady();
-</script>
 
 <script>
   type Rest = { x: number; y: number; r: number };
@@ -1641,9 +1757,13 @@ const stickers = [
     face: 1,
     openZoom: 0.62,
     envY: 300,
-    sheetW: 280,
-    sheetH: 344,
-    sheetFace: 1,
+    // Up 20%, as portrait went: the letters are what the page is for, and at
+    // 280 wide they sat small in a 1000-wide canvas.
+    sheetW: 336,
+    sheetH: 413,
+    // Scaled with the paper — every type size inside a letter is a multiple of
+    // this, so growing the sheet alone would only have added white space.
+    sheetFace: 1.2,
     stickerFace: 1,
     fadeCard: false,
     cascade: false,
@@ -1652,10 +1772,14 @@ const stickers = [
     // deliberately overhang the opened card, which reads as their backdrop.
     // Index order is Work, Writing, Projects; Writing sits in the middle, so
     // the centre coordinate belongs to index 1.
+    // The outer two moved out by 60 to pay for the wider paper: at the old 250
+    // and 720 the hand overlapped by 86 and began covering entries rather than
+    // margins. At 190 and 810 the overlap is back to ~26 and the fan still
+    // ends inside the canvas (22 and 978 of 1000).
     sheets: [
-      { x: 250, y: 300, r: -5 },
+      { x: 190, y: 300, r: -5 },
       { x: 500, y: 250, r: 0 },
-      { x: 720, y: 292, r: 4 },
+      { x: 810, y: 292, r: 4 },
     ],
     // The letters now claim the middle band, so the stickers take the sky above
     // and the lawn below rather than the side margins.
@@ -1686,27 +1810,52 @@ const stickers = [
   const TALL: Layout = {
     canvasW: 460,
     canvasH: 1040,
-    envW: 420,
-    envH: 231,
-    topH: 61,
-    tabW: 42,
-    face: 0.6,
+    // Closed size wasn't tracking canvasW — the fit is height-bound here (the
+    // tall canvas exists for the cascade, not the card), so a card sized well
+    // under canvasW read as small even at fit=1. Sized up to it instead, with
+    // topH/tabW scaled by the same ratio so the flaps keep their proportions.
+    envW: 460,
+    envH: 253,
+    topH: 67,
+    tabW: 46,
+    // 0.6 made the address text (title, blurb especially) run under 11px once
+    // fit was applied — fine for a glimpse before the auto-open, unreadable
+    // once the closed card became something a visitor actually lingers on.
+    // The blurb has three lines of headroom below it before the card's own
+    // fixed height clips anything, so there's room to grow.
+    face: 0.8,
     // Nothing to step back from: the flat card still fits the tall canvas.
     openZoom: 1,
-    envY: 440,
-    sheetW: 320,
-    sheetH: 360,
-    sheetFace: 1.3,
+    // Below canvas centre (520) by the same fraction WIDE sits below its own
+    // centre, so the closed card doesn't read as pinned to the top half.
+    envY: 560,
+    // Bigger paper on a phone: the letter is the thing being read, and at
+    // 320x360 with fit applied it sat well under a phone's width. Up another
+    // 20% from 340x380 — at 408 the letter is 89% of the canvas width, which
+    // is as far as it goes before it has no margin to sit in at all.
+    sheetW: 408,
+    sheetH: 456,
+    // Scaled with the paper: growing the sheet alone would only have added
+    // white space, since every type size inside a letter is a multiple of this.
+    // sheetH is a floor, not a cap (see .sheet), so the extra type grows the
+    // paper rather than pushing the foot link off the bottom edge.
+    sheetFace: 1.68,
     stickerFace: 0.85,
     fadeCard: false,
     cascade: true,
-    // A cascade in reading order, stepping 240 — two thirds of a letter — so the
-    // covered part of each is only its tail: the heading and the first two
-    // entries of every letter stay in the clear.
+    // A cascade in reading order, stepping 250 — the exposed head band of each
+    // letter, since the next one covers everything below it.
+    // The step is what the 20% bigger paper costs: three letters of ~560 (the
+    // 456 floor plus what the 1.68 type adds) leave only 1040 - 560 = 480 of
+    // canvas to spread across, so 240 is the arithmetic ceiling and 250 lets
+    // the outer two overhang a canvas edge each — the top of the first and the
+    // foot of the third, neither of which carries an entry.
+    // Rotations stay eased off: a straighter stack reads as a column to be
+    // read down, which is what the vertical fan is for.
     sheets: [
-      { x: 216, y: 250, r: -3 },
-      { x: 248, y: 490, r: 3 },
-      { x: 210, y: 730, r: -2 },
+      { x: 226, y: 285, r: -2 },
+      { x: 240, y: 535, r: 2 },
+      { x: 220, y: 785, r: -1 },
     ],
     // Two rows in the bands the cascade leaves free. The lower one stops short
     // of the canvas foot, which the fixed footer covers.
@@ -1719,12 +1868,12 @@ const stickers = [
       { x: 387, y: 721, r: -5 },
       { x: 15, y: 923, r: -9 },
     ],
-    // Portrait plays the fold too: the canvas is width-limited on a phone, so
-    // the closed card lands at ~85% of the screen — the envelope is the whole
-    // point of arriving here, and skipping it gave a phone the payoff without
-    // the moment. The reserve is the strip the hint sits in.
+    // Portrait arrives open. The fold is worth watching on a desktop, where the
+    // card and the fan both fit at once; on a phone it costs two seconds before
+    // anything can be read, and the letters are what a phone visitor came for.
+    // The reserve is the strip the hint sits in.
     hintReserve: 70,
-    instant: false,
+    instant: true,
   };
 
   const MAX_FIT = 1.9; // the canvas may scale up, or a big screen wastes itself
@@ -1783,6 +1932,28 @@ const stickers = [
     const restOf = (m: Movable): Rest =>
       m.kind === 'env' ? envRest() : m.kind === 'sheet' ? L.sheets[m.i] : L.stickers[m.i];
 
+    // Dragging (pointer or arrow keys) is otherwise unbounded, and the stage
+    // clips rather than scrolls — so a letter or sticker pushed past the edge
+    // is gone for good, with no way to bring it back.
+    //
+    // Holding the WHOLE element inside the canvas is too strict to move in: a
+    // 408-wide letter in the 460-wide portrait canvas had 52px of sideways
+    // travel and read as stuck in a slot. Keeping a grabbable strip on canvas
+    // is enough to guarantee recovery, and lets a letter hang off an edge —
+    // which is most of the point of being able to move it at all.
+    const KEEP = 60; // px of the element that must stay on canvas
+    const clampToCanvas = (m: Movable, x: number, y: number): Pos => {
+      // A sticker can be narrower than KEEP; then the whole of it must stay.
+      const keepX = Math.min(KEEP, m.half.w * 2);
+      const keepY = Math.min(KEEP, m.half.h * 2);
+      const lo = (half: number, keep: number) => keep - half;
+      const hi = (span: number, half: number, keep: number) => span - keep + half;
+      return {
+        x: Math.min(Math.max(x, lo(m.half.w, keepX)), hi(L.canvasW, m.half.w, keepX)),
+        y: Math.min(Math.max(y, lo(m.half.h, keepY)), hi(L.canvasH, m.half.h, keepY)),
+      };
+    };
+
     const measure = () => {
       movables.forEach((m) => {
         m.half = { w: m.el.offsetWidth / 2, h: m.el.offsetHeight / 2 };
@@ -1825,6 +1996,9 @@ const stickers = [
       done = p >= 0.999;
       if (done) canvas.dataset.done = '';
       else delete canvas.dataset.done;
+      // Mirrored onto the root so the fixed furniture outside .lab-stage — the
+      // top bar — can key off the open state too.
+      document.documentElement.classList.toggle('card-open', done);
 
       const cx = L.canvasW / 2;
 
@@ -2047,7 +2221,7 @@ const stickers = [
           m.el.setPointerCapture(e.pointerId);
         }
         // Pointer travel is in screen pixels; the canvas is scaled.
-        m.custom = { x: origin.x + dx / fit, y: origin.y + dy / fit };
+        m.custom = clampToCanvas(m, origin.x + dx / fit, origin.y + dy / fit);
         place(m, m.custom.x, m.custom.y, restOf(m).r);
         // The contact shadow is placed in render(), which a drag does not run;
         // without this the card slides out from under its own shadow.
@@ -2087,7 +2261,7 @@ const stickers = [
           if (!move) return;
           e.preventDefault();
           const current = m.custom ?? restOf(m);
-          m.custom = { x: current.x + move[0], y: current.y + move[1] };
+          m.custom = clampToCanvas(m, current.x + move[0], current.y + move[1]);
           place(m, m.custom.x, m.custom.y, restOf(m).r);
         });
       }
@@ -2186,35 +2360,40 @@ const stickers = [
 </script>
 
 <script>
-  // The colophon: a dialog small enough not to need focus management beyond
-  // returning the caller's focus.
-  const colophon = document.getElementById('colophon-modal');
-  const colophonBtn = document.getElementById('colophon-btn');
-  const colophonClose = document.getElementById('colophon-close');
+  // Two dialogs — the colophon and About — small enough not to need focus
+  // management beyond returning the caller's focus.
+  const wireModal = (name: string, event: string) => {
+    const modal = document.getElementById(`${name}-modal`);
+    const opener = document.getElementById(`${name}-btn`);
+    const closer = document.getElementById(`${name}-close`);
 
-  const closeColophon = () => {
-    if (!colophon || colophon.hidden) return;
-    colophon.hidden = true;
-    colophonBtn?.focus();
+    const close = () => {
+      if (!modal || modal.hidden) return;
+      modal.hidden = true;
+      opener?.focus();
+    };
+
+    opener?.addEventListener('click', () => {
+      if (!modal) return;
+      modal.hidden = false;
+      closer?.focus();
+      try {
+        (window as any).posthog?.capture?.(event);
+      } catch {
+        /* analytics is never load-bearing */
+      }
+    });
+
+    closer?.addEventListener('click', close);
+    // Backdrop only: a click inside the panel must not close it.
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
   };
 
-  colophonBtn?.addEventListener('click', () => {
-    if (!colophon) return;
-    colophon.hidden = false;
-    colophonClose?.focus();
-    try {
-      (window as any).posthog?.capture?.('colophon_opened');
-    } catch {
-      /* analytics is never load-bearing */
-    }
-  });
-
-  colophonClose?.addEventListener('click', closeColophon);
-  // Backdrop only: a click inside the panel must not close it.
-  colophon?.addEventListener('click', (e) => {
-    if (e.target === colophon) closeColophon();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeColophon();
-  });
+  wireModal('colophon', 'colophon_opened');
+  wireModal('about', 'about_opened');
 </script>
