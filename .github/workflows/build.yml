@@ -7,6 +7,13 @@ on:
   pull_request:
     branches:
       - master
+  # Fired by inosaint/ai when its project list changes. The homepage's Projects
+  # letter is scraped from that site at BUILD time (see astro-site/src/pages/index.astro),
+  # so a new project only reaches the homepage once this repo rebuilds.
+  repository_dispatch:
+    types: [projects-updated]
+  # Manual button in the Actions tab, for refreshing without a commit.
+  workflow_dispatch:
 
 jobs:
   build:
@@ -37,8 +44,9 @@ jobs:
           path: astro-site/dist/
 
   deploy:
-    # Only deploy on pushes to master branch
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    # Deploy on master pushes, on a manual run, and when the AI projects repo
+    # says its list changed. Never on pull_request — that builds only.
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
 
