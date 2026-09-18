@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { Image, getImage } from 'astro:assets';
 import { YouTube } from 'astro-embed';
@@ -103,4 +104,6 @@ const formatDate = (date: Date) => {
 
     <Content components={{ YouTube }} />
   </article>
+
+  <RelatedPosts entry={entry} />
 </BaseLayout>

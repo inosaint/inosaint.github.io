@@ -1,0 +1,154 @@
+---
+// Related posts, scored by tag overlap against the rest of the writing
+// collection. No curation to keep up to date: a new post starts appearing
+// under its siblings the moment it is tagged.
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+type Props = {
+  entry: CollectionEntry<'writing'>;
+  /** The letter is sized for three. */
+  count?: number;
+};
+
+const { entry, count = 3 } = Astro.props;
+
+// Drafts are excluded — they are unfinished, and linking to one from a
+// published post would send readers somewhere deliberately left out of the
+// index and the RSS feed.
+const candidates = (await getCollection('writing', ({ data }) => data.status === 'published'))
+  .filter((post) => post.id !== entry.id);
+
+const tags = new Set(entry.data.tags);
+
+// Jaccard (shared ÷ union) rather than a raw count of shared tags, so a post
+// carrying eight tags cannot outrank a tightly-matched pair just by being
+// broadly tagged. Union is never 0 here: a score is only asked for when the
+// two posts share at least one tag.
+const score = (other: CollectionEntry<'writing'>) => {
+  const otherTags = new Set(other.data.tags);
+  let shared = 0;
+  for (const tag of otherTags) if (tags.has(tag)) shared += 1;
+  if (!shared) return 0;
+  return shared / (tags.size + otherTags.size - shared);
+};
+
+const related = candidates
+  .map((post) => ({ post, score: score(post) }))
+  .filter((c) => c.score > 0)
+  // Ties are common with a small tag vocabulary, so break them by date —
+  // between two equally related posts, the newer one is the better read.
+  .sort((a, b) => b.score - a.score || b.post.data.date.getTime() - a.post.data.date.getTime())
+  .slice(0, count);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+{
+  related.length > 0 && (
+    <aside class="related" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related writing</h2>
+      <div class="related-grid">
+        {related.map(({ post, score }, i) => (
+          <a
+            href={`/writing/${post.id}/`}
+            class="card"
+            data-related-post
+            data-position={i + 1}
+            data-score={score.toFixed(2)}
+          >
+            {post.data.image && (
+              <Image
+                src={post.data.image}
+                alt=""
+                class="card-image"
+                width={450}
+                height={250}
+                densities={[1.5, 2]}
+                loading="lazy"
+              />
+            )}
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <div class="post-header-meta" style="margin-top: 12px;">
+              {formatDate(post.data.date)}
+            </div>
+          </a>
+        ))}
+      </div>
+    </aside>
+  )
+}
+
+{
+  related.length > 0 && (
+    <script is:inline>
+      // These are same-host links, so the outbound handler in posthog.astro
+      // deliberately ignores them and a $pageview alone cannot say whether the
+      // reader arrived from a related card, an inline link or the index.
+      //
+      // `position` and `score` are the point of this: together they say whether
+      // the tag-overlap ranking actually predicts clicks, or whether three
+      // recent posts would do just as well.
+      document.addEventListener(
+        'click',
+        function (e) {
+          var link = e.target instanceof Element ? e.target.closest('a[data-related-post]') : null;
+          if (!link) return;
+          try {
+            window.posthog &&
+              window.posthog.capture('related_post_clicked', {
+                from: window.location.pathname,
+                to: link.pathname,
+                position: Number(link.dataset.position),
+                score: Number(link.dataset.score),
+              });
+          } catch (err) {
+            /* analytics is never load-bearing */
+          }
+        },
+        true // capture phase, matching posthog.astro
+      );
+    </script>
+  )
+}
+
+<style>
+  .related {
+    margin-top: 4rem;
+  }
+
+  .related h2 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* These sit below the article, not in it — a notch down from the index cards
+     so they read as a footer rather than as more of the piece. */
+  .related :global(.card h3) {
+    font-size: 1.05rem;
+  }
+
+  .related :global(.card p) {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .related-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>
