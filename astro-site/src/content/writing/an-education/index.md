@@ -2,7 +2,9 @@
 title: An education in the age of automation
 description: A case for design school education in an era that questions it
 date: 2026-09-30
-tags: []
+tags:
+  - design-education
+  - design-industry
 updated:
 status: published
 image: ./bauhaus-cover.webp
