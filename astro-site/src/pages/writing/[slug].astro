@@ -98,7 +98,7 @@ const formatDate = (date: Date) => {
 
     {entry.data.image && (
       <div class="post-header-image">
-        <Image src={entry.data.image} alt={entry.data.title} width={1200} height={600} />
+        <Image src={entry.data.image} alt={entry.data.title} width={1200} style={entry.data.imagePosition ? `object-position: ${entry.data.imagePosition}` : undefined} />
       </div>
     )}
 

@@ -12,6 +12,8 @@ const writing = defineCollection({
     updated: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
     image: image().optional(),
+    // CSS object-position for the 2:1 post header crop, e.g. "center 85%" (default centre).
+    imagePosition: z.string().optional(),
     url: z.string().optional(), // optional for external posts
     status: z.enum(['draft', 'published']).default('published'),
   }),
