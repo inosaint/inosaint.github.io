@@ -43,8 +43,8 @@ You will meet people and their obsessions(or witness the creation of a new one),
 
 As I end the post, I acknowledge that a good design school education is a privilege that few have access to. I am conscious of my privilege, and I am writing this post to implore those of you who are currently at the threshold of such a decision to take that leap of faith. You may not end up getting a job after it, but I hope you acquire an open mind, develop great friendships and make core memories in those years. Design school changed me, and I feel it was for the better. I didn't know it would when I was taking the leap, but I am so glad that I took it.
 
-[^1]: Header image: taken at the Bauhaus Design Museum. From my archive.
+[^1]: Header image: taken at the Bauhaus Design Museum. Taken at the Bauhaus Design Museum, Dessau.
 
-[^2]: That’s me, hand-lettering a poster in design school. From my archive.
+[^2]: That’s me, hand-lettering a poster in design school.
 
-[^3]: Reinhold Rossig, specimen sheet from lessons with Joost Schmidt, 1929. Indian ink and pencil on paper. From my archive.
+[^3]: Reinhold Rossig, specimen sheet from lessons with Joost Schmidt, 1929. Indian ink and pencil on paper. Taken at the Bauhaus Design Museum, Dessau.
