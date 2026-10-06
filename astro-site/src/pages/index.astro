@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import PostHog from '../components/posthog.astro';
+import WebMCP from '../components/WebMCP.astro';
 
 // This page is its own document rather than a BaseLayout child: it owns the
 // whole viewport, has no container or site chrome, and paints its own footer.
@@ -290,8 +291,12 @@ const stickers = [
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
 
     <link rel="alternate" type="application/rss+xml" title="Kenneth Mark Dsouza — Writing" href="/rss.xml" />
+    <!-- Agent discovery, matching BaseLayout's. -->
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
     <PostHog />
+    <WebMCP />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Kenneth Mark Dsouza" />

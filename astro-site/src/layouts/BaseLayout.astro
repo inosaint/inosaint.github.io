@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import PostHog from '../components/posthog.astro';
+import WebMCP from '../components/WebMCP.astro';
 
 interface Props {
   title?: string;
@@ -17,6 +18,8 @@ interface Props {
   noindex?: boolean;
   /** Page-specific schema.org nodes, merged into the site-wide @graph. */
   schema?: Record<string, unknown>[];
+  /** Path to this page's Markdown twin (e.g. /writing/slug.md), advertised to agents. */
+  markdownPath?: string;
 }
 
 const {
@@ -30,7 +33,8 @@ const {
   type = 'website',
   publishedDate,
   noindex = false,
-  schema = []
+  schema = [],
+  markdownPath
 } = Astro.props;
 
 const siteUrl = "https://kenneth.dsouza.im";
@@ -124,8 +128,15 @@ const jsonLd = {
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Kenneth Mark Dsouza — Writing" href="/rss.xml" />
 
+    <!-- Agent discovery. GitHub Pages can't send HTTP Link headers; these are the
+         in-document equivalent (RFC 8288 §3.3 / HTML link types). -->
+    {markdownPath && <link rel="alternate" type="text/markdown" title="Markdown version" href={markdownPath} />}
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
     <!-- PostHog Analytics -->
     <PostHog />
+    <WebMCP />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />

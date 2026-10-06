@@ -1,43 +1,27 @@
 # https://kenneth.dsouza.im
 
+# Answer engines / AI crawlers are named explicitly and welcome to read and cite.
+# Crawlers obey only the group that matches them most specifically, so they share
+# one group with the wildcard and all see the same Content-Signal.
+#
+# Content-Signal (https://contentsignals.org):
+#   search=yes    — index and link to these pages in search results
+#   ai-input=yes  — use them to answer a question in real time (with attribution)
+#   ai-train=no   — do not use them to train or fine-tune models
 User-agent: *
-Allow: /
-
-# Answer engines / AI crawlers — explicitly welcome.
 User-agent: GPTBot
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
 User-agent: Claude-User
-Allow: /
-
 User-agent: Claude-SearchBot
-Allow: /
-
 User-agent: PerplexityBot
-Allow: /
-
 User-agent: Perplexity-User
-Allow: /
-
 User-agent: Google-Extended
-Allow: /
-
 User-agent: Applebot-Extended
-Allow: /
-
 User-agent: Bingbot
-Allow: /
-
 User-agent: cohere-ai
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 Sitemap: https://kenneth.dsouza.im/sitemap-index.xml

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { hasMarkdown, markdownPath } from '../../lib/agent-markdown';
 import RelatedPosts from '../../components/RelatedPosts.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { Image, getImage } from 'astro:assets';
@@ -73,6 +74,7 @@ const formatDate = (date: Date) => {
   publishedDate={entry.data.date}
   noindex={entry.data.status === 'draft'}
   schema={schema}
+  markdownPath={hasMarkdown(entry) ? markdownPath('writing', entry.id) : undefined}
   wide
 >
   <nav class="breadcrumb-header">

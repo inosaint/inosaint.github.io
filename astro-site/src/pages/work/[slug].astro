@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { hasMarkdown, markdownPath } from '../../lib/agent-markdown';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { Image, getImage } from 'astro:assets';
 import { YouTube } from 'astro-embed';
@@ -78,6 +79,7 @@ const schema = [
   type="article"
   noindex={entry.data.status === 'draft'}
   schema={schema}
+  markdownPath={hasMarkdown(entry) ? markdownPath('work', entry.id) : undefined}
   wide
 >
   <nav class="breadcrumb-header">

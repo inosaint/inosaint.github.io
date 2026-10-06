@@ -1,0 +1,87 @@
+---
+// WebMCP: exposes read-only tools to in-browser agents via navigator.modelContext.
+// No-op in browsers without the API. Data comes from /agent-index.json and the
+// per-page .md twins, fetched only when an agent actually calls a tool.
+---
+
+<script>
+  type Page = {
+    type: 'work' | 'writing';
+    title: string;
+    description: string;
+    url: string;
+    markdown: string | null;
+    tags: string[];
+    date?: string;
+    year?: string;
+    company?: string | null;
+  };
+
+  const modelContext = (navigator as any).modelContext;
+
+  if (modelContext?.registerTool) {
+    let index: Promise<Page[]> | undefined;
+    const pages = () =>
+      (index ??= fetch('/agent-index.json')
+        .then((res) => res.json())
+        .then((data) => data.pages as Page[]));
+
+    const text = (value: unknown) => ({
+      content: [{ type: 'text', text: typeof value === 'string' ? value : JSON.stringify(value, null, 2) }],
+    });
+
+    const tools = [
+      {
+        name: 'list_pages',
+        description:
+          "List Kenneth Mark Dsouza's published case studies (work) and posts (writing), newest first, with URLs and a Markdown URL for each.",
+        inputSchema: {
+          type: 'object',
+          properties: {
+            type: { type: 'string', enum: ['work', 'writing', 'all'], description: 'Which section to list. Defaults to all.' },
+          },
+        },
+        execute: async ({ type = 'all' }: { type?: string } = {}) =>
+          text((await pages()).filter((page) => type === 'all' || page.type === type)),
+      },
+      {
+        name: 'search_site',
+        description: 'Search case studies and posts by keyword across titles, descriptions, tags and company names.',
+        inputSchema: {
+          type: 'object',
+          properties: { query: { type: 'string', description: 'Keyword or phrase, e.g. "design systems" or "hiring".' } },
+          required: ['query'],
+        },
+        execute: async ({ query }: { query: string }) => {
+          const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+          const matches = (await pages()).filter((page) => {
+            const haystack = [page.title, page.description, page.company ?? '', ...page.tags].join(' ').toLowerCase();
+            return terms.every((term) => haystack.includes(term));
+          });
+          return text(matches.length ? matches : `No pages match "${query}". Try list_pages for everything.`);
+        },
+      },
+      {
+        name: 'read_page',
+        description:
+          'Get the full text of a case study or post as Markdown. Pass its page URL or path; omit it to read the page currently open.',
+        inputSchema: {
+          type: 'object',
+          properties: { url: { type: 'string', description: 'e.g. /writing/hiring/ or the full https URL.' } },
+        },
+        execute: async ({ url }: { url?: string } = {}) => {
+          const path = new URL(url ?? location.href, location.origin).pathname.replace(/\/$/, '');
+          const page = (await pages()).find((p) => p.markdown && new URL(p.url).pathname.replace(/\/$/, '') === path);
+          if (!page?.markdown) {
+            return text(`No Markdown version for ${path || '/'}. The site-wide summary is at ${location.origin}/llms.txt.`);
+          }
+          return text(await (await fetch(page.markdown)).text());
+        },
+      },
+    ];
+
+    for (const tool of tools) {
+      modelContext.registerTool({ ...tool, annotations: { readOnlyHint: true } });
+    }
+  }
+</script>
