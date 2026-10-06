@@ -44,6 +44,12 @@ export const selectedWritingAndSpeaking = [
 
 export const workshops = [
   {
+    title: 'The Designer in the Age of AI at DesignUp 2026',
+    date: 'October 2, 2026',
+    description: 'A sold-out interactive workshop at DesignUp 2026 on the value of a designer in the age of AI.',
+    url: 'https://26.designup.io/schedule/'
+  },
+  {
     title: 'Interactive DataViz Using AI Coding at VizChitra 2026',
     date: 'July 3, 2026',
     description: 'A sold-out workshop at VizChitra 2026 on building interactive data visualizations with AI coding tools.',
@@ -100,7 +106,7 @@ export const experience = [
       { src: '/images/jiva-workshop-2.webp', alt: 'Field visit with the Jiva team', width: 1000, height: 623 }
     ],
     details: [
-      'Led the product design function across five mobile apps and internal tools serving Indonesia’s agriculture supply chain.',
+      'Led a 12-member product design team across five mobile apps and internal tools serving Indonesia’s agriculture supply chain.',
       'Designed products for 100k+ farmers, 5,400 collectors, and 4,900 retailers.',
       'Co-led Jiva Lite, a WhatsApp-based assistant that helped farmers improve their sales by $180 on avg.',
       'Led design for Crop Doctor, an AI-powered interface inside the Farmer App for diagnosing crop disease.',
@@ -116,7 +122,7 @@ export const experience = [
       { src: '/images/gojek-workshop-2.webp', alt: 'Kenneth with the Gojek design team', width: 1000, height: 752 }
     ],
     details: [
-      'Headed the Merchant Platform design team across multiple merchant-facing products; ads, pos, payment gateways and merchant platforms.',
+      'Headed the 12-member Merchant Platform design team across multiple merchant-facing products; ads, pos, payment gateways and merchant platforms.',
       'Led the redesign of GoBiz as it evolved from a restaurant management tool into a broader merchant platform.',
       'Improved information architecture across products serving 1.5M+ merchants.',
       'Designed for regional expansion across Thailand, Vietnam, and Singapore.',
