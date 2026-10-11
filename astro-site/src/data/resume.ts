@@ -42,27 +42,32 @@ export const selectedWritingAndSpeaking = [
   }
 ];
 
+// `venue` is the short name used where workshops are summarised (the /work page).
 export const workshops = [
   {
     title: 'The Designer in the Age of AI at DesignUp 2026',
+    venue: 'DesignUp',
     date: 'October 2, 2026',
     description: 'A sold-out interactive workshop at DesignUp 2026 on the value of a designer in the age of AI.',
     url: 'https://26.designup.io/schedule/'
   },
   {
     title: 'Interactive DataViz Using AI Coding at VizChitra 2026',
+    venue: 'VizChitra',
     date: 'July 3, 2026',
     description: 'A sold-out workshop at VizChitra 2026 on building interactive data visualizations with AI coding tools.',
     url: 'https://vizchitra.com/2026/sessions/interactive-dataviz-using-ai-coding'
   },
   {
     title: 'Agentic Coding Workshop at CEC, Mangalore',
+    venue: 'CEC Mangalore',
     date: 'April 29, 2026',
     description: 'Introduced Computer Science and Design students to Agentic Coding at Canara Engineering College. My second IRL workshop on the topic.',
     url: 'https://x.com/kenneth/status/2049520004182515961'
   },
   {
     title: 'AI Workshop at NID',
+    venue: 'NID',
     date: 'March 5, 2026',
     description: 'AI workshop hosted at the National Institute of Design, India.',
     url: 'https://x.com/nid_india/status/2029866422168428610'

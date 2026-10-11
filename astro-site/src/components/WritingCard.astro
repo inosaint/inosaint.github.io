@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import type { WritingCardItem } from '../lib/writing-cards';
+
+interface Props {
+  writing: WritingCardItem;
+  /** Thumbnail-left list row instead of the full-width image card. */
+  compact?: boolean;
+}
+
+const { writing, compact = false } = Astro.props;
+
+// Compact rows show a 132px thumbnail; don't ship a 450px image for it.
+const [imageWidth, imageHeight] = compact ? [264, 147] : [450, 250];
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<a
+  href={writing.url}
+  target={writing.isInternal ? undefined : "_blank"}
+  rel={writing.isInternal ? undefined : "noopener noreferrer"}
+  class:list={["card", { "card--compact": compact }]}
+  title={writing.isInternal ? undefined : `${writing.title} (opens in new tab)`}
+>
+  {writing.image && writing.isInternal ? (
+    <Image
+      src={writing.image}
+      alt={writing.title}
+      class="card-image"
+      width={imageWidth}
+      height={imageHeight}
+      densities={compact ? undefined : [1.5, 2]}
+    />
+  ) : (
+    <img
+      src={writing.imageUrl}
+      alt={writing.title}
+      class="card-image"
+      width={imageWidth}
+      height={imageHeight}
+      loading="lazy"
+    />
+  )}
+  <div class="card-body">
+    <h3>
+      {writing.title}
+      {!writing.isInternal && (
+        <>
+          <sup class="external-link-icon" aria-hidden="true">
+            [<span class="material-symbols-outlined">arrow_outward</span>]
+          </sup>
+          <span class="sr-only"> (opens in new tab)</span>
+        </>
+      )}
+    </h3>
+    <p>{writing.description}</p>
+    <div class="post-header-meta card-date">{formatDate(writing.date)}</div>
+  </div>
+</a>

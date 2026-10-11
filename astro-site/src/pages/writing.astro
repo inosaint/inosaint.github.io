@@ -1,86 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
+import WritingCard from '../components/WritingCard.astro';
+import { getWritingCards } from '../lib/writing-cards';
 
-const internalWritings = await getCollection('writing', ({ data }) => {
-  return data.status === 'published';
-});
-
-const externalWritings = [
-  {
-    title: 'Squads as a Growth Engine for Designers',
-    description: 'How we used squads to help our designers level up at Jiva',
-    url: 'https://medium.com/notes-from-the-fields/how-we-used-squads-to-help-our-designers-level-up-443fcbc52e2f',
-    image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*iuV8e1TmjIe0zsr8yQfXyA.jpeg',
-    date: new Date('2025-08-18') // Add approximate dates for sorting
-  },
-  {
-    title: 'Redesigning the Sahabat Jiva app',
-    description: 'From Field Insights to Better UX for our Sahabat Jivas',
-    url: 'https://medium.com/notes-from-the-fields/from-field-insights-to-better-ux-for-our-sahabat-jivas-3056b32ba51f',
-    image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3Fnwkn7IeOiYbTxz-n3K7w.jpeg',
-    date: new Date('2025-05-15')
-  },
-  {
-    title: 'How a sticker design became an unofficial Mascot',
-    description: 'The story of how a last-minute sticker design became a beloved company icon',
-    url: 'https://medium.com/notes-from-the-fields/more-than-swag-how-a-last-minute-sticker-became-a-company-icon-42d86246e736',
-    image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Nq0RLdn32pPVk-zLPFy-Cw.png',
-    date: new Date('2024-11-28')
-  },
-  {
-    title: 'Designing the Akar Design System',
-    description: 'Taming the chaos of hypergrowth with a lean approach to building a design system',
-    url: 'https://medium.com/notes-from-the-fields/taming-the-chaos-of-hypergrowth-our-lean-approach-to-building-a-design-system-part-1-2adbb24ddef0',
-    image: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*L1SeHFlgAyu3LkCQXR252g.png',
-    date: new Date('2024-10-17')
-  },
-  {
-    title: 'Gamify DesignOps with human connection',
-    description: 'A talk about bringing human connection into DesignOps',
-    url: 'https://www.youtube.com/watch?v=c__raLe34ZU',
-    image: '/images/sddefault.jpg',
-    date: new Date('2023-08-9')
-  },
-  {
-    title: 'How Gojek\'s design & research teams collaborate effectively across borders',
-    description: 'Insights on cross-border collaboration',
-    url: 'https://www.gojek.io/blog/near-far-wherever-we-are',
-    image: 'https://blog.gojek.io/content/images/2020/10/Blog-banners_Design-research-05.jpg',
-    date: new Date('2020-09-08')
-  },
-  {
-    title: 'What every young designer should know',
-    description: 'Advice for product designers fresh out of college or the first hire to a company',
-    url: 'https://uxdesign.cc/what-every-young-designer-should-know-abb2af79f43e',
-    image: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*qVDD_s14Q9ZZDP9ZXZ51Nw.jpeg',
-    date: new Date('2016-07-25')
-  }
-];
-
-// Combine and sort all writings by date (newest first)
-const writings = [
-  ...internalWritings.map((post) => ({
-    title: post.data.title,
-    description: post.data.description,
-    url: `/writing/${post.id}/`,
-    image: post.data.image,
-    imageUrl: post.data.image ? null : 'https://placehold.co/450x250',
-    date: new Date(post.data.date),
-    isInternal: true
-  })),
-  ...externalWritings.map((post) => ({
-    ...post,
-    imageUrl: post.image,
-    isInternal: false
-  }))
-].sort((a, b) => b.date.getTime() - a.date.getTime());
-
-// Date formatter function
-const formatDate = (date: Date) => {
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-};
+const writings = await getWritingCards();
 ---
 
 <BaseLayout title="Writing and Talks - Kenneth Mark Dsouza" wide>
@@ -103,49 +26,9 @@ const formatDate = (date: Date) => {
     </a>
   </nav>
 
-  <h1 style="margin-bottom: 3rem;">Writing and Talks</h1>
+  <h1 class="page-title">Writing and Talks</h1>
 
   <div class="grid">
-    {writings.map(writing => (
-      <a
-        href={writing.url}
-        target={writing.isInternal ? undefined : "_blank"}
-        rel={writing.isInternal ? undefined : "noopener noreferrer"}
-        class="card"
-        title={writing.isInternal ? undefined : `${writing.title} (opens in new tab)`}
-      >
-        {writing.image && writing.isInternal ? (
-          <Image
-            src={writing.image}
-            alt={writing.title}
-            class="card-image"
-            width={450}
-            height={250}
-            densities={[1.5, 2]}
-          />
-        ) : (
-          <img
-            src={writing.imageUrl}
-            alt={writing.title}
-            class="card-image"
-            width="450"
-            height="250"
-          />
-        )}
-        <h3>
-          {writing.title}
-          {!writing.isInternal && (
-            <>
-              <sup class="external-link-icon" aria-hidden="true">
-                [<span class="material-symbols-outlined">arrow_outward</span>]
-              </sup>
-              <span class="sr-only"> (opens in new tab)</span>
-            </>
-          )}
-        </h3>
-        <p>{writing.description}</p>
-        <div class="post-header-meta" style="margin-top: 16px;">{formatDate(writing.date)}</div>
-      </a>
-    ))}
+    {writings.map((writing) => <WritingCard writing={writing} />)}
   </div>
 </BaseLayout>
