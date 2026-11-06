@@ -75,7 +75,7 @@ We reviewed similar apps to understand how they structured information and workf
 As we knew that our data was in-accurate and prone to telling the wrong story, we had to rely on doing some qualitative research. We held workshops with branch managers, trainers, and on-ground teams. Their first-hand experience highlighted key gaps and opportunities that might not surface through analytics alone.
 
 I've done these kind of projects many times over the years and it's fairly easy to know how to execute each of the steps above, but the challenge really is in bringing all this as well as align the people together in a coherent way.
-![[monthly-checkpoint.png]]
+
 The data from all these sources can be overwhelming to deal with and the design team often got stuck on how to go ahead. I had to step in to give direction on what we need to do next and keep moving forward.
 
 ![Screenshot from one of our monthly checkpoints with the larger org](./monthly-checkpoint.png)
